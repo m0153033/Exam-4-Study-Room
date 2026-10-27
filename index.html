@@ -272,6 +272,7 @@ const S = {
   view: "home",          // home | name | setup | lobby | join | play | end
   role: null,            // solo | host | player
   nick: LS.get("nick", ""),
+  roomName: LS.get("roomName", ""),
   pid: LS.get("pid", null) || (() => { const id = "p" + newId() + newId(); LS.set("pid", id); return id; })(),
   hostPlays: true,
   pendingRole: null,
@@ -454,7 +455,7 @@ function hostsList(){
 function newGame(role){
   const sess = newId() + newId();
   const deck = buildDeck(S.setup.topics, S.setup.mode, sess, S.seen);
-  S.G = { sess, role, hostPlays: role === "solo" ? true : S.hostPlays, hostNick: S.nick || "Host",
+  S.G = { sess, role, hostPlays: role === "solo" ? true : S.hostPlays, hostNick: role === "host" ? (S.roomName || ((S.nick || "Host") + "'s room")) : (S.nick || "Host"),
     topics: S.setup.topics.slice(), mode: S.setup.mode, queue: deck, base: deck.length, i: 0, rev: 0,
     phase: role === "solo" ? "q" : "lobby", ans: {}, players: {}, revealed: [], fu: {}, fuFrom: {}, fuN: 0, votes: {}, t: Date.now(), pw: role === "solo" ? null : newPw() };
   if (S.G.hostPlays) S.G.players.me = { n: S.nick || "Me", c: 0 };
@@ -668,8 +669,8 @@ function vHome(){
     <p class="muted" style="max-width:62ch">Every concept from the Exam 4 lectures comes up at least once. Miss one and a fresh question on that topic comes up a few questions later. Nobody sees anyone else's answers or score; your results stay on your own device.</p></div>
     ${resume}
     <div class="modes">
-      <button class="mode" data-act="pick" data-role="host"><span class="tag">Host a group</span><h3>Show it on this screen</h3><p class="muted">Open a room and get a one-word password. Friends open this site on any phone or laptop and type it in. No accounts or sign-ups.</p></button>
-      <button class="mode" data-act="pick" data-role="player"><span class="tag">Join a group</span><h3>Answer on this phone</h3><p class="muted">Type the host's password and you're in. You'll see each question and answer right here.</p></button>
+      <button class="mode" data-act="pick" data-role="host"><span class="tag">Group</span><h3>Host a group</h3><p class="muted">Open a room and get a one-word password. Friends open this site on any phone or laptop and type it in. No accounts or sign-ups.</p></button>
+      <button class="mode" data-act="pick" data-role="player"><span class="tag">Group</span><h3>Join a group</h3><p class="muted">Type the host's password and you're in. You'll see each question and answer right here.</p></button>
       <button class="mode" data-act="pick" data-role="solo"><span class="tag">Solo</span><h3>Play by yourself</h3><p class="muted">Same questions, follow-ups and review report, on one device.</p></button>
     </div>
     ${READY.length ? "" : `<div class="banner">Questions are being added one lecture at a time. Check back soon.</div>`}
@@ -681,8 +682,10 @@ function vName(){
   const hostOpt = r === "host" ? `<label class="row" style="gap:10px"><input type="checkbox" id="hp" ${S.hostPlays ? "checked" : ""} style="width:22px;height:22px"> <span>I'll also answer on this screen (leave off if this device is only the shared display)</span></label>` : "";
   return `<div class="card stack" style="max-width:560px">
     <div class="eyebrow">${r === "host" ? "Host a group" : r === "player" ? "Join a group" : "Solo"}</div>
-    <h2>${r === "host" && !S.hostPlays ? "Name the game" : "What should we call you?"}</h2>
-    <input type="text" id="nick" maxlength="20" placeholder="${r === "host" ? "e.g. Mindy" : "Your first name"}" value="${esc(S.nick)}" autocomplete="off">
+    ${r === "host" ? `<label for="roomName"><h2>Room name</h2></label>
+    <input type="text" id="roomName" maxlength="24" placeholder="e.g. Med-Surg Squad" value="${esc(S.roomName)}" autocomplete="off">
+    <label for="nick"><h2 style="margin-top:6px">Your name</h2></label>` : `<label for="nick"><h2>What should we call you?</h2></label>`}
+    <input type="text" id="nick" maxlength="20" placeholder="Your first name" value="${esc(S.nick)}" autocomplete="off">
     ${hostOpt}
     <div class="row"><button class="btn primary big" data-act="nameNext">Continue</button></div>
   </div>`;
@@ -720,7 +723,7 @@ function vLobby(){
       <p class="muted" style="font-size:14px"><b>Friend not showing up?</b> Check they typed the word exactly. If they're on school or hospital Wi-Fi, have them switch to phone data and try again.</p>
     </div>
     <div class="card stack" style="gap:16px">
-      <div class="stack" style="gap:4px"><div class="eyebrow">${esc(G.hostNick)}'s room</div><h2>${ps.length + (G.hostPlays ? 1 : 0)} in the room</h2></div>
+      <div class="stack" style="gap:4px"><div class="eyebrow">${esc(G.hostNick)}</div><h2>${ps.length + (G.hostPlays ? 1 : 0)} in the room</h2></div>
       <div class="roster">${roster}</div>
       <p class="muted">${G.queue.length} questions · ${G.topics.length} topics · ${G.mode === "full" ? "full coverage" : "quick round"}</p>
       ${roomNote()}
@@ -753,9 +756,9 @@ function playView(){
   if (S.role === "host" && S.G && S.G.phase === "lobby"){ S.view = "lobby"; return vLobby(); }
   const c = ctx();
   if (!c) return `<div class="card stack"><h2>Waiting for the host…</h2><p class="muted">If the host's screen closed, it will reconnect here automatically.</p><button class="btn" data-act="toJoin">Pick a different game</button></div>`;
-  if (c.phase === "lobby") return `<div class="card stack"><div class="eyebrow">${esc(c.hostNick)}'s room</div><h2>You're in, ${esc(S.nick)}.</h2><p class="muted">The first question shows up here when the host starts.</p>${accessNote()}${heardNote(c)}<div class="roster">${(c.roster).map(r => `<span class="who"><span class="dot" style="background:${PC(r.c)}"></span>${esc(r.n)}</span>`).join("")}</div></div>`;
+  if (c.phase === "lobby") return `<div class="card stack"><div class="eyebrow">${esc(c.hostNick)}</div><h2>You're in, ${esc(S.nick)}.</h2><p class="muted">The first question shows up here when the host starts.</p>${accessNote()}${heardNote(c)}<div class="roster">${(c.roster).map(r => `<span class="who"><span class="dot" style="background:${PC(r.c)}"></span>${esc(r.n)}</span>`).join("")}</div></div>`;
   if (c.phase === "end") return endView(c);
-  if (c.phase === "closed") return `<div class="card stack"><div class="eyebrow">${esc(c.hostNick || "Host")}'s room</div><h2>The host closed this room.</h2><p class="muted">Thanks for studying! You can join another room.</p><div class="row"><button class="btn primary big" data-act="toJoin">Join another room</button></div></div>`;
+  if (c.phase === "closed") return `<div class="card stack"><div class="eyebrow">${esc(c.hostNick || "Study room")}</div><h2>The host closed this room.</h2><p class="muted">Thanks for studying! You can join another room.</p><div class="row"><button class="btn primary big" data-act="toJoin">Join another room</button></div></div>`;
   const q = getQ(c.qid); if (!q) return `<div class="card">Loading…</div>`;
   const ord = optOrder(q, c.sess);
   const reveal = c.phase === "reveal";
@@ -917,7 +920,7 @@ function endView(c){
 /* ---------- events ---------- */
 let lastBound = null;
 function bind(v){
-  const n = $("#nick"); if (n && lastBound !== "name") n.focus();
+  const n = $("#roomName") || $("#nick"); if (n && lastBound !== "name") n.focus();
   lastBound = v;
   const hp = $("#hp"); if (hp) hp.onchange = () => { S.hostPlays = hp.checked; };
   document.querySelectorAll('input[name=mode]').forEach(r => r.onchange = () => { S.setup.mode = r.value; render(); });
@@ -938,6 +941,7 @@ document.addEventListener("click", e => {
   const act = b.dataset.act;
   if (act === "pick"){ S.pendingRole = b.dataset.role; S.view = "name"; render(); }
   else if (act === "nameNext"){
+    const rn = $("#roomName"); if (rn){ const rv = (rn.value || "").trim().slice(0, 24); if (!rv){ rn.focus(); return; } S.roomName = rv; LS.set("roomName", rv); }
     const v = ($("#nick").value || "").trim().slice(0, 20); if (!v){ $("#nick").focus(); return; }
     S.nick = v; LS.set("nick", v);
     if (S.pendingRole === "player"){ S.role = null; S.joinErr = ""; S.view = "join"; render(); const f = $("#pwIn"); if (f) f.focus(); }
