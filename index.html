@@ -1,0 +1,1005 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Exam 4 Study Room</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: one working surface per screen — a "charting station" card on a scrub-teal ground; big type for a tablet across the table, stacks on phones */
+:root{
+  --bg:#EEF3F2; --surface:#FFFFFF; --sunk:#E2EAE9; --ink:#10282B; --muted:#56706F; --line:#CFDCDA;
+  --accent:#0E6B70; --accent-ink:#FFFFFF; --accent-soft:#D4ECEB; --amber:#B86E00; --amber-soft:#FBEBCF;
+  --ok:#1E7F47; --ok-soft:#DDF2E4; --bad:#B53A28; --bad-soft:#F9E1DC; --qr:#FFFFFF;
+  --p1:#2a78d6; --p2:#eb6834; --p3:#1baf7a; --p4:#eda100; --p5:#e87ba4; --p6:#008300;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0C1819; --surface:#132527; --sunk:#0F1F21; --ink:#E4EFEE; --muted:#93AAA9; --line:#26403F;
+  --accent:#4DB6BA; --accent-ink:#06201F; --accent-soft:#163C3D; --amber:#F0B455; --amber-soft:#3A2D14;
+  --ok:#56C285; --ok-soft:#163626; --bad:#EE7A65; --bad-soft:#3E1D17;
+  --p1:#3987e5; --p2:#d95926; --p3:#199e70; --p4:#c98500; --p5:#d55181; --p6:#008300; color-scheme:dark; } }
+:root[data-theme="dark"]{
+  --bg:#0C1819; --surface:#132527; --sunk:#0F1F21; --ink:#E4EFEE; --muted:#93AAA9; --line:#26403F;
+  --accent:#4DB6BA; --accent-ink:#06201F; --accent-soft:#163C3D; --amber:#F0B455; --amber-soft:#3A2D14;
+  --ok:#56C285; --ok-soft:#163626; --bad:#EE7A65; --bad-soft:#3E1D17;
+  --p1:#3987e5; --p2:#d95926; --p3:#199e70; --p4:#c98500; --p5:#d55181; --p6:#008300; color-scheme:dark; }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.5;padding-inline:16px;padding-block:18px 40px}
+.wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+h1,h2,h3{font-family:var(--f-display);line-height:1.1;margin:0;text-wrap:balance}
+h1{font-size:clamp(30px,5vw,48px);font-weight:800;letter-spacing:-.01em}
+h2{font-size:clamp(22px,3vw,30px);font-weight:800}
+h3{font-size:18px;font-weight:600}
+p{margin:0}
+.muted{color:var(--muted)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.stack{display:flex;flex-direction:column;gap:12px}
+button{font:inherit;color:inherit;cursor:pointer}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:12px 18px;font-weight:700;min-height:48px}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn.primary:disabled{opacity:.45;cursor:not-allowed}
+.btn.ghost{background:transparent}
+.btn.big{font-size:19px;padding:16px 24px;min-height:58px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+input[type=text],input[inputmode]{font:inherit;font-size:20px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);width:100%;max-width:360px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:baseline;gap:10px}
+.brand b{font-family:var(--f-display);font-weight:800;font-size:20px}
+.linkbtn{background:none;border:0;color:var(--muted);text-decoration:underline;padding:6px}
+
+/* home */
+.modes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.mode{text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:8px;min-height:170px}
+.mode:hover{border-color:var(--accent)}
+.mode .tag{font-family:var(--f-mono);font-size:12px;color:var(--accent);letter-spacing:.06em;text-transform:uppercase}
+.mode h3{font-size:22px}
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:8px 14px;background:var(--surface);font-weight:700;font-size:15px}
+.chip[aria-pressed=true]{background:var(--accent-soft);border-color:var(--accent);color:var(--ink)}
+.pill{display:inline-flex;align-items:center;gap:6px;font-family:var(--f-mono);font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--sunk);color:var(--muted)}
+.pill.amber{background:var(--amber-soft);color:var(--amber)}
+.pill.accent{background:var(--accent-soft);color:var(--accent)}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.pill.bad{background:var(--bad-soft);color:var(--bad)}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block;flex:none}
+/* lobby */
+.lobby{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:18px}
+@media (max-width:760px){.lobby{grid-template-columns:1fr}}
+.pw{font-family:var(--f-mono);font-weight:500;font-size:clamp(40px,9vw,64px);letter-spacing:.18em;line-height:1;padding:18px 20px;border-radius:12px;background:var(--accent-soft);color:var(--ink);width:max-content;max-width:100%;overflow-wrap:anywhere}
+.pwin{font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.16em}
+.lockrow{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.err{color:var(--bad);font-weight:700}
+.url{font-family:var(--f-mono);font-size:13px;word-break:break-all;background:var(--sunk);padding:8px 10px;border-radius:8px}
+.roster{display:flex;flex-wrap:wrap;gap:8px}
+.who{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:6px 12px 6px 8px;font-weight:700;background:var(--surface)}
+.who.done{border-color:var(--ok);background:var(--ok-soft)}
+.who .ck{font-family:var(--f-mono);font-size:12px;color:var(--ok)}
+
+/* play */
+.qhead{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+.progress{height:6px;background:var(--sunk);border-radius:6px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--accent);border-radius:6px}
+.stem{font-size:clamp(20px,2.6vw,30px);line-height:1.35;font-weight:700;max-width:60ch}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{display:flex;gap:14px;align-items:flex-start;text-align:left;width:100%;border:1.5px solid var(--line);background:var(--surface);border-radius:12px;padding:14px 16px;font-size:clamp(17px,2vw,21px);line-height:1.35}
+.opt .k{font-family:var(--f-mono);font-weight:500;min-width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:var(--sunk);flex:none;font-size:15px}
+.opt.sata .k{border-radius:6px}
+.opt[aria-pressed=true]{border-color:var(--accent);background:var(--accent-soft)}
+.opt[aria-pressed=true] .k{background:var(--accent);color:var(--accent-ink)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.opt.right .k{background:var(--ok);color:var(--surface)}
+.opt.wrongpick{border-color:var(--bad);background:var(--bad-soft)}
+.opt .picks{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;padding-left:8px}
+.opt .tx{min-width:0;flex:1}
+.mini{font-family:var(--f-mono);font-size:12px;padding:2px 8px;border-radius:999px;color:#fff;white-space:nowrap}
+.numrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.numrow .unit{font-family:var(--f-mono);font-size:18px}
+.rationale{border-left:4px solid var(--accent);background:var(--sunk);padding:14px 16px;border-radius:0 12px 12px 0;max-width:75ch}
+.why{display:flex;flex-direction:column;gap:6px;max-width:75ch}
+.why h4{margin:0;font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.why ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+.why li{border-left:3px solid var(--bad);background:var(--bad-soft);padding:8px 12px;border-radius:0 10px 10px 0;font-size:16px;line-height:1.4}
+.why li b{font-family:var(--f-mono);font-weight:500}
+.why .opt-t{font-weight:700}
+.btn.danger{border-color:var(--bad);color:var(--bad)}
+.verdict{font-family:var(--f-display);font-weight:800;font-size:26px}
+.verdict.ok{color:var(--ok)} .verdict.bad{color:var(--bad)}
+.banner{padding:12px 16px;border-radius:12px;background:var(--amber-soft);color:var(--ink);border:1px solid var(--amber)}
+.answers-table{display:grid;grid-template-columns:auto 1fr auto;gap:6px 14px;align-items:center}
+.split{display:grid;grid-template-columns:minmax(0,1fr);gap:18px}
+
+/* results */
+.chart{display:flex;flex-direction:column;gap:18px}
+.trow{display:grid;grid-template-columns:minmax(150px,240px) minmax(0,1fr);gap:8px 16px;align-items:start}
+@media (max-width:640px){.trow{grid-template-columns:1fr}}
+.tname{font-weight:700;line-height:1.25}
+.bars{display:flex;flex-direction:column;gap:6px}
+.bar{display:grid;grid-template-columns:minmax(64px,110px) minmax(0,1fr) 64px;gap:10px;align-items:center;font-size:14px}
+.track{height:14px;background:var(--sunk);border-radius:4px;overflow:hidden;position:relative}
+.fill{height:100%;border-radius:4px}
+.bar .lbl{color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar .val{font-family:var(--f-mono);text-align:right;font-variant-numeric:tabular-nums}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--muted)}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.review details{border-top:1px solid var(--line);padding:10px 0}
+.review summary{cursor:pointer;font-weight:700;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.review .q{margin:8px 0 6px;font-size:15px}
+.tot{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.tot .card{padding:16px}
+.big{font-family:var(--f-display);font-weight:800;font-size:34px}
+@media (prefers-reduced-motion:no-preference){.fill,.progress i{transition:width .5s ease}}
+</style>
+
+<div class="wrap" id="app">
+  <div class="topbar">
+    <div class="brand"><b>Exam 4 Study Room</b><span class="eyebrow">PN III · Exam Nov 9</span></div>
+    <div class="row" style="gap:6px"><span id="conn" class="row" style="gap:6px;font-size:14px;color:var(--muted)"></span><button class="linkbtn" id="homeBtn" hidden>Leave / start over</button></div>
+  </div>
+  <section id="scr" aria-live="polite"></section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.5/dist/peerjs.min.js"></script>
+<script src="questions.js"></script>
+<script>
+/* Question bank lives in questions.js. Older-style wrong-answer notes (WHY) still merge in if present. */
+if (typeof WHY === "object") BANK.forEach(q => { if (!q.w && WHY[q.id]) q.w = WHY[q.id]; });
+const isHi = (t, c) => !!(HI[t] && HI[t].includes(c));
+const qCount = t => BANK.filter(q => q.t === t).length;
+const READY = Object.keys(TOPICS).filter(t => qCount(t) > 0);
+/* ===== ENGINE: pure helpers (no DOM) ===== */
+const BYID = Object.fromEntries(BANK.map(q => [q.id, q]));
+function hash(str){ let h = 2166136261 >>> 0; for (let i = 0; i < str.length; i++){ h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+function rng(seed){ let a = hash(String(seed)); return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+function shuffled(arr, seed){ const r = rng(seed), a = arr.slice(); for (let i = a.length - 1; i > 0; i--){ const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function rt(x, d){ const f = Math.pow(10, d); return Math.round(Number((x * f).toPrecision(12))) / f; }
+function nf(x){ return Number(x).toLocaleString("en-US", { maximumFractionDigits: 4 }); }
+function tr(x){ const r = rt(x, 4); return nf(r) + (Math.abs(x - r) > 1e-9 ? "…" : ""); }
+const RL = ["Round to the whole number", "Round to the tenths", "Round to the hundredths"];
+
+function getQ(id){ return BYID[id]; }
+function optOrder(q, sess){ return q.type === "num" ? null : shuffled(q.o.map((_, i) => i), sess + "|" + q.id); }
+function parseNum(v){ const s = String(v == null ? "" : v).replace(/,/g, "").trim(); if (!/^-?\d*\.?\d+$/.test(s)) return NaN; return parseFloat(s); }
+function grade(q, a){
+  if (a == null || a === "") return false;
+  if (q.type === "mc") return a === q.a;
+  if (q.type === "sata"){ if (!Array.isArray(a)) return false; const s = [...a].sort((x, y) => x - y), k = [...q.a].sort((x, y) => x - y); return s.length === k.length && s.every((v, i) => v === k[i]); }
+  const v = parseNum(a); return isFinite(v) && Math.abs(v - q.a) < 1e-9;
+}
+function whyHTML(q, sess){
+  if (q.type === "num") return q.mw ? `<div class="why"><h4>Common mistakes</h4><ul><li>${esc(q.mw.replace(/^Common mistakes:\s*/, ""))}</li></ul></div>` : "";
+  if (!q.w || !q.w.length) return "";
+  const keys = q.type === "mc" ? [q.a] : q.a, wrongIdx = q.o.map((_, i) => i).filter(i => !keys.includes(i));
+  const why = {}; wrongIdx.forEach((i, n) => { if (q.w[n]) why[i] = q.w[n]; });
+  const ord = optOrder(q, sess) || q.o.map((_, i) => i);
+  const items = ord.map((o, pos) => why[o] ? `<li><b>${String.fromCharCode(65 + pos)}.</b> <span class="opt-t">${esc(q.o[o])}</span> — ${esc(why[o])}</li>` : "").filter(Boolean).join("");
+  return items ? `<div class="why"><h4>${q.type === "sata" ? "Why the others don't belong" : "Why the other choices are wrong"}</h4><ul>${items}</ul></div>` : "";
+}
+function correctText(q, sess){
+  if (q.type === "num") return `${nf(q.a)} ${q.unit}`;
+  const ord = optOrder(q, sess), keys = q.type === "mc" ? [q.a] : q.a;
+  return ord.map((o, i) => keys.includes(o) ? `${String.fromCharCode(65 + i)}. ${q.o[o]}` : null).filter(Boolean).join(" · ");
+}
+function answerText(q, a, sess){
+  if (a == null || a === "") return "—";
+  if (q.type === "num") return `${a} ${q.unit}`;
+  const ord = optOrder(q, sess), arr = Array.isArray(a) ? a : [a];
+  return arr.map(o => String.fromCharCode(65 + ord.indexOf(o))).sort().join(", ");
+}
+
+/* Deck: every concept in the chosen topics once per game, freshest questions first.
+   seen = {id: times asked on this device}; ties broken by a per-game shuffle so repeats rotate. */
+function freshest(pool, seen, seed){
+  const order = shuffled(pool.map(q => q.id), seed);
+  return order.sort((a, b) => (seen[a] || 0) - (seen[b] || 0));
+}
+function buildDeck(topics, mode, sess, seen){
+  seen = seen || {};
+  const per = {};
+  for (const t of topics){
+    if (t === "math") continue;
+    per[t] = Object.keys(CONCEPTS[t]).map(c => freshest(BANK.filter(q => q.t === t && q.c === c), seen, sess + t + c)).filter(l => l.length);
+  }
+  const math = topics.includes("math") ? MATH_TEMPLATES.map((m, i) => `g~${m}~${sess}m${i}`) : [];
+  if (mode === "quick"){
+    const by = {};
+    for (const t of Object.keys(per)) by[t] = shuffled(per[t].map(l => l[0]), sess + "q" + t).sort((a, b) => (seen[a] || 0) - (seen[b] || 0) || (isHi(t, getQ(b).c) - isHi(t, getQ(a).c)));
+    if (math.length) by.math = shuffled(math, sess + "qm");
+    const out = []; let added = true;
+    while (out.length < 25 && added){ added = false; for (const t of topics){ if (by[t] && by[t].length && out.length < 25){ out.push(by[t].shift()); added = true; } } }
+    return shuffled(out, sess + "quick");
+  }
+  const ids = [];
+  for (const t of Object.keys(per)) for (const l of per[t]){ ids.push(l[0]); if (l.length > 1 && isHi(t, getQ(l[0]).c)) ids.push(l[1]); }
+  return shuffled(ids.concat(math), sess + "deck");
+}
+function pickFollowup(q, queue, sess, n, seen){
+  if (q.t === "math") return `g~${q.c}~${sess}f${n}`;
+  seen = seen || {};
+  const used = new Set(queue);
+  const pool = BANK.filter(x => x.t === q.t && !used.has(x.id));
+  const same = pool.filter(x => x.c === q.c);
+  const src = same.length ? same : pool;
+  if (!src.length) return null;
+  return freshest(src, seen, sess + q.id + n)[0];
+}
+
+/* Summary for end screen */
+function summarize(G){
+  const topics = G.topics;
+  const asked = G.revealed.map(getQ);
+  const tp = topics.map(t => {
+    const total = Object.keys(CONCEPTS[t]).length;
+    const covered = new Set(asked.filter(q => q.t === t).map(q => q.c)).size;
+    return [t, covered, total];
+  });
+  const keys = Object.keys(G.players);
+  const pl = keys.map(k => {
+    const per = {}; let c = 0, n = 0;
+    for (const q of asked){
+      const a = (G.ans[k] || {})[q.id]; if (a == null || a === "") continue;
+      const ok = grade(q, a); per[q.t] = per[q.t] || [0, 0]; per[q.t][1]++; n++; if (ok){ per[q.t][0]++; c++; }
+    }
+    return [G.players[k].n, G.players[k].c, c, n, per, k];
+  });
+  return { tp, pl };
+}
+
+</script>
+<script>
+/* ---------- room passwords ---------- */
+const PW_WORDS = ["MAPLE","OTTER","CEDAR","PLUM","RIVER","HONEY","TULIP","PANDA","LEMON","OCEAN","FERN","BIRCH","CORAL","PEACH","MANGO","KOALA","ROBIN","OLIVE","SPARK","CLOUD","GRAPE","TIGER","MOOSE","BEACH","PIANO","CANDY","DAISY","EAGLE","FROST","GUAVA","HAZEL","IVORY","JELLY","KIWI","LILAC","MELON","NOVA","ORBIT","PEARL","QUILT","RAVEN","SALSA","TOAST","UMBER","VELVET","WALRUS","YARN","ZEBRA","ACORN","BAGEL","CAMEL","DONUT","EMBER","FLUTE","GECKO","HIPPO","IGLOO","JUMBO","KAYAK","LLAMA","MOCHA","NACHO","OPAL","PECAN","QUAIL","RHINO","SUSHI","TACO","WAFFLE","BREEZE","CASTLE","DRAGON","FALCON","GINGER","HARBOR","JIGSAW","KETTLE","LAGOON","MUFFIN","NUTMEG","ORCHID","PEPPER","PUFFIN","ROCKET","SAFARI","TEAPOT","TURTLE","VIOLET","WIZARD","BANJO","COMET","DINGO","FIGS","GLOW","HALO","JADE","KITE","LYNX","MINT","NEST","OWL","PINE","RUBY","SAGE","WREN"].filter(w => w.length >= 4 && w.length <= 6);
+function newPw(){ let n = Math.random(); try{ const u = new Uint32Array(1); crypto.getRandomValues(u); n = u[0] / 4294967296; }catch(e){} return PW_WORDS[Math.floor(n * PW_WORDS.length)]; }
+const normPw = s => String(s || "").trim().toUpperCase().replace(/[^A-Z]/g, "");
+const pwLock = (sess, pw) => hash("e4lock|" + sess + "|" + normPw(pw));
+const pwKey = (sess, pid, pw) => hash("e4key|" + sess + "|" + pid + "|" + normPw(pw));
+const $ = s => document.querySelector(s);
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const LS = { get(k, d){ try{ const v = localStorage.getItem("pn3e4_" + k); return v == null ? d : JSON.parse(v); }catch(e){ return d; } }, set(k, v){ try{ localStorage.setItem("pn3e4_" + k, JSON.stringify(v)); }catch(e){} }, del(k){ try{ localStorage.removeItem("pn3e4_" + k); }catch(e){} } };
+const PC = n => `var(--p${(n % 6) + 1})`;
+const letter = i => String.fromCharCode(65 + i);
+const newId = () => Math.random().toString(36).slice(2, 8);
+
+/* ---------- app state ---------- */
+const S = {
+  view: "home",          // home | name | setup | lobby | join | play | end
+  role: null,            // solo | host | player
+  nick: LS.get("nick", ""),
+  pid: LS.get("pid", null) || (() => { const id = "p" + newId() + newId(); LS.set("pid", id); return id; })(),
+  hostPlays: true,
+  pendingRole: null,
+  room: null, db: null, user: null, perms: null,
+  roomState: "connecting", dbState: "connecting",
+  G: null,               // engine state when this device runs the game
+  H: null,               // host state when this device is a player
+  hostSess: null,
+  dbLive: [], dbAns: [],
+  draft: null, sent: {}, myVote: {},
+  hist: LS.get("hist", {}),
+  seen: LS.get("seen", {}),
+  openRev: new Set(),         // review sections the viewer opened (stay open across refreshes)   // question id -> times asked on this device (drives fresh-first decks)
+  setup: { topics: READY.slice(), mode: "full" },
+  keys: LS.get("keys", {}),   // sess -> password this device entered
+  unlock: null, pwErr: ""
+};
+
+/* ---------- connection: direct device-to-device, no accounts needed ----------
+   The host's browser listens at an address made from the room password.
+   Players type the password, connect straight to the host, and swap small status messages. */
+const PEER_PREFIX = "pn3-exam4-studyroom-v1-";
+const NET = { peer: null, mode: null, pw: null, conns: new Map(), remote: new Map(), retry: null, tries: 0 };
+S.room = { peers(){ return [...NET.remote.values()].map(p => ({ presence: p, sameTab: false })); } };
+S.roomState = "idle"; S.dbState = "none"; S.db = null;
+let ansUnsub = null;
+function subscribeAns(){}
+function dbPut(){}
+
+const MIRROR = {};
+function pres(patch){
+  const before = JSON.stringify(MIRROR);
+  for (const k in patch){ if (patch[k] === null) delete MIRROR[k]; else MIRROR[k] = patch[k]; }
+  if (JSON.stringify(MIRROR) === before) return;
+  netSendAll();
+}
+function netSend(conn){ try{ if (conn && conn.open) conn.send({ k: "pres", p: MIRROR }); }catch(e){} }
+function netSendAll(){ for (const c of NET.conns.values()) netSend(c); }
+function netReady(){ return typeof Peer === "function"; }
+function newPeer(id){ const o = { debug: 0 }; return id ? new Peer(id, o) : new Peer(o); }
+function wireConn(conn){
+  conn.on("open", () => {
+    NET.conns.set(conn.peer, conn);
+    if (NET.mode === "player"){ S.roomState = "on"; NET.tries = 0; }
+    netSend(conn); renderStatus(); onSync();
+  });
+  conn.on("data", d => {
+    if (!d || d.k !== "pres" || !d.p || typeof d.p !== "object") return;
+    NET.remote.set(conn.peer, d.p);
+    if (NET.mode === "player" && S.role !== "player") checkJoined();
+    onSync();
+  });
+  const gone = () => {
+    if (NET.conns.get(conn.peer) === conn) NET.conns.delete(conn.peer);
+    NET.remote.delete(conn.peer);
+    if (NET.mode === "player"){ S.roomState = "off"; scheduleRejoin(); }
+    onSync(); renderStatus();
+  };
+  conn.on("close", gone); conn.on("error", gone);
+}
+function netStop(){
+  clearTimeout(NET.retry); NET.retry = null; clearTimeout(S.joinTimer);
+  const p = NET.peer; NET.peer = null;
+  try{ p && p.destroy(); }catch(e){}
+  NET.mode = null; NET.pw = null; NET.conns.clear(); NET.remote.clear();
+  S.roomState = "idle"; renderStatus();
+}
+function keepAlive(peer){
+  peer.on("disconnected", () => {
+    if (NET.peer !== peer || peer.destroyed) return;
+    if (NET.mode === "host"){ S.roomState = "connecting"; renderStatus(); }
+    setTimeout(() => { try{ if (NET.peer === peer && !peer.destroyed && peer.disconnected) peer.reconnect(); }catch(e){} }, 2000);
+  });
+}
+
+/* ----- host ----- */
+function startHost(){
+  const G = S.G; if (!G || G.role !== "host") return;
+  if (NET.mode === "host" && NET.pw === G.pw && NET.peer && !NET.peer.destroyed) return;
+  netStop();
+  if (!netReady()){ S.roomState = "err"; render(); return; }
+  NET.mode = "host"; NET.pw = G.pw; S.roomState = "connecting"; renderStatus();
+  const peer = NET.peer = newPeer(PEER_PREFIX + G.pw);
+  keepAlive(peer);
+  peer.on("open", () => { if (NET.peer !== peer) return; S.roomState = "on"; NET.tries = 0; render(); broadcast(true); });
+  peer.on("connection", conn => { if (NET.peer === peer) wireConn(conn); });
+  peer.on("error", err => {
+    if (NET.peer !== peer) return;
+    const t = err && err.type;
+    if (t === "unavailable-id"){
+      /* Another open room is using this word (or this room's old tab hasn't let go yet). */
+      const G2 = S.G; if (!G2 || G2.role !== "host") return;
+      NET.tries++;
+      if (G2.phase === "lobby" || NET.tries > 3){ G2.pw = newPw(); saveG(); NET.tries = 0; netStop(); startHost(); render(); }
+      else setTimeout(() => { if (NET.peer === peer){ netStop(); startHost(); } }, 4000);
+      return;
+    }
+    if (t === "browser-incompatible"){ S.roomState = "err"; render(); return; }
+    if (t === "peer-unavailable") return;
+    S.roomState = "off"; renderStatus();
+    setTimeout(() => { if (NET.peer === peer){ try{ peer.reconnect(); }catch(e){ netStop(); startHost(); } } }, 3000);
+  });
+}
+
+/* ----- player ----- */
+function startJoin(pw){
+  netStop();
+  S.joinErr = "";
+  if (!netReady()){ S.joinErr = "Group play couldn't load. Check your internet connection and reload the page."; render(); return; }
+  NET.mode = "player"; NET.pw = pw; S.roomState = "connecting"; render();
+  const peer = NET.peer = newPeer();
+  keepAlive(peer);
+  peer.on("open", () => { if (NET.peer === peer) dialHost(); });
+  peer.on("error", err => {
+    if (NET.peer !== peer) return;
+    if (S.role === "player"){ S.roomState = "off"; renderStatus(); scheduleRejoin(); return; }
+    S.joinErr = err && err.type === "peer-unavailable"
+      ? "No open room uses that password. Check the word with the host, and make sure they tapped Open the room."
+      : "Couldn't connect. If you're on school or hospital Wi-Fi, switch to phone data and try again.";
+    netStop(); render();
+  });
+  clearTimeout(S.joinTimer);
+  S.joinTimer = setTimeout(() => {
+    if (NET.peer === peer && S.role !== "player"){
+      S.joinErr = "The room didn't answer. If you're on school or hospital Wi-Fi, switch to phone data and try again.";
+      netStop(); render();
+    }
+  }, 20000);
+}
+function dialHost(){
+  if (!NET.peer || NET.peer.destroyed || NET.mode !== "player") return;
+  try{ wireConn(NET.peer.connect(PEER_PREFIX + NET.pw, { reliable: true })); }catch(e){ scheduleRejoin(); }
+}
+/* The host's tab reloaded or a phone slept: keep redialing quietly. */
+function scheduleRejoin(){
+  if (NET.mode !== "player" || S.role !== "player" || NET.retry) return;
+  NET.retry = setTimeout(() => {
+    NET.retry = null;
+    if (NET.mode !== "player" || NET.conns.size) return;
+    const p = NET.peer;
+    if (p && p.open) dialHost();
+    else if (p && !p.destroyed){ try{ p.reconnect(); }catch(e){} scheduleRejoin(); }
+  }, 3000);
+}
+function checkJoined(){
+  for (const h of NET.remote.values()){
+    if (h && h.role === "host" && h.sess && h.phase !== "closed" && (!h.lk || h.lk === pwLock(h.sess, NET.pw))){
+      clearTimeout(S.joinTimer);
+      S.keys[h.sess] = NET.pw; LS.set("keys", S.keys); S.pwDraft = "";
+      playerJoin(h.sess); return;
+    }
+  }
+}
+function doConnect(){
+  const f = $("#pwIn"), pw = normPw(f ? f.value : S.pwDraft);
+  if (!pw){ S.joinErr = "Type the password the host gave you."; render(); return; }
+  S.pwDraft = pw; startJoin(pw);
+}
+
+
+function onSync(){
+  if (S.G && S.G.phase === "end" && S.role !== "player"){ renderStatus(); return; }
+  if (S.view === "join" && S.role !== "player"){ renderStatus(); return; }
+  if ((S.role === "host") && S.G) hostIngest();
+  else if (S.role === "player") playerIngest();
+  else if (S.view === "join") render();
+  renderStatus();
+}
+const FRESH = 10 * 60 * 1000;
+function hostsList(){
+  const by = {};
+  if (S.room) for (const p of S.room.peers()){ const h = p.presence; if (!p.sameTab && h && h.role === "host" && h.sess) by[h.sess] = h; }
+  const now = Date.now();
+  for (const h of S.dbLive){ if (h && h.role === "host" && h.sess && now - (h.hb || 0) < FRESH && (!by[h.sess] || (h.rev || 0) > (by[h.sess].rev || 0))) by[h.sess] = h; }
+  if (S.G) delete by[S.G.sess];
+  return Object.values(by).filter(h => h.phase !== "end" && h.phase !== "closed").sort((a, b) => (b.t || 0) - (a.t || 0));
+}
+
+/* ================= HOST / SOLO ENGINE ================= */
+function newGame(role){
+  const sess = newId() + newId();
+  const deck = buildDeck(S.setup.topics, S.setup.mode, sess, S.seen);
+  S.G = { sess, role, hostPlays: role === "solo" ? true : S.hostPlays, hostNick: S.nick || "Host",
+    topics: S.setup.topics.slice(), mode: S.setup.mode, queue: deck, base: deck.length, i: 0, rev: 0,
+    phase: role === "solo" ? "q" : "lobby", ans: {}, players: {}, revealed: [], fu: {}, fuFrom: {}, fuN: 0, votes: {}, t: Date.now(), pw: role === "solo" ? null : newPw() };
+  if (S.G.hostPlays) S.G.players.me = { n: S.nick || "Me", c: 0 };
+  S.role = role; S.draft = null; saveG();
+  if (role !== "solo"){ ansUnsub && ansUnsub(); ansUnsub = null; subscribeAns(); }
+}
+function saveG(){ if (S.G) LS.set("game", S.G); }
+function curQid(){ return S.G.queue[S.G.i]; }
+const ALIVE = 150 * 1000;
+/* every player record we can hear, from either channel, newest wins */
+function playerRecs(){
+  if (!S.G || S.G.role === "solo") return [];
+  const by = {}, now = Date.now(), ok = r => !S.G.pw || r.k === pwKey(S.G.sess, r.pid, S.G.pw);
+  if (S.room) for (const p of S.room.peers()){ const r = p.presence; if (!p.sameTab && r && r.role === "player" && r.host === S.G.sess && r.pid && ok(r)){ by[r.pid] = Object.assign({ live: true }, r); } }
+  for (const r of S.dbAns){ if (!r || r.host !== S.G.sess || !r.pid || !ok(r)) continue; const alive = now - (r.hb || 0) < ALIVE; const cur = by[r.pid];
+    if (!cur || (r.t || 0) > (cur.t || 0)) by[r.pid] = Object.assign({ live: (cur && cur.live) || alive }, r); }
+  return Object.values(by);
+}
+function activeKeys(){
+  const ks = playerRecs().filter(r => r.live).map(r => r.pid);
+  if (S.G.hostPlays) ks.unshift("me");
+  return ks;
+}
+function hostIngest(){
+  const G = S.G; if (!G) return;
+  let changed = false; const qid = curQid();
+  for (const r of playerRecs()){
+    const k = r.pid;
+    if (!G.players[k]){ G.players[k] = { n: String(r.nick || "Player").slice(0, 24), c: Object.keys(G.players).length }; changed = true; }
+    if (G.phase === "q" && r.qid === qid && r.a != null){
+      G.ans[k] = G.ans[k] || {};
+      if (JSON.stringify(G.ans[k][qid]) !== JSON.stringify(r.a)){ G.ans[k][qid] = r.a; changed = true; }
+    }
+    if (G.phase === "reveal" && r.vote && r.vote.q === qid && G.votes[k] !== r.vote.v){ G.votes[k] = r.vote.v; changed = true; }
+  }
+  if (changed) saveG();
+  maybeAuto();
+  render(); broadcast();
+}
+function allAnswered(){
+  const G = S.G, qid = curQid(), ks = activeKeys();
+  return ks.length > 0 && ks.every(k => G.ans[k] && G.ans[k][qid] != null);
+}
+let autoTimer = null;
+function maybeAuto(){
+  const G = S.G; if (!G) return;
+  clearTimeout(autoTimer);
+  if (G.phase === "q" && allAnswered()) autoTimer = setTimeout(() => { if (S.G && S.G.phase === "q" && allAnswered()) hostReveal(); }, 700);
+  if (G.phase === "reveal" && G.role !== "solo"){
+    const ks = activeKeys(), qid = curQid();
+    const allNext = ks.length > 0 && ks.every(k => (k === "me" ? S.myVote[qid] : G.votes[k]) === "next");
+    if (allNext) autoTimer = setTimeout(() => { if (S.G && S.G.phase === "reveal") hostNext(); }, 900);
+  }
+}
+function hostStart(){ S.G.phase = "q"; saveG(); render(); broadcast(); }
+function hostSubmitOwn(a){ const G = S.G, qid = curQid(); G.ans.me = G.ans.me || {}; G.ans.me[qid] = a; saveG(); if (G.role === "solo") hostReveal(); else { maybeAuto(); render(); broadcast(); } }
+function hostReveal(){
+  const G = S.G; if (G.phase !== "q") return;
+  const qid = curQid(), q = getQ(qid);
+  G.phase = "reveal"; G.votes = {};
+  if (!G.revealed.includes(qid)){ G.revealed.push(qid); markSeen(qid); }
+  const missed = Object.keys(G.ans).some(k => G.ans[k][qid] != null && !grade(q, G.ans[k][qid]));
+  if (missed && !G.fu[qid]){
+    const f = pickFollowup(q, G.queue, G.sess, G.fuN++, S.seen);
+    if (f){ const pos = Math.min(G.i + 3, G.queue.length); G.queue.splice(pos, 0, f); G.fu[qid] = f; G.fuFrom[f] = qid; }
+  }
+  if (S.G.hostPlays && G.ans.me && G.ans.me[qid] != null) recordHist(q, G.ans.me[qid]);
+  saveG(); render(); broadcast(); maybeAuto();
+}
+function hostNext(){
+  const G = S.G; clearTimeout(autoTimer);
+  if (G.i + 1 >= G.queue.length){ hostEnd(); return; }
+  G.i++; G.phase = "q"; G.votes = {}; S.draft = null; saveG(); render(); broadcast();
+  try{ window.scrollTo({ top: 0, behavior: "smooth" }); }catch(e){}
+}
+function hostClose(){
+  const G = S.G; if (!G) return;
+  G.phase = "closed"; broadcast(true);
+  const p = hostPayload(); p.phase = "closed"; p.hb = Date.now(); p.rev = (G.rev || 0) + 1; dbPut("live", "h-" + G.sess, p);
+  setTimeout(() => pres({ role: null, phase: null, roster: null, rv: null, sum: null, qid: null, sess: null }), 1500);
+  setTimeout(netStop, 2000);
+  LS.del("game"); S.G = null; S.role = null; S.view = "home"; S.toast = "Room closed."; render();
+}
+async function hostEnd(){
+  const G = S.G; G.phase = "end"; saveG(); render(); broadcast();
+  if (S.db && G.revealed.length){
+    try{ await S.db.collection("results").doc("r-" + G.sess).set({ when: new Date().toISOString(), mode: G.role, topics: G.topics, coverage: summarize(G).tp, missedConcepts: [...new Set(missedList(G).map(m => m.q.t + ":" + m.q.c))] }); }catch(e){}
+  }
+}
+let lastCast = "";
+function hostPayload(){
+  const G = S.G;
+  const qid = G.phase === "q" || G.phase === "reveal" ? curQid() : null;
+  const roster = Object.keys(G.players).map(k => ({ p: k, n: G.players[k].n, c: G.players[k].c, a: !!(qid && G.ans[k] && G.ans[k][qid] != null), r: G.phase === "reveal" && (k === "me" ? S.myVote[qid] : G.votes[k]) === "next" }));
+  const p = { role: "host", nick: G.hostNick, sess: G.sess, phase: G.phase, qid, i: G.i, n: G.queue.length, t: G.t, fu: qid ? (G.fuFrom[qid] ? 1 : 0) : 0, roster, rv: null, sum: null, lk: G.pw ? pwLock(G.sess, G.pw) : null };
+  if (G.phase === "reveal") p.rv = { fu: G.fu[qid] ? 1 : 0, talk: talkCount() };
+  if (G.phase === "end") p.sum = { tp: summarize(G).tp };
+  return p;
+}
+function broadcast(force){
+  const G = S.G; if (!G || G.role === "solo") return;
+  const p = hostPayload(), key = JSON.stringify(p);
+  if (key !== lastCast){ G.rev = (G.rev || 0) + 1; lastCast = key; saveG(); }
+  else if (!force) return;
+  p.rev = G.rev; p.hb = Date.now();
+  pres(p);
+  dbPut("live", "h-" + G.sess, p);
+}
+
+/* ================= PLAYER ================= */
+function playerJoin(sess){
+  S.role = "player"; S.hostSess = sess; S.view = "play"; S.draft = null; S.joinedAt = Date.now();
+  LS.set("lastHost", sess);
+  playerIngest(); playerSync(true);
+}
+function hostState(){
+  let best = null;
+  if (S.room) for (const p of S.room.peers()){ const h = p.presence; if (h && h.role === "host" && h.sess === S.hostSess && (!best || (h.rev || 0) >= (best.rev || 0))) best = h; }
+  for (const h of S.dbLive){ if (h && h.role === "host" && h.sess === S.hostSess && (!best || (h.rev || 0) > (best.rev || 0))) best = h; }
+  return best;
+}
+function playerIngest(){
+  const prev = S.H; S.H = hostState();
+  const H = S.H;
+  if (H){
+    if (!prev || prev.sess !== H.sess || prev.qid !== H.qid){ S.draft = null; }
+    if (S.histSess !== H.sess){ S.histSess = H.sess; S.hist = {}; S.sent = {}; S.myVote = {}; }
+    if (H.phase === "reveal" && H.qid && S.sent[H.qid] != null){ recordHist(getQ(H.qid), S.sent[H.qid], H.sess); }
+    if (H.phase === "reveal" && H.qid && S.lastSeenQ !== H.sess + H.qid){ S.lastSeenQ = H.sess + H.qid; markSeen(H.qid); }
+    playerSync();
+  }
+  render();
+}
+let lastSync = "", lastT = 0;
+function playerSync(heartbeat){
+  if (S.role !== "player" || !S.hostSess) return;
+  const H = S.H, qid = H ? H.qid : null;
+  const r = { role: "player", pid: S.pid, nick: S.nick, host: S.hostSess, sess: S.hostSess, k: pwKey(S.hostSess, S.pid, S.keys[S.hostSess] || ""), qid, a: qid && S.sent[qid] != null ? S.sent[qid] : null, vote: qid && S.myVote[qid] ? { q: qid, v: S.myVote[qid] } : null };
+  const key = JSON.stringify(r);
+  if (key !== lastSync){ lastSync = key; lastT = Date.now(); }
+  else if (!heartbeat) return;
+  r.t = lastT; r.hb = Date.now();
+  pres(r);
+  dbPut("ans", S.hostSess + "-" + S.pid, r);
+}
+function playerSubmit(a){ const H = S.H; if (!H || H.phase !== "q") return; S.sent[H.qid] = a; playerSync(); render(); }
+function vote(v){
+  const qid = S.role === "player" ? S.H && S.H.qid : curQid();
+  if (!qid) return; S.myVote[qid] = v;
+  if (S.role === "player") playerSync();
+  else { broadcast(); maybeAuto(); }
+  render();
+}
+function markSeen(qid){ if (!qid || qid.startsWith("g~")) return; S.seen[qid] = (S.seen[qid] || 0) + 1; LS.set("seen", S.seen); }
+function recordHist(q, a, sess){ const ok = grade(q, a); if (S.hist[q.id] && S.hist[q.id].seen) return; S.hist[q.id] = { ok, t: q.t, c: q.c, seen: 1 }; }
+/* keep both sides visible to each other */
+setInterval(() => { if (S.role === "player") playerSync(true); if (S.role === "host" && S.G) { broadcast(true); hostIngest(); } }, 15000);
+
+/* ---------- connection status ---------- */
+function connOk(){ return S.roomState === "on"; }
+function renderStatus(){
+  const el = $("#conn"); if (!el) return;
+  const st = S.roomState;
+  el.innerHTML = st === "connecting" ? `<span class="dot" style="background:var(--amber)"></span>Connecting…`
+    : st === "on" ? `<span class="dot" style="background:var(--ok)"></span>Connected`
+    : st === "off" ? `<span class="dot" style="background:var(--amber)"></span>Reconnecting…`
+    : st === "err" ? `<span class="dot" style="background:var(--bad)"></span>Group play unavailable`
+    : "";
+}
+
+/* ================= RENDER ================= */
+function render(){
+  const v = S.view, el = $("#scr");
+  const ae = document.activeElement, focusId = ae && ae.id && ae.tagName === "INPUT" ? ae.id : null, selS = focusId ? ae.selectionStart : null;
+  renderInner(v, el);
+  if (focusId){ const f = document.getElementById(focusId); if (f){ f.focus(); try{ f.setSelectionRange(selS, selS); }catch(e){} } }
+}
+function renderInner(v, el){
+  $("#homeBtn").hidden = v === "home";
+  if (v === "home") el.innerHTML = vHome();
+  else if (v === "name") el.innerHTML = vName();
+  else if (v === "setup") el.innerHTML = vSetup();
+  else if (v === "lobby") el.innerHTML = vLobby();
+  else if (v === "join") el.innerHTML = vJoin();
+  else if (v === "play") el.innerHTML = playView();
+  renderStatus();
+  bind(v);
+}
+function accessNote(){ return ""; }
+function heardNote(c){
+  if (S.role !== "player" || !c || !S.joinedAt || Date.now() - S.joinedAt < 12000) return "";
+  if ((c.roster || []).some(r => r.p === S.pid)) return "";
+  return `<div class="banner"><b>The host's screen doesn't see you yet.</b> Keep this page open; it usually clears in a few seconds.</div>`;
+}
+function roomNote(){
+  if (S.roomState === "err") return `<div class="banner stack" style="gap:6px"><p><b>This browser can't run group play.</b></p><p>Try Chrome or Safari. Solo mode still works here.</p></div>`;
+  if (S.roomState === "off") return `<div class="banner stack" style="gap:6px"><p><b>Lost the connection. Trying again…</b></p><p>If it doesn't come back in a few seconds, switch from school or hospital Wi-Fi to phone data. Your place in the game is saved.</p></div>`;
+  return "";
+}
+function blueprintCard(){
+  const rows = Object.keys(TOPICS).map(t => { const n = qCount(t), b = BLUEPRINT[t] || [0, 0];
+    return `<div class="bar" style="grid-template-columns:minmax(0,1fr) auto auto"><span class="lbl" style="white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere;color:var(--ink)">${esc(TOPICS[t])}</span><span class="mono muted" style="font-size:13px">${b[0]} on exam${b[1] ? " · " + b[1] + " CJ" : ""}</span>${n ? `<span class="pill ok">${n} ready</span>` : `<span class="pill">Coming soon</span>`}</div>`; }).join("");
+  return `<div class="card stack" style="gap:10px"><div class="eyebrow">Exam 4 blueprint · ${READY.length} of ${Object.keys(TOPICS).length} lectures loaded</div><div class="stack" style="gap:8px">${rows}</div></div>`;
+}
+function vHome(){
+  const saved = LS.get("game", null);
+  const resume = saved && saved.phase !== "end" && saved.revealed && saved.revealed.length ? `<div class="card row" style="justify-content:space-between"><div><div class="eyebrow">Unfinished game on this device</div><p>${esc(saved.revealed.length)} answered · ${esc(saved.queue.length - saved.i)} left</p></div><button class="btn primary" data-act="resume">Resume</button></div>` : "";
+  const toast = S.toast ? `<div class="banner" role="status">${esc(S.toast)}</div>` : ""; S.toast = "";
+  return `<div class="stack" style="gap:20px">${toast}
+    <div class="stack" style="gap:8px"><h1>Review everything on Exam 4, together.</h1>
+    <p class="muted" style="max-width:62ch">Every concept from the Exam 4 lectures comes up at least once. Miss one and a fresh question on that topic comes up a few questions later. Nobody sees anyone else's answers or score; your results stay on your own device.</p></div>
+    ${resume}
+    <div class="modes">
+      <button class="mode" data-act="pick" data-role="host"><span class="tag">Host a group</span><h3>Show it on this screen</h3><p class="muted">Open a room and get a one-word password. Friends open this site on any phone or laptop and type it in. No accounts or sign-ups.</p></button>
+      <button class="mode" data-act="pick" data-role="player"><span class="tag">Join a group</span><h3>Answer on this phone</h3><p class="muted">Type the host's password and you're in. You'll see each question and answer right here.</p></button>
+      <button class="mode" data-act="pick" data-role="solo"><span class="tag">Solo</span><h3>Play by yourself</h3><p class="muted">Same questions, follow-ups and review report, on one device.</p></button>
+    </div>
+    ${READY.length ? "" : `<div class="banner">Questions are being added one lecture at a time. Check back soon.</div>`}
+    ${blueprintCard()}
+  </div>`;
+}
+function vName(){
+  const r = S.pendingRole;
+  const hostOpt = r === "host" ? `<label class="row" style="gap:10px"><input type="checkbox" id="hp" ${S.hostPlays ? "checked" : ""} style="width:22px;height:22px"> <span>I'll also answer on this screen (leave off if this device is only the shared display)</span></label>` : "";
+  return `<div class="card stack" style="max-width:560px">
+    <div class="eyebrow">${r === "host" ? "Host a group" : r === "player" ? "Join a group" : "Solo"}</div>
+    <h2>${r === "host" && !S.hostPlays ? "Name the game" : "What should we call you?"}</h2>
+    <input type="text" id="nick" maxlength="20" placeholder="${r === "host" ? "e.g. Mindy" : "Your first name"}" value="${esc(S.nick)}" autocomplete="off">
+    ${hostOpt}
+    <div class="row"><button class="btn primary big" data-act="nameNext">Continue</button></div>
+  </div>`;
+}
+function deckCount(){ const sess = "count"; return { full: buildDeck(S.setup.topics, "full", sess, S.seen).length, quick: buildDeck(S.setup.topics, "quick", sess, S.seen).length }; }
+function bankStats(){ const ts = S.setup.topics.filter(t => t !== "math"); const pool = BANK.filter(q => ts.includes(q.t)); const fresh = pool.filter(q => !S.seen[q.id]).length; return { pool: pool.length, fresh }; }
+function vSetup(){
+  const c = deckCount();
+  const chips = Object.keys(TOPICS).map(t => READY.includes(t) ? `<button class="chip" aria-pressed="${S.setup.topics.includes(t)}" data-act="topic" data-t="${t}">${esc(TOPICS[t])}</button>` : `<button class="chip" disabled style="opacity:.5;cursor:not-allowed">${esc(TOPICS[t])} · soon</button>`).join("");
+  return `<div class="card stack" style="gap:18px">
+    <div class="stack" style="gap:6px"><div class="eyebrow">Set up the round</div><h2>What are we covering?</h2></div>
+    <div class="chips">${chips}</div>
+    <div class="stack" style="gap:8px">
+      <label class="row" style="gap:10px"><input type="radio" name="mode" value="full" ${S.setup.mode === "full" ? "checked" : ""}> <span><b>Full coverage</b> — every concept once, freshest questions first · <span class="mono">${c.full}</span> questions + follow-ups</span></label>
+      <label class="row" style="gap:10px"><input type="radio" name="mode" value="quick" ${S.setup.mode === "quick" ? "checked" : ""}> <span><b>Quick round</b> — <span class="mono">${c.quick}</span> questions spread across the topics</span></label>
+    </div>
+    <p class="muted"><span class="mono">${bankStats().fresh}</span> of <span class="mono">${bankStats().pool}</span> questions in these topics haven't come up on this device yet; each game uses those first.</p>
+    <div class="row"><button class="btn primary big" data-act="create" ${S.setup.topics.length ? "" : "disabled"}>${S.pendingRole === "solo" ? "Start" : "Open the room"}</button></div>
+  </div>`;
+}
+function inviteText(G){
+  const link = location.href.split("#")[0];
+  return `Join my Exam 4 study room:\n${link}\nTap "Join a group" and type the password ${G.pw}.`;
+}
+function vLobby(){
+  const G = S.G, ps = playerRecs().filter(r => r.live);
+  const roster = Object.keys(G.players).map(k => `<span class="who"><span class="dot" style="background:${PC(G.players[k].c)}"></span>${esc(G.players[k].n)}${k === "me" ? ' <span class="muted">(this screen)</span>' : ""}</span>`).join("") || `<span class="muted">Nobody yet. Share the password to let people in.</span>`;
+  return `<div class="lobby">
+    <div class="card stack">
+      <div class="eyebrow">Room password</div>
+      <div class="pw" id="pw" aria-label="Room password ${esc(G.pw)}">${esc(G.pw)}</div>
+      <p class="muted" style="font-size:15px">Tell your friends: open this site, tap <b>Join a group</b> and type <b>${esc(G.pw)}</b>. Only people with the password can get in. Keep this screen open while you play.</p>
+      <div class="row"><button class="btn" data-act="copy">Copy invite</button><span class="muted" id="copyNote" style="font-size:14px"></span></div>
+      <div class="url" id="url" hidden>${esc(inviteText(G))}</div>
+      <p class="muted" style="font-size:14px"><b>Friend not showing up?</b> Check they typed the word exactly. If they're on school or hospital Wi-Fi, have them switch to phone data and try again.</p>
+    </div>
+    <div class="card stack" style="gap:16px">
+      <div class="stack" style="gap:4px"><div class="eyebrow">${esc(G.hostNick)}'s room</div><h2>${ps.length + (G.hostPlays ? 1 : 0)} in the room</h2></div>
+      <div class="roster">${roster}</div>
+      <p class="muted">${G.queue.length} questions · ${G.topics.length} topics · ${G.mode === "full" ? "full coverage" : "quick round"}</p>
+      ${roomNote()}
+      <div class="row"><button class="btn primary big" data-act="start" ${activeKeys().length ? "" : "disabled"}>Start</button><button class="btn danger" data-act="close">Close room</button></div>
+    </div>
+  </div>`;
+}
+function vJoin(){
+  const busy = NET.mode === "player" && S.role !== "player";
+  return `<div class="card stack" style="max-width:560px;gap:14px">
+    <div class="eyebrow">Hi ${esc(S.nick)}</div>
+    <h2>Type the room password</h2>
+    <p class="muted">The host sees a one-word password on their screen after tapping <b>Open the room</b>.</p>
+    <div class="lockrow"><input type="text" id="pwIn" class="pwin" maxlength="8" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="e.g. MAPLE" value="${esc(S.pwDraft || "")}" style="max-width:220px" ${busy ? "disabled" : ""}>
+      <button class="btn primary" data-act="connect" ${busy ? "disabled" : ""}>${busy ? "Connecting…" : "Join"}</button>${busy ? `<button class="btn ghost" data-act="cancelJoin">Cancel</button>` : ""}</div>
+    ${S.joinErr ? `<p class="err" role="alert">${esc(S.joinErr)}</p>` : ""}
+  </div>`;
+}
+
+/* ---------- play view (host, solo, player) ---------- */
+function ctx(){
+  if (S.role === "player"){
+    const H = S.H; if (!H) return null;
+    return { phase: H.phase, sess: H.sess, qid: H.qid, i: H.i, n: H.n, fu: H.fu, roster: H.roster || [], rv: H.rv, sum: H.sum, canAnswer: true, mine: H.qid ? S.sent[H.qid] : null, hostNick: H.nick };
+  }
+  const G = S.G, qid = (G.phase === "q" || G.phase === "reveal") ? curQid() : null;
+  return { phase: G.phase, sess: G.sess, qid, i: G.i, n: G.queue.length, fu: qid && G.fuFrom[qid] ? 1 : 0, canAnswer: G.hostPlays, mine: qid && G.ans.me ? G.ans.me[qid] : null, isHost: true };
+}
+function playView(){
+  if (S.role === "host" && S.G && S.G.phase === "lobby"){ S.view = "lobby"; return vLobby(); }
+  const c = ctx();
+  if (!c) return `<div class="card stack"><h2>Waiting for the host…</h2><p class="muted">If the host's screen closed, it will reconnect here automatically.</p><button class="btn" data-act="toJoin">Pick a different game</button></div>`;
+  if (c.phase === "lobby") return `<div class="card stack"><div class="eyebrow">${esc(c.hostNick)}'s room</div><h2>You're in, ${esc(S.nick)}.</h2><p class="muted">The first question shows up here when the host starts.</p>${accessNote()}${heardNote(c)}<div class="roster">${(c.roster).map(r => `<span class="who"><span class="dot" style="background:${PC(r.c)}"></span>${esc(r.n)}</span>`).join("")}</div></div>`;
+  if (c.phase === "end") return endView(c);
+  if (c.phase === "closed") return `<div class="card stack"><div class="eyebrow">${esc(c.hostNick || "Host")}'s room</div><h2>The host closed this room.</h2><p class="muted">Thanks for studying! You can join another room.</p><div class="row"><button class="btn primary big" data-act="toJoin">Join another room</button></div></div>`;
+  const q = getQ(c.qid); if (!q) return `<div class="card">Loading…</div>`;
+  const ord = optOrder(q, c.sess);
+  const reveal = c.phase === "reveal";
+  const pct = Math.round(100 * c.i / Math.max(1, c.n));
+  const typePill = q.type === "sata" ? `<span class="pill amber">Select all that apply</span>` : q.type === "num" ? `<span class="pill amber">${esc(q.round)}</span>` : "";
+  const fuPill = c.fu ? `<span class="pill accent">Follow-up</span>` : "";
+  const head = `<div class="stack" style="gap:10px">
+      <div class="qhead"><div class="row" style="gap:8px"><span class="pill">${esc(TOPICS[q.t])}</span>${fuPill}${typePill}</div><span class="mono muted">Q ${c.i + 1} / ${c.n}</span></div>
+      <div class="progress" aria-hidden="true"><i style="width:${pct}%"></i></div></div>`;
+
+  // picks per original option (reveal)
+  const answered = c.mine != null;
+  const locked = reveal || !c.canAnswer;
+  const draft = S.draft != null ? S.draft : (c.mine != null ? c.mine : (q.type === "sata" ? [] : null));
+  let body = "";
+  if (q.type === "num"){
+    if (reveal){
+      body = `<div class="opt right" style="cursor:default"><span class="k">✓</span><span class="tx mono">${esc(nf(q.a))} ${esc(q.unit)}</span></div>
+        ${c.mine != null ? `<p class="muted">Your answer: <span class="mono">${esc(c.mine)} ${esc(q.unit)}</span></p>` : ""}`;
+    } else if (c.canAnswer){
+      body = `<div class="numrow"><input id="numIn" inputmode="decimal" autocomplete="off" placeholder="Your answer" value="${esc(typeof draft === "string" ? draft : (c.mine || ""))}" style="max-width:220px"><span class="unit">${esc(q.unit)}</span></div>`;
+    } else body = `<p class="muted">Answer on your phones · ${esc(q.unit)}</p>`;
+  } else {
+    body = `<div class="opts">${ord.map((o, i) => {
+      const sel = q.type === "sata" ? (Array.isArray(draft) && draft.includes(o)) : draft === o;
+      const isRight = q.type === "mc" ? o === q.a : q.a.includes(o);
+      const myPick = c.mine != null && (Array.isArray(c.mine) ? c.mine.includes(o) : c.mine === o);
+      let cls = "opt" + (q.type === "sata" ? " sata" : "");
+      if (reveal){ if (isRight) cls += " right"; else if (myPick) cls += " wrongpick"; }
+      const chips = reveal && myPick ? `<span class="picks"><span class="pill">your pick</span></span>` : "";
+      return `<button class="${cls}" ${locked ? "disabled" : ""} aria-pressed="${!reveal && sel}" data-act="opt" data-o="${o}"><span class="k">${reveal && isRight ? "✓" : letter(i)}</span><span class="tx">${esc(q.o[o])}</span>${chips}</button>`;
+    }).join("")}</div>`;
+  }
+
+  let controls = "";
+  if (!reveal && c.canAnswer){
+    const ready = q.type === "num" ? true : q.type === "sata" ? Array.isArray(draft) && draft.length > 0 : draft != null;
+    controls = `<div class="row"><button class="btn primary big" data-act="submit" ${ready ? "" : "disabled"}>${answered ? "Update answer" : "Lock in"}</button>${answered ? `<span class="pill ok">Locked in: ${esc(answerText(q, c.mine, c.sess))}</span>` : ""}</div>`;
+  }
+  let status = "";
+  if (!reveal && S.role === "host" && S.G.role !== "solo"){
+    const G = S.G, ks = activeKeys();
+    status = `<div class="stack" style="gap:10px"><div class="roster">${ks.map(k => { const p = G.players[k]; if (!p) return ""; const done = G.ans[k] && G.ans[k][c.qid] != null; return `<span class="who ${done ? "done" : ""}"><span class="dot" style="background:${PC(p.c)}"></span>${esc(p.n)} ${done ? '<span class="ck">✓ in</span>' : '<span class="muted" style="font-weight:400">thinking</span>'}</span>`; }).join("")}</div>
+      <div class="row"><button class="btn ghost" data-act="reveal">Reveal now</button><span class="muted" style="font-size:14px">Reveals automatically once everyone locks in.</span></div></div>`;
+  }
+  if (!reveal && S.role === "player"){
+    const r = c.roster || [];
+    status = `<div class="roster">${r.map(p => `<span class="who ${p.a ? "done" : ""}"><span class="dot" style="background:${PC(p.c)}"></span>${esc(p.n)}${p.a ? ' <span class="ck">✓</span>' : ""}</span>`).join("")}</div>`;
+  }
+
+  let after = "";
+  if (reveal){
+    const mineOk = c.mine != null ? grade(q, c.mine) : null;
+    const verdict = c.canAnswer ? (mineOk === null ? `<div class="verdict muted">No answer this time</div>` : mineOk ? `<div class="verdict ok">Correct</div>` : `<div class="verdict bad">Not this one</div>`) : "";
+    const fuAdded = S.role === "player" ? c.rv && c.rv.fu : S.G.fu[c.qid];
+    const fuNote = fuAdded ? `<p class="pill accent" style="text-transform:none;letter-spacing:0">Extra practice: another ${esc(TOPICS[q.t])} question is coming up in a few.</p>` : "";
+    const talkN = S.role === "player" ? (c.rv && c.rv.talk) || 0 : talkCount();
+    const talk = talkN ? `<div class="banner">Someone wants to talk this one through. Share how you thought about it, whatever you picked, then move on.</div>` : "";
+    const solo = S.role !== "player" && S.G.role === "solo";
+    const myV = S.myVote[c.qid];
+    const voteRow = solo ? `<div class="row"><button class="btn primary big" data-act="next">Next question</button></div>`
+      : `<div class="row">${c.canAnswer ? `<button class="btn ${myV === "next" ? "primary" : ""} big" data-act="vote" data-v="next">${myV === "next" ? "Ready ✓" : "Ready for next"}</button><button class="btn ${myV === "talk" ? "primary" : ""} big" data-act="vote" data-v="talk">Let's talk about it</button>` : ""}${S.role === "host" ? `<button class="btn ${c.canAnswer ? "" : "primary"} big" data-act="next">Next question</button>` : ""}</div>
+         ${readyRoster(c)}`;
+    after = `<div class="stack" style="gap:14px">${verdict}${q.type !== "num" ? `<p><b>Answer:</b> ${esc(correctText(q, c.sess))}</p>` : ""}<div class="rationale">${esc(q.r)}</div>${whyHTML(q, c.sess)}${fuNote}${talk}${voteRow}</div>`;
+  }
+  const pwTag = S.role === "host" && S.G && S.G.pw ? `<span class="muted" style="font-size:14px">Room password <span class="mono" style="color:var(--ink);letter-spacing:.12em">${esc(S.G.pw)}</span></span>` : "";
+  const endBtn = S.role !== "player" ? `<div class="row" style="justify-content:space-between">${pwTag}<span class="row" style="gap:4px">${S.role === "host" ? `<button class="linkbtn" data-act="close">Close room</button>` : ""}<button class="linkbtn" data-act="end">End and see review</button></span></div>` : "";
+  const notes = S.role === "player" ? accessNote() + heardNote(c) : "";
+  return `<div class="card stack" style="gap:20px">${notes}${head}<div class="stem">${esc(q.q)}</div>${body}${controls}${status}${after}</div>${endBtn}`;
+}
+function readyRoster(c){
+  if (S.role !== "host" && S.role !== "player") return "";
+  let rows;
+  if (S.role === "host"){ const G = S.G, qid = c.qid; rows = activeKeys().map(k => ({ n: G.players[k] ? G.players[k].n : "?", c: G.players[k] ? G.players[k].c : 0, r: (k === "me" ? S.myVote[qid] : G.votes[k]) === "next" })); }
+  else rows = (c.roster || []).map(r => ({ n: r.n, c: r.c, r: r.r }));
+  if (!rows.length) return "";
+  const waiting = rows.filter(r => !r.r).map(r => r.n);
+  return `<div class="stack" style="gap:8px"><div class="roster">${rows.map(r => `<span class="who ${r.r ? "done" : ""}"><span class="dot" style="background:${PC(r.c)}"></span>${esc(r.n)} ${r.r ? '<span class="ck">✓ ready</span>' : '<span class="muted" style="font-weight:400">reading</span>'}</span>`).join("")}</div>
+    <p class="muted" style="font-size:14px">${waiting.length ? `Next question starts when everyone taps Ready. Waiting on ${esc(waiting.join(", "))}.` : "Everyone's ready. Moving on…"}${S.role === "host" ? " You can also tap Next question." : ""}</p></div>`;
+}
+function talkCount(){ const G = S.G, qid = curQid(); return Object.keys(G.votes).filter(k => G.votes[k] === "talk").length + (S.myVote[qid] === "talk" ? 1 : 0); }
+
+/* ---------- end / review ---------- */
+function missedList(G){
+  const out = [];
+  for (const qid of G.revealed){
+    const q = getQ(qid); const who = [];
+    for (const k of Object.keys(G.ans)){ const a = G.ans[k][qid]; if (a != null && !grade(q, a)) who.push(1); }
+    if (who.length) out.push({ q, who, qid });
+  }
+  return out;
+}
+function myPer(hist){
+  const per = {}; let c = 0, n = 0;
+  for (const id of Object.keys(hist)){ const h = hist[id]; per[h.t] = per[h.t] || [0, 0]; per[h.t][1]++; n++; if (h.ok){ per[h.t][0]++; c++; } }
+  return { per, c, n };
+}
+function chartHTML(tp, mine){
+  if (!tp || !tp.length) return "";
+  const legend = `<div class="legend"><span><span class="dot" style="background:var(--muted)"></span>Concepts covered this round</span>${mine ? `<span><span class="dot" style="background:var(--accent)"></span>You: correct / answered</span>` : ""}</div>`;
+  const rows = tp.map(([t, cov, tot]) => {
+    const cpct = Math.round(100 * cov / Math.max(1, tot));
+    let bars = `<div class="bar" title="${esc(TOPICS[t])}: ${cov} of ${tot} concepts covered"><span class="lbl">Covered</span><span class="track"><span class="fill" style="display:block;width:${cpct}%;background:var(--muted)"></span></span><span class="val">${cov}/${tot}</span></div>`;
+    if (mine){ const v = mine[t] || [0, 0]; const pc = v[1] ? Math.round(100 * v[0] / v[1]) : 0;
+      bars += `<div class="bar" title="You: ${v[0]} of ${v[1]} correct in ${esc(TOPICS[t])}"><span class="lbl">You</span><span class="track"><span class="fill" style="display:block;width:${pc}%;background:var(--accent)"></span></span><span class="val">${v[0]}/${v[1]}</span></div>`; }
+    return `<div class="trow"><div class="tname">${esc(TOPICS[t])}</div><div class="bars">${bars}</div></div>`;
+  }).join("");
+  return `<div class="card stack" style="gap:16px"><div class="stack" style="gap:4px"><div class="eyebrow">By topic</div><h2>${mine ? "What you covered and what you got" : "What we covered"}</h2></div>${legend}<div class="chart">${rows}</div></div>`;
+}
+function reviewHTML(items, sess, shared){
+  if (!items.length) return `<div class="card"><h3>${shared ? "No concepts flagged for review." : "Nothing to review from this round."}</h3></div>`;
+  const byT = {};
+  items.forEach(m => { (byT[m.q.t] = byT[m.q.t] || {}); (byT[m.q.t][m.q.c] = byT[m.q.t][m.q.c] || []).push(m); });
+  const blocks = Object.keys(TOPICS).filter(t => byT[t]).map(t => {
+    const cs = Object.keys(byT[t]).map(c => {
+      const ms = byT[t][c];
+      const key = t + ":" + c;
+      return `<details data-k="${esc(key)}" ${S.openRev.has(key) ? "open" : ""}><summary>${esc(CONCEPTS[t][c] || c)}</summary>
+        ${ms.map(m => `<div class="q">${esc(m.q.q)}</div><p style="font-size:15px"><b>Answer:</b> ${esc(correctText(m.q, sess))}</p><div class="rationale" style="font-size:15px;margin-top:6px">${esc(m.q.r)}</div><div style="margin-top:8px">${whyHTML(m.q, sess)}</div>`).join("")}</details>`;
+    }).join("");
+    return `<div class="stack" style="gap:2px"><h3 style="margin-top:8px">${esc(TOPICS[t])}</h3>${cs}</div>`;
+  }).join("");
+  const sub = shared ? "Concepts that tripped up at least one person. Nobody's name or score is shown. Tap one to see the question, the answer and why." : "Only you can see this. Tap a concept to see the question, the answer and why.";
+  return `<div class="card stack review" style="gap:8px"><div class="stack" style="gap:4px"><div class="eyebrow">What to review</div><h2>${shared ? "Concepts to go over together" : "Your review list"}</h2><p class="muted">${sub}</p></div>${blocks}</div>`;
+}
+function notReached(tp){
+  if (!tp) return "";
+  const gaps = tp.filter(([t, cov, tot]) => cov < tot);
+  if (!gaps.length) return "";
+  return `<div class="card stack" style="gap:8px"><div class="eyebrow">Not reached yet</div>${gaps.map(([t, cov, tot]) => `<p><b>${esc(TOPICS[t])}:</b> ${tot - cov} concept${tot - cov > 1 ? "s" : ""} not asked this round</p>`).join("")}</div>`;
+}
+function myTile(c, n){
+  return `<div class="tot"><div class="card"><div class="eyebrow">Only you see this</div><div class="big mono">${c}/${n}</div><div class="muted">correct out of answered</div></div></div>`;
+}
+function endView(c){
+  let tp, html = "";
+  if (S.role === "player"){
+    tp = c.sum && c.sum.tp;
+    const me = myPer(S.hist);
+    const items = Object.keys(S.hist).filter(id => !S.hist[id].ok).map(id => ({ q: getQ(id) })).filter(m => m.q);
+    html = myTile(me.c, me.n) + chartHTML(tp, me.per) + reviewHTML(items, c.sess, false);
+  } else {
+    const G = S.G; tp = summarize(G).tp;
+    const items = missedList(G).map(m => ({ q: m.q }));
+    if (G.role === "solo"){
+      const k = "me", per = {}; let cc = 0, nn = 0;
+      for (const qid of G.revealed){ const q = getQ(qid), a = (G.ans.me || {})[qid]; if (a == null) continue; per[q.t] = per[q.t] || [0, 0]; per[q.t][1]++; nn++; if (grade(q, a)){ per[q.t][0]++; cc++; } }
+      html = myTile(cc, nn) + chartHTML(tp, per) + reviewHTML(items, c.sess, false);
+    } else {
+      html = `<p class="muted">Everyone's own score and review list are on their own phone.</p>` + chartHTML(tp, null) + reviewHTML(items, c.sess, true);
+    }
+  }
+  const again = S.role !== "player" ? `<div class="row"><button class="btn primary big" data-act="again">New game</button>${S.role === "host" ? `<button class="btn danger" data-act="close">Close room</button>` : ""}</div>` : `<div class="row"><button class="btn big" data-act="toJoin">Join another game</button></div>`;
+  return `<div class="stack" style="gap:18px"><div class="stack" style="gap:6px"><div class="eyebrow">Round complete</div><h1>Here's what to review.</h1></div>${html}${notReached(tp)}${again}</div>`;
+}
+
+
+
+/* ---------- events ---------- */
+let lastBound = null;
+function bind(v){
+  const n = $("#nick"); if (n && lastBound !== "name") n.focus();
+  lastBound = v;
+  const hp = $("#hp"); if (hp) hp.onchange = () => { S.hostPlays = hp.checked; };
+  document.querySelectorAll('input[name=mode]').forEach(r => r.onchange = () => { S.setup.mode = r.value; render(); });
+  const pi = $("#pwIn"); if (pi){ pi.oninput = () => { S.pwDraft = pi.value; }; pi.onkeydown = e => { if (e.key === "Enter") doConnect(); }; }
+  const ni = $("#numIn"); if (ni){ ni.oninput = () => { S.draft = ni.value; }; ni.onkeydown = e => { if (e.key === "Enter") doSubmit(); }; }
+}
+function doSubmit(){
+  const c = ctx(); const q = getQ(c.qid);
+  let a = S.draft != null ? S.draft : c.mine;
+  if (q.type === "num"){ const ni = $("#numIn"); a = ni ? ni.value.trim() : a; if (!isFinite(parseNum(a))){ ni && (ni.setCustomValidity("Enter a number"), ni.reportValidity()); return; } }
+  if (q.type === "sata" && (!Array.isArray(a) || !a.length)) return;
+  if (q.type === "mc" && a == null) return;
+  S.draft = null;
+  if (S.role === "player") playerSubmit(a); else hostSubmitOwn(a);
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-act]"); if (!b) return;
+  const act = b.dataset.act;
+  if (act === "pick"){ S.pendingRole = b.dataset.role; S.view = "name"; render(); }
+  else if (act === "nameNext"){
+    const v = ($("#nick").value || "").trim().slice(0, 20); if (!v){ $("#nick").focus(); return; }
+    S.nick = v; LS.set("nick", v);
+    if (S.pendingRole === "player"){ S.role = null; S.joinErr = ""; S.view = "join"; render(); const f = $("#pwIn"); if (f) f.focus(); }
+    else { S.view = "setup"; render(); }
+  }
+  else if (act === "topic"){ const t = b.dataset.t; if (!READY.includes(t)) return; const i = S.setup.topics.indexOf(t); if (i >= 0) S.setup.topics.splice(i, 1); else S.setup.topics.push(t); S.setup.topics.sort((a, b) => Object.keys(TOPICS).indexOf(a) - Object.keys(TOPICS).indexOf(b)); render(); }
+  else if (act === "create"){
+    newGame(S.pendingRole);
+    S.myVote = {}; S.hist = {}; LS.set("hist", {});
+    S.view = S.G.role === "solo" ? "play" : "lobby"; render(); broadcast();
+    if (S.G.role === "host") startHost();
+  }
+  else if (act === "start"){ hostStart(); S.view = "play"; render(); }
+  else if (act === "copy"){ const t = inviteText(S.G); try{ navigator.clipboard.writeText(t).then(() => { b.textContent = "Copied"; }, () => showInvite()); }catch(err){ showInvite(); } }
+  else if (act === "join"){
+    const sess = b.dataset.sess, h = hostsList().find(x => x.sess === sess);
+    if (h && h.lk && S.keys[sess] && pwLock(sess, S.keys[sess]) === h.lk){ playerJoin(sess); return; }
+    S.unlock = sess; S.pwErr = ""; S.pwDraft = ""; render(); const f = $("#pwIn"); if (f) f.focus();
+  }
+  else if (act === "unlock"){ tryUnlock(b.dataset.sess); }
+  else if (act === "cancelUnlock"){ S.unlock = null; S.pwErr = ""; render(); }
+  else if (act === "connect"){ doConnect(); }
+  else if (act === "cancelJoin"){ netStop(); S.joinErr = ""; render(); }
+  else if (act === "fixconn"){ (async () => { try{ if (S.perms){ const st = await S.perms.request(); if (Object.values(st || {}).some(v => v === "denied")){ try{ await S.perms.manage(); }catch(e){} } } }catch(e){} location.reload(); })(); }
+  else if (act === "toJoin"){ pres({ role: null, host: null, sess: null, qid: null, a: null, vote: null }); netStop(); S.role = null; S.H = null; S.hostSess = null; S.joinErr = ""; S.view = "join"; render(); }
+  else if (act === "opt"){
+    const c = ctx(); const q = getQ(c.qid); const o = +b.dataset.o;
+    let d = S.draft != null ? S.draft : c.mine;
+    if (q.type === "sata"){ d = Array.isArray(d) ? d.slice() : []; const i = d.indexOf(o); if (i >= 0) d.splice(i, 1); else d.push(o); }
+    else d = o;
+    S.draft = d; render();
+  }
+  else if (act === "submit"){ doSubmit(); }
+  else if (act === "reveal"){ hostReveal(); }
+  else if (act === "next"){ hostNext(); }
+  else if (act === "vote"){ vote(b.dataset.v); }
+  else if (act === "close"){ if (b.dataset.sure){ hostClose(); } else { b.dataset.sure = "1"; b.textContent = "Tap again to close the room"; } }
+  else if (act === "end"){ if (b.dataset.sure){ hostEnd(); } else { b.dataset.sure = "1"; b.textContent = "Tap again to end the round"; } }
+  else if (act === "again"){ if (S.role === "host"){ pres({ role: null, phase: null, roster: null, rv: null, sum: null, qid: null, sess: null }); setTimeout(netStop, 800); } S.G = null; LS.del("game"); S.view = "setup"; S.pendingRole = S.pendingRole || "solo"; render(); }
+  else if (act === "resume"){ S.G = LS.get("game", null); if (!S.G) return; S.role = S.G.role; S.pendingRole = S.G.role; S.hostPlays = S.G.hostPlays; S.view = S.G.phase === "lobby" ? "lobby" : "play"; render(); broadcast(); if (S.G.role === "host") startHost(); }
+});
+document.addEventListener("toggle", e => { const d = e.target; if (!d || !d.dataset || !d.dataset.k) return; if (d.open) S.openRev.add(d.dataset.k); else S.openRev.delete(d.dataset.k); }, true);
+$("#homeBtn").onclick = () => {
+  if (S.role === "host" || S.role === "solo"){ if (S.G) saveG(); pres({ role: null, phase: null, roster: null, rv: null, sum: null, qid: null }); }
+  if (S.role === "player") pres({ role: null, host: null, sess: null, qid: null, a: null, vote: null });
+  setTimeout(netStop, 500);
+  S.role = null; S.G = null; S.H = null; S.view = "home"; render();
+};
+function showInvite(){ const u = $("#url"); if (!u) return; u.hidden = false; selectUrl(); const n = $("#copyNote"); if (n) n.textContent = "Copy the text below"; }
+function tryUnlock(sess){
+  const f = $("#pwIn"), pw = normPw(f ? f.value : S.pwDraft);
+  const h = hostsList().find(x => x.sess === sess);
+  if (!h){ S.pwErr = "That room just closed."; render(); return; }
+  if (!pw){ S.pwErr = "Type the password the host gave you."; render(); return; }
+  if (h.lk && pwLock(sess, pw) !== h.lk){ S.pwErr = "That password doesn't match. Check with the host and try again."; S.pwDraft = pw; render(); const g = $("#pwIn"); if (g){ g.focus(); g.select(); } return; }
+  S.keys[sess] = pw; LS.set("keys", S.keys); S.unlock = null; S.pwErr = ""; S.pwDraft = "";
+  playerJoin(sess);
+}
+function selectUrl(){ const u = $("#url"); if (!u) return; const r = document.createRange(); r.selectNodeContents(u); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+setInterval(() => { if (S.hist) LS.set("hist", S.hist); }, 4000);
+{ const g = LS.get("game", null); if (g && (!Array.isArray(g.queue) || g.queue.some(id => !BYID[id]))) LS.del("game"); }
+render();
+</script>
+
+</body></html>
