@@ -1,13 +1,18 @@
 # Week 10.2 Gastrointestinal Infections (17 core conditions) — professor's PowerPoint.
 T = "giinf"
 CONCEPTS = {
- "hh":"Hiatal hernia",
- "gerd":"GERD",
- "meds":"GI meds: H2 blockers, PPIs, sucralfate, antacids, metoclopramide",
+ "hh":"Hiatal hernia: patho & types (FOCUS)",
+ "hh2":"Hiatal hernia: signs & care (FOCUS)",
+ "gerd":"GERD: cause & signs (FOCUS)",
+ "gerd2":"GERD: complications & teaching (FOCUS)",
+ "meds":"GI meds: PPIs & H2 blockers (FOCUS)",
+ "meds2":"GI meds: sucralfate, antacids, metoclopramide (FOCUS)",
  "barrett":"Barrett's esophagus",
  "ecancer":"Esophageal cancer",
- "gastritis":"Gastritis",
- "pud":"Peptic ulcer disease",
+ "gastritis":"Gastritis: causes & types (FOCUS)",
+ "gastritis2":"Gastritis: bleeding & care (FOCUS)",
+ "pud":"PUD: causes & gastric vs duodenal (FOCUS)",
+ "pud2":"PUD: complications & care (FOCUS)",
  "gcancer":"Gastric cancer",
  "enteral":"Enteral nutrition",
  "tpn":"PPN / TPN",
@@ -21,7 +26,8 @@ CONCEPTS = {
  "sepsis":"Sepsis",
  "signs":"Murphy's vs McBurney's",
 }
-HI = ["meds","pud","append","sepsis","dumping","tpn","perf","enteral","signs"]
+# Professor: GERD, hiatal hernia, gastritis and PUD are the FOCUS conditions (in depth); the other 13 are need-to-know basics.
+HI = ["hh","hh2","gerd","gerd2","meds","meds2","gastritis","gastritis2","pud","pud2","tpn","signs"]
 
 SATA = "Select all that apply."
 Q = []
@@ -38,7 +44,7 @@ q("hh","Which type of hiatal hernia has the higher risk of strangulation?",
  ["Sliding || Most common (~95%), but lower strangulation risk.","*Paraesophageal (rolling)",
   "Both carry equal risk || The lecture contrasts them.","Neither can strangulate || Rolling hernias can."],
  "In a rolling hernia the fundus rolls up beside the esophagus while the GE junction stays put.")
-q("hh","Which teaching is the first-line defense for a client with a hiatal hernia?",
+q("hh2","Which teaching is the first-line defense for a client with a hiatal hernia?",
  ["Lie down for 1 hour after eating || Avoid the recumbent position after meals.",
   "*Stay upright 1–2 hours after eating",
   "Eat 3 large meals a day || Small, frequent meals.",
@@ -48,7 +54,7 @@ q("hh","Which are risk factors for hiatal hernia? "+SATA,
  ["*Obesity","*Pregnancy","*Chronic coughing or heavy lifting","*Aging",
   "High-fiber diet || Not a listed risk factor."],
  "Anything raising intra-abdominal pressure or weakening the diaphragm.")
-q("hh","After a fundoplication for a severe hiatal hernia, which diet teaching is correct? "+SATA,
+q("hh2","After a fundoplication for a severe hiatal hernia, which diet teaching is correct? "+SATA,
  ["*Start with liquids, then advance to a soft diet","*Take small bites and chew well","*Reduce air swallowing",
   "Drink carbonated beverages to relieve bloating || Increases gas and air."],
  "Plus routine post-op care.")
@@ -59,11 +65,11 @@ q("gerd","What causes GERD?",
   "H. pylori in the duodenum || A major PUD cause.",
   "Loss of intrinsic factor || Pernicious anemia.","Fecalith obstruction || Appendicitis."],
  "Backflow irritates the esophageal mucosa.")
-q("gerd","Which complications can result from untreated GERD? "+SATA,
+q("gerd2","Which complications can result from untreated GERD? "+SATA,
  ["*Barrett's esophagus","*Esophageal stricture","*Aspiration pneumonia","*Dental erosion and chronic cough",
   "Pernicious anemia || Linked to gastrectomy and atrophic gastritis."],
  "Also esophagitis, laryngitis.")
-q("gerd","Which teaching is correct for GERD? "+SATA,
+q("gerd2","Which teaching is correct for GERD? "+SATA,
  ["*Avoid lying down 2–3 hours after eating","*Elevate the head of the bed 30°","*Small, low-fat meals",
   "*Stop smoking and lose weight",
   "Have chocolate or coffee after meals to aid digestion || Caffeine and chocolate are triggers."],
@@ -81,24 +87,24 @@ q("meds","Which long-term effects are associated with PPIs? "+SATA,
  ["*Osteoporosis","*Hypomagnesemia",
   "Tardive dyskinesia || Metoclopramide.","Increased phenytoin levels || H2 blockers (cimetidine)."],
  "PPIs inhibit gastric secretions, raising pH.")
-q("meds","Which teaching is correct for sucralfate?",
+q("meds2","Which teaching is correct for sucralfate?",
  ["Take with meals || Take on an empty stomach before meals.",
   "*Take on an empty stomach before meals; it can decrease absorption of other medications",
   "It's absorbed systemically to block acid || It forms a local gel coating; not systemic.",
   "Take it with antacids at the same time || Can decrease absorption of other meds."],
  "Sucralfate is a gastric protectant.")
-q("meds","A client on metoclopramide for 4 months develops lip smacking and tongue movements. What should the nurse suspect?",
+q("meds2","A client on metoclopramide for 4 months develops lip smacking and tongue movements. What should the nurse suspect?",
  ["Expected effect || A serious adverse effect.","*Tardive dyskinesia",
   "Hypomagnesemia || PPI.","Dumping syndrome || Not related."],
  "Metoclopramide (prokinetic) increases gastric peristalsis; not to be used longer than 12 weeks.")
 q("meds","A client on warfarin starts cimetidine. What should the nurse monitor for?",
  ["*Increased anticoagulant effect (bleeding)","Hypoglycemia || Not listed.","Tardive dyskinesia || Metoclopramide.","Osteoporosis || Long-term PPIs."],
  "H2 blockers increase levels of anticoagulants and phenytoin. They can be taken with or without food.")
-q("meds","When should antacids such as Mylanta be taken?",
+q("meds2","When should antacids such as Mylanta be taken?",
  ["30–60 minutes before the first meal || PPIs.","*1–3 hours after eating, separated from other medications",
   "With other medications to help absorption || They inhibit absorption of other meds.","Only at bedtime || Not the instruction."],
  "Antacids neutralize acid; assess for diarrhea or constipation.")
-q("meds","Match the drug to its action: which neutralizes gastric acid?",
+q("meds2","Match the drug to its action: which neutralizes gastric acid?",
  ["Famotidine || Blocks histamine receptors to decrease secretion.","Pantoprazole || Inhibits gastric secretions.",
   "*Aluminum hydroxide (Amphojel), Mylanta, Tums","Metoclopramide || Increases peristalsis."],
  "Antacids neutralize; H2 blockers and PPIs decrease secretion; sucralfate coats; metoclopramide moves things along.")
@@ -140,7 +146,7 @@ q("ecancer","Which nursing priorities apply to esophageal cancer? "+SATA,
  "Often asymptomatic until advanced; unintentional weight loss is common.")
 
 # ---------- gastritis ----------
-q("gastritis","A client with gastritis has coffee-ground emesis. What should the nurse do first?",
+q("gastritis2","A client with gastritis has coffee-ground emesis. What should the nurse do first?",
  ["Give an antacid || Not the priority.","*Assess vital signs and notify the provider immediately",
   "Encourage a bland snack || Not with bleeding.","Document and reassess at shift change || A red flag needs action now."],
  "NCLEX alert: coffee-ground emesis or tarry stools = bleeding red flag.")
@@ -153,7 +159,7 @@ q("gastritis","How does chronic gastritis differ from acute gastritis?",
   "Chronic resolves once the irritant is removed || That describes acute.",
   "Chronic is always caused by NSAIDs || Acute is irritant-driven.","There's no difference || The lecture contrasts them."],
  "Acute: sudden, from irritants, self-limiting.")
-q("gastritis","Which lifestyle teaching is correct for gastritis? "+SATA,
+q("gastritis2","Which lifestyle teaching is correct for gastritis? "+SATA,
  ["*Keep a food journal","*Bland diet","*Avoid bedtime snacks","*Avoid alcohol, caffeine and smoking","*Reduce stress",
   "Take ibuprofen for the epigastric pain || Remove NSAIDs."],
  "Remove the causative agent; PPIs/H2 blockers/antacids; H. pylori eradication if positive.")
@@ -164,18 +170,18 @@ q("pud","Which finding points to a DUODENAL ulcer rather than a gastric ulcer?",
   "*Pain is relieved by food and recurs 2–3 hours later, often at night",
   "Pain 30–60 minutes after eating || Gastric ulcer.","Beefy red tongue || Pernicious anemia."],
  "Gastric = pain with food. Duodenal = food relieves, then pain returns 2–3 hours later and at night.")
-q("pud","A client with peptic ulcer disease suddenly has severe pain and a rigid, board-like abdomen. What should the nurse suspect?",
+q("pud2","A client with peptic ulcer disease suddenly has severe pain and a rigid, board-like abdomen. What should the nurse suspect?",
  ["Needing the PPI dose earlier || Not a medication-timing issue.","*Perforation, a surgical emergency",
   "Dumping syndrome || Post-gastrectomy.","Normal ulcer pain || Board-like abdomen is an emergency."],
  "NCLEX alert: sudden board-like abdomen in PUD = perforation.")
 q("pud","What causes the majority of peptic ulcers?",
  ["*H. pylori infection","Hiatal hernia || Not the main cause.","Low-fiber diet || Diverticulitis.","Vitamin B12 deficiency || Not related."],
  "Also chronic NSAIDs, smoking, alcohol, physiologic stress (Curling's and Cushing's ulcers).")
-q("pud","Which complications of peptic ulcer disease should the nurse monitor for? "+SATA,
+q("pud2","Which complications of peptic ulcer disease should the nurse monitor for? "+SATA,
  ["*Hemorrhage (hematemesis, melena)","*Perforation","*Obstruction",
   "Barrett's esophagus || A GERD complication.","Pernicious anemia || Not listed."],
  "Treatment: H. pylori triple/quad therapy, PPIs; avoid NSAIDs, alcohol and smoking.")
-q("pud","A client with PUD asks what to take for a headache. Best response?",
+q("pud2","A client with PUD asks what to take for a headache. Best response?",
  ["\"Ibuprofen is fine with food.\" || NSAIDs are a major ulcer cause.","*\"Avoid NSAIDs like ibuprofen and aspirin; ask your provider what's safe.\"",
   "\"Aspirin is safest.\" || Aspirin also damages the mucosa.","\"Take naproxen at bedtime.\" || An NSAID."],
  "Teach to avoid NSAIDs, alcohol and smoking.")
@@ -399,3 +405,64 @@ q("signs","Match the sign to its condition. Which pairings are correct? "+SATA,
 q("signs","Where is McBurney's point?",
  ["Right upper quadrant || That's where Murphy's sign is checked.","*Right lower quadrant","Left lower quadrant || Diverticulitis pain.","Epigastric area || Pancreatitis and ulcer pain."],
  "Appendicitis pain starts periumbilical, then migrates to McBurney's point.")
+
+# ---------- extra depth on the four FOCUS conditions (all from the professor's slides) ----------
+q("hh","A client with a hiatal hernia reports heartburn and regurgitation. When are these symptoms usually worse?",
+ ["*When lying flat and after large meals","When sitting upright || Upright helps; gravity is the first-line defense.","Only in the morning before eating || Not the pattern taught.","During exercise only || Not the pattern taught."],
+ "Hiatal hernia symptoms: heartburn and regurgitation worse lying flat, dysphagia, fullness or belching, worse after large meals.")
+q("hh2","A client with a hiatal hernia has substernal chest pain. Why does the nurse take it seriously?",
+ ["*Hiatal hernia pain can mimic cardiac pain, so cardiac causes must be ruled out","It always means the hernia has strangulated || Not always.",
+  "It's never related to the hernia || It can be.","It means the client has GERD only || Not the point."],
+ "Substernal chest pain is listed as a hiatal hernia symptom that can mimic cardiac pain.")
+q("hh2","Which interventions are correct for a client with a hiatal hernia? "+SATA,
+ ["*Small, frequent meals","*Remain upright 1–2 hours after eating","*Elevate the head of the bed","*Weight reduction and avoid tight clothing","*Avoid straining and heavy lifting",
+  "Lie down right after meals to rest the stomach || Worsens reflux."],
+ "Surgical fundoplication if severe.")
+q("hh","In a sliding hiatal hernia, what moves up into the chest?",
+ ["*The stomach and the GE junction","Only the fundus, beside the esophagus || That's a paraesophageal (rolling) hernia.","The appendix || Not related.","The colon || Not related."],
+ "Sliding (~95%) is worse when supine. Paraesophageal: the fundus rolls up and the GE junction stays put; higher strangulation risk.")
+q("gerd","Which are risk factors for GERD? "+SATA,
+ ["*Hiatal hernia","*Obesity","*Smoking and alcohol","*Caffeine, fatty or spicy foods, chocolate","*Pregnancy and delayed gastric emptying"],
+ "An incompetent LES lets gastric contents reflux into the esophagus.")
+q("gerd","Which findings fit GERD? "+SATA,
+ ["*Heartburn (pyrosis)","*Regurgitation of sour material","*Chronic cough, hoarseness or sore throat","*Dysphagia or odynophagia",
+  "RUQ pain with inspiratory arrest || Murphy's sign, cholecystitis."],
+ "Symptoms are worse after meals and when supine.")
+q("gerd2","A client with GERD asks why they must keep taking the PPI when they feel fine. Best response?",
+ ["*'Symptoms can hide ongoing damage to the esophagus, so keep taking it as prescribed.'","'You can stop once the heartburn is gone.' || Symptoms can mask damage.",
+  "'Take it only when you have heartburn.' || Not the teaching.","'It's only for your stomach, not your esophagus.' || Not accurate."],
+ "Teach adherence: untreated GERD can lead to esophagitis, strictures and Barrett's esophagus.")
+q("meds","How do PPIs such as pantoprazole and omeprazole work?",
+ ["*Inhibit gastric secretions, which raises the pH","Neutralize acid that's already there || Antacids.","Coat the ulcer with a gel || Sucralfate.","Speed up gastric emptying || Metoclopramide."],
+ "Take 30–60 minutes before the first meal; long-term use causes osteoporosis and hypomagnesemia.")
+q("meds","How do H2 blockers such as famotidine work?",
+ ["*Block histamine receptors to decrease acid secretion and raise pH","Inhibit the proton pump || PPIs.","Neutralize acid || Antacids.","Form a protective coating || Sucralfate."],
+ "Can be taken with or without food; cimetidine raises anticoagulant and phenytoin levels.")
+q("meds2","A client takes sucralfate and several other oral medications. What should the nurse teach?",
+ ["*Separate them, because sucralfate can decrease absorption of other medications","Take them all together for convenience || Absorption drops.",
+  "Take sucralfate after meals || Empty stomach, before meals.","Crush sucralfate into food || Not the teaching."],
+ "Sucralfate works locally as a gel coating; it isn't systemic.")
+q("gastritis","Which type of gastritis is sudden, irritant-caused and usually resolves once the cause is removed?",
+ ["*Acute gastritis","Chronic gastritis || Long-standing, often H. pylori, can lead to atrophy.","Barrett's esophagus || Not gastritis.","Peritonitis || Not gastritis."],
+ "Causes: NSAIDs and aspirin, alcohol, H. pylori, severe physiologic stress (burns, trauma, sepsis), bile reflux.")
+q("gastritis","Which findings are expected with gastritis? "+SATA,
+ ["*Epigastric pain or burning","*Nausea, vomiting and bloating","*Anorexia and early satiety",
+  "*Hematemesis or melena if erosive or bleeding","LLQ pain || Diverticulitis."],
+ "Hematemesis or melena can occur with erosive or bleeding gastritis; treat it as a red flag.")
+q("gastritis2","What is the treatment approach for gastritis? "+SATA,
+ ["*Remove the causative agent such as NSAIDs or alcohol","*PPIs, H2 blockers or antacids","*H. pylori eradication if positive","*Small, bland, non-irritating meals",
+  "High-fat meals to coat the stomach || Not taught."],
+ "Monitor for signs of GI bleeding.")
+q("pud","When does gastric ulcer pain usually occur?",
+ ["*30–60 minutes after eating, worsening with food","2–3 hours after eating and at night || Duodenal.","Only when fasting overnight || Duodenal pattern.","It's relieved by food || Duodenal."],
+ "Weight loss is common with gastric ulcers because eating hurts.")
+q("pud","What is peptic ulcer disease?",
+ ["*Erosion of the GI mucosa through the muscularis mucosae from an imbalance between acid/pepsin and mucosal defenses",
+  "Inflammation of the gallbladder || Cholecystitis.","An outpouching of the colon || Diverticulosis.","Backflow into the esophagus || GERD."],
+ "Risk factors: H. pylori (majority), chronic NSAIDs, smoking, alcohol, physiologic stress (Curling's and Cushing's ulcers).")
+q("pud2","What is the treatment for H. pylori-related peptic ulcer disease?",
+ ["*Triple or quadruple therapy as prescribed, plus a PPI","Surgery for every ulcer || Not first-line.","NSAIDs for the pain || NSAIDs cause ulcers.","Antacids alone || Doesn't eradicate H. pylori."],
+ "Also avoid NSAIDs, alcohol and smoking; monitor for hemorrhage, perforation and obstruction.")
+q("pud2","Where may peptic ulcer pain radiate?",
+ ["*To the back","To the right shoulder || Cholecystitis pattern.","To the left arm || Cardiac pattern.","To the RLQ || Appendicitis pattern."],
+ "Burning, gnawing epigastric pain. Sudden severe pain with a rigid abdomen = perforation.")
