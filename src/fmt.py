@@ -26,7 +26,7 @@ DRUGS = {  # generic -> brand
  "atorvastatin":"Lipitor","glipizide":"Glucotrol","repaglinide":"Prandin","pioglitazone":"Actos","acarbose":"Precose",
  "miglitol":"Glyset","sitagliptin":"Januvia","pramlintide":"Symlin","insulin lispro":"Humalog","lispro":"Humalog",
  "insulin aspart":"NovoLog","aspart":"NovoLog","glulisine":"Apidra","glargine":"Lantus","detemir":"Levemir","degludec":"Tresiba",
- "albuterol":"ProAir","amlodipine":"Norvasc","prednisone":"Deltasone",
+ "albuterol":"ProAir","amlodipine":"Norvasc","prednisone":"Deltasone","tranexamic acid":"Cyklokapron","desmopressin":"DDAVP","epinephrine":"EpiPen",
 }
 # brand written alone (no generic) -> generic to put in front
 BRAND_ONLY = {"Entresto":"sacubitril/valsartan","Jardiance":"empagliflozin","Farxiga":"dapagliflozin","Ozempic":"semaglutide",
@@ -74,7 +74,7 @@ ABBR = {
  "DKA":"diabetic ketoacidosis","HHS":"hyperosmolar hyperglycemic state","CGM":"continuous glucose monitor","GLP-1":"glucagon-like peptide-1",
  "DPP-4":"dipeptidyl peptidase-4","NPH":"neutral protamine Hagedorn","TZD":"thiazolidinedione","TZDs":"thiazolidinediones",
  "AGI":"alpha-glucosidase inhibitor","AGIs":"alpha-glucosidase inhibitors","CV":"cardiovascular","CHF":"congestive heart failure",
- "O2":"oxygen","SCDs":"sequential compression devices","D50":"50% dextrose","D10":"10% dextrose","D5":"5% dextrose","D5W":"5% dextrose in water","A-fib":"atrial fibrillation","VTE":"venous thromboembolism","GIP":"glucose-dependent insulinotropic polypeptide","RN":"registered nurse","TBSA":"total body surface area","SMBG":"self-monitoring of blood glucose",
+ "PRBCs":"packed red blood cells","PRBC":"packed red blood cell","RBCs":"red blood cells","WBCs":"white blood cells","FFP":"fresh frozen plasma","TRALI":"transfusion-related acute lung injury","TACO":"transfusion-associated circulatory overload","ITP":"immune thrombocytopenia","IgA":"immunoglobulin A","PT/INR":"prothrombin time/international normalized ratio","aPTT":"activated partial thromboplastin time","Hgb":"hemoglobin","Hct":"hematocrit","LR":"lactated Ringer's","NS":"normal saline","EPO":"erythropoietin","ICU":"intensive care unit", "O2":"oxygen","SCDs":"sequential compression devices","D50":"50% dextrose","D10":"10% dextrose","D5":"5% dextrose","D5W":"5% dextrose in water","A-fib":"atrial fibrillation","VTE":"venous thromboembolism","GIP":"glucose-dependent insulinotropic polypeptide","RN":"registered nurse","TBSA":"total body surface area","SMBG":"self-monitoring of blood glucose",
 }
 _GEN = {k.lower(): (k, v) for k, v in DRUGS.items()}
 _keys = sorted(list(DRUGS) + list(BRAND_ONLY) + list(ABBR), key=len, reverse=True)
