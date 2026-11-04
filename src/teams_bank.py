@@ -14,8 +14,11 @@ CONCEPTS = {
  "debrief":"Debriefing",
  "ert":"Emergency Response Team",
  "codes":"Hospital emergency codes",
+ "which":"Which code to call: deteriorating vs arrest (FOCUS)",
+ "which2":"Which code to call: visitors, staff & other codes (FOCUS)",
 }
-HI = ["three","rrttrig","cbwhen","comm","aha","cbsteps"]
+# Classmate update (Nov 3): know which code to call from a patient scenario.
+HI = ["three","which","which2","rrttrig","cbwhen","comm","aha","cbsteps"]
 
 SATA = "Select all that apply."
 Q = []
@@ -232,3 +235,42 @@ q("codes","Why do hospitals use emergency codes? "+SATA,
  ["*To communicate urgent situations clearly and quickly","*To prevent panic among patients and visitors",
   "Because every hospital uses identical colors || Codes vary by hospital or region."],
  "Always follow your facility's protocols.")
+
+# ---------- which code to call (scenario focus) ----------
+RRT="Call the Rapid Response Team"; CB="Call a Code Blue and start CPR"; ERT_="Call the Emergency Response Team"; NONE="Document and keep monitoring || This change needs a team called now."
+q("which","A patient's heart rate drops to 38 bpm and the patient says they feel dizzy. The patient is awake and has a pulse. What should the nurse do?",
+ ["*"+RRT,CB+" || The patient has a pulse and is responsive.",ERT_+" || ERT is for visitors and staff, not inpatients.",NONE],
+ "RRT triggers: HR below 40 or above 130, RR below 8 or above 28, SBP below 90, O2 sat below 90% on oxygen.")
+q("which","A post-op patient's respiratory rate is 32 and O2 saturation is 87% on 4 L of oxygen. The patient is awake and talking. What should the nurse do?",
+ ["*"+RRT,CB+" || Not in arrest; breathing with a pulse.",ERT_+" || For non-patients.",NONE],
+ "RR above 28 and O2 sat below 90% on supplemental oxygen are both RRT triggers.")
+q("which","The nurse finds a patient unresponsive in bed. There is no pulse and only occasional gasping breaths. What should the nurse do?",
+ ["*"+CB,RRT+" || The patient is in arrest.",ERT_+" || For non-patients.","Get a full set of vital signs first || Delays CPR."],
+ "Gasping is not normal breathing. Unresponsive + not breathing normally + no pulse = Code Blue.")
+q("which","A patient on the medical floor has a new seizure. The patient is breathing and has a pulse. Which team does the nurse call?",
+ ["*The Rapid Response Team","Code Blue || The patient has a pulse and is breathing.","The Emergency Response Team || That's for visitors and staff.","No team; give a snack || Not appropriate."],
+ "Seizures, new confusion, chest pain and sudden breathing changes are RRT triggers.")
+q("which","A patient's blood pressure is 84/50 and the patient is newly confused. What should the nurse do?",
+ ["*"+RRT,CB+" || The patient has a pulse and is breathing.",ERT_+" || For non-patients.",NONE],
+ "SBP below 90 and new confusion are RRT triggers.")
+q("which","The vital signs are still within range, but the nurse has a strong feeling the patient is getting worse. What can the nurse do?",
+ ["*Call the Rapid Response Team based on concern","Wait until a vital sign crosses a trigger || Concern alone is enough.","Call a Code Blue || Not in arrest.","Ask the patient's family to decide || The nurse decides."],
+ "A nurse can activate RRT on serious concern even before vital-sign thresholds are met.")
+q("which","An inpatient with chest pain becomes unresponsive while the RRT is on the way. No pulse is felt. What should the nurse do now?",
+ ["*Start CPR and call a Code Blue","Wait for the RRT to arrive || The patient is now in arrest.","Give oxygen and recheck in 5 minutes || Delays CPR.","Call the ERT || For non-patients."],
+ "Once the patient is in arrest, it is a Code Blue.")
+q("which2","A visitor collapses in the hospital cafeteria. Which team is called?",
+ ["*The Emergency Response Team (ERT)","Rapid Response Team || That's for deteriorating inpatients.","Code Red || That's fire.","Code Black || That's a bomb threat."],
+ "ERT responds to visitors, staff or others outside routine inpatient care who faint, seize, fall or collapse.")
+q("which2","A staff member has a seizure in the hallway outside the break room. Which team is called?",
+ ["*The Emergency Response Team (ERT)","The Rapid Response Team || For inpatients.","No team; let them rest || Needs emergency help.","Code Black || Bomb threat."],
+ "Call the hospital emergency number, assess safety, give initial aid and coordinate transfer to the ED.")
+q("which2","Match each situation to the correct call. Which is correct?",
+ ["*Inpatient with HR 140 and new confusion: RRT","Visitor faints in the lobby: Code Blue || That's the ERT.","Inpatient with no pulse: RRT || That's a Code Blue.","Staff member falls in the parking garage: RRT || That's the ERT."],
+ "RRT = deteriorating inpatient; Code Blue = arrest; ERT = non-patient emergency in the facility.")
+q("which2","The nurse smells smoke and sees flames in a supply room. Which code is called?",
+ ["*Code Red","Code Blue || Cardiac arrest.","Code Black || Bomb threat.","Rapid Response || For deteriorating patients."],
+ "Code Red = fire; Code Black = bomb threat; Code Blue = medical emergency/cardiac arrest. Colors vary by hospital.")
+q("which2","A caller tells the unit secretary there is a bomb in the building. Which code is called?",
+ ["*Code Black","Code Red || Fire.","Code Blue || Cardiac arrest.","ERT || For people who collapse or need medical help."],
+ "Emergency code colors vary by facility; follow hospital policy.")

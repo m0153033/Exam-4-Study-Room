@@ -5,30 +5,31 @@ CONCEPTS = {
  "metsyn":"Metabolic syndrome criteria",
  "metsx":"Metabolic syndrome findings & complications",
  "metmgmt":"Metabolic syndrome lifestyle management",
- "metdrugs":"Metabolic syndrome meds: GLP-1, metformin, statins, ACE",
- "barind":"Bariatric surgery: indications & procedures",
- "barcare":"Bariatric pre/post-op care & leak",
- "bardc":"Bariatric discharge, dumping & supplements",
+ "metdrugs":"Metabolic syndrome meds: GLP-1, metformin, statins, ACE (FOCUS)",
+ "barind":"Bariatric surgery: indications & procedures (FOCUS)",
+ "barcare":"Bariatric pre/post-op care & leak (FOCUS)",
+ "bardc":"Bariatric discharge, dumping & supplements (FOCUS)",
  "dx":"Diagnostic tests & cutoffs",
  "types":"Prediabetes, MODY & gestational diabetes",
  "t1t2":"Type 1 vs type 2",
  "monitor":"Glucose monitoring & CGM",
- "insulin":"Insulin types: onset, peak, duration",
- "insadmin":"Insulin administration, storage & sliding scale",
+ "insulin":"Insulin types: onset, peak, duration (FOCUS)",
+ "insadmin":"Insulin administration, storage & sliding scale (FOCUS)",
  "drugint":"Drugs that raise or lower glucose with insulin",
- "injectables":"GLP-1 agonists & amylin mimetics",
+ "injectables":"GLP-1 agonists & amylin mimetics (FOCUS)",
  "orals":"Oral agents: sulfonylureas to gliptins",
  "sglt2":"SGLT2 inhibitors",
  "hyper":"Hyperglycemia, dawn & Somogyi",
  "hypo":"Hypoglycemia & rule of 15",
- "dka":"DKA recognition",
- "dkatx":"DKA treatment & goals",
- "hhs":"HHS",
+ "dka":"DKA recognition (FOCUS)",
+ "dkatx":"DKA treatment & goals (FOCUS)",
+ "hhs":"HHS (FOCUS)",
  "chronic":"Chronic complications",
  "sick":"Sick day rules",
  "dc":"Discharge teaching & carb counting",
 }
-HI = ["hypo","dka","dkatx","hhs","insulin","insadmin","orals","sick","dx","hyper"]
+# Classmate update (Nov 3): DKA, HHS, insulin & fluid replacement, GLP-1, gastric sleeve & dumping syndrome are tested.
+HI = ["hypo","dka","dkatx","hhs","insulin","insadmin","injectables","metdrugs","barind","barcare","bardc"]
 
 SATA = "Select all that apply."
 Q = []
@@ -374,7 +375,7 @@ q("hypo","Which items provide about 15 g of carbohydrate? "+SATA,
 
 # ---------- DKA recognition ----------
 q("dka","Which findings are expected in DKA? "+SATA,
- ["*Fruity breath","*Kussmaul respirations","*Glucose 300–500 mg/dL","*pH under 7.3","*Ketones in the blood and urine",
+ ["*Fruity breath","*Kussmaul respirations","*Glucose usually over 250 mg/dL (often 300–500)","*pH under 7.3","*Ketones in the blood and urine",
   "Glucose over 1,000 with no ketones || HHS."],
  "Diagnostic triad: hyperglycemia, ketonemia (>3 mmol/L), metabolic acidosis (pH <7.3, bicarb <15).")
 q("dka","Which type of diabetes most commonly develops DKA?",
@@ -482,3 +483,27 @@ q("dc","A client with diabetes scrapes a toe. What should the nurse teach?",
  ["Ignore minor scratches || Sensation may be impaired; small wounds become ulcers.","*Inspect and care for even minor wounds and report signs of infection",
   "Soak the foot in hot water || Burns from impaired sensation.","Go barefoot to air it out || Wear proper footwear."],
  "Skin and wound care education is part of discharge planning.")
+
+# ---------- added (classmate focus list) ----------
+q("dka","Which glucose cutoffs does the lecture give for DKA and HHS?",
+ ["*DKA: usually over 250 mg/dL; HHS: over 600 mg/dL","DKA: over 600; HHS: over 250 || Reversed.",
+  "DKA: over 126; HHS: over 200 || Those are diagnostic cutoffs for diabetes.","Both: over 180 || That's mild hyperglycemia."],
+ "DKA often 300–500 mg/dL with ketones and acidosis. HHS often over 1,000 mg/dL with little or no ketosis.")
+q("hhs","An older adult with type 2 diabetes has a glucose of 980 mg/dL, severe dehydration and confusion. Urine ketones are negative. What does the nurse suspect?",
+ ["*HHS","DKA || Ketones and acidosis would be present.","Hypoglycemia || Glucose is high.","Somogyi phenomenon || Not this picture."],
+ "HHS: severe hyperglycemia (over 600, often over 1,000), dehydration, minimal or no ketosis, slower onset.")
+q("dkatx","A client in DKA has a BP of 82/50. Which fluid does the nurse expect first?",
+ ["*0.9% normal saline, 1–2 L rapidly","D5W bolus || Dextrose is added later, when glucose falls.","No fluids until insulin starts || Fluids come first.","Oral fluids only || Not for hypotension."],
+ "Then 250–500 mL/hr depending on hydration. Add dextrose when glucose falls (per lecture) and keep the insulin going.")
+q("barind","Which statement about sleeve gastrectomy is correct?",
+ ["*It is a restrictive, irreversible procedure that shrinks the stomach; staple line leaks are a risk","It is fully reversible || That's endoscopic sleeve gastroplasty.",
+  "It bypasses the small intestine || That's the Roux-en-Y.","It has no complications || Leaks and dumping can occur."],
+ "Restrictive procedures reduce stomach size, causing a feeling of fullness.")
+q("bardc","Which teaching helps PREVENT dumping syndrome after bariatric surgery? "+SATA,
+ ["*Avoid high-sugar, high-fat and processed carbohydrates","*Eat small, frequent meals","*No liquids 30 minutes before or 30–60 minutes after solid food",
+  "Drink a large glass of juice with meals || Sugar and fluids with meals cause dumping.","Eat 3 large meals a day || Small meals."],
+ "If early dumping occurs: lie down for 30 minutes to slow gastric emptying.")
+q("injectables","Which client should NOT receive semaglutide (Ozempic), per the lecture?",
+ ["*A client with a history of medullary thyroid cancer","A client with type 2 diabetes and obesity || A good candidate.",
+  "A client who wants weekly dosing || That's a feature.","A client with high post-meal glucose || GLP-1 helps that."],
+ "GLP-1 agonists can also cause pancreatitis and severe dehydration; common side effects are GI.")

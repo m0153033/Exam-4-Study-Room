@@ -8,7 +8,6 @@ CONCEPTS = {
  "meds":"GI meds: PPIs & H2 blockers (FOCUS)",
  "meds2":"GI meds: sucralfate, antacids, metoclopramide (FOCUS)",
  "barrett":"Barrett's esophagus",
- "ecancer":"Esophageal cancer",
  "gastritis":"Gastritis: causes & types (FOCUS)",
  "gastritis2":"Gastritis: bleeding & care (FOCUS)",
  "pud":"PUD: causes & gastric vs duodenal (FOCUS)",
@@ -19,15 +18,17 @@ CONCEPTS = {
  "dumping":"Dumping syndrome",
  "pernicious":"Pernicious anemia",
  "gastro":"Gastroenteritis",
- "append":"Appendicitis",
+ "append":"Appendicitis: cause & pain pattern (FOCUS)",
+ "append2":"Appendicitis: nursing care & rupture (FOCUS)",
  "divert":"Diverticulitis",
  "perf":"Perforation",
  "periton":"Peritonitis",
  "sepsis":"Sepsis",
  "signs":"Murphy's vs McBurney's",
 }
+# Classmate update (Nov 3): appendicitis also tested; esophageal cancer NOT tested.
 # Professor: GERD, hiatal hernia, gastritis and PUD are the FOCUS conditions (in depth); the other 13 are need-to-know basics.
-HI = ["hh","hh2","gerd","gerd2","meds","meds2","gastritis","gastritis2","pud","pud2","tpn","signs"]
+HI = ["hh","hh2","gerd","gerd2","meds","meds2","gastritis","gastritis2","pud","pud2","append","append2","tpn","signs"]
 
 SATA = "Select all that apply."
 Q = []
@@ -128,22 +129,6 @@ q("barrett","Which are risk factors for Barrett's esophagus? "+SATA,
  ["*Long-standing, poorly controlled GERD","*Male sex, age over 50","*Obesity and smoking","*Family history",
   "Low-sodium diet || Not a listed risk factor."],
  "Also chronic hiatal hernia.")
-
-# ---------- esophageal cancer ----------
-q("ecancer","Which esophageal cancer type is linked to GERD and Barrett's and is most common in the U.S.?",
- ["*Adenocarcinoma, lower third of the esophagus","Squamous cell, upper/mid esophagus || Linked to alcohol and tobacco.",
-  "Gastric adenocarcinoma || That's stomach cancer.","Melanoma || Not discussed."],
- "Squamous cell: upper/mid esophagus, alcohol and tobacco.")
-q("ecancer","A client with esophageal cancer now has trouble swallowing liquids as well as solids. What should the nurse do?",
- ["Document it as expected || A change that must be reported.",
-  "*Report it immediately; it signals worsening obstruction and changes aspiration risk",
-  "Encourage thicker solid foods || Worsens risk.","Give a laxative || Not related."],
- "NCLEX alert: dysphagia progressing from solids to liquids = worsening luminal obstruction.")
-q("ecancer","Which nursing priorities apply to esophageal cancer? "+SATA,
- ["*Nutrition support (liquid, semi-soft, or enteral feeding)","*Aspiration precautions and swallowing checks",
-  "*Prepare for esophagectomy, chemo or radiation","*Psychosocial support and palliative discussions",
-  "High-fiber raw vegetables to clear the obstruction || Not a nursing priority."],
- "Often asymptomatic until advanced; unintentional weight loss is common.")
 
 # ---------- gastritis ----------
 q("gastritis2","A client with gastritis has coffee-ground emesis. What should the nurse do first?",
@@ -296,11 +281,11 @@ q("append","Which pain pattern is classic for appendicitis?",
  ["*Starts vague around the umbilicus, then moves to the RLQ (McBurney's point)",
   "LLQ pain with fever || Diverticulitis.","Epigastric pain relieved by food || Duodenal ulcer.","Burning chest pain when lying flat || GERD/hiatal hernia."],
  "Also rebound tenderness, guarding, low-grade fever, anorexia, nausea.")
-q("append","A client with suspected appendicitis asks for a heating pad and a laxative. What should the nurse do?",
+q("append2","A client with suspected appendicitis asks for a heating pad and a laxative. What should the nurse do?",
  ["Provide both for comfort || Both can cause rupture.","*Decline both; heat and laxatives or enemas can precipitate rupture",
   "Give the laxative only || Laxatives can cause rupture.","Give the heating pad only || Heat can cause rupture."],
  "NCLEX alert: never apply heat or give laxatives/enemas for suspected appendicitis.")
-q("append","A client with appendicitis suddenly reports that the pain is gone. What should the nurse suspect?",
+q("append2","A client with appendicitis suddenly reports that the pain is gone. What should the nurse suspect?",
  ["The appendicitis resolved || Sudden relief is a red flag.","*Rupture",
   "The analgesic worked || Not the concern taught.","Dumping syndrome || Not related."],
  "Assess the pain trend. Untreated cases risk rupture within 24–72 hours.")
@@ -308,6 +293,29 @@ q("append","Which nursing actions are correct for suspected appendicitis? "+SATA
  ["*Keep NPO","*Prepare for emergent appendectomy","*Assess the pain trend",
   "Give an enema to clear the bowel || Can precipitate rupture.","Apply heat to the RLQ || Can precipitate rupture."],
  "Diagnosis: CT or abdominal ultrasound. Concerns: abscess, perforation, peritonitis.")
+
+q("append","What usually causes appendicitis?",
+ ["*Obstruction of the appendix (a fecalith or lymphoid tissue) leading to inflammation and bacterial overgrowth",
+  "Outpouchings in a weak colon wall || That's diverticulosis/diverticulitis.","A gallstone blocking the cystic duct || That's cholecystitis.",
+  "Acid backflow into the esophagus || That's GERD."],
+ "Lymphoid hyperplasia is often seen in young adults.")
+q("append","A 19-year-old says the pain started around the belly button last night and is now sharp in the lower right abdomen. Which other findings fit appendicitis? "+SATA,
+ ["*Rebound tenderness and guarding","*Low-grade fever","*Anorexia and nausea",
+  "Pain in the lower left quadrant with leukocytosis || That pattern is diverticulitis.","Inspiratory arrest during RUQ palpation || That's Murphy's sign (cholecystitis)."],
+ "Classic: periumbilical pain that migrates to the RLQ (McBurney's point).")
+q("append","Which tests are used to diagnose appendicitis?",
+ ["*CT scan or abdominal ultrasound","HIDA scan || Gallbladder function test.","ERCP || Used for bile/pancreatic ducts.","Upper endoscopy || Used for the esophagus and stomach."],
+ "Treatment is surgery (appendectomy).")
+q("append2","A client with RLQ pain at McBurney's point is being admitted. Which order should the nurse question?",
+ ["*Tap-water enema to relieve constipation","Keep NPO || Correct; surgery is expected.","CT scan of the abdomen || Correct for diagnosis.","Monitor the pain trend || Correct."],
+ "Enemas, laxatives and heat can increase pressure and cause rupture.")
+q("append2","A client with appendicitis had 8/10 RLQ pain that suddenly dropped to 1/10. An hour later the abdomen is rigid and the temperature is rising. What does the nurse suspect?",
+ ["*Rupture with peritonitis; notify the provider immediately","The pain medication is working || Sudden relief then rigidity is a red flag.",
+  "Normal recovery || Not without surgery.","Gastroenteritis || Doesn't fit."],
+ "Concerns: abscess, perforation, peritonitis. Untreated cases risk rupture within 24–72 hours.")
+q("append2","Why is a client with suspected appendicitis kept NPO?",
+ ["*In anticipation of emergent surgery (appendectomy)","To rest the pancreas || That's pancreatitis.","To prevent dumping syndrome || Not related.","Because NPO cures the infection || Surgery is the treatment."],
+ "Keep NPO, prepare for appendectomy, and monitor for rupture.")
 
 # ---------- diverticulitis ----------
 q("divert","Which finding is most common in diverticulitis?",
