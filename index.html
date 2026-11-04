@@ -136,6 +136,10 @@ a.mode{color:inherit;text-decoration:none}
 .tot{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
 .tot .card{padding:16px}
 .big{font-family:var(--f-display);font-weight:800;font-size:34px}
+table.adm{width:100%;border-collapse:collapse;font-size:15px}
+table.adm th{text-align:left;font-size:13px;color:var(--muted);font-weight:600;border-bottom:1px solid var(--line);padding:8px 10px}
+table.adm td{border-bottom:1px solid var(--line);padding:9px 10px}
+table.adm .num, table.adm th:not(:first-child){text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums}
 @media (prefers-reduced-motion:no-preference){.fill,.progress i{transition:width .5s ease}}
 </style>
 
@@ -296,6 +300,9 @@ const S = {
    The host's browser listens at an address made from the room password.
    Players type the password, connect straight to the host, and swap small status messages. */
 const PEER_PREFIX = "pn3-exam4-studyroom-v1-";
+/* Study log + admin panel. STATS_URL is the Google Apps Script web app that writes to the owner's Google Sheet.
+   The admin password is checked by that script, not here. Scores are never sent: only name, room, and question counts. */
+const STATS_URL = "";
 const NET = { peer: null, mode: null, pw: null, conns: new Map(), remote: new Map(), retry: null, tries: 0 };
 S.room = { peers(){ return [...NET.remote.values()].map(p => ({ presence: p, sameTab: false })); } };
 S.roomState = "idle"; S.dbState = "none"; S.db = null;
@@ -492,7 +499,7 @@ function hostIngest(){
     }
     if (G.phase === "reveal" && r.vote && r.vote.q === qid && G.votes[k] !== r.vote.v){ G.votes[k] = r.vote.v; changed = true; }
   }
-  if (changed) saveG();
+  if (changed){ saveG(); TRACK.roomBeat(); }
   maybeAuto();
   render(); broadcast();
 }
@@ -534,6 +541,7 @@ function hostNext(){
 }
 function hostClose(){
   const G = S.G; if (!G) return;
+  TRACK.flush(true); TRACK.roomBeat(true);
   G.phase = "closed"; broadcast(true);
   const p = hostPayload(); p.phase = "closed"; p.hb = Date.now(); p.rev = (G.rev || 0) + 1; dbPut("live", "h-" + G.sess, p);
   setTimeout(() => pres({ role: null, phase: null, roster: null, rv: null, sum: null, qid: null, sess: null }), 1500);
@@ -542,6 +550,7 @@ function hostClose(){
 }
 async function hostEnd(){
   const G = S.G; G.phase = "end"; saveG(); render(); broadcast();
+  TRACK.flush(true); if (G.role === "host") TRACK.roomBeat(true);
   if (S.db && G.revealed.length){
     try{ await S.db.collection("results").doc("r-" + G.sess).set({ when: new Date().toISOString(), mode: G.role, topics: G.topics, coverage: summarize(G).tp, missedConcepts: [...new Set(missedList(G).map(m => m.q.t + ":" + m.q.c))] }); }catch(e){}
   }
@@ -584,6 +593,7 @@ function playerIngest(){
   if (H){
     if (!prev || prev.sess !== H.sess || prev.qid !== H.qid){ S.draft = null; }
     if (S.histSess !== H.sess){ S.histSess = H.sess; S.hist = {}; S.sent = {}; S.myVote = {}; }
+    TRACK.start("group", H.nick || "", H.sess);
     if (H.phase === "reveal" && H.qid && S.sent[H.qid] != null){ recordHist(getQ(H.qid), S.sent[H.qid], H.sess); }
     if (H.phase === "reveal" && H.qid && S.lastSeenQ !== H.sess + H.qid){ S.lastSeenQ = H.sess + H.qid; markSeen(H.qid); }
     playerSync();
@@ -611,9 +621,27 @@ function vote(v){
   render();
 }
 function markSeen(qid){ if (!qid || qid.startsWith("g~")) return; S.seen[qid] = (S.seen[qid] || 0) + 1; LS.set("seen", S.seen); }
-function recordHist(q, a, sess){ const ok = grade(q, a); if (S.hist[q.id] && S.hist[q.id].seen) return; S.hist[q.id] = { ok, t: q.t, c: q.c, seen: 1 }; }
+function recordHist(q, a, sess){ const ok = grade(q, a); if (S.hist[q.id] && S.hist[q.id].seen) return; S.hist[q.id] = { ok, t: q.t, c: q.c, seen: 1 }; TRACK.q(); }
+/* ---------- study log (name, room, how many questions; never scores) ---------- */
+const TRACK = {
+  sid: null, mode: null, room: "", n: 0, sent: -1, lastRoom: 0,
+  post(o, beacon){ if (!STATS_URL) return; const body = JSON.stringify(o);
+    try{ if (beacon && navigator.sendBeacon){ navigator.sendBeacon(STATS_URL, new Blob([body], { type: "text/plain" })); return; } }catch(e){}
+    try{ fetch(STATS_URL, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain" }, body, keepalive: true }).catch(() => {}); }catch(e){} },
+  start(mode, room, sess){ const sid = S.pid + "~" + sess; if (this.sid === sid){ if (room && room !== this.room){ this.room = room; this.flush(true); } return; }
+    this.flush(); this.sid = sid; this.mode = mode; this.room = room || ""; this.n = LS.get("tq_" + sid, 0); this.sent = -1; this.flush(true); },
+  q(){ if (!this.sid) return; this.n++; LS.set("tq_" + this.sid, this.n); if (this.n - this.sent >= 3) this.flush(); },
+  flush(force, beacon){ if (!this.sid || (!force && this.n === this.sent)) return; this.sent = this.n;
+    this.post({ k: "study", sid: this.sid, name: S.nick || "?", mode: this.mode, room: this.room, q: this.n }, beacon); },
+  roomBeat(closed){ const G = S.G; if (!G || G.role !== "host") return; const now = Date.now();
+    const names = Object.keys(G.players).filter(k => k !== "me").map(k => G.players[k].n), key = names.join("|");
+    if (!closed && key === this.lastKey && now - this.lastRoom < 30000) return; this.lastRoom = now; this.lastKey = key;
+    this.post({ k: "room", rid: S.pid + "~" + G.sess, room: G.hostNick, host: S.nick || "Host", people: names, closed: !!closed }); }
+};
+addEventListener("pagehide", () => TRACK.flush(false, true));
+document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden") TRACK.flush(false, true); });
 /* keep both sides visible to each other */
-setInterval(() => { if (S.role === "player") playerSync(true); if (S.role === "host" && S.G) { broadcast(true); hostIngest(); } }, 15000);
+setInterval(() => { if (S.role === "player") playerSync(true); if (S.role === "host" && S.G) { broadcast(true); hostIngest(); if (S.G.phase !== "end") TRACK.roomBeat(); } }, 15000);
 
 /* ---------- connection status ---------- */
 function connOk(){ return S.roomState === "on"; }
@@ -642,6 +670,7 @@ function renderInner(v, el){
   else if (v === "lobby") el.innerHTML = vLobby();
   else if (v === "join") el.innerHTML = vJoin();
   else if (v === "play") el.innerHTML = playView();
+  else if (v === "admin") el.innerHTML = vAdmin();
   renderStatus();
   bind(v);
 }
@@ -677,6 +706,44 @@ function vHome(){
     </div>
     ${READY.length ? "" : `<div class="banner">Questions are being added one lecture at a time. Check back soon.</div>`}
     ${blueprintCard()}
+    <div class="row" style="justify-content:flex-end"><button class="linkbtn" data-act="admin" style="font-size:14px">⚙ Admin</button></div>
+  </div>`;
+}
+/* ---------- admin panel: password checked by the Google Apps Script, not stored in this page ---------- */
+const ADM = { pw: (() => { try{ return sessionStorage.getItem("pn3e4_adm") || ""; }catch(e){ return ""; } })(), data: null, err: "", busy: false, timer: null };
+async function admLoad(){
+  if (!STATS_URL){ ADM.err = "The admin panel isn't connected to the Google Sheet yet."; render(); return; }
+  ADM.busy = true; render();
+  try{
+    const r = await fetch(STATS_URL + "?pw=" + encodeURIComponent(ADM.pw) + "&t=" + Date.now());
+    const d = await r.json();
+    if (!d.ok){ ADM.err = "Wrong password."; ADM.data = null; ADM.pw = ""; try{ sessionStorage.removeItem("pn3e4_adm"); }catch(e){} }
+    else { ADM.err = ""; ADM.data = d; ADM.at = new Date(); try{ sessionStorage.setItem("pn3e4_adm", ADM.pw); }catch(e){} }
+  }catch(e){ ADM.err = "Couldn't reach the Google Sheet. Check the connection and try again."; }
+  ADM.busy = false; if (S.view === "admin") render();
+}
+function vAdmin(){
+  if (!ADM.data) return `<div class="card stack" style="max-width:420px">
+    <div class="eyebrow">Admin</div><label for="admPw"><h2>Password</h2></label>
+    <input type="password" id="admPw" inputmode="numeric" maxlength="20" autocomplete="off" value="">
+    ${ADM.err ? `<p style="color:var(--bad)">${esc(ADM.err)}</p>` : ""}
+    <div class="row"><button class="btn primary big" data-act="admGo" ${ADM.busy ? "disabled" : ""}>${ADM.busy ? "Checking…" : "Open"}</button></div></div>`;
+  const d = ADM.data;
+  const rooms = (d.rooms || []).length ? d.rooms.map(r => `<div class="card stack" style="gap:6px;padding:14px"><h3 style="margin:0">${esc(r.room)}</h3>
+      <div class="roster"><span class="who"><b>${esc(r.host)}</b>&nbsp;<span class="muted">(host)</span></span>${(r.people || []).map(n => `<span class="who">${esc(n)}</span>`).join("")}</div></div>`).join("")
+    : `<p class="muted">No rooms open right now.</p>`;
+  const ppl = (d.people || []).slice().sort((a, b) => b.questions - a.questions || a.name.localeCompare(b.name));
+  const tot = ppl.reduce((a, p) => a + p.questions, 0);
+  const table = ppl.length ? `<div style="overflow-x:auto"><table class="adm"><thead><tr><th>Name</th><th>Times studied</th><th>Questions</th></tr></thead><tbody>
+      ${ppl.map(p => `<tr><td>${esc(p.name)}</td><td class="num">${p.times}</td><td class="num">${p.questions}</td></tr>`).join("")}</tbody></table></div>`
+    : `<p class="muted">Nobody has studied yet.</p>`;
+  return `<div class="stack" style="gap:18px">
+    <div class="row" style="justify-content:space-between;align-items:flex-end"><div><div class="eyebrow">Admin</div><h1 style="margin:4px 0 0">Who's studying</h1></div>
+      <div class="row" style="gap:8px"><button class="btn" data-act="admRefresh" ${ADM.busy ? "disabled" : ""}>${ADM.busy ? "Refreshing…" : "Refresh"}</button><button class="btn ghost" data-act="admOut">Lock</button></div></div>
+    <section class="stack" style="gap:10px"><h2 style="margin:0">Open rooms</h2>${rooms}</section>
+    <section class="stack" style="gap:10px"><h2 style="margin:0">Everyone who studied</h2>
+      <p class="muted" style="margin:0">${ppl.length} ${ppl.length === 1 ? "person" : "people"} · ${tot} questions answered in all</p>${table}</section>
+    <p class="muted" style="font-size:13px">Updated ${ADM.at ? ADM.at.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }) : ""}. Refreshes every 30 seconds while open.</p>
   </div>`;
 }
 function vName(){
@@ -686,7 +753,7 @@ function vName(){
     <div class="eyebrow">${r === "host" ? "Host a group" : r === "player" ? "Join a group" : "Solo"}</div>
     ${r === "host" ? `<label for="roomName"><h2>Room name</h2></label>
     <input type="text" id="roomName" maxlength="24" placeholder="e.g. Med-Surg Squad" value="${esc(S.roomName)}" autocomplete="off">
-    <label for="nick"><h2 style="margin-top:6px">Your name</h2></label>` : `<label for="nick"><h2>What should we call you?</h2></label>`}
+    <label for="nick"><h2 style="margin-top:6px">Your name</h2></label>` : r === "solo" ? `<label for="nick"><h2>Your name</h2></label><p class="muted" style="margin:-4px 0 4px">So we can count your study sessions. Scores stay on this device.</p>` : `<label for="nick"><h2>What should we call you?</h2></label>`}
     <input type="text" id="nick" maxlength="20" placeholder="Your first name" value="${esc(S.nick)}" autocomplete="off">
     ${hostOpt}
     <div class="row"><button class="btn primary big" data-act="nameNext">Continue</button></div>
@@ -926,6 +993,7 @@ function bind(v){
   lastBound = v;
   const hp = $("#hp"); if (hp) hp.onchange = () => { S.hostPlays = hp.checked; };
   document.querySelectorAll('input[name=mode]').forEach(r => r.onchange = () => { S.setup.mode = r.value; render(); });
+  const ap = $("#admPw"); if (ap){ ap.focus(); ap.onkeydown = e => { if (e.key === "Enter"){ const b = document.querySelector('[data-act=admGo]'); b && b.click(); } }; }
   const pi = $("#pwIn"); if (pi){ pi.oninput = () => { S.pwDraft = pi.value; }; pi.onkeydown = e => { if (e.key === "Enter") doConnect(); }; }
   const ni = $("#numIn"); if (ni){ ni.oninput = () => { S.draft = ni.value; }; ni.onkeydown = e => { if (e.key === "Enter") doSubmit(); }; }
 }
@@ -941,6 +1009,10 @@ function doSubmit(){
 document.addEventListener("click", e => {
   const b = e.target.closest("[data-act]"); if (!b) return;
   const act = b.dataset.act;
+  if (act === "admin"){ S.view = "admin"; ADM.err = ""; render(); if (ADM.pw) admLoad(); clearInterval(ADM.timer); ADM.timer = setInterval(() => { if (S.view === "admin" && ADM.data) admLoad(); else if (S.view !== "admin") clearInterval(ADM.timer); }, 30000); return; }
+  else if (act === "admGo"){ const f = $("#admPw"); ADM.pw = (f && f.value || "").trim(); if (!ADM.pw){ f && f.focus(); return; } admLoad(); return; }
+  else if (act === "admRefresh"){ admLoad(); return; }
+  else if (act === "admOut"){ ADM.pw = ""; ADM.data = null; try{ sessionStorage.removeItem("pn3e4_adm"); }catch(e){} S.view = "home"; render(); return; }
   if (act === "pick"){ S.pendingRole = b.dataset.role; S.view = "name"; render(); }
   else if (act === "nameNext"){
     const rn = $("#roomName"); if (rn){ const rv = (rn.value || "").trim().slice(0, 24); if (!rv){ rn.focus(); return; } S.roomName = rv; LS.set("roomName", rv); }
@@ -953,6 +1025,7 @@ document.addEventListener("click", e => {
   else if (act === "create"){
     newGame(S.pendingRole);
     S.myVote = {}; S.hist = {}; LS.set("hist", {});
+    TRACK.start(S.G.role === "solo" ? "solo" : "group (host)", S.G.role === "host" ? S.G.hostNick : "", S.G.sess); TRACK.lastRoom = 0; TRACK.roomBeat();
     S.view = S.G.role === "solo" ? "play" : "lobby"; render(); broadcast();
     if (S.G.role === "host") startHost();
   }
@@ -983,10 +1056,11 @@ document.addEventListener("click", e => {
   else if (act === "close"){ if (b.dataset.sure){ hostClose(); } else { b.dataset.sure = "1"; b.textContent = "Tap again to close the room"; } }
   else if (act === "end"){ if (b.dataset.sure){ hostEnd(); } else { b.dataset.sure = "1"; b.textContent = "Tap again to end the round"; } }
   else if (act === "again"){ if (S.role === "host"){ pres({ role: null, phase: null, roster: null, rv: null, sum: null, qid: null, sess: null }); setTimeout(netStop, 800); } S.G = null; LS.del("game"); S.view = "setup"; S.pendingRole = S.pendingRole || "solo"; render(); }
-  else if (act === "resume"){ S.G = LS.get("game", null); if (!S.G) return; S.role = S.G.role; S.pendingRole = S.G.role; S.hostPlays = S.G.hostPlays; S.view = S.G.phase === "lobby" ? "lobby" : "play"; render(); broadcast(); if (S.G.role === "host") startHost(); }
+  else if (act === "resume"){ S.G = LS.get("game", null); if (!S.G) return; TRACK.start(S.G.role === "solo" ? "solo" : "group (host)", S.G.role === "host" ? S.G.hostNick : "", S.G.sess); S.role = S.G.role; S.pendingRole = S.G.role; S.hostPlays = S.G.hostPlays; S.view = S.G.phase === "lobby" ? "lobby" : "play"; render(); broadcast(); if (S.G.role === "host") startHost(); }
 });
 document.addEventListener("toggle", e => { const d = e.target; if (!d || !d.dataset || !d.dataset.k) return; if (d.open) S.openRev.add(d.dataset.k); else S.openRev.delete(d.dataset.k); }, true);
 $("#homeBtn").onclick = () => {
+  TRACK.flush(true); if (S.role === "host") TRACK.roomBeat(true);
   if (S.role === "host" || S.role === "solo"){ if (S.G) saveG(); pres({ role: null, phase: null, roster: null, rv: null, sum: null, qid: null }); }
   if (S.role === "player") pres({ role: null, host: null, sess: null, qid: null, a: null, vote: null });
   setTimeout(netStop, 500);

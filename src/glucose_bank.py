@@ -1,17 +1,17 @@
 # Week 11.1 Glucose Regulation with Metabolic Syndrome — Prof. Mila Jones's transcript + PowerPoint (+ calorie counting chart).
 T = "glucose"
 CONCEPTS = {
- "norm":"Normal glucose regulation",
- "metsyn":"Metabolic syndrome criteria",
- "metsx":"Metabolic syndrome findings & complications",
- "metmgmt":"Metabolic syndrome lifestyle management",
+ "norm":"Normal glucose regulation (FOCUS)",
+ "metsyn":"Metabolic syndrome criteria (FOCUS)",
+ "metsx":"Metabolic syndrome findings & complications (FOCUS)",
+ "metmgmt":"Metabolic syndrome lifestyle management (FOCUS)",
  "metdrugs":"Metabolic syndrome meds: GLP-1, metformin, statins, ACE (FOCUS)",
  "barind":"Bariatric surgery: indications & procedures (FOCUS)",
  "barcare":"Bariatric pre/post-op care & leak (FOCUS)",
  "bardc":"Bariatric discharge, dumping & supplements (FOCUS)",
- "dx":"Diagnostic tests & cutoffs",
+ "dx":"Diagnostic tests & cutoffs (FOCUS)",
  "types":"Prediabetes, MODY & gestational diabetes",
- "t1t2":"Type 1 vs type 2",
+ "t1t2":"Type 1 vs type 2 (FOCUS)",
  "monitor":"Glucose monitoring & CGM",
  "insulin":"Insulin types: onset, peak, duration (FOCUS)",
  "insadmin":"Insulin administration, storage & sliding scale (FOCUS)",
@@ -25,11 +25,12 @@ CONCEPTS = {
  "dkatx":"DKA treatment & goals (FOCUS)",
  "hhs":"HHS (FOCUS)",
  "chronic":"Chronic complications",
- "sick":"Sick day rules",
+ "sick":"Sick day rules (FOCUS)",
  "dc":"Discharge teaching & carb counting",
 }
 # Classmate update (Nov 3): DKA, HHS, insulin & fluid replacement, GLP-1, gastric sleeve & dumping syndrome are tested.
-HI = ["hypo","dka","dkatx","hhs","insulin","insadmin","injectables","metdrugs","barind","barcare","bardc"]
+# Student review #2 (Nov 4): metabolic syndrome, type 1 vs 2, A1C, metformin/liver, insulin storage, sick days, hypoglycemia, bariatric teaching.
+HI = ["hypo","dka","dkatx","hhs","insulin","insadmin","injectables","metdrugs","barind","barcare","bardc","metsyn","metmgmt","t1t2","dx","sick","norm"]
 
 SATA = "Select all that apply."
 Q = []
@@ -507,3 +508,66 @@ q("injectables","Which client should NOT receive semaglutide (Ozempic), per the 
  ["*A client with a history of medullary thyroid cancer","A client with type 2 diabetes and obesity || A good candidate.",
   "A client who wants weekly dosing || That's a feature.","A client with high post-meal glucose || GLP-1 helps that."],
  "GLP-1 agonists can also cause pancreatitis and severe dehydration; common side effects are GI.")
+
+# ---------- added (student review #2, Nov 4) ----------
+q("norm","Which organ stores glucose, and which organ makes insulin?",
+ ["*The liver stores glucose (as glycogen); the pancreas (beta cells) makes insulin","The pancreas stores glucose; the liver makes insulin || Reversed.",
+  "The kidneys store glucose; the stomach makes insulin || Not correct.","The muscles make insulin || Beta cells of the pancreas make insulin."],
+ "When glucose is low, glucagon tells the liver to release stored glucose.")
+q("metdrugs","A client is newly diagnosed with type 2 diabetes. Which medication does the nurse anticipate first?",
+ ["*metformin","Insulin glargine || Not usually first-line for a new type 2 diagnosis.","Glucagon || Treats hypoglycemia.","Pancrelipase || Pancreatic enzyme replacement."],
+ "Metformin is first-line for type 2 diabetes and prediabetes.")
+q("metdrugs","How does metformin lower blood glucose?",
+ ["*It lowers the amount of glucose the liver makes and releases, and improves insulin sensitivity","It makes the pancreas release more insulin || That's a sulfonylurea.",
+  "It makes the kidneys spill glucose into the urine || That's an SGLT2 inhibitor.","It replaces missing insulin || That's insulin."],
+ "Metformin works on the liver; it doesn't cause hypoglycemia on its own.")
+q("metsyn","Which statement best describes metabolic syndrome?",
+ ["*A cluster of risk factors (like the branches of one tree) that raise the risk of type 2 diabetes and heart disease","A single disease caused by one gene || It's a cluster of risk factors.",
+  "Another name for type 1 diabetes || Not correct.","A complication of bariatric surgery || Not correct."],
+ "Insulin resistance is the common root. Branches: abdominal obesity, high triglycerides, low HDL, high BP, high fasting glucose.")
+q("metmgmt","What is the main way to prevent or reverse metabolic syndrome?",
+ ["*Lifestyle changes: diet, weight management and regular physical activity","Starting insulin right away || Not first-line.",
+  "Bariatric surgery for everyone || Only for certain clients.","Nothing can be done || It's reversible with lifestyle change."],
+ "Medications target individual risk factors when lifestyle isn't enough.")
+q("t1t2","Which statement correctly compares type 1 and type 2 diabetes?",
+ ["*Type 1: autoimmune, little or no insulin made, needs insulin for life. Type 2: insulin resistance, often lifestyle-related, treated with lifestyle, oral meds and insulin if needed",
+  "Type 1 is caused by lifestyle; type 2 is autoimmune || Reversed.","Both always need insulin at diagnosis || Type 2 often starts with lifestyle and metformin.",
+  "Type 2 means the pancreas makes no insulin || That's type 1."],
+ "Type 1 clients never skip insulin; type 2 may eventually need insulin too.")
+q("dx","Which A1C results match each category, per the lecture?",
+ ["*Normal under 5.7%; prediabetes 5.7–6.4%; diabetes 6.5% or higher","Diabetes 5.7% or higher || 5.7–6.4% is prediabetes.",
+  "Normal under 7%; diabetes 8% or higher || 7% is a treatment goal, not a diagnostic cutoff.","Prediabetes 6.5–7% || 6.5% diagnoses diabetes."],
+ "The A1C reflects about 3 months of glucose (the life span of a red blood cell).")
+q("insadmin","How is insulin stored?",
+ ["*Unopened insulin in the refrigerator; once opened, it's good for 28 days at room temperature","All insulin in the freezer || Freezing ruins insulin.",
+  "Opened insulin is good for 6 months || Discard after 28 days.","Unopened insulin at room temperature until it expires || Refrigerate unopened insulin."],
+ "Protect insulin from extreme temperatures; date the vial or pen when opened.")
+q("insadmin","A client opened an insulin pen 30 days ago and kept it at room temperature. What should the nurse teach?",
+ ["*Discard it; opened insulin is good for 28 days","Keep using it until it's empty || Expired after 28 days.","Put it in the freezer to extend it || Never freeze insulin.","Use it only if it looks clear || It's still expired."],
+ "Rotate injection sites to prevent lipodystrophy.")
+q("sick","A client with diabetes is sick and not eating much. Which teaching about insulin is correct?",
+ ["*Never skip insulin; keep taking it and check glucose more often","Skip insulin until eating normally || Illness raises glucose; skipping risks DKA.",
+  "Double the insulin dose || Not without provider direction.","Stop checking glucose || Check more often."],
+ "Illness and stress raise glucose. Keep basal insulin going and stay hydrated.")
+q("hypo","A client's glucose is 48 mg/dL. They are alert, oriented and can swallow. What should the nurse do?",
+ ["*Give 15 g of fast carbs, such as 4 oz of orange juice or milk, then recheck in 15 minutes","Give glucagon IM || For a client who can't swallow or is unconscious.",
+  "Give a full meal first || Fast carbs come first.","Wait and recheck in 1 hour || Treat now."],
+ "Rule of 15: 15 g carbs, recheck in 15 minutes, repeat if still low.")
+q("hypo","A client with a glucose of 45 mg/dL is unconscious. Which is correct?",
+ ["*Give glucagon (or IV dextrose in the hospital), turn them on their side, and recheck glucose in 15 minutes","Give orange juice by mouth || Aspiration risk.",
+  "Give insulin || Would make it worse.","Wait for them to wake up || Treat now."],
+ "Once awake and able to swallow, give carbs to prevent another drop.")
+q("barcare","Which consults are needed BEFORE bariatric surgery? "+SATA,
+ ["*Psychological evaluation (clearance)","*Nutrition consult","Dermatology consult || Not required.","Ophthalmology consult || Not required."],
+ "Also informed consent and teaching on the lifelong post-op diet and supplements.")
+q("bardc","A client with type 2 diabetes asks if bariatric surgery will cure their diabetes. What is the best response?",
+ ["*It can improve diabetes or put it in remission, but it isn't a cure; you'll still need follow-up, the bariatric diet and supplements","Yes, you'll never need to check your sugar again || Not a cure.",
+  "No, it has no effect on diabetes || It often improves glucose control.","Only if you stop all medications first || Not correct."],
+ "Lifelong follow-up, the post-op bariatric diet, and supplements including vitamin B12.")
+q("bardc","Why does a client need lifelong vitamin B12 after bariatric surgery?",
+ ["*The surgery removes or bypasses the cells that make intrinsic factor, which is needed to absorb B12","B12 prevents dumping syndrome || Not the reason.",
+  "B12 replaces insulin || Not correct.","B12 is only needed for 2 weeks || It's lifelong."],
+ "Other lifelong supplements: multivitamin, iron, calcium citrate and vitamin D.")
+q("bardc","A client with diabetes plans bariatric surgery. Which signs of dumping syndrome should the nurse teach? "+SATA,
+ ["*Diarrhea","*Abdominal cramping","*Nausea","*Dizziness, sweating and a fast heart rate after eating","Constipation and bradycardia || Not dumping signs."],
+ "Prevent it with small meals, no sugary or high-fat foods, and no fluids with meals.")

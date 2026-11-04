@@ -484,3 +484,15 @@ q("migraine","What is sumatriptan used for?",
 q("migraine","Which drug combination with sumatriptan can cause serotonin syndrome?",
  ["*Other serotonin agonists or St. John's wort","Acetaminophen || Not a listed interaction.","Folic acid || Not listed.","Antacids || Memantine interaction."],
  "MAOIs within 2 weeks can cause sumatriptan toxicity.")
+
+# ---------- added (student review #2, Nov 4: seizures focus on phenytoin) ----------
+q("phenytoin","What is the therapeutic range for phenytoin (Dilantin)?",
+ ["*10–20 mcg/mL","0.5–2 ng/mL || That's digoxin.","50–100 mcg/mL || Too high.","1–2 mcg/mL || Too low."],
+ "Over 30 mcg/mL can be toxic.")
+q("phenytoin","Which teaching is most important for a client starting phenytoin?",
+ ["*Brush and floss well and see the dentist regularly; gums can overgrow","Take it with grapefruit juice || That's carbamazepine's interaction.",
+  "Stop it when seizures stop || Never stop abruptly.","Skip doses if sleepy || Keep a steady level."],
+ "Gingival hyperplasia: soft toothbrush, regular dental care. Keep drug levels steady.")
+q("phenytoin","A nurse is giving IV phenytoin. Which is correct?",
+ ["*Never mix it with dextrose; it is incompatible","Mix it in D5W || Incompatible with dextrose.","Any IV fluid is fine || Not with dextrose.","It can only be given IM || It is given IV."],
+ "IV phenytoin is incompatible with dextrose.")

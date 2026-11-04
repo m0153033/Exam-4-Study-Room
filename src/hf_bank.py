@@ -7,21 +7,21 @@ CONCEPTS = {
  "causes":"Causes, risk factors & triggers",
  "comp":"Compensation & remodeling",
  "sysdia":"Systolic (HFrEF) vs diastolic (HFpEF)",
- "lr":"Left- vs right-sided signs",
+ "lr":"Left- vs right-sided signs (FOCUS)",
  "nyha":"NYHA classes",
- "bnp":"BNP",
+ "bnp":"BNP (FOCUS)",
  "imaging":"Echo, TEE, chest x-ray & ECG",
  "labs":"Labs: K, Na, Mg, BUN/Cr, LFTs, TSH, ABG",
  "hemo":"MAP & CVP",
- "assess":"Priority assessment & lung sounds",
+ "assess":"Priority assessment & lung sounds (FOCUS)",
  "weight":"Daily weights & early decompensation",
  "edjvd":"Edema & JVD assessment",
  "pillars":"The four pillars",
- "loop":"Loop diuretics (furosemide)",
+ "loop":"Loop diuretics (furosemide) (FOCUS)",
  "spiro":"Spironolactone",
  "ace":"ACE inhibitors",
  "arb":"ARBs",
- "arni":"ARNI: sacubitril/valsartan",
+ "arni":"ARNI: sacubitril/valsartan (FOCUS)",
  "bb":"Beta blockers",
  "sglt2":"SGLT2 inhibitors",
  "dig":"Digoxin",
@@ -35,7 +35,8 @@ CONCEPTS = {
  "hcm":"Hypertrophic cardiomyopathy safety",
 }
 # Nursing Priorities Review slide = professor emphasis -> two questions per full game
-HI = ["lr","weight","ape","check","dig","arni","hcm","loop"]
+# Student review #2 (Nov 4): left vs right, BNP, priority assessment, Entresto switch, furosemide.
+HI = ["lr","weight","ape","check","dig","arni","hcm","loop","bnp","assess"]
 
 SATA = "Select all that apply."
 Q = []
@@ -784,3 +785,31 @@ q("hcm","A client with HCM feels dizzy after standing up quickly. What should th
   "Take a nitroglycerin || Worsens obstruction.",
   "Bear down to raise blood pressure || Valsalva worsens obstruction."],
  "HCM needs filling, not dehydration.")
+
+# ---------- added (student review #2, Nov 4) ----------
+q("lr","Which findings point to LEFT-sided heart failure? "+SATA,
+ ["*Crackles in the lungs","*Shortness of breath and orthopnea","*Pink, frothy sputum in severe cases","Jugular venous distension and ankle edema || Right-sided signs.","Liver enlargement and ascites || Right-sided signs."],
+ "Left = lungs. Right = rest of the body (JVD, edema, weight gain).")
+q("lr","Which findings point to RIGHT-sided heart failure? "+SATA,
+ ["*Jugular venous distension","*Dependent edema","*Weight gain","*Abdominal swelling (ascites) or an enlarged liver","Crackles and pink frothy sputum || Left-sided signs."],
+ "Left = lungs. Right = rest of the body.")
+q("assess","A client with heart failure has new confusion and an O2 sat of 88%. What does the nurse do?",
+ ["*Treat it as a priority: assess airway and breathing, raise the head of the bed, give oxygen and notify the provider","Document it and recheck at the next round || A red flag.",
+  "Give a sleeping pill for restlessness || Masks hypoxia.","Encourage more fluids || Fluid is restricted."],
+ "New confusion and low O2 sat mean poor perfusion or worsening pulmonary congestion.")
+q("loop","Furosemide (Lasix) is given to a client with LEFT-sided heart failure. Which finding shows it's working?",
+ ["*More urine output and clearer lungs (fewer crackles)","Weight goes up || Should go down.","More crackles || Worsening.","Potassium rises || Furosemide lowers potassium."],
+ "For right-sided failure, expect less edema and weight loss. Monitor potassium and I&O.")
+q("loop","A client with right-sided heart failure is on furosemide. Which finding shows improvement?",
+ ["*Less peripheral edema and a lower daily weight","New jugular venous distension || Worsening.","Weight up 2 kg in 2 days || Worsening.","Decreased urine output || The drug isn't working."],
+ "Daily weight is the best indicator of fluid status.")
+q("dc","Which teaching fits a client with heart failure and fluid overload? "+SATA,
+ ["*Follow the fluid restriction; ice chips and broth count as fluid","*Limit sodium to 1.5–2 g a day","*Weigh yourself daily, same time, same scale","*Track intake and output","Drink extra water to flush the kidneys || Fluid is restricted."],
+ "Report weight gain, more pillows needed to sleep, new crackles or new confusion.")
+q("arni","A client on lisinopril is switching to sacubitril/valsartan (Entresto). What must the nurse know?",
+ ["*Stop the ACE inhibitor at least 36 hours before the first Entresto dose; combining them risks angioedema","Give both together for a week || Never combine.",
+  "Start Entresto with the next lisinopril dose || Must wait 36 hours.","No wait is needed || 36 hours after an ACE inhibitor."],
+ "The 36-hour wait is for ACE inhibitors (-pril). Never give Entresto with an ACE inhibitor or ARB.")
+q("bnp","Which lab result supports a heart failure diagnosis?",
+ ["*An elevated BNP","A low BNP || Makes heart failure less likely.","A high hemoglobin A1C || Diabetes test.","A low lipase || Pancreas test."],
+ "BNP is released when the ventricles are stretched by volume and pressure.")

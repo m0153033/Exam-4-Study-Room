@@ -12,7 +12,7 @@ CONCEPTS = {
  "gastritis2":"Gastritis: bleeding & care (FOCUS)",
  "pud":"PUD: causes & gastric vs duodenal (FOCUS)",
  "pud2":"PUD: complications & care (FOCUS)",
- "gcancer":"Gastric cancer",
+ "gcancer":"Gastric cancer signs (FOCUS)",
  "enteral":"Enteral nutrition",
  "tpn":"PPN / TPN",
  "dumping":"Dumping syndrome",
@@ -28,7 +28,7 @@ CONCEPTS = {
 }
 # Classmate update (Nov 3): appendicitis also tested; esophageal cancer NOT tested.
 # Professor: GERD, hiatal hernia, gastritis and PUD are the FOCUS conditions (in depth); the other 13 are need-to-know basics.
-HI = ["hh","hh2","gerd","gerd2","meds","meds2","gastritis","gastritis2","pud","pud2","append","append2","tpn","signs"]
+HI = ["hh","hh2","gerd","gerd2","meds","meds2","gastritis","gastritis2","pud","pud2","append","append2","tpn","signs","gcancer"]
 
 SATA = "Select all that apply."
 Q = []
@@ -474,3 +474,11 @@ q("pud2","What is the treatment for H. pylori-related peptic ulcer disease?",
 q("pud2","Where may peptic ulcer pain radiate?",
  ["*To the back","To the right shoulder || Cholecystitis pattern.","To the left arm || Cardiac pattern.","To the RLQ || Appendicitis pattern."],
  "Burning, gnawing epigastric pain. Sudden severe pain with a rigid abdomen = perforation.")
+
+# ---------- added (student review #2, Nov 4: gastric cancer signs) ----------
+q("gcancer","Which signs fit gastric cancer? "+SATA,
+ ["*Vague indigestion early (or no symptoms)","*Early satiety","*Unintended weight loss","*Anemia","*Epigastric pain"],
+ "Early signs are vague, so it's often found late. Diagnosis is by endoscopy with biopsy.")
+q("gcancer","A client reports months of vague indigestion, feeling full after a few bites and a 10 lb weight loss. Which condition does the nurse suspect?",
+ ["*Gastric cancer","GERD || Heartburn after meals, no weight loss pattern.","Appendicitis || Acute RLQ pain.","Cholecystitis || RUQ pain after fatty meals."],
+ "Risk factors: H. pylori, smoked or salted foods, smoking, pernicious anemia, atrophic gastritis.")
