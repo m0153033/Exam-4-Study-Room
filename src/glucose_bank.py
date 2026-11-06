@@ -1,36 +1,44 @@
 # Week 11.1 Glucose Regulation with Metabolic Syndrome — Prof. Mila Jones's transcript + PowerPoint (+ calorie counting chart).
 T = "glucose"
 CONCEPTS = {
- "norm":"Normal glucose regulation (FOCUS)",
+ "norm":"Normal glucose regulation",
  "metsyn":"Metabolic syndrome criteria (FOCUS)",
- "metsx":"Metabolic syndrome findings & complications (FOCUS)",
+ "metsx":"Metabolic syndrome findings & complications",
  "metmgmt":"Metabolic syndrome lifestyle management (FOCUS)",
  "metdrugs":"Metabolic syndrome meds: GLP-1, metformin, statins, ACE (FOCUS)",
- "barind":"Bariatric surgery: indications & procedures (FOCUS)",
+ "barind":"Bariatric surgery: indications & procedures",
  "barcare":"Bariatric pre/post-op care & leak (FOCUS)",
  "bardc":"Bariatric discharge, dumping & supplements (FOCUS)",
  "dx":"Diagnostic tests & cutoffs (FOCUS)",
  "types":"Prediabetes, MODY & gestational diabetes",
  "t1t2":"Type 1 vs type 2 (FOCUS)",
  "monitor":"Glucose monitoring & CGM",
- "insulin":"Insulin types: onset, peak, duration (FOCUS)",
+ "insulin":"Insulin types: onset, peak, duration",
  "insadmin":"Insulin administration, storage & sliding scale (FOCUS)",
  "drugint":"Drugs that raise or lower glucose with insulin",
  "injectables":"GLP-1 agonists & amylin mimetics (FOCUS)",
  "orals":"Oral agents: sulfonylureas to gliptins",
  "sglt2":"SGLT2 inhibitors",
  "hyper":"Hyperglycemia, dawn & Somogyi",
- "hypo":"Hypoglycemia & rule of 15",
+ "hypo":"Hypoglycemia & rule of 15 (FOCUS)",
  "dka":"DKA recognition (FOCUS)",
  "dkatx":"DKA treatment & goals (FOCUS)",
- "hhs":"HHS (FOCUS)",
+ "hhs":"HHS: signs & labs (FOCUS)",
+ "hhstx":"HHS treatment & the fluid formula (FOCUS)",
+ "whipple":"Whipple's triad & hypoglycemia levels (FOCUS)",
+ "statin":"Statins: LFTs & rhabdomyolysis (FOCUS)",
+ "leak":"Bariatric: anastomotic leak (FOCUS)",
+ "dumping":"Bariatric: dumping syndrome (FOCUS)",
  "chronic":"Chronic complications",
  "sick":"Sick day rules (FOCUS)",
  "dc":"Discharge teaching & carb counting",
 }
 # Classmate update (Nov 3): DKA, HHS, insulin & fluid replacement, GLP-1, gastric sleeve & dumping syndrome are tested.
 # Student review #2 (Nov 4): metabolic syndrome, type 1 vs 2, A1C, metformin/liver, insulin storage, sick days, hypoglycemia, bariatric teaching.
-HI = ["hypo","dka","dkatx","hhs","insulin","insadmin","injectables","metdrugs","barind","barcare","bardc","metsyn","metmgmt","t1t2","dx","sick","norm"]
+# Student review #3 (Nov 5, met with Prof. Jones): metabolic syndrome 5 criteria + primary interventions, GLP-1 pancreatitis,
+# statins (LFTs, rhabdo), anastomotic leak, dumping, DKA & HHS (know the formula), Whipple's triad, 15-15 rule, sick days,
+# rotate sites, metformin & B12, gastric bypass, type 1 vs 2.
+HI = ["metsyn","metmgmt","injectables","statin","leak","dumping","bardc","dka","dkatx","hhs","hhstx","hypo","whipple","t1t2","sick","insadmin","metdrugs","dx"]
 
 SATA = "Select all that apply."
 Q = []
@@ -94,7 +102,7 @@ q("metdrugs","A client on metformin is scheduled for a CT with IV contrast. What
  ["Double the metformin the night before || Not taught.","*Hold metformin for at least 48 hours after the contrast study",
   "No change is needed || Contrast can cause lactic acidosis.","Give it with the contrast || Not taught."],
  "Also avoid alcohol and cimetidine (lactic acidosis risk). Take with meals; monitor renal function.")
-q("metdrugs","A client on atorvastatin reports unexplained muscle pain and weakness. What is the concern?",
+q("statin","A client on atorvastatin reports unexplained muscle pain and weakness. What is the concern?",
  ["Expected soreness from exercise || Must be reported.","*Rhabdomyolysis","Lactic acidosis || Metformin.","Angioedema || ACE inhibitors."],
  "Statins require baseline and periodic LFTs.")
 
@@ -117,7 +125,7 @@ q("barind","Why do bypass clients need lifelong vitamin supplements?",
  "Permanence, lifelong supplements and strict behavior change are the major disadvantages.")
 
 # ---------- bariatric care ----------
-q("barcare","After a gastric bypass, what is the EARLIEST sign of an anastomotic leak?",
+q("leak","After a gastric bypass, what is the EARLIEST sign of an anastomotic leak?",
  ["Hypotension || Later sign.","*Unexplained tachycardia (HR over 120)","Bradycardia || Not the sign.","Weight gain || Not related."],
  "Also tachypnea, fever, and progressive left shoulder or back pain. Report to the surgeon immediately.")
 q("barcare","Which post-op care is correct after bariatric surgery? "+SATA,
@@ -428,10 +436,10 @@ q("hhs","How does HHS differ from DKA? "+SATA,
  ["*Glucose is usually over 600 mg/dL (often over 1,000)","*Minimal or no ketosis","*No Kussmaul respirations or fruity breath","*Slower onset over days to weeks","*Higher mortality (10–20%)",
   "More common in type 1 || More common in type 2."],
  "Type 2 clients still make some insulin, enough to prevent ketosis.")
-q("hhs","What is the PRIORITY treatment for HHS?",
+q("hhstx","What is the PRIORITY treatment for HHS?",
  ["Insulin infusion || May not even be necessary.","*Fluid resuscitation","Sodium bicarbonate || No significant acidosis.","Glucagon || Glucose is high."],
  "Fluid deficit is often 8–12 L; normal saline 1–2 L the first hour.")
-q("hhs","Why is fluid correction in HHS done gradually (first half over 12 hours)?",
+q("hhstx","Why is fluid correction in HHS done gradually (first half over 12 hours)?",
  ["*To prevent cerebral edema from rapid fluid and electrolyte shifts","To save IV fluid || Not the reason.",
   "To allow ketones to build || Not the reason.","Because the client isn't dehydrated || Severe dehydration is the hallmark."],
  "Watch elderly clients for fluid overload and pulmonary edema.")
@@ -439,7 +447,7 @@ q("hhs","Which nursing care applies to HHS? "+SATA,
  ["*Neuro checks every 1–2 hours (Glasgow Coma Scale)","*Seizure precautions","*Strict I&O, urine goal over 0.5 mL/kg/hr","*DVT and fall prevention","*Daily weights",
   "Ambulate right away to prevent clots || Bed rest until hemodynamically stable."],
  "Look for precipitating factors: infection, steroids or diuretics, MI or stroke, nonadherence.")
-q("hhs","Which precipitating factors can lead to HHS? "+SATA,
+q("hhstx","Which precipitating factors can lead to HHS? "+SATA,
  ["*Infection such as pneumonia or UTI","*Steroids or diuretics","*Not taking diabetes medications","*MI or stroke",
   "Regular exercise || Not a precipitating factor."],
  "Emphasize sick day rules, hydration and follow-up.")
@@ -500,7 +508,7 @@ q("barind","Which statement about sleeve gastrectomy is correct?",
  ["*It is a restrictive, irreversible procedure that shrinks the stomach; staple line leaks are a risk","It is fully reversible || That's endoscopic sleeve gastroplasty.",
   "It bypasses the small intestine || That's the Roux-en-Y.","It has no complications || Leaks and dumping can occur."],
  "Restrictive procedures reduce stomach size, causing a feeling of fullness.")
-q("bardc","Which teaching helps PREVENT dumping syndrome after bariatric surgery? "+SATA,
+q("dumping","Which teaching helps PREVENT dumping syndrome after bariatric surgery? "+SATA,
  ["*Avoid high-sugar, high-fat and processed carbohydrates","*Eat small, frequent meals","*No liquids 30 minutes before or 30–60 minutes after solid food",
   "Drink a large glass of juice with meals || Sugar and fluids with meals cause dumping.","Eat 3 large meals a day || Small meals."],
  "If early dumping occurs: lie down for 30 minutes to slow gastric emptying.")
@@ -568,6 +576,138 @@ q("bardc","Why does a client need lifelong vitamin B12 after bariatric surgery?"
  ["*The surgery removes or bypasses the cells that make intrinsic factor, which is needed to absorb B12","B12 prevents dumping syndrome || Not the reason.",
   "B12 replaces insulin || Not correct.","B12 is only needed for 2 weeks || It's lifelong."],
  "Other lifelong supplements: multivitamin, iron, calcium citrate and vitamin D.")
-q("bardc","A client with diabetes plans bariatric surgery. Which signs of dumping syndrome should the nurse teach? "+SATA,
+q("dumping","A client with diabetes plans bariatric surgery. Which signs of dumping syndrome should the nurse teach? "+SATA,
  ["*Diarrhea","*Abdominal cramping","*Nausea","*Dizziness, sweating and a fast heart rate after eating","Constipation and bradycardia || Not dumping signs."],
  "Prevent it with small meals, no sugary or high-fat foods, and no fluids with meals.")
+
+# ---------- added (student review #3, Nov 5: Prof. Jones's focus list) ----------
+# Metabolic syndrome: all 5 criteria + primary interventions
+q("metsyn","How many of the 5 criteria must a client meet to be diagnosed with metabolic syndrome?",
+ ["*3 or more","All 5 || Only 3 are needed.","1 || Not enough.","2 || Not enough."],
+ "The 5: high BP, low HDL, high triglycerides, high fasting glucose, large waist.")
+q("metsyn","Which findings are among the 5 metabolic syndrome criteria? "+SATA,
+ ["*BP 130/85 mmHg or higher (or on BP medication)","*Triglycerides 150 mg/dL or higher","*Fasting glucose 100 mg/dL or higher (or on diabetes medication)",
+  "*Waist 40 inches or more in men, 35 inches or more in women","*HDL under 40 mg/dL in men or under 50 mg/dL in women"],
+ "Meeting 3 or more = metabolic syndrome.")
+q("metsyn","Which waist size meets the metabolic syndrome criterion for a woman?",
+ ["*35 inches (88 cm) or greater","40 inches or greater || That's the cutoff for men.","30 inches or greater || Too low.","45 inches or greater || Too high."],
+ "Men: 40 inches (102 cm) or greater. Large waist = central (abdominal) obesity.")
+q("metsyn","A male client has BP 136/88, triglycerides 180 mg/dL and HDL 35 mg/dL. His fasting glucose is 92 and waist is 38 inches. Does he meet the criteria for metabolic syndrome?",
+ ["*Yes: high BP, high triglycerides and low HDL make 3 criteria","No: his glucose is normal || Only 3 of 5 are needed.",
+  "No: his waist is under 40 inches || Only 3 of 5 are needed.","Only if he also has diabetes || Not required."],
+ "Criteria: BP ≥130/85, TG ≥150, HDL <40 (men)/<50 (women), fasting glucose ≥100, waist ≥40 (men)/≥35 (women).")
+q("metmgmt","What is the PRIMARY intervention for metabolic syndrome?",
+ ["*Lifestyle modification: weight loss, heart-healthy diet, physical activity and stress management","Starting a GLP-1 agonist right away || Medications come if lifestyle changes fail.",
+  "Bariatric surgery || Not the primary intervention.","Insulin therapy || Not the primary intervention."],
+ "Medications (GLP-1s, metformin, statins, ACE inhibitors) are added if lifestyle changes fail.")
+q("metmgmt","Which goals fit the lifestyle plan for metabolic syndrome? "+SATA,
+ ["*Lose 5% to 10% of body weight within 6 months","*At least 150 minutes a week of moderate exercise (30 minutes most days), plus resistance training",
+  "*A DASH or Mediterranean diet: complex carbs, high fiber, more fruits and vegetables","*Limit processed foods, sugary drinks and saturated fats",
+  "Lose 30% of body weight in 1 month || Not a realistic or safe goal."],
+ "Weight loss reduces visceral fat and insulin resistance. Stress management also helps.")
+# GLP-1
+q("injectables","A client on semaglutide (Ozempic) has severe abdominal pain radiating to the back with vomiting. What does the nurse suspect?",
+ ["*Pancreatitis; hold the medication and notify the provider","Expected GI upset || Severe pain to the back is a red flag.","Dumping syndrome || Happens after bariatric surgery.","Hypoglycemia || Doesn't cause this pain."],
+ "GLP-1 risks: pancreatitis, severe dehydration, thyroid tumors. Contraindicated with a history of medullary thyroid carcinoma.")
+q("injectables","Which complication must be taught to every client starting a GLP-1 agonist?",
+ ["*Pancreatitis: report severe abdominal pain right away","Hair loss || Not the key complication.","Weight gain || GLP-1s cause weight loss.","Low blood pressure from bradykinin || That's not a GLP-1 effect."],
+ "Also teach severe dehydration risk and the medullary thyroid carcinoma contraindication.")
+# statins
+q("statin","Which test must be done before and periodically during statin therapy?",
+ ["*Liver function tests (LFTs)","Thyroid tests || Not the statin requirement.","Pulmonary function tests || Not related.","Hemoglobin A1C || Not the statin requirement."],
+ "Statins: report unexplained muscle pain or tenderness (rhabdomyolysis).")
+q("statin","A client on atorvastatin (Lipitor) should report which symptom right away?",
+ ["*Unexplained muscle pain, tenderness or weakness","Mild headache that resolves || Not the key concern.","Increased appetite || Not related.","Dry cough || That's an ACE inhibitor."],
+ "Muscle pain can signal rhabdomyolysis. Periodic LFTs are mandatory.")
+# bariatric: leak, dumping, bypass, B12
+q("leak","What is the PRIORITY assessment after bariatric surgery?",
+ ["*Monitor for an anastomotic leak","Measure the waist || Not post-op priority.","Teach carb counting || Not the priority now.","Check the A1C || Not the priority now."],
+ "Leak signs: unexplained tachycardia, fever, sudden abdominal or left shoulder pain.")
+q("leak","Which findings after gastric bypass suggest an anastomotic leak? "+SATA,
+ ["*Unexplained tachycardia","*Fever","*Sudden abdominal pain or left shoulder pain","Bradycardia || Tachycardia is the clue.","Diarrhea 30 minutes after a sugary meal || That's dumping."],
+ "An untreated leak can cause peritonitis: guarding and a rigid, board-like abdomen.")
+q("leak","A client 2 days after gastric bypass has HR 128, temperature 101.4°F and new left shoulder pain. What should the nurse do?",
+ ["*Notify the surgeon right away; suspect an anastomotic leak","Give pain medication and recheck in 4 hours || Too slow.","Encourage ambulation and fluids || Not the priority.","Document it as expected post-op || These are red flags."],
+ "Notify the surgeon for fever over 101°F, severe abdominal pain radiating to the left shoulder, or persistent nausea and vomiting.")
+q("dumping","When do dumping syndrome symptoms usually start?",
+ ["*About 30 minutes after eating, especially high-carbohydrate food","Only at night || Linked to meals.","3 days after surgery only || A late complication tied to eating.","Only when fasting || Linked to meals."],
+ "Signs: hypotension, diaphoresis, tachycardia, cramping. Avoid high-carbohydrate foods.")
+q("dumping","A client 2 months after gastric bypass feels dizzy, sweaty and crampy 30 minutes after eating cake. What should the nurse tell them to do?",
+ ["*Lie down for 30 minutes to slow gastric emptying","Drink a large glass of juice || Sugar and fluid make it worse.","Walk briskly to speed digestion || Speeds emptying.","Eat another dessert || Worsens it."],
+ "Prevention: small meals, avoid high-sugar foods, no fluids with meals.")
+q("bardc","Which supplements does a client need for LIFE after gastric bypass? "+SATA,
+ ["*Vitamin B12","*Multivitamin","*Iron","*Calcium citrate","*Vitamin D"],
+ "Listed as absolutely necessary. B12: the surgery removes intrinsic factor (pernicious anemia risk).")
+q("bardc","Which late complications of gastric bypass come from poor absorption? "+SATA,
+ ["*Pernicious anemia (no intrinsic factor for B12)","*Iron-deficiency anemia","*Osteoporosis (poor vitamin D and calcium absorption)","Anastomotic leak || Acute surgical complication."],
+ "Other late complications: dumping syndrome, bowel obstruction and hernias.")
+# metformin & B12
+q("metdrugs","A client has taken metformin for years. Which supplement may be needed?",
+ ["*Vitamin B12 (metformin can cause B12 and folic acid malabsorption)","Potassium || Not linked to metformin.","Vitamin K || Not linked to metformin.","Iodine || Not linked to metformin."],
+ "Metformin: take with food, monitor kidney function, avoid alcohol and IV contrast (lactic acidosis).")
+# DKA
+q("dka","Which findings are classic for DKA? "+SATA,
+ ["*Glucose usually over 250 mg/dL","*Metabolic acidosis (pH under 7.3 or bicarbonate under 15)","*Kussmaul respirations","*Fruity breath odor","No ketones || DKA has ketones."],
+ "Diagnostic triad: hyperglycemia, ketonemia, metabolic acidosis.")
+q("dkatx","What is the treatment for DKA?",
+ ["*IV fluids, a regular insulin IV drip, and potassium replacement to correct the acidosis and electrolytes","Oral fluids and a high-carb snack || Not for DKA.",
+  "An insulin bolus with no fluids || Fluids come first; no initial bolus.","Sodium bicarbonate only || Not the main treatment."],
+ "Normal saline 1–2 L rapidly if hypotensive; regular insulin 0.1 units/kg/hr; check potassium before insulin (hold if under 3.3).")
+q("dkatx","A client on an insulin drip for DKA has a glucose of 240 mg/dL. What does the nurse anticipate?",
+ ["*Add dextrose to the IV fluids and continue the insulin","Stop the insulin drip || Never stop insulin unless the provider orders it.","Give a bolus of insulin || Not indicated.","Give glucagon || Not hypoglycemic."],
+ "Add dextrose when glucose is under 250 mg/dL. Goal: glucose drops 50–70 mg/dL per hour.")
+q("dkatx","Which nursing considerations apply to a client in DKA? "+SATA,
+ ["*Never stop insulin unless the provider orders it","*Frequent neuro checks for cerebral edema","*Glucose every 1–2 hours","*Strict I&O with a Foley catheter","Give an initial insulin bolus || Not given initially."],
+ "Also cardiac monitoring, electrolytes every 2–4 hours, seizure precautions.")
+# HHS
+q("hhs","Which findings are expected in HHS? "+SATA,
+ ["*Glucose over 600 mg/dL","*Serum osmolality over 320 mOsm/kg","*Sodium over 145 mEq/L","*Altered mental status","Fruity breath and Kussmaul respirations || Notably ABSENT in HHS."],
+ "Also profound dehydration (8–12 L deficit), elevated BUN/creatinine, bicarbonate over 15 (no significant acidosis).")
+q("hhs","Which findings are notably ABSENT in HHS? "+SATA,
+ ["*Fruity breath odor","*Kussmaul respirations","Altered mental status || Present.","Profound dehydration || Present."],
+ "Minimal ketosis means no fruity breath; no significant acidosis means no Kussmaul breathing.")
+q("hhstx","Which formula estimates the total body water deficit in HHS?",
+ ["*0.6 × body weight (kg) × [(serum Na⁺ ÷ 140) − 1]","0.1 × body weight (kg) || That's the insulin drip rate in units/kg/hr.",
+  "Serum Na⁺ × 2 + glucose ÷ 18 || That's an osmolality estimate, not this formula.","Weight (kg) × 30 || That's a daily fluid estimate."],
+ "Know the formula: 0.6 × weight × [(Na ÷ 140) − 1]. The typical deficit is 8–12 L.")
+q("hhstx","How is the estimated fluid deficit replaced in HHS?",
+ ["*First half over 12 hours, second half over the next 36 hours","All of it in the first hour || Too fast; cerebral edema risk.","Evenly over 4 hours || Too fast.","Only by mouth || IV fluids are needed."],
+ "Initial: normal saline 1–2 L in the first hour, then 100–200 mL/hr based on cardiovascular status.")
+q("hhstx","Which value from the patient is plugged into the HHS fluid-deficit formula along with body weight?",
+ ["*Serum sodium","Serum potassium || Not in the formula.","Blood glucose || Not in the formula.","Hemoglobin A1C || Not in the formula."],
+ "Total body water deficit = 0.6 × weight (kg) × [(serum Na⁺ ÷ 140) − 1].")
+q("hhstx","When does the IV fluid change from 0.9% to 0.45% saline in HHS?",
+ ["*When glucose is under 300 mg/dL or the client is hemodynamically stable (per provider)","Right at admission || Start with 0.9% NS.","Never || The slide says to switch.","When glucose is over 600 || That's the starting point."],
+ "Assess for cerebral edema and pulmonary edema during fluid replacement.")
+q("hhstx","What is the goal rate of glucose reduction in HHS, and why?",
+ ["*Gradually, 50–70 mg/dL per hour, to prevent cerebral edema","As fast as possible || Rapid correction causes cerebral edema.","200 mg/dL per hour || Too fast.","No glucose drop is wanted || Gradual reduction is the goal."],
+ "Insulin may not be needed; fluids are the priority. Reduce the drip when glucose is under 300.")
+q("hhstx","What is the potassium goal during HHS treatment?",
+ ["*4–5 mEq/L; monitor closely and replace as needed","Under 3 mEq/L || Too low.","6–7 mEq/L || Too high.","Potassium doesn't need monitoring || Watch for arrhythmias."],
+ "Also replace phosphate if severely low and correct magnesium.")
+# hypoglycemia
+q("whipple","What makes up Whipple's triad for hypoglycemia?",
+ ["*Low blood glucose, signs and symptoms of hypoglycemia, and relief of symptoms when glucose is given","Polyuria, polydipsia and polyphagia || That's hyperglycemia.",
+  "Hyperglycemia, ketonemia and acidosis || That's the DKA triad.","Fever, tachycardia and left shoulder pain || That's an anastomotic leak."],
+ "Check the blood glucose before treating; other conditions can mimic hypoglycemia (anxiety, migraine, TIA, hyperthyroidism, alcohol).")
+q("whipple","Before treating suspected hypoglycemia, what should the nurse do first if possible?",
+ ["*Check the blood glucose","Give insulin || Would worsen it.","Call a code || Not unless unresponsive without a pulse.","Wait 1 hour || Treat promptly."],
+ "Whipple's triad confirms hypoglycemia: low glucose + symptoms + relief with glucose.")
+q("whipple","A client's glucose is 50 mg/dL and they can't safely swallow, but are responding. Which hypoglycemia level is this and how is it treated?",
+ ["*Level 2 (under 54): give glucagon by injection or nasally","Level 1: rule of 15 by mouth || Level 1 is 54–69 and able to swallow.","Level 3: no treatment needed || Level 3 is an emergency.","Not hypoglycemia || 50 is low."],
+ "Level 1: 54–69, awake, rule of 15. Level 2: under 54, can't take carbs by mouth, glucagon. Level 3: under 54 with altered LOC, IV D50W.")
+q("hypo","What is the 15-15 rule for hypoglycemia?",
+ ["*Give 15 g of fast-acting carbohydrate, recheck glucose in 15 minutes, repeat if still low","Give 15 units of insulin every 15 minutes || Would worsen it.",
+  "Wait 15 minutes, then give 15 g of protein || Fast carbs first.","Give 15 mL of D50 IV for every reading || Not the rule of 15."],
+ "Examples of 15 g: 4 oz juice or regular soda, glucose tablets. Then a snack once glucose is back up.")
+# insulin site rotation, sick day
+q("insadmin","Why does the nurse teach a client to rotate insulin injection sites?",
+ ["*To prevent lipodystrophy, which causes uneven insulin absorption","To make insulin work faster || Not the reason.","To reduce the dose needed || Not the reason.","Because each site needs a different insulin || Not the reason."],
+ "Rotate within one body area, about an inch from the last injection.")
+q("sick","A client with type 1 diabetes has the flu and asks whether to stop insulin since they aren't eating. What should the nurse say?",
+ ["*Don't stop insulin; illness raises glucose. Check glucose and ketones more often and stay hydrated","Stop insulin until you're eating again || Risks DKA.",
+  "Take half your insulin every other day || Not the rule.","Only take insulin if your glucose is over 400 || Too late."],
+ "Never stop insulin when sick. Call the provider for persistent vomiting, ketones or glucose that stays high.")
+q("t1t2","A 12-year-old is admitted with weight loss, polyuria and DKA. Which type of diabetes is most likely?",
+ ["*Type 1: autoimmune destruction of beta cells, so no insulin is made","Type 2 || Usually insulin resistance in adults with lifestyle risk factors.","Gestational || Only in pregnancy.","MODY || Rare and genetic."],
+ "DKA is most common in type 1; HHS is most common in type 2.")
