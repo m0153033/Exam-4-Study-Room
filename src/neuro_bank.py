@@ -115,7 +115,7 @@ q("phenytoin","What is the therapeutic range for phenytoin?",
  ["*10–20 mcg/mL","0.5–2 ng/mL || Digoxin.","50–100 mcg/mL || Too high.","1–5 mcg/mL || Too low."],
  "A narrow range; over 30 can be toxic.")
 q("phenytoin","A phenytoin level is 28 mcg/mL. What should the nurse do?",
- ["*Hold the dose and notify the provider; it's above the therapeutic range","Give it; it's therapeutic || Range is 10–20.","Give an extra dose || Too high.","Recheck next month || Act now."],
+ ["*Notify the provider; it's above the therapeutic range","Give an extra dose || Too high.","No action; it's therapeutic || Range is 10–20.","Recheck next month || Act now."],
  "Phenytoin has a narrow therapeutic range.")
 q("phenytoin","A phenytoin level is 7 mcg/mL. How is this interpreted?",
  ["*Below the therapeutic range (10–20)","Therapeutic || Too low.","Toxic || Too low.","Normal for IV || Same range."],
