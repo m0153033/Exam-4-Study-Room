@@ -17,6 +17,7 @@ CONCEPTS = {
  "which":"Which code to call: deteriorating vs arrest (FOCUS)",
  "which2":"Which code to call: visitors, staff & other codes (FOCUS)",
 }
+# VERSION 2 (Nov 8): every question re-worded with new scenarios/distractors.
 # Classmate update (Nov 3): know which code to call from a patient scenario.
 HI = ["three","which","which2","rrttrig","cbwhen","comm","aha","cbsteps"]
 
@@ -24,253 +25,258 @@ SATA = "Select all that apply."
 Q = []
 def q(c, stem, opts, r): Q.append((c, stem, opts, r))
 
+RRT="Call the Rapid Response Team"; CB="Call a Code Blue and start CPR"; ERT_="Call the Emergency Response Team"; NONE="Document it and recheck later || This change needs a team called now."
+
 # ---------- RRT vs Code Blue vs ERT ----------
-q("three","A patient suddenly collapses and is unresponsive with no pulse. What is the nurse's FIRST action?",
- ["Call a Rapid Response Team || The patient is in arrest; that's a Code Blue.","*Start CPR and call a Code Blue",
-  "Move the patient to a stretcher || Delays CPR.","Give oxygen by nasal cannula || Not enough for arrest."],
- "From the professor's quiz: immediate CPR and activating Code Blue are critical for cardiac arrest.")
-q("three","A nurse notices a patient becoming increasingly confused and disoriented over the past hour. What is the best action?",
- ["*Call the Rapid Response Team","Call a Code Blue || The patient isn't in arrest.","Give 2 L by nasal cannula only || Doesn't address the deterioration.","Document and continue routine monitoring || A change needs action."],
- "Acute mental status changes can be early signs of deterioration; immediate intervention matters.")
-q("three","Which vital sign finding would MOST likely trigger a Code Blue?",
- ["BP 90/60 mmHg || May warrant assessment, not a code.","HR 120 bpm || Not an arrest.","RR 24 breaths/min || Not an arrest.","*The patient is apneic and pulseless"],
- "Absence of breathing and pulse indicates cardiac arrest.")
-q("three","Match each team to its situation. Which pairs are correct? "+SATA,
- ["*Rapid Response Team: an inpatient showing early signs of deterioration","*Code Blue: cardiac or respiratory arrest","*Emergency Response Team: a visitor or staff member who needs medical help",
-  "Emergency Response Team: an inpatient in cardiac arrest || That's a Code Blue.","Code Blue: a visitor who feels faint || That's an ERT call."],
- "RRT prevents the arrest; Code Blue treats it; ERT covers non-patient medical emergencies.")
-q("three","A patient on the unit is breathing and has a pulse, but is suddenly hard to arouse. Which team?",
- ["*Rapid Response Team","Code Blue || There's still a pulse and breathing.","Emergency Response Team || That's for visitors and staff.","None; reassess in an hour || Sudden unresponsiveness is a trigger."],
- "Sudden unresponsiveness is an RRT trigger. If breathing or pulse stops, it becomes a Code Blue.")
+q("three","Which statement correctly matches each team?",
+ ["*RRT: an inpatient getting worse · Code Blue: an inpatient in arrest · ERT: a visitor or staff member who needs help","RRT: arrest · Code Blue: getting worse || Reversed.",
+  "ERT: inpatients in arrest || That's Code Blue.","Code Blue: visitors who faint || That's ERT."],
+ "RRT prevents the arrest; Code Blue treats it; ERT covers non-patients.")
+q("three","A patient was talking a minute ago and is now limp, not breathing and has no carotid pulse. What should the nurse do first?",
+ ["*"+CB,RRT+" || The patient is in arrest.","Put on oxygen and get vitals || Delays CPR.","Move the patient to the stretcher || Delays CPR."],
+ "Immediate CPR and a Code Blue are critical in arrest.")
+q("three","Over the last hour a patient has become more and more confused. What is the best action?",
+ ["*"+RRT,CB+" || Not in arrest.","Put on 2 L of oxygen only || Doesn't address the change.","Keep routine monitoring || A change needs action."],
+ "New mental status changes are early warning signs.")
+q("three","Which finding means a Code Blue, not a Rapid Response?",
+ ["*No breathing and no pulse","BP 88/58 || RRT.","HR 136 || RRT.","RR 30 || RRT."],
+ "Code Blue = no pulse and/or not breathing.")
+q("three","A patient is breathing and has a pulse but is suddenly very hard to wake. Which team?",
+ ["*The Rapid Response Team","Code Blue || Still breathing with a pulse.","ERT || For non-patients.","No team; check in an hour || Sudden change is a trigger."],
+ "If the breathing or pulse stops, it becomes a Code Blue.")
+q("three","Which pairs of team and situation are correct? "+SATA,
+ ["*RRT: an inpatient with early signs of decline","*Code Blue: cardiac or respiratory arrest","*ERT: a visitor or staff member needing medical help","ERT: an inpatient in arrest || Code Blue.","Code Blue: a dizzy visitor || ERT."],
+ "Pick the team by WHO it is and WHETHER they have a pulse and are breathing.")
+
+# ---------- which code to call (FOCUS) ----------
+q("which","A patient's heart rate is 36 and they feel lightheaded, but they're awake with a pulse. What should the nurse do?",
+ ["*"+RRT,CB+" || Has a pulse and is awake.",ERT_+" || For non-patients.",NONE],
+ "RRT trigger: HR under 40 or over 130.")
+q("which","A patient's heart rate is 142 and they look anxious. They're breathing and have a pulse. What should the nurse do?",
+ ["*"+RRT,CB+" || Not in arrest.",ERT_+" || For non-patients.",NONE],
+ "HR over 130 is an RRT trigger.")
+q("which","A post-op patient's O2 sat is 85% on 3 L of oxygen and RR is 30. They're awake. What should the nurse do?",
+ ["*"+RRT,CB+" || Breathing with a pulse.",ERT_+" || For non-patients.",NONE],
+ "O2 sat under 90% despite oxygen and RR over 28 are RRT triggers.")
+q("which","A patient's respiratory rate drops to 6 after an opioid dose. They have a pulse. Which team?",
+ ["*"+RRT,CB+" || Still breathing with a pulse.",ERT_+" || For non-patients.",NONE],
+ "RR under 8 is an RRT trigger.")
+q("which","A patient's systolic BP is 82 and they're newly confused. What should the nurse do?",
+ ["*"+RRT,CB+" || Not in arrest.",ERT_+" || For non-patients.",NONE],
+ "SBP under 90 and new confusion are RRT triggers.")
+q("which","A patient suddenly has slurred speech and a facial droop. They're breathing with a pulse. Which team?",
+ ["*The Rapid Response Team","Code Blue || Not in arrest.","ERT || For non-patients.","No team; reassess later || A sudden neuro change."],
+ "Sudden slurred speech can mean a stroke.")
+q("which","A patient on the medical floor starts having a seizure. They're breathing and have a pulse. Which team?",
+ ["*The Rapid Response Team","Code Blue || Not in arrest.","ERT || For visitors and staff.","None || A new seizure is a trigger."],
+ "New seizure activity is an RRT trigger.")
+q("which","A patient has chest pain that nitroglycerin isn't relieving. They're awake with a pulse. Which team?",
+ ["*The Rapid Response Team","Code Blue || Not in arrest.","ERT || For non-patients.","Wait for the morning rounds || Act now."],
+ "Unrelieved chest pain is an RRT trigger.")
+q("which","The nurse finds a patient unresponsive with only occasional gasping breaths and no pulse. What should the nurse do?",
+ ["*"+CB,RRT+" || In arrest.",ERT_+" || For non-patients.","Count the respirations first || Gasping is not breathing; start CPR."],
+ "Agonal gasps don't count as breathing.")
+q("which","All vital signs are normal, but the nurse is truly worried the patient is getting worse. What can the nurse do?",
+ ["*Call the Rapid Response Team based on concern","Wait until a vital sign is abnormal || Concern is enough.","Call a Code Blue || Not in arrest.","Let the family decide || The nurse decides."],
+ "Staff concern is a valid RRT trigger.")
+q("which","The RRT is on the way for a patient with chest pain. The patient becomes unresponsive with no pulse. What now?",
+ ["*Start CPR and call a Code Blue","Wait for the RRT || It's now an arrest.","Give oxygen and recheck || Delays CPR.","Call the ERT || For non-patients."],
+ "Once there's no pulse, it's a Code Blue.")
+q("which","A patient's urine output suddenly drops to almost nothing and the patient looks pale. Which team?",
+ ["*The Rapid Response Team","Code Blue || Not in arrest.","ERT || For non-patients.","No team; recheck tomorrow || A sudden change is a trigger."],
+ "A sudden change in urine output is an RRT trigger.")
+q("which","A patient's dressing is soaked with bright red blood and the BP is falling. They're awake. Which team?",
+ ["*The Rapid Response Team","Code Blue || Not in arrest.","ERT || For non-patients.","Just reinforce the dressing || Needs a team."],
+ "Acute bleeding is an RRT trigger.")
+q("which2","A visitor collapses in the hospital cafeteria. Which team is called?",
+ ["*The Emergency Response Team (ERT)","Rapid Response Team || For inpatients.","Code Red || Fire.","Code Black || Bomb threat."],
+ "ERT: visitors, staff and others who faint, seize, fall or collapse.")
+q("which2","A nurse on break in the staff lounge has a seizure. Which team is called?",
+ ["*The Emergency Response Team (ERT)","Rapid Response Team || For inpatients.","Code Blue only || Not unless in arrest.","No team; let them rest || Needs help."],
+ "Call the emergency number and keep the area safe.")
+q("which2","A visitor slips and falls in the parking garage and seems confused. Which team is called?",
+ ["*The Emergency Response Team (ERT)","Rapid Response Team || For inpatients.","Code Red || Fire.","Security only || A medical team is needed."],
+ "The ERT decides whether the person goes to the ED.")
+q("which2","Which situation and call are matched correctly?",
+ ["*Inpatient with HR 135 and new confusion: Rapid Response","Visitor fainting in the lobby: Code Blue || ERT.","Inpatient with no pulse: Rapid Response || Code Blue.","Staff member falling in the hallway: Rapid Response || ERT."],
+ "RRT = inpatient getting worse; Code Blue = arrest; ERT = non-patient.")
+q("which2","The nurse sees smoke coming from a patient's room. Which code is called?",
+ ["*Code Red","Code Blue || Arrest.","Code Black || Bomb threat.","Rapid Response || Patient decline."],
+ "Code Red = fire.")
+q("which2","Someone calls the front desk saying there's a bomb in the hospital. Which code is called?",
+ ["*Code Black","Code Red || Fire.","Code Blue || Arrest.","ERT || Medical help."],
+ "Code colors vary by hospital; follow your facility's policy.")
+q("which2","Which pairs of code and meaning are correct? "+SATA,
+ ["*Code Blue: cardiac or respiratory arrest","*Code Red: fire","*Code Black: bomb threat","Code Red: bomb threat || Code Black.","Code Black: fire || Code Red."],
+ "Always follow your facility's chart.")
 
 # ---------- RRT purpose ----------
-q("rrtwhy","What is the primary purpose of a Rapid Response Team?",
- ["*To assess and intervene early when a patient shows signs of deterioration, preventing cardiac or respiratory arrest",
-  "To run a code when a patient has no pulse || That's Code Blue.","To help visitors who fall || That's ERT.","To replace the primary nurse || The primary nurse stays and continues care."],
- "It brings critical care expertise to the bedside without delay and supports concerned bedside nurses.")
-q("rrtwhy","Who can call a Rapid Response Team?",
- ["Only the provider || Not per the lecture.","Only the charge nurse || Not per the lecture.","*Any staff member","Only the family || Not per the lecture."],
- "Many hospitals also allow families to call, but the professor's answer is 'any staff member.'")
-q("rrtwhy","Can a Rapid Response Team be activated even if the vital signs are normal?",
- ["*Yes; staff concern is a valid reason to call","No; vital signs must be abnormal || Not per the lecture.","Only if the provider agrees first || Not required.","Only at night || Not a rule."],
- "Many hospitals list 'staff concern' as a trigger; you don't need to wait for abnormal vitals.")
-q("rrtwhy","A patient has new-onset confusion. The blood glucose is 125 mg/dL. What should the nurse do?",
- ["Give orange juice || Glucose isn't low.","*Call the Rapid Response Team","Document and recheck in 4 hours || A sudden change needs action now.","Call a Code Blue || The patient isn't in arrest."],
- "The professor's example: new confusion with a normal glucose means something else is wrong. Call the RRT.")
-q("rrtwhy","Which goals does the Rapid Response Team serve? "+SATA,
- ["*Prevent cardiac arrest","*Prevent ICU transfer or death","*Bring critical care expertise to the bedside without delay","*Support bedside nurses who are concerned about a patient"],
- "From the 'Purpose of the RRT' slide.")
+q("rrtwhy","What is the main goal of a Rapid Response Team?",
+ ["*Catch a patient getting worse early and act to prevent an arrest","Run the code when there's no pulse || Code Blue.","Help visitors who fall || ERT.","Take over the nurse's patient || The primary nurse stays."],
+ "Brings critical care expertise to the bedside fast.")
+q("rrtwhy","Who is allowed to call a Rapid Response?",
+ ["*Any staff member","Only the provider || Not per the lecture.","Only the charge nurse || Not per the lecture.","Only the family || Not per the lecture."],
+ "Many hospitals also let families call.")
+q("rrtwhy","A patient is suddenly confused. The glucose is 132 mg/dL. What should the nurse do?",
+ ["*Call the Rapid Response Team","Give juice || Glucose isn't low.","Recheck in 4 hours || Act now.","Call a Code Blue || Not in arrest."],
+ "New confusion with normal glucose means something else is wrong.")
+q("rrtwhy","Which are goals of a Rapid Response Team? "+SATA,
+ ["*Prevent cardiac arrest","*Prevent ICU transfer or death","*Bring critical care help to the bedside fast","*Support nurses who are worried about a patient"],
+ "From the purpose slide.")
 
 # ---------- RRT triggers ----------
-q("rrttrig","Which vital signs are Rapid Response triggers, per the lecture? "+SATA,
- ["*Heart rate under 40 or over 130 bpm","*Respiratory rate under 8 or over 28/min","*Systolic BP under 90 mmHg","*Oxygen saturation under 90% despite oxygen",
-  "Heart rate of 98 bpm || Normal.","Respiratory rate of 18/min || Normal."],
- "Acute temperature changes, especially with sepsis, are also triggers.")
-q("rrttrig","A nurse is assessing a post-op patient. Which findings warrant calling the Rapid Response Team? "+SATA,
- ["*Sudden onset of slurred speech","*Oxygen saturation of 86% on room air","*Heart rate of 44 bpm with dizziness","*New onset of confusion",
-  "Blood pressure of 96/60 mmHg || Low-normal BP alone doesn't usually trigger RRT.","Temperature of 38.5°C (101.3°F) || Mild fever alone doesn't usually trigger RRT."],
- "Professor's answer: A, C, D, E. Slurred speech = possible stroke; O2 under 90%; bradycardia with symptoms; new confusion.")
-q("rrttrig","Which neurological changes are Rapid Response triggers? "+SATA,
- ["*Sudden change in level of consciousness or confusion","*New seizure activity","*Sudden unresponsiveness",
-  "Chronic dementia that's unchanged || Not a sudden change."],
- "The key word is sudden or new.")
-q("rrttrig","Which breathing or airway findings are Rapid Response triggers? "+SATA,
- ["*Labored breathing or use of accessory muscles","*Increased work of breathing or cyanosis","*Unable to speak in full sentences","*New stridor or wheezing"],
- "From the 'Breathing or airway concerns' list.")
-q("rrttrig","Which other findings on the slide trigger a Rapid Response? "+SATA,
- ["*Acute bleeding or signs of internal hemorrhage","*Chest pain unrelieved by interventions","*Acute temperature change, especially with sepsis","*A sudden change in urine output",
-  "Pain relieved by the ordered medication || Not a trigger."],
- "Triggers include sudden changes in HR, BP, RR, oxygen saturation, level of consciousness and urine output.")
+q("rrttrig","Which vital signs meet Rapid Response criteria? "+SATA,
+ ["*HR 38","*RR 30","*Systolic BP 86","*O2 sat 87% on oxygen","HR 96 || Normal.","RR 16 || Normal."],
+ "HR under 40 or over 130; RR under 8 or over 28; SBP under 90; O2 sat under 90% despite oxygen.")
+q("rrttrig","A post-op patient is being assessed. Which findings should prompt a Rapid Response? "+SATA,
+ ["*Sudden slurred speech","*O2 sat of 86% on room air","*HR of 42 with dizziness","*New confusion","BP 98/62 alone || Not usually a trigger.","Temperature 100.4°F alone || Not usually a trigger."],
+ "Slurred speech may mean stroke.")
+q("rrttrig","Which neurological changes trigger a Rapid Response? "+SATA,
+ ["*Sudden confusion","*A new seizure","*Suddenly won't respond","Long-standing dementia that hasn't changed || Not sudden."],
+ "Key words: sudden or new.")
+q("rrttrig","Which breathing findings trigger a Rapid Response? "+SATA,
+ ["*Using neck muscles to breathe","*Bluish lips","*Can't finish a sentence","*New stridor"],
+ "Also increased work of breathing or new wheezing.")
+q("rrttrig","Which other findings trigger a Rapid Response? "+SATA,
+ ["*Signs of internal bleeding","*Chest pain that won't go away","*A sudden temperature change with possible sepsis","*A sudden drop in urine output","Pain controlled by the ordered medicine || Not a trigger."],
+ "Look for sudden changes.")
 
 # ---------- RRT roles ----------
-q("rrtroles","During a Rapid Response, what is the primary nurse's role?",
- ["Leave to care for other patients || Stays at the bedside.","*Give an SBAR report and continue care at the bedside",
-  "Manage the airway and ventilation || The respiratory therapist does this.","Write new medical orders || The provider does this."],
+q("rrtroles","The Rapid Response Team arrives. What does the patient's primary nurse do?",
+ ["*Give an SBAR report and stay to help","Leave for other patients || Stays.","Manage the airway || Respiratory therapist.","Write orders || The provider."],
  "The primary nurse knows the patient best.")
-q("rrtroles","Match each RRT member to their responsibility. Which pairs are correct? "+SATA,
- ["*Critical care nurse (RRT RN): assesses the patient and starts interventions","*Respiratory therapist: manages the airway and gives oxygen or ventilation","*Provider (physician, NP or PA): gives medical orders and evaluates the condition","*Charge nurse: oversees and coordinates unit support or transfers",
-  "Respiratory therapist: writes medication orders || The provider does this."],
+q("rrtroles","Which RRT members and jobs are matched correctly? "+SATA,
+ ["*RRT nurse: assesses and starts interventions","*Respiratory therapist: airway and oxygen","*Provider: gives orders and evaluates","*Charge nurse: coordinates support and transfers","Respiratory therapist: writes medication orders || The provider."],
  "From the RRT roles slide.")
-q("rrtroles","What may happen after the Rapid Response Team assesses a patient? "+SATA,
- ["*The patient stabilizes on the floor","*The patient is transferred to a higher level of care (ICU)","*The condition worsens into a Code Blue",
-  "The RRT must leave within 1 minute || Not part of how the RRT works."],
- "The team arrives within minutes, and assessment and interventions (labs, fluids, oxygen, medications) begin immediately.")
-q("rrtroles","How is a Rapid Response Team activated?",
- ["*By calling a specific number or pressing a button","By sending an email to the unit || Too slow.","By waiting for the provider's rounds || Too slow.","Only by the family || Any staff member can call."],
- "Team members arrive within minutes.")
+q("rrtroles","What can happen after a Rapid Response assessment? "+SATA,
+ ["*The patient stabilizes and stays on the unit","*The patient moves to the ICU","*The patient gets worse and a Code Blue is called","The team must leave within 1 minute || Not a rule."],
+ "Labs, fluids, oxygen and meds can start right away.")
+q("rrtroles","How is a Rapid Response called?",
+ ["*Dial the specific number or press the button","Send an email || Too slow.","Wait for rounds || Too slow.","Only the family can call || Any staff member can."],
+ "The team arrives within minutes.")
 
 # ---------- Code Blue when ----------
-q("cbwhen","When is a Code Blue called? "+SATA,
- ["*Unresponsive patient","*No pulse","*No breathing or abnormal breathing (agonal gasps)","*Sudden collapse",
-  "Heart rate of 132 with a pulse and normal breathing || A Rapid Response trigger, not a code."],
- "In simple terms: Code Blue = a patient is not breathing and/or has no pulse.")
-q("cbwhen","A patient is making occasional gasping breaths and has no pulse. What does the nurse do?",
- ["Wait; the patient is still breathing || Agonal gasps are not normal breathing.","*Call a Code Blue and start CPR",
-  "Call the Rapid Response Team || The patient is in arrest.","Give oxygen and recheck in 5 minutes || Delays CPR."],
- "No pulse and no breathing = initiate Code Blue immediately.")
+q("cbwhen","Which situations call for a Code Blue? "+SATA,
+ ["*Unresponsive","*No pulse","*Not breathing or only gasping","*Sudden collapse","HR 134 with a pulse and normal breathing || RRT."],
+ "Code Blue = not breathing and/or no pulse.")
+q("cbwhen","A patient has no pulse but is taking occasional gasping breaths. What does the nurse do?",
+ ["*Call a Code Blue and start CPR","Wait, since they're breathing || Gasping isn't breathing.","Call the RRT || In arrest.","Give oxygen and recheck || Delays CPR."],
+ "No pulse = Code Blue now.")
 
-# ---------- steps ----------
-q("cbsteps","What is the FIRST step when a nurse finds a patient who may be in arrest?",
- ["*Recognize the emergency: check responsiveness (tap and shout) and assess ABCs","Get the crash cart || Comes after recognizing and calling.","Assign team roles || Step 5.","Call time of death || Not a nursing step."],
- "Steps: 1 Recognize · 2 Call Code Blue · 3 Begin BLS · 4 Get equipment · 5 Assign roles · 6 ROSC or termination.")
-q("cbsteps","How should a nurse announce a Code Blue?",
- ["*State the location clearly, such as \"Code Blue, Room 204, East Wing\"","Just say \"Help!\" || Doesn't give the location.","Text the provider || Too slow.","Wait for the charge nurse to call || Activate immediately."],
- "Press the Code Blue button or pull the emergency cord, or call the emergency number (e.g., 2222).")
-q("cbsteps","A nurse is alone when a patient arrests. What should the nurse do?",
- ["Leave to find help, then start CPR || Delays compressions.","*Start compressions while calling for help, or delegate someone to call",
-  "Wait for the code team before touching the patient || Delays CPR.","Get the crash cart first || Compressions come first."],
- "Start chest compressions immediately.")
-q("cbsteps","Which equipment is brought for a Code Blue? "+SATA,
- ["*Crash cart","*Defibrillator or AED","*Suction","*Oxygen setup"],
- "If you're not doing CPR, help by retrieving or setting up this equipment.")
-q("cbsteps","Return of spontaneous circulation (ROSC) is achieved. What happens next? "+SATA,
- ["*Support breathing and monitor vitals","*Transfer to the ICU","*Continue post-resuscitation care",
-  "Stop monitoring because the code is over || Post-resuscitation care continues."],
- "If there's no ROSC after extended effort, the team may terminate the code; the MD calls time of death.")
-q("cbsteps","Who calls the time of death when a code is terminated?",
- ["The primary nurse || Not per the lecture.","The recorder || Documents, doesn't call it.","*The MD","The family || Not per the lecture."],
- "The team may terminate based on clinical judgment and protocols.")
+# ---------- Code Blue steps ----------
+q("cbsteps","A nurse walks in and finds a patient slumped over. What is the FIRST step?",
+ ["*Check responsiveness (tap and shout) and the ABCs","Grab the crash cart || After recognizing and calling.","Assign roles || Step 5.","Call the family || Not first."],
+ "Recognize · call · start BLS · get equipment · assign roles · ROSC or termination.")
+q("cbsteps","Which is the correct way to call a Code Blue?",
+ ["*Say the location clearly, like 'Code Blue, Room 312, North Wing'","Yell 'Help!' only || No location.","Text the provider || Too slow.","Wait for the charge nurse || Call right away."],
+ "Press the code button, pull the cord or dial the emergency number.")
+q("cbsteps","A nurse is alone when a patient goes into arrest. What should the nurse do?",
+ ["*Start compressions and call out for help (or have someone call)","Leave to find help first || Delays CPR.","Wait for the code team || Delays CPR.","Get the crash cart first || Compressions first."],
+ "Start compressions immediately.")
+q("cbsteps","A nurse isn't doing CPR during a code. How can they help? "+SATA,
+ ["*Bring the crash cart","*Bring the defibrillator or AED","*Set up suction","*Set up oxygen"],
+ "Get the equipment ready.")
+q("cbsteps","The patient has a pulse again (ROSC). What happens next? "+SATA,
+ ["*Support breathing and watch vitals","*Transfer to the ICU","*Continue post-resuscitation care","Stop monitoring; the code is over || Care continues."],
+ "If there's no ROSC after a long effort, the team may stop.")
+q("cbsteps","Who calls the time of death when a code is stopped?",
+ ["*The MD","The primary nurse || Not per the lecture.","The recorder || Documents only.","The family || Not per the lecture."],
+ "The team decides based on judgment and protocol.")
 
 # ---------- CPR quality ----------
-q("cpr","What compression rate does the lecture teach?",
- ["60–80 per minute || Too slow.","*100–120 per minute","130–150 per minute || Too fast.","30 per minute || Too slow."],
- "Depth 2 inches (5 cm), allowing full chest recoil.")
-q("cpr","Which compression technique is correct for adult CPR? "+SATA,
- ["*Depth of 2 inches (5 cm)","*Allow full chest recoil","*Rate of 100–120 per minute",
-  "Depth of 1 inch || Too shallow.","Lean on the chest between compressions || Prevents recoil."],
- "From Step 3: Begin Basic Life Support.")
-q("cpr","About how often should the compressor switch to keep compressions high quality?",
- ["Every 30 seconds || Too often.","*Every 2 minutes (5 cycles)","Every 10 minutes || Too long; quality drops.","Only when the code ends || Fatigue lowers quality."],
- "The AHA chart: the compressor rotates with the AED/monitor person every 5 cycles.")
+q("cpr","How fast should chest compressions be?",
+ ["*100–120 per minute","60–80 per minute || Too slow.","140–160 per minute || Too fast.","30 per minute || Too slow."],
+ "Depth 2 inches with full recoil.")
+q("cpr","Which are signs of high-quality adult compressions? "+SATA,
+ ["*2 inches (5 cm) deep","*Full chest recoil","*100–120 per minute","1 inch deep || Too shallow.","Leaning on the chest between compressions || Blocks recoil."],
+ "From the BLS step.")
+q("cpr","How often should compressors switch?",
+ ["*About every 2 minutes (5 cycles)","Every 30 seconds || Too often.","Every 10 minutes || Quality drops.","Never || Fatigue lowers quality."],
+ "The compressor switches with the AED/monitor person.")
 
 # ---------- Code Blue roles ----------
-q("cbroles","Per the lecture's Code Blue team table, what does the primary RN do?",
- ["Directs the code || The provider does this.","*Performs chest compressions (CPR)","Administers ACLS medications || The ICU RN does this.","Performs intubation || The anesthesiologist does this."],
- "The primary RN also knows the patient's history and events leading up to the arrest.")
-q("cbroles","Match each Code Blue team member to their role, per the lecture. Which pairs are correct? "+SATA,
- ["*Provider (MD/NP/PA): directs the code and makes medical decisions","*ICU RN: ACLS-certified, administers certain medications","*Respiratory therapist: maintains the airway and gives rescue breaths","*Anesthesiologist: possible intubation","*Security: crowd control"],
- "The charge RN aids in assisting.")
-q("cbroles","What does the code recorder do?",
- ["Gives compressions || That's the compressor.","*Documents times of medications, compressions, shocks and rhythm changes",
-  "Inserts the IV || That's the medication role.","Leads the code || That's the team leader."],
- "The recorder also communicates key information to the leader, such as \"Epinephrine given at 14:05.\"")
-q("cbroles","Which role directs the code, assigns roles and interprets cardiac rhythms?",
- ["Recorder || Documents.","*Code (team) leader","Airway || Manages ventilation.","Compressor || Performs CPR."],
- "The leader decides when to shock or give medications.")
-q("cbroles","Which medications does the medication role give during a code, per the lecture?",
- ["*ACLS medications such as epinephrine and amiodarone","Insulin and potassium || Not listed.","Antibiotics || Not listed.","Blood products || Not listed."],
- "The medication role also manages IV access.")
+q("cbroles","According to the lecture's Code Blue table, what is the primary RN's job?",
+ ["*Chest compressions","Directing the code || The provider.","Giving ACLS medications || The ICU RN.","Intubating || The anesthesiologist."],
+ "The primary RN also knows what led up to the arrest.")
+q("cbroles","Which Code Blue members and roles are matched correctly? "+SATA,
+ ["*Provider: runs the code and makes medical decisions","*ICU RN: gives certain ACLS medications","*Respiratory therapist: airway and rescue breaths","*Anesthesiologist: may intubate","*Security: crowd control"],
+ "The charge RN helps assist.")
+q("cbroles","Who documents the times of medications, shocks and rhythm changes?",
+ ["*The recorder","The compressor || Does CPR.","The medication nurse || Gives meds.","The team leader || Directs."],
+ "The recorder also tells the leader key times.")
+q("cbroles","Which role runs the code, assigns jobs and reads the heart rhythm?",
+ ["*The team leader","The recorder || Documents.","The airway role || Breathing.","The compressor || CPR."],
+ "The leader decides when to shock or give meds.")
+q("cbroles","Which medications does the medication role give during a code?",
+ ["*ACLS drugs such as epinephrine and amiodarone","Insulin and potassium || Not listed.","Antibiotics || Not listed.","Blood || Not listed."],
+ "They also manage IV access.")
 
 # ---------- AHA six-person ----------
-q("aha","In the AHA six-person CPR team, which positions form the resuscitation triangle? "+SATA,
- ["*Position 1: compressor","*Position 2: AED/monitor/defibrillator","*Position 3: airway",
-  "Position 4: team leader || A leadership role.","Position 5: recorder || A leadership role."],
- "Leadership roles: team leader (4), code recorder (5), IV/IO/medications (6).")
+q("aha","Which three positions make up the AHA 'resuscitation triangle'? "+SATA,
+ ["*Compressor","*AED/monitor/defibrillator","*Airway","Team leader || Leadership.","Recorder || Leadership."],
+ "Leadership: team leader, recorder, IV/IO/medications.")
 q("aha","Which statements about the AHA team leader are correct? "+SATA,
- ["*Every resuscitation team must have a defined leader","*Assigns roles to team members","*Makes treatment decisions","*Provides feedback to the team as needed",
-  "Performs compressions the entire time || The leader directs."],
- "From the AHA Positions for Six-Person High-Quality CPR Teams chart.")
-q("aha","Where should the monitor be placed, per the AHA chart?",
- ["*Where the entire team can see it","Behind the team leader || Should be visible to all.","Out of the room || Not per the chart.","Facing the family || Not per the chart."],
- "Position 2 brings and operates the AED/monitor/defibrillator.")
-q("aha","What does position 5, the code recorder, track per the AHA chart? "+SATA,
- ["*Times of interventions and medications","*Frequency and duration of interruptions in compressions","*Communicates these to the team leader",
-  "Opens the airway || Position 3."],
- "Recording keeps the team on time and avoids duplication.")
-q("aha","Which statement reflects the AHA chart's rule about the resuscitation triangle?",
- ["*The team owns the code; no member leaves the triangle except to protect their safety",
-  "Members leave whenever another nurse arrives || Not the rule.","The compressor never rotates || Rotates every 5 cycles.","Only the leader stays || The whole team stays."],
- "Position 6 (IV/IO/medications) is an ACLS provider role.")
+ ["*Every team needs a clear leader","*Assigns roles","*Makes treatment decisions","*Gives feedback","Does compressions the whole time || Directs."],
+ "From the AHA six-person chart.")
+q("aha","Where does the AHA chart say to place the monitor?",
+ ["*Where the whole team can see it","Behind the leader || Visible to all.","Outside the room || Not per the chart.","Facing the family || Not per the chart."],
+ "Position 2 runs the AED/monitor.")
+q("aha","What does the recorder (position 5) track? "+SATA,
+ ["*Times of interventions and medications","*How often and how long compressions are paused","*Reports these to the leader","Opens the airway || Position 3."],
+ "Keeps the team on time.")
+q("aha","What is the AHA rule about leaving the resuscitation triangle?",
+ ["*No one leaves except for their own safety","Anyone can leave when help arrives || Not the rule.","The compressor never switches || Switches every 5 cycles.","Only the leader stays || The whole team stays."],
+ "The team owns the code.")
 
 # ---------- communication ----------
-q("comm","Which communication tool should be used when giving a report to the Rapid Response Team?",
- ["*SBAR","Teach-back || For patient teaching.","Closed-loop only || Used during codes for orders.","CHOLY || A cholecystitis mnemonic."],
- "SBAR: Situation, Background, Assessment, Recommendation.")
-q("comm","The team leader says, \"Give 1 mg epinephrine IV.\" What is the correct closed-loop response?",
- ["\"Okay.\" || Vague; avoid it.","*\"1 mg epinephrine IV, giving now,\" then confirm when it's given",
-  "Give it without saying anything || No reply is unsafe.","\"Got it, I'll get to it.\" || Doesn't repeat the order."],
- "Closed-loop communication ensures messages are heard, understood and acted on. The leader then says \"Thank you.\"")
-q("comm","Which statements about communication during a Code Blue are correct? "+SATA,
- ["*Each member identifies themselves and their role on arrival","*The medication nurse reads back orders to reduce errors","*The recorder communicates key information to the leader","*Avoid vague responses like \"okay\" or no reply"],
- "Examples: \"I'm the primary nurse,\" \"I'll take over compressions,\" \"I'm recording.\"")
-q("comm","Match each SBAR part to its content. Which pairs are correct? "+SATA,
- ["*Situation: what's happening right now","*Background: relevant history and recent changes","*Assessment: current findings and vital signs","*Recommendation: what you need done next",
-  "Background: what you want the provider to do || That's Recommendation."],
- "SBAR is a structured handoff.")
-q("comm","Why does each Code Blue team member need a focused role?",
- ["*It avoids confusion and overlap, so care is coordinated and timely","It lets everyone leave early || Not the reason.","It replaces closed-loop communication || They work together.","It means no leader is needed || Every team needs a leader."],
- "Having the right people, trained, in the right roles saves lives.")
+q("comm","A nurse calls the Rapid Response Team. Which tool should they use to give report?",
+ ["*SBAR","Teach-back || Patient teaching.","CHOLY || Cholecystitis.","Closed-loop only || For orders during a code."],
+ "Situation, Background, Assessment, Recommendation.")
+q("comm","The leader says, 'Give 300 mg amiodarone IV.' Which reply is closed-loop communication?",
+ ["*'300 mg amiodarone IV, giving now,' then confirming when it's given","'Okay.' || Too vague.","No reply, just give it || Unsafe.","'Sure, in a minute.' || Doesn't repeat the order."],
+ "The leader then says, 'Thank you.'")
+q("comm","Which communication practices are correct during a Code Blue? "+SATA,
+ ["*Say your name and role when you arrive","*Read back medication orders","*The recorder reports key times to the leader","*Avoid vague replies like 'okay'"],
+ "Example: 'I'm the primary nurse,' 'I'm recording.'")
+q("comm","Which SBAR parts are matched correctly? "+SATA,
+ ["*Situation: what's happening now","*Background: history and recent changes","*Assessment: findings and vital signs","*Recommendation: what you need done","Background: what you want done || Recommendation."],
+ "A structured handoff.")
+q("comm","A nurse calls the provider: 'Mr. Lee in 214 is short of breath with an O2 sat of 86%.' Which part of SBAR is this?",
+ ["*Situation","Background || History.","Assessment || Detailed findings.","Recommendation || What you need."],
+ "Situation = what's happening right now.")
+q("comm","Why does each Code Blue member need one clear role?",
+ ["*To avoid confusion and overlap so care is fast and coordinated","So people can leave early || Not the reason.","To skip closed-loop communication || They work together.","So no leader is needed || A leader is needed."],
+ "The right people in the right roles saves lives.")
 
 # ---------- debrief ----------
-q("debrief","What is the purpose of debriefing after a Code Blue?",
- ["*To identify what went well and what could be improved","To decide who is to blame || Debriefing isn't about blame.","To complete billing || Not the purpose.","To notify the family || Not the purpose."],
- "Discuss effective actions, delays or miscommunication, equipment issues, and whether protocols were followed.")
-q("debrief","Who should participate in a code debrief? "+SATA,
- ["*Nurses and physicians","*Respiratory therapists and pharmacists","*PCTs","*Anyone who played a significant role or witnessed the event"],
- "All team members involved in the response.")
+q("debrief","What is the purpose of a debrief after a code?",
+ ["*Find what went well and what to improve","Decide who's to blame || Not about blame.","Do billing || Not the purpose.","Call the family || Not the purpose."],
+ "Discuss delays, miscommunication and equipment problems.")
+q("debrief","Who should be part of a code debrief? "+SATA,
+ ["*Nurses and physicians","*Respiratory therapists and pharmacists","*PCTs","*Anyone who played a big role or saw the event"],
+ "Everyone involved.")
 q("debrief","Which are goals of a debrief? "+SATA,
- ["*Highlight successful interventions and coordination","*Identify delays, miscommunication or equipment problems","*Promote team learning and patient safety","*Acknowledge the emotional toll and offer support resources"],
- "Debriefing also includes suggestions for future improvement.")
+ ["*Recognize what worked","*Find delays or equipment problems","*Improve team learning and safety","*Acknowledge the emotional toll and offer support"],
+ "Also suggest future improvements.")
 
 # ---------- ERT ----------
-q("ert","A visitor faints in the main lobby. Which team is called?",
- ["Rapid Response Team || For inpatients showing deterioration.","Code Blue || For patients in arrest.","*Emergency Response Team (ERT)","No team; call the visitor's family || The visitor needs help."],
- "An ERT is called for a visitor or staff member who needs medical help (a non-patient medical emergency).")
-q("ert","When can an ERT be called for a staff member or visitor? "+SATA,
- ["*Faints","*Has a seizure","*Falls or appears ill","*Becomes short of breath"],
- "Call the designated emergency number and ensure safety while awaiting help.")
-q("ert","What happens when an ERT is called, per the lecture?",
- ["*The ER team is notified, intervenes, and decides whether the person needs to go to the ED","The person is admitted to the ICU || Not automatically.",
-  "The person is sent home || Not the process.","The Code Blue team always comes || Only if the person is in arrest."],
- "Example call: \"Medical emergency, adult visitor unresponsive on 3rd floor hallway.\"")
+q("ert","A visitor in the waiting room suddenly faints. Which team responds?",
+ ["*The Emergency Response Team","The Rapid Response Team || Inpatients.","Code Blue || Unless in arrest.","No team || They need help."],
+ "ERT = non-patient medical emergencies.")
+q("ert","When can an ERT be called for a visitor or staff member? "+SATA,
+ ["*They faint","*They have a seizure","*They fall or look ill","*They become short of breath"],
+ "Call the emergency number and keep the area safe.")
+q("ert","What happens after an ERT is called?",
+ ["*The ER team comes, intervenes, and decides whether the person needs the ED","The person goes straight to the ICU || Not automatic.","The person is sent home || Not the process.","A Code Blue is always called || Only for arrest."],
+ "Example: 'Medical emergency, adult visitor unresponsive, 3rd floor hallway.'")
 
 # ---------- codes ----------
-q("codes","What does Code Red mean?",
- ["Cardiac arrest || That's Code Blue.","*Fire","Bomb threat || That's Code Black.","Evacuation || Varies by chart."],
- "Codes vary by hospital, so always follow your facility's protocols.")
-q("codes","What does Code Black mean?",
- ["Fire || Code Red.","*Bomb threat","Cardiac arrest || Code Blue.","Hazardous spill || Not Code Black."],
- "Both charts on the slide list Code Black as a bomb threat.")
-q("codes","Why do hospitals use emergency codes? "+SATA,
- ["*To communicate urgent situations clearly and quickly","*To prevent panic among patients and visitors",
-  "Because every hospital uses identical colors || Codes vary by hospital or region."],
- "Always follow your facility's protocols.")
-
-# ---------- which code to call (scenario focus) ----------
-RRT="Call the Rapid Response Team"; CB="Call a Code Blue and start CPR"; ERT_="Call the Emergency Response Team"; NONE="Document and keep monitoring || This change needs a team called now."
-q("which","A patient's heart rate drops to 38 bpm and the patient says they feel dizzy. The patient is awake and has a pulse. What should the nurse do?",
- ["*"+RRT,CB+" || The patient has a pulse and is responsive.",ERT_+" || ERT is for visitors and staff, not inpatients.",NONE],
- "RRT triggers: HR below 40 or above 130, RR below 8 or above 28, SBP below 90, O2 sat below 90% on oxygen.")
-q("which","A post-op patient's respiratory rate is 32 and O2 saturation is 87% on 4 L of oxygen. The patient is awake and talking. What should the nurse do?",
- ["*"+RRT,CB+" || Not in arrest; breathing with a pulse.",ERT_+" || For non-patients.",NONE],
- "RR above 28 and O2 sat below 90% on supplemental oxygen are both RRT triggers.")
-q("which","The nurse finds a patient unresponsive in bed. There is no pulse and only occasional gasping breaths. What should the nurse do?",
- ["*"+CB,RRT+" || The patient is in arrest.",ERT_+" || For non-patients.","Get a full set of vital signs first || Delays CPR."],
- "Gasping is not normal breathing. Unresponsive + not breathing normally + no pulse = Code Blue.")
-q("which","A patient on the medical floor has a new seizure. The patient is breathing and has a pulse. Which team does the nurse call?",
- ["*The Rapid Response Team","Code Blue || The patient has a pulse and is breathing.","The Emergency Response Team || That's for visitors and staff.","No team; give a snack || Not appropriate."],
- "Seizures, new confusion, chest pain and sudden breathing changes are RRT triggers.")
-q("which","A patient's blood pressure is 84/50 and the patient is newly confused. What should the nurse do?",
- ["*"+RRT,CB+" || The patient has a pulse and is breathing.",ERT_+" || For non-patients.",NONE],
- "SBP below 90 and new confusion are RRT triggers.")
-q("which","The vital signs are still within range, but the nurse has a strong feeling the patient is getting worse. What can the nurse do?",
- ["*Call the Rapid Response Team based on concern","Wait until a vital sign crosses a trigger || Concern alone is enough.","Call a Code Blue || Not in arrest.","Ask the patient's family to decide || The nurse decides."],
- "A nurse can activate RRT on serious concern even before vital-sign thresholds are met.")
-q("which","An inpatient with chest pain becomes unresponsive while the RRT is on the way. No pulse is felt. What should the nurse do now?",
- ["*Start CPR and call a Code Blue","Wait for the RRT to arrive || The patient is now in arrest.","Give oxygen and recheck in 5 minutes || Delays CPR.","Call the ERT || For non-patients."],
- "Once the patient is in arrest, it is a Code Blue.")
-q("which2","A visitor collapses in the hospital cafeteria. Which team is called?",
- ["*The Emergency Response Team (ERT)","Rapid Response Team || That's for deteriorating inpatients.","Code Red || That's fire.","Code Black || That's a bomb threat."],
- "ERT responds to visitors, staff or others outside routine inpatient care who faint, seize, fall or collapse.")
-q("which2","A staff member has a seizure in the hallway outside the break room. Which team is called?",
- ["*The Emergency Response Team (ERT)","The Rapid Response Team || For inpatients.","No team; let them rest || Needs emergency help.","Code Black || Bomb threat."],
- "Call the hospital emergency number, assess safety, give initial aid and coordinate transfer to the ED.")
-q("which2","Match each situation to the correct call. Which is correct?",
- ["*Inpatient with HR 140 and new confusion: RRT","Visitor faints in the lobby: Code Blue || That's the ERT.","Inpatient with no pulse: RRT || That's a Code Blue.","Staff member falls in the parking garage: RRT || That's the ERT."],
- "RRT = deteriorating inpatient; Code Blue = arrest; ERT = non-patient emergency in the facility.")
-q("which2","The nurse smells smoke and sees flames in a supply room. Which code is called?",
- ["*Code Red","Code Blue || Cardiac arrest.","Code Black || Bomb threat.","Rapid Response || For deteriorating patients."],
- "Code Red = fire; Code Black = bomb threat; Code Blue = medical emergency/cardiac arrest. Colors vary by hospital.")
-q("which2","A caller tells the unit secretary there is a bomb in the building. Which code is called?",
- ["*Code Black","Code Red || Fire.","Code Blue || Cardiac arrest.","ERT || For people who collapse or need medical help."],
- "Emergency code colors vary by facility; follow hospital policy.")
+q("codes","What does a Code Red mean?",
+ ["*Fire","Cardiac arrest || Code Blue.","Bomb threat || Code Black.","Missing child || Not on this chart."],
+ "Codes vary by hospital.")
+q("codes","What does a Code Black mean?",
+ ["*Bomb threat","Fire || Code Red.","Cardiac arrest || Code Blue.","Chemical spill || Not Code Black."],
+ "Both charts list Code Black as a bomb threat.")
+q("codes","Why do hospitals use color codes? "+SATA,
+ ["*To share urgent information quickly and clearly","*To avoid panicking patients and visitors","Because every hospital uses the same colors || They vary."],
+ "Follow your facility's protocols.")
