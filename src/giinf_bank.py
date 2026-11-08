@@ -26,6 +26,7 @@ CONCEPTS = {
  "sepsis":"Sepsis",
  "signs":"Murphy's vs McBurney's",
 }
+# VERSION 2 (Nov 8): every question re-worded with new scenarios/distractors.
 # Classmate update (Nov 3): appendicitis also tested; esophageal cancer NOT tested.
 # Professor: GERD, hiatal hernia, gastritis and PUD are the FOCUS conditions (in depth); the other 13 are need-to-know basics.
 HI = ["hh","hh2","gerd","gerd2","meds","meds2","gastritis","gastritis2","pud","pud2","append","append2","tpn","signs","gcancer"]
@@ -34,451 +35,355 @@ SATA = "Select all that apply."
 Q = []
 def q(c, stem, opts, r): Q.append((c, stem, opts, r))
 
-# ---------- hiatal hernia ----------
-q("hh","What is a hiatal hernia?",
- ["*A portion of the stomach protrudes up through the diaphragm's esophageal hiatus into the chest",
-  "An outpouching of the colon wall || That's diverticulosis.",
-  "Inflammation of the appendix || Appendicitis.",
-  "Replacement of esophageal cells with intestinal-type cells || Barrett's esophagus."],
- "Two types: sliding (~95%, worse when supine) and paraesophageal/rolling (higher strangulation risk).")
-q("hh","Which type of hiatal hernia has the higher risk of strangulation?",
- ["Sliding || Most common (~95%), but lower strangulation risk.","*Paraesophageal (rolling)",
-  "Both carry equal risk || The lecture contrasts them.","Neither can strangulate || Rolling hernias can."],
- "In a rolling hernia the fundus rolls up beside the esophagus while the GE junction stays put.")
-q("hh2","Which teaching is the first-line defense for a client with a hiatal hernia?",
- ["Lie down for 1 hour after eating || Avoid the recumbent position after meals.",
-  "*Stay upright 1–2 hours after eating",
-  "Eat 3 large meals a day || Small, frequent meals.",
-  "Wear a snug waistband for support || Avoid tight clothing."],
- "NCLEX alert: avoid the recumbent position after meals; gravity is the first-line defense against reflux.")
-q("hh","Which are risk factors for hiatal hernia? "+SATA,
- ["*Obesity","*Pregnancy","*Chronic coughing or heavy lifting","*Aging",
-  "High-fiber diet || Not a listed risk factor."],
- "Anything raising intra-abdominal pressure or weakening the diaphragm.")
-q("hh2","After a fundoplication for a severe hiatal hernia, which diet teaching is correct? "+SATA,
- ["*Start with liquids, then advance to a soft diet","*Take small bites and chew well","*Reduce air swallowing",
-  "Drink carbonated beverages to relieve bloating || Increases gas and air."],
+# ---------- hiatal hernia (FOCUS) ----------
+q("hh","A client asks what a hiatal hernia is. What is the best explanation?",
+ ["*Part of the stomach pushes up through the opening in the diaphragm into the chest","A pouch in the colon wall || Diverticulosis.",
+  "An inflamed appendix || Appendicitis.","Changed cells in the lower esophagus || Barrett's esophagus."],
+ "Two types: sliding (about 95%) and paraesophageal (rolling).")
+q("hh","Which type of hiatal hernia is most common, and which is more likely to strangulate?",
+ ["*Sliding is most common; paraesophageal (rolling) is more likely to strangulate","Rolling is most common; sliding strangulates || Reversed.",
+  "Both are equally common || Sliding is about 95%.","Neither can strangulate || Rolling can."],
+ "In a rolling hernia, the fundus rolls up beside the esophagus.")
+q("hh","In a SLIDING hiatal hernia, what moves up into the chest?",
+ ["*The stomach and the gastroesophageal (GE) junction","Only the fundus, beside the esophagus || Rolling hernia.","The colon || Not related.","The gallbladder || Not related."],
+ "Sliding hernias are worse when lying flat.")
+q("hh","Which clients are at higher risk for a hiatal hernia? "+SATA,
+ ["*A pregnant client","*A client with obesity","*A client who lifts heavy boxes at work","*An older adult","A client who eats a high-fiber diet || Not a risk factor."],
+ "Anything that raises abdominal pressure or weakens the diaphragm.")
+q("hh","When are hiatal hernia symptoms usually worse?",
+ ["*Lying flat and after big meals","Sitting upright || Upright helps.","Only in the morning || Not the pattern.","During light walking || Not the pattern."],
+ "Symptoms: heartburn, regurgitation, trouble swallowing, fullness or belching.")
+q("hh2","A client with a hiatal hernia likes to lie on the couch right after dinner. What should the nurse teach?",
+ ["*Stay upright for 1–2 hours after eating","Lie on the left side after dinner || Stay upright.","Lie down to help digestion || Worsens reflux.","Take a walk then lie flat || Stay upright."],
+ "Gravity is the first-line defense against reflux.")
+q("hh2","Which interventions help a client with a hiatal hernia? "+SATA,
+ ["*Small, frequent meals","*Raise the head of the bed","*Lose weight","*Avoid tight waistbands","*Avoid straining and heavy lifting","Eat one large meal at bedtime || Worsens reflux."],
+ "Severe hernias may need fundoplication surgery.")
+q("hh2","A client with a hiatal hernia has substernal chest pain. Why does the nurse take it seriously?",
+ ["*Hernia pain can look like heart pain, so a cardiac cause must be ruled out","It always means strangulation || Not always.","It's never related to the hernia || It can be.","It means GERD only || Not the point."],
+ "Rule out the heart first.")
+q("hh2","What diet teaching follows a fundoplication? "+SATA,
+ ["*Start with liquids and advance to soft foods","*Take small bites and chew well","*Avoid swallowing air","Drink soda to relieve bloating || Adds gas."],
  "Plus routine post-op care.")
 
-# ---------- GERD ----------
-q("gerd","What causes GERD?",
- ["*An incompetent lower esophageal sphincter lets gastric contents back up",
-  "H. pylori in the duodenum || A major PUD cause.",
-  "Loss of intrinsic factor || Pernicious anemia.","Fecalith obstruction || Appendicitis."],
- "Backflow irritates the esophageal mucosa.")
-q("gerd2","Which complications can result from untreated GERD? "+SATA,
- ["*Barrett's esophagus","*Esophageal stricture","*Aspiration pneumonia","*Dental erosion and chronic cough",
-  "Pernicious anemia || Linked to gastrectomy and atrophic gastritis."],
- "Also esophagitis, laryngitis.")
+# ---------- GERD (FOCUS) ----------
+q("gerd","What is the underlying problem in GERD?",
+ ["*A weak lower esophageal sphincter lets stomach contents flow back up","H. pylori in the duodenum || PUD.","No intrinsic factor || Pernicious anemia.","A blocked appendix || Appendicitis."],
+ "Backflow burns the esophageal lining.")
+q("gerd","A client reports a burning feeling behind the breastbone after big meals that is worse lying down. What is this?",
+ ["*Heartburn (pyrosis), the classic GERD symptom","Murphy's sign || Cholecystitis.","McBurney's point pain || Appendicitis.","Dumping syndrome || After gastric surgery."],
+ "Also sour regurgitation, hoarseness, chronic cough and trouble swallowing.")
+q("gerd","Which findings fit GERD? "+SATA,
+ ["*Heartburn","*A sour taste from regurgitation","*Chronic cough or hoarseness","*Painful or difficult swallowing","Pain in the lower right abdomen || Appendicitis."],
+ "Worse after meals and when lying flat.")
+q("gerd","Which are risk factors for GERD? "+SATA,
+ ["*A hiatal hernia","*Obesity","*Smoking and alcohol","*Chocolate, caffeine, and fatty or spicy foods","*Pregnancy"],
+ "Delayed gastric emptying also contributes.")
+q("gerd2","Which complications can untreated GERD cause? "+SATA,
+ ["*Barrett's esophagus","*Narrowing of the esophagus (stricture)","*Aspiration pneumonia","*Tooth enamel erosion","Pernicious anemia || Not a GERD complication."],
+ "Also esophagitis and laryngitis.")
 q("gerd2","Which teaching is correct for GERD? "+SATA,
- ["*Avoid lying down 2–3 hours after eating","*Elevate the head of the bed 30°","*Small, low-fat meals",
-  "*Stop smoking and lose weight",
-  "Have chocolate or coffee after meals to aid digestion || Caffeine and chocolate are triggers."],
- "Teach adherence; symptoms can mask ongoing damage.")
-q("gerd","What is the classic symptom of GERD?",
- ["*Heartburn (pyrosis)","RLQ pain || Appendicitis.","Beefy red tongue || Pernicious anemia.","LLQ pain || Diverticulitis."],
- "Also regurgitation of sour material, dysphagia, chronic cough, hoarseness. Worse after meals and when supine.")
+ ["*Don't lie down for 2–3 hours after eating","*Raise the head of the bed about 30 degrees","*Eat small, low-fat meals","*Quit smoking and lose weight","Have a coffee after dinner || A trigger."],
+ "Teach adherence; feeling better doesn't mean healed.")
+q("gerd2","A client with GERD stopped their PPI because the heartburn went away. What should the nurse explain?",
+ ["*Damage can continue without symptoms, so keep taking it as prescribed","That's fine once symptoms stop || Symptoms can hide damage.",
+  "Take it only when it burns || Not the teaching.","PPIs only help the stomach || Not accurate."],
+ "Untreated GERD can lead to strictures and Barrett's esophagus.")
 
-# ---------- meds ----------
-q("meds","When should a client take pantoprazole for best effect?",
- ["At bedtime || Not the teaching point.","*30–60 minutes before the first meal of the day",
-  "With every meal || Not the teaching point.","1–3 hours after eating || That's antacids."],
- "NCLEX alert: PPIs work best 30–60 minutes before the first meal; a common test point.")
-q("meds","Which long-term effects are associated with PPIs? "+SATA,
- ["*Osteoporosis","*Hypomagnesemia",
-  "Tardive dyskinesia || Metoclopramide.","Increased phenytoin levels || H2 blockers (cimetidine)."],
- "PPIs inhibit gastric secretions, raising pH.")
-q("meds2","Which teaching is correct for sucralfate?",
- ["Take with meals || Take on an empty stomach before meals.",
-  "*Take on an empty stomach before meals; it can decrease absorption of other medications",
-  "It's absorbed systemically to block acid || It forms a local gel coating; not systemic.",
-  "Take it with antacids at the same time || Can decrease absorption of other meds."],
- "Sucralfate is a gastric protectant.")
-q("meds2","A client on metoclopramide for 4 months develops lip smacking and tongue movements. What should the nurse suspect?",
- ["Expected effect || A serious adverse effect.","*Tardive dyskinesia",
-  "Hypomagnesemia || PPI.","Dumping syndrome || Not related."],
- "Metoclopramide (prokinetic) increases gastric peristalsis; not to be used longer than 12 weeks.")
-q("meds","A client on warfarin starts cimetidine. What should the nurse monitor for?",
- ["*Increased anticoagulant effect (bleeding)","Hypoglycemia || Not listed.","Tardive dyskinesia || Metoclopramide.","Osteoporosis || Long-term PPIs."],
- "H2 blockers increase levels of anticoagulants and phenytoin. They can be taken with or without food.")
-q("meds2","When should antacids such as Mylanta be taken?",
- ["30–60 minutes before the first meal || PPIs.","*1–3 hours after eating, separated from other medications",
-  "With other medications to help absorption || They inhibit absorption of other meds.","Only at bedtime || Not the instruction."],
- "Antacids neutralize acid; assess for diarrhea or constipation.")
-q("meds2","Match the drug to its action: which neutralizes gastric acid?",
- ["Famotidine || Blocks histamine receptors to decrease secretion.","Pantoprazole || Inhibits gastric secretions.",
-  "*Aluminum hydroxide (Amphojel), Mylanta, Tums","Metoclopramide || Increases peristalsis."],
- "Antacids neutralize; H2 blockers and PPIs decrease secretion; sucralfate coats; metoclopramide moves things along.")
+# ---------- GI meds (FOCUS) ----------
+q("meds","When should a client take omeprazole or pantoprazole?",
+ ["*30–60 minutes before the first meal of the day","With dinner || Not the teaching.","At bedtime with a snack || Not the teaching.","1–3 hours after meals || That's antacids."],
+ "A common test point.")
+q("meds","A client has taken a PPI for years. Which problems should the nurse watch for? "+SATA,
+ ["*Weak bones (osteoporosis)","*Low magnesium","Tardive dyskinesia || Metoclopramide.","Higher warfarin levels || Cimetidine."],
+ "PPIs reduce stomach acid secretion.")
+q("meds","How do PPIs work?",
+ ["*They stop the stomach from secreting acid, raising the pH","They neutralize acid already there || Antacids.","They coat the ulcer || Sucralfate.","They speed stomach emptying || Metoclopramide."],
+ "Pantoprazole, omeprazole: -prazole.")
+q("meds","How does famotidine (Pepcid) work?",
+ ["*It blocks histamine receptors so less acid is made","It blocks the proton pump || PPIs.","It neutralizes acid || Antacids.","It coats the stomach || Sucralfate."],
+ "H2 blockers can be taken with or without food.")
+q("meds","A client on warfarin is started on cimetidine. What should the nurse watch for?",
+ ["*Bleeding, because cimetidine raises warfarin levels","Low blood sugar || Not listed.","Tardive dyskinesia || Metoclopramide.","Bone loss || PPIs."],
+ "Cimetidine also raises phenytoin levels.")
+q("meds2","How should sucralfate (Carafate) be taken?",
+ ["*On an empty stomach before meals, apart from other medications","With meals || Empty stomach.","Mixed with antacids || Separate them.","Only at bedtime with food || Not the instruction."],
+ "It forms a gel coating over the ulcer; it isn't absorbed into the body.")
+q("meds2","A client on metoclopramide for 5 months has lip smacking and tongue thrusting. What does the nurse suspect?",
+ ["*Tardive dyskinesia","Low magnesium || PPIs.","An expected effect || A serious adverse effect.","Dumping syndrome || Not related."],
+ "Metoclopramide should not be used for more than 12 weeks.")
+q("meds2","When should a client take an antacid like Mylanta?",
+ ["*1–3 hours after eating, apart from other medications","30 minutes before breakfast || PPIs.","With all other pills || Blocks absorption.","Only once a week || Not the instruction."],
+ "Antacids can cause diarrhea or constipation.")
+q("meds2","Which drug NEUTRALIZES stomach acid that's already there?",
+ ["*Aluminum hydroxide (Amphojel)","Famotidine || Reduces acid production.","Pantoprazole || Reduces acid production.","Metoclopramide || Moves food along."],
+ "Antacids neutralize; H2 blockers and PPIs reduce secretion; sucralfate coats.")
+q("meds2","A client takes sucralfate and three other morning pills. What should the nurse teach?",
+ ["*Space the other pills apart from sucralfate, because it reduces their absorption","Take them all at once || Absorption drops.","Take sucralfate after meals || Empty stomach.","Crush sucralfate into food || Not the teaching."],
+ "Sucralfate works locally.")
 
 # ---------- Barrett's ----------
-q("barrett","What is Barrett's esophagus?",
- ["*Metaplasia from chronic GERD: normal squamous cells of the distal esophagus are replaced by intestinal-type cells",
-  "A cancer of the upper esophagus || Pre-malignant, not cancer.",
-  "A stomach hernia || Hiatal hernia.","Gastric inflammation || Gastritis."],
- "Considered pre-malignant; raises the risk of esophageal adenocarcinoma.")
-q("barrett","How is Barrett's esophagus followed?",
- ["Monitoring symptoms only || Barrett's itself doesn't cause new symptoms.",
-  "*Surveillance endoscopy with biopsy",
-  "Yearly chest x-ray || Not the method.","Stool cultures || Not related."],
- "NCLEX alert: surveillance biopsy, not symptom monitoring alone, catches early dysplasia.")
-q("barrett","Which new finding in a client with Barrett's esophagus is a red flag?",
- ["Mild heartburn || Common with chronic GERD.","*New dysphagia",
-  "Taking a PPI daily || Recommended therapy.","Weight loss with diet || Planned weight loss is encouraged."],
- "Also teach warning signs: weight loss and GI bleeding.")
+q("barrett","What happens in Barrett's esophagus?",
+ ["*Long-term GERD changes the lower esophagus lining into intestinal-type cells","The esophagus becomes cancer right away || It's pre-malignant.","The stomach herniates || Hiatal hernia.","The stomach lining is inflamed || Gastritis."],
+ "Raises the risk of esophageal adenocarcinoma.")
+q("barrett","How is Barrett's esophagus monitored?",
+ ["*Regular endoscopy with biopsy","Watching symptoms only || Not enough.","A yearly chest x-ray || Not the method.","Stool tests || Not related."],
+ "Biopsy catches early dysplasia.")
+q("barrett","A client with Barrett's esophagus reports new trouble swallowing. What does the nurse do?",
+ ["*Report it; new dysphagia is a red flag","Reassure them it's normal heartburn || A red flag.","Suggest chewing gum || Not appropriate.","Wait until the next scope || Report now."],
+ "Also report weight loss and bleeding.")
 q("barrett","Which are risk factors for Barrett's esophagus? "+SATA,
- ["*Long-standing, poorly controlled GERD","*Male sex, age over 50","*Obesity and smoking","*Family history",
-  "Low-sodium diet || Not a listed risk factor."],
- "Also chronic hiatal hernia.")
+ ["*Long-term, poorly controlled GERD","*Male, over age 50","*Obesity","*Smoking","A low-sodium diet || Not a risk factor."],
+ "Also family history and chronic hiatal hernia.")
 
-# ---------- gastritis ----------
-q("gastritis2","A client with gastritis has coffee-ground emesis. What should the nurse do first?",
- ["Give an antacid || Not the priority.","*Assess vital signs and notify the provider immediately",
-  "Encourage a bland snack || Not with bleeding.","Document and reassess at shift change || A red flag needs action now."],
- "NCLEX alert: coffee-ground emesis or tarry stools = bleeding red flag.")
+# ---------- gastritis (FOCUS) ----------
+q("gastritis","A client takes ibuprofen daily and drinks heavily. Which condition are they at risk for?",
+ ["*Gastritis","Appendicitis || Not caused this way.","Diverticulitis || Not caused this way.","Pernicious anemia || Not caused this way."],
+ "Causes: NSAIDs and aspirin, alcohol, H. pylori, severe stress, bile reflux.")
 q("gastritis","Which are causes of gastritis? "+SATA,
- ["*NSAIDs and aspirin","*Alcohol","*H. pylori","*Severe physiologic stress such as burns or sepsis",
-  "High-fiber diet || Not a listed cause."],
- "Also bile reflux.")
-q("gastritis","How does chronic gastritis differ from acute gastritis?",
- ["*Chronic is often H. pylori-driven and can progress to atrophy and higher cancer risk",
-  "Chronic resolves once the irritant is removed || That describes acute.",
-  "Chronic is always caused by NSAIDs || Acute is irritant-driven.","There's no difference || The lecture contrasts them."],
- "Acute: sudden, from irritants, self-limiting.")
-q("gastritis2","Which lifestyle teaching is correct for gastritis? "+SATA,
- ["*Keep a food journal","*Bland diet","*Avoid bedtime snacks","*Avoid alcohol, caffeine and smoking","*Reduce stress",
-  "Take ibuprofen for the epigastric pain || Remove NSAIDs."],
- "Remove the causative agent; PPIs/H2 blockers/antacids; H. pylori eradication if positive.")
+ ["*NSAIDs","*Alcohol","*H. pylori","*Severe burns or sepsis","A high-fiber diet || Not a cause."],
+ "Remove the cause.")
+q("gastritis","Which statement describes ACUTE gastritis?",
+ ["*Sudden, caused by an irritant, and usually resolves once the irritant is removed","Long-term and H. pylori-driven || Chronic.","Always leads to cancer || Not acute.","Caused by a weak sphincter || GERD."],
+ "Chronic gastritis can lead to atrophy and higher cancer risk.")
+q("gastritis","Which findings are expected with gastritis? "+SATA,
+ ["*Burning epigastric pain","*Nausea and vomiting","*Feeling full quickly","*Loss of appetite","Pain in the lower left abdomen || Diverticulitis."],
+ "Bloody vomit or black stools mean bleeding.")
+q("gastritis2","A client with gastritis vomits material that looks like coffee grounds. What does the nurse do first?",
+ ["*Check vital signs and notify the provider right away","Give an antacid || Not the priority.","Offer crackers || Not with bleeding.","Recheck at the end of the shift || Act now."],
+ "Coffee-ground emesis and tarry stools = GI bleeding.")
+q("gastritis2","Which teaching fits gastritis? "+SATA,
+ ["*Keep a food diary","*Eat a bland diet","*Avoid bedtime snacks","*Avoid alcohol, caffeine and smoking","*Lower stress","Use aspirin for the stomach pain || Remove NSAIDs."],
+ "Treat H. pylori if present.")
+q("gastritis2","What is the treatment plan for gastritis? "+SATA,
+ ["*Stop the cause, such as NSAIDs or alcohol","*PPIs, H2 blockers or antacids","*Treat H. pylori if present","*Small, bland meals","Large, high-fat meals || Not taught."],
+ "Monitor for signs of bleeding.")
 
-# ---------- PUD ----------
-q("pud","Which finding points to a DUODENAL ulcer rather than a gastric ulcer?",
- ["Pain worsens after eating with weight loss || Gastric ulcer.",
-  "*Pain is relieved by food and recurs 2–3 hours later, often at night",
-  "Pain 30–60 minutes after eating || Gastric ulcer.","Beefy red tongue || Pernicious anemia."],
- "Gastric = pain with food. Duodenal = food relieves, then pain returns 2–3 hours later and at night.")
-q("pud2","A client with peptic ulcer disease suddenly has severe pain and a rigid, board-like abdomen. What should the nurse suspect?",
- ["Needing the PPI dose earlier || Not a medication-timing issue.","*Perforation, a surgical emergency",
-  "Dumping syndrome || Post-gastrectomy.","Normal ulcer pain || Board-like abdomen is an emergency."],
- "NCLEX alert: sudden board-like abdomen in PUD = perforation.")
-q("pud","What causes the majority of peptic ulcers?",
- ["*H. pylori infection","Hiatal hernia || Not the main cause.","Low-fiber diet || Diverticulitis.","Vitamin B12 deficiency || Not related."],
- "Also chronic NSAIDs, smoking, alcohol, physiologic stress (Curling's and Cushing's ulcers).")
-q("pud2","Which complications of peptic ulcer disease should the nurse monitor for? "+SATA,
- ["*Hemorrhage (hematemesis, melena)","*Perforation","*Obstruction",
-  "Barrett's esophagus || A GERD complication.","Pernicious anemia || Not listed."],
- "Treatment: H. pylori triple/quad therapy, PPIs; avoid NSAIDs, alcohol and smoking.")
-q("pud2","A client with PUD asks what to take for a headache. Best response?",
- ["\"Ibuprofen is fine with food.\" || NSAIDs are a major ulcer cause.","*\"Avoid NSAIDs like ibuprofen and aspirin; ask your provider what's safe.\"",
-  "\"Aspirin is safest.\" || Aspirin also damages the mucosa.","\"Take naproxen at bedtime.\" || An NSAID."],
- "Teach to avoid NSAIDs, alcohol and smoking.")
+# ---------- PUD (FOCUS) ----------
+q("pud","A client's stomach pain gets WORSE 30–60 minutes after eating, and they've lost weight. Which ulcer is likely?",
+ ["*Gastric ulcer","Duodenal ulcer || Food relieves duodenal pain.","GERD || Burning behind the breastbone.","Appendicitis || RLQ pain."],
+ "Clients with gastric ulcers lose weight because eating hurts.")
+q("pud","A client's stomach pain gets BETTER when they eat but returns 2–3 hours later and wakes them at night. Which ulcer is likely?",
+ ["*Duodenal ulcer","Gastric ulcer || Food makes gastric pain worse.","Gastritis || Not this pattern.","Hiatal hernia || Not this pattern."],
+ "Duodenal: food relieves; night pain is common.")
+q("pud","What causes most peptic ulcers?",
+ ["*H. pylori infection","A hiatal hernia || Not the main cause.","Low-fiber diet || Diverticulitis.","Low B12 || Not related."],
+ "Also NSAIDs, smoking, alcohol and severe stress.")
+q("pud","Which describes peptic ulcer disease?",
+ ["*Erosion through the GI lining when acid outmatches the lining's defenses","An inflamed gallbladder || Cholecystitis.","A pouch in the colon || Diverticulosis.","Acid backflow into the esophagus || GERD."],
+ "Curling's ulcers (burns) and Cushing's ulcers (head injury) are stress ulcers.")
+q("pud2","A client with an ulcer suddenly has severe pain and a hard, board-like abdomen. What does the nurse suspect?",
+ ["*Perforation, a surgical emergency","Needs an extra antacid || Not a med issue.","Normal ulcer pain || An emergency.","Dumping syndrome || Not related."],
+ "Notify the provider immediately.")
+q("pud2","Which complications of PUD should the nurse watch for? "+SATA,
+ ["*Bleeding (bloody vomit or black stools)","*Perforation","*Obstruction","Barrett's esophagus || A GERD complication.","Appendicitis || Not related."],
+ "Avoid NSAIDs, alcohol and smoking.")
+q("pud2","A client with an ulcer asks what to take for a headache. What is the best answer?",
+ ["*Avoid ibuprofen, naproxen and aspirin; ask your provider what's safe","Ibuprofen with food is fine || NSAIDs cause ulcers.","Aspirin is safest || Also damages the lining.","Naproxen at night is fine || An NSAID."],
+ "NSAIDs are a major ulcer cause.")
+q("pud2","How is an H. pylori ulcer treated?",
+ ["*Triple or quadruple therapy plus a PPI","Surgery for every ulcer || Not first-line.","NSAIDs for pain || Cause ulcers.","Antacids alone || Don't kill H. pylori."],
+ "Monitor for bleeding, perforation and obstruction.")
+q("pud2","Where might peptic ulcer pain spread?",
+ ["*To the back","To the right shoulder || Cholecystitis.","To the left arm || Heart.","To the lower right abdomen || Appendicitis."],
+ "Burning, gnawing epigastric pain.")
 
-# ---------- gastric cancer ----------
-q("gcancer","Why does a client need lifelong vitamin B12 monitoring after a gastrectomy?",
- ["The surgery damages the ileum || The stomach was removed, not the ileum.",
-  "*The cells that make intrinsic factor were removed, so B12 can't be absorbed",
-  "B12 causes dumping syndrome || Not related.","Chemotherapy destroys B12 || Not the reason."],
- "NCLEX alert: any post-gastrectomy client needs lifelong B12 monitoring.")
+# ---------- gastric cancer (FOCUS) ----------
+q("gcancer","A 64-year-old has had vague indigestion for months, feels full after a few bites, and has lost 12 lb without trying. What does the nurse suspect?",
+ ["*Gastric cancer","GERD || No weight loss pattern.","Appendicitis || Acute RLQ pain.","Gastroenteritis || Acute, with diarrhea."],
+ "Early signs are vague, so it's often found late.")
+q("gcancer","Which signs fit gastric cancer? "+SATA,
+ ["*Vague indigestion","*Feeling full quickly","*Unplanned weight loss","*Anemia","*Epigastric pain"],
+ "Diagnosis: endoscopy with biopsy.")
 q("gcancer","Which are risk factors for gastric cancer? "+SATA,
- ["*H. pylori infection","*Diet high in smoked, salted or preserved foods","*Smoking","*Pernicious anemia or chronic atrophic gastritis",
-  "High-fiber diet || Protective for diverticular disease, not a risk factor."],
- "Also family history. Often silent until advanced.")
-q("gcancer","After a gastrectomy, what should the nurse watch for?",
- ["*Dumping syndrome","Appendicitis || Not related.","GERD from a hiatal hernia || Not the post-op focus.","Hyperkalemia || Not discussed."],
- "Also small, frequent meals; nutrition and emotional support; wound and drain care.")
-q("gcancer","How is gastric cancer diagnosed?",
- ["*Upper endoscopy (gastroscopy) with biopsy","Stool culture || Not diagnostic.","McBurney's point exam || Appendicitis.","Chest x-ray alone || Not diagnostic."],
- "Then CT staging, gastrectomy, and chemo/radiation, targeted therapy or immunotherapy.")
+ ["*H. pylori","*A diet of smoked, salted or preserved foods","*Smoking","*Pernicious anemia","A high-fiber diet || Not a risk factor."],
+ "Also atrophic gastritis and family history.")
+q("gcancer","Which test confirms gastric cancer?",
+ ["*Upper endoscopy with biopsy","A stool culture || Not diagnostic.","A chest x-ray || Not diagnostic.","An abdominal exam at McBurney's point || Appendicitis."],
+ "Then CT staging and treatment.")
+q("gcancer","After a gastrectomy for cancer, which two problems does the nurse watch for long-term? "+SATA,
+ ["*Dumping syndrome","*Vitamin B12 deficiency","Appendicitis || Not related.","GERD from a hernia || Not the focus."],
+ "The cells that make intrinsic factor are removed, so B12 is lifelong.")
 
 # ---------- enteral ----------
-q("enteral","What is the gold standard for confirming INITIAL feeding tube placement?",
- ["Gastric pH || Used for ongoing checks.","*X-ray",
-  "Auscultating an air bolus || Not the lecture's method.","Client can talk || Not a confirmation method."],
- "Then check gastric pH (<5) and note the external markings before every feeding or medication.")
-q("enteral","Before each tube feeding, which gastric aspirate pH supports correct placement?",
- ["*Under 5","7.4 || Not gastric.","Over 8 || Not gastric.","Exactly 10 || Not gastric."],
- "Reassess placement before every feeding and medication.")
-q("enteral","What is the core aspiration-prevention measure for enteral feedings?",
- ["Lie flat during feeds || Raises aspiration risk.","*HOB at least 30° (30–45°) during and 30–60 minutes after feeding",
-  "Give feeds only at night || Not the core measure.","Feed faster to finish sooner || Not the core measure."],
- "NCLEX alert from the slide.")
-q("enteral","Which are complications of enteral feeding? "+SATA,
- ["*Aspiration","*Diarrhea","*Tube clogging","*Abdominal distention and high residuals",
-  "Gingival hyperplasia || Phenytoin."],
- "Flush before and after feeds and meds; monitor for aspiration (cough, falling SpO2); check glucose per policy.")
-q("enteral","What does enteral nutrition require?",
- ["*An intact, functioning GI tract","A central line || TPN.","A nonfunctional gut || That's when parenteral nutrition is used.","NPO with nothing in the GI tract || Not enteral."],
- "Used for dysphagia, neuro impairment, ventilation, or inadequate oral intake.")
+q("enteral","A new feeding tube has been placed. How is placement FIRST confirmed?",
+ ["*X-ray","Checking the pH || For ongoing checks.","Listening for an air bolus || Not the method.","Asking the client to talk || Not a method."],
+ "After that, check gastric pH and the tube markings before each use.")
+q("enteral","Before giving a medication through a feeding tube, the aspirate pH is 3. What does this mean?",
+ ["*The tube is likely in the stomach","The tube is in the lungs || Not likely with pH 3.","The tube is in the intestine || Intestinal pH is higher.","The tube must be replaced || pH under 5 supports placement."],
+ "Gastric aspirate pH under 5 supports placement.")
+q("enteral","How should a client receiving tube feedings be positioned?",
+ ["*Head of bed at least 30 degrees during and for 30–60 minutes after","Flat || Aspiration risk.","On the left side flat || Not the position.","Head down || Aspiration risk."],
+ "The core aspiration prevention measure.")
+q("enteral","Which are complications of tube feeding? "+SATA,
+ ["*Aspiration","*Diarrhea","*A clogged tube","*Bloating and high residuals","Gum overgrowth || Phenytoin."],
+ "Flush before and after feeds and meds.")
+q("enteral","What must a client have to receive enteral nutrition?",
+ ["*A working GI tract","A central line || TPN.","A non-working gut || That's TPN.","Strict NPO || Not enteral."],
+ "Used for trouble swallowing, neuro problems or poor intake.")
 
-# ---------- TPN ----------
-q("tpn","A client's TPN bag runs out and the new bag isn't ready. What is the main risk?",
- ["Hyperglycemia || The risk is the opposite.","*Rebound hypoglycemia",
-  "Hyperkalemia || Not the lecture's concern.","Dumping syndrome || Not related."],
- "NCLEX alert: never stop TPN abruptly; taper. The body has adapted to the high glucose.")
-q("tpn","Which nursing care applies to TPN? "+SATA,
- ["*Strict aseptic technique","*Monitor blood glucose regularly","*Dedicated line; no other meds through it","*Taper; never stop abruptly",
-  "Give antibiotics through the TPN line to save an IV site || Dedicated line."],
- "Complications: hyper/hypoglycemia, catheter infection, fluid overload, electrolyte imbalance.")
-q("tpn","How does PPN differ from TPN?",
- ["*PPN is peripheral and short-term; TPN uses a central line and is long-term, complete nutrition",
-  "PPN goes into the stomach || That's enteral.","They're identical || The lecture contrasts them.","TPN is peripheral || TPN is central."],
- "Parenteral nutrition bypasses the GI tract; used for obstruction, severe malabsorption, prolonged ileus, short bowel.")
-q("tpn","A client on TPN has fever and redness at the central line site. What does the nurse suspect?",
- ["*Catheter-related infection","Rebound hypoglycemia || Presents with low glucose.","Dumping syndrome || Not related.","Fluid overload || Not with fever and redness."],
- "TPN lines are a sepsis risk; strict aseptic technique always.")
+# ---------- PPN / TPN (professor: know the difference) ----------
+q("tpn","Which statement correctly compares PPN and TPN?",
+ ["*PPN: peripheral vein, short-term. TPN: central line, long-term, complete nutrition","PPN: central line; TPN: peripheral || Reversed.",
+  "Both go into the stomach || That's enteral.","They're the same thing || They differ."],
+ "Both bypass the GI tract.")
+q("tpn","A client needs IV nutrition for 4 days and has only a peripheral IV. Which is appropriate?",
+ ["*PPN","TPN || Needs a central line.","A PEG tube feeding || That's enteral, not IV.","Nothing can be given || PPN can."],
+ "PPN = short-term, peripheral.")
+q("tpn","A client with a bowel obstruction will need complete IV nutrition for weeks. Which is appropriate?",
+ ["*TPN through a central line","PPN || Short-term only.","Tube feeding || The gut isn't working.","Clear liquids || Not complete nutrition."],
+ "TPN is used when the gut can't be used.")
+q("tpn","Which are true of BOTH PPN and TPN? "+SATA,
+ ["*They bypass the GI tract","*They need strict aseptic technique","Both need a central line || Only TPN.","Both are long-term || PPN is short-term."],
+ "Any parenteral line is an infection risk.")
+q("tpn","Which statements about PPN and TPN are correct? "+SATA,
+ ["*TPN goes through a central line","*PPN goes through a peripheral vein","*PPN is short-term","*TPN can provide complete nutrition long-term","TPN can run in any peripheral IV || Central line only."],
+ "Know the difference.")
+q("tpn","The TPN bag runs out and pharmacy needs an hour to send the next one. What is the biggest risk?",
+ ["*Rebound hypoglycemia","Hyperglycemia || The opposite.","High potassium || Not the concern.","Dumping syndrome || Not related."],
+ "Never stop TPN suddenly; taper it.")
+q("tpn","Which nursing care fits TPN? "+SATA,
+ ["*Strict aseptic technique","*Check blood glucose regularly","*Use a dedicated line","*Taper it, never stop suddenly","Push IV antibiotics through the TPN line || Dedicated line only."],
+ "Complications: high or low glucose, line infection, fluid overload.")
+q("tpn","A client on TPN has a fever and redness at the central line. What does the nurse suspect?",
+ ["*A line infection","Low blood sugar || Not with fever and redness.","Dumping syndrome || Not related.","Fluid overload || Not with fever."],
+ "TPN lines are a sepsis risk.")
 
 # ---------- dumping ----------
-q("dumping","Which intervention is most tested for dumping syndrome?",
- ["Drink fluids with every meal || Speeds emptying.","*Separate liquids from solids by 30–45 minutes",
-  "Eat 3 large high-sugar meals || Worsens it.","Walk right after eating || Lie down instead."],
- "NCLEX alert: separating liquids from meals slows gastric emptying.")
+q("dumping","Twenty minutes after lunch, a client who had a gastrectomy has cramping, diarrhea, sweating and a racing heart. What is this?",
+ ["*Early dumping syndrome","Late dumping || 1–3 hours after eating.","Peritonitis || Rigid abdomen and fever.","Pernicious anemia || Develops slowly."],
+ "Early (10–30 minutes): fluid shift into the intestine.")
+q("dumping","Two hours after a meal, a client who had a gastrectomy is shaky, sweaty and confused. What is this?",
+ ["*Late dumping with low blood sugar","Early dumping || Within 30 minutes.","Peritonitis || Not this picture.","A stroke || Check glucose first."],
+ "Late (1–3 hours): reactive hypoglycemia.")
 q("dumping","Which teaching helps prevent dumping syndrome? "+SATA,
- ["*Small, frequent meals","*Avoid simple sugars and concentrated sweets","*Lie down 20–30 minutes after eating","*Increase protein and fat",
-  "Drink a milkshake with lunch || Concentrated sugar plus liquid with a meal."],
- "Fiber supplements (psyllium) may also help.")
-q("dumping","Two hours after eating, a post-gastrectomy client is shaky, sweaty and confused. What is happening?",
- ["Early dumping from a fluid shift || Early happens in 10–30 minutes.",
-  "*Late dumping with reactive hypoglycemia",
-  "Peritonitis || Would show a rigid abdomen and fever.","Pernicious anemia || Develops slowly."],
- "Early (10–30 min): fluid shift; tachycardia, diaphoresis, cramping, diarrhea. Late (1–3 hrs): reactive hypoglycemia.")
-q("dumping","Which surgeries put a client at risk for dumping syndrome? "+SATA,
- ["*Gastrectomy","*Gastric bypass (bariatric) surgery","*Vagotomy or pyloroplasty",
-  "Appendectomy || Not a listed risk."],
- "Rapid emptying of hyperosmolar contents into the small intestine.")
+ ["*Small, frequent meals","*Avoid sweets and simple sugars","*Separate liquids from solids by 30–45 minutes","*Lie down 20–30 minutes after eating","Drink a milkshake with lunch || Sugar plus fluid."],
+ "More protein and fat helps; fiber supplements may too.")
+q("dumping","Which surgeries can cause dumping syndrome? "+SATA,
+ ["*Gastrectomy","*Gastric bypass","*Vagotomy or pyloroplasty","Appendectomy || Not a risk."],
+ "Food empties too fast into the small intestine.")
 
 # ---------- pernicious anemia ----------
-q("pernicious","What causes pernicious anemia?",
- ["Iron deficiency || A different anemia.","*Lack of intrinsic factor, so B12 can't be absorbed in the ileum",
-  "Folate excess || Not the cause.","Blood loss from ulcers || Not the cause."],
- "Megaloblastic anemia. Causes: autoimmune destruction of parietal cells, gastrectomy, atrophic gastritis.")
+q("pernicious","Why does pernicious anemia develop?",
+ ["*Without intrinsic factor, vitamin B12 can't be absorbed","Too little iron || A different anemia.","Too much folate || Not the cause.","Bleeding ulcers || Not the cause."],
+ "Causes: autoimmune, gastrectomy, atrophic gastritis.")
 q("pernicious","Which findings suggest pernicious anemia? "+SATA,
- ["*Bright red, beefy, smooth tongue","*Paresthesias","*Ataxia and balance problems","*Fatigue and pallor",
-  "RLQ pain || Appendicitis."],
- "Labs: low B12, elevated MCV, intrinsic factor/parietal cell antibodies.")
-q("pernicious","A client with pernicious anemia asks if eating more B12-rich foods will cure it. Best response?",
- ["\"Yes, diet alone will fix it.\" || Without intrinsic factor, dietary B12 isn't absorbed.",
-  "*\"You'll need lifelong B12 injections (or high-dose oral); diet alone can't correct it.\"",
-  "\"You only need a short course of B12.\" || Therapy is lifelong.","\"An iron supplement will cure it.\" || It's B12, not iron."],
- "Teach that therapy is lifelong.")
-q("pernicious","Why does early treatment of pernicious anemia matter so much?",
- ["*Neurologic damage can become irreversible if treatment is delayed",
-  "The tongue can rupture || Not a concern.","It causes perforation || Not related.","It leads to dumping syndrome || Not related."],
- "NCLEX alert: early recognition matters more than the anemia itself. Monitor fall risk from ataxia.")
+ ["*A smooth, beefy red tongue","*Tingling in the hands and feet","*Trouble with balance","*Fatigue and pale skin","Lower right abdominal pain || Appendicitis."],
+ "Labs: low B12, high MCV.")
+q("pernicious","A client with pernicious anemia asks if eating more meat and eggs will fix it. What is the answer?",
+ ["*No; you'll need lifelong B12 shots or high-dose pills, because your body can't absorb it from food","Yes, diet will fix it || No intrinsic factor.",
+  "Only a short course of B12 is needed || Lifelong.","Iron pills will fix it || It's B12."],
+ "Therapy is lifelong.")
+q("pernicious","Why is early treatment of pernicious anemia so important?",
+ ["*Nerve damage can become permanent","The tongue can rupture || Not a concern.","It causes perforation || Not related.","It causes dumping || Not related."],
+ "Watch for falls from poor balance.")
 
 # ---------- gastroenteritis ----------
-q("gastro","What is the PRIORITY intervention for gastroenteritis?",
- ["Give an antidiarrheal || Avoided in suspected infectious causes.","*Rehydration with fluids and electrolytes",
-  "Start a high-fiber diet || Advance diet slowly.","Give a laxative || Not indicated."],
- "Fluid and electrolyte loss is the primary danger, not the infection itself.")
-q("gastro","Which findings suggest dehydration in gastroenteritis? "+SATA,
- ["*Dry mucous membranes","*Tachycardia","*Decreased urine output","*Poor skin turgor",
-  "Bradycardia with bounding pulses || Not dehydration findings."],
- "Monitor I&O, daily weights, skin turgor. Young children and older adults are at highest risk.")
-q("gastro","Which precautions are needed for a client with infectious gastroenteritis?",
- ["Airborne || Not the route.","*Contact precautions and strict hand hygiene","Droplet only || Not the lecture's choice.","None needed || It spreads."],
- "Causes: norovirus and rotavirus (most common viral), E. coli, Salmonella, C. difficile.")
+q("gastro","A client with gastroenteritis has had vomiting and diarrhea for 2 days. What is the priority?",
+ ["*Replace fluids and electrolytes","Give an antidiarrheal || Avoided in infection.","Start a high-fiber diet || Advance slowly.","Give a laxative || Not indicated."],
+ "The fluid loss is the main danger.")
+q("gastro","Which findings show dehydration? "+SATA,
+ ["*Dry mouth","*Fast heart rate","*Less urine","*Poor skin turgor","A slow pulse with bounding pulses || Not dehydration."],
+ "Young children and older adults are at highest risk.")
+q("gastro","Which precautions are needed for infectious gastroenteritis?",
+ ["*Contact precautions and hand hygiene","Airborne || Not the route.","Droplet only || Not the choice.","None || It spreads."],
+ "Common causes: norovirus, rotavirus, E. coli, Salmonella, C. diff.")
 
-# ---------- appendicitis ----------
-q("append","Which pain pattern is classic for appendicitis?",
- ["*Starts vague around the umbilicus, then moves to the RLQ (McBurney's point)",
-  "LLQ pain with fever || Diverticulitis.","Epigastric pain relieved by food || Duodenal ulcer.","Burning chest pain when lying flat || GERD/hiatal hernia."],
- "Also rebound tenderness, guarding, low-grade fever, anorexia, nausea.")
-q("append2","A client with suspected appendicitis asks for a heating pad and a laxative. What should the nurse do?",
- ["Provide both for comfort || Both can cause rupture.","*Decline both; heat and laxatives or enemas can precipitate rupture",
-  "Give the laxative only || Laxatives can cause rupture.","Give the heating pad only || Heat can cause rupture."],
- "NCLEX alert: never apply heat or give laxatives/enemas for suspected appendicitis.")
-q("append2","A client with appendicitis suddenly reports that the pain is gone. What should the nurse suspect?",
- ["The appendicitis resolved || Sudden relief is a red flag.","*Rupture",
-  "The analgesic worked || Not the concern taught.","Dumping syndrome || Not related."],
- "Assess the pain trend. Untreated cases risk rupture within 24–72 hours.")
-q("append","Which nursing actions are correct for suspected appendicitis? "+SATA,
- ["*Keep NPO","*Prepare for emergent appendectomy","*Assess the pain trend",
-  "Give an enema to clear the bowel || Can precipitate rupture.","Apply heat to the RLQ || Can precipitate rupture."],
- "Diagnosis: CT or abdominal ultrasound. Concerns: abscess, perforation, peritonitis.")
-
+# ---------- appendicitis (FOCUS) ----------
+q("append","A 20-year-old's pain started around the belly button and now is sharp in the lower right abdomen. What is the likely cause?",
+ ["*Appendicitis","Diverticulitis || Lower left.","Cholecystitis || Upper right.","GERD || Burning chest."],
+ "Pain moves to McBurney's point.")
 q("append","What usually causes appendicitis?",
- ["*Obstruction of the appendix (a fecalith or lymphoid tissue) leading to inflammation and bacterial overgrowth",
-  "Outpouchings in a weak colon wall || That's diverticulosis/diverticulitis.","A gallstone blocking the cystic duct || That's cholecystitis.",
-  "Acid backflow into the esophagus || That's GERD."],
- "Lymphoid hyperplasia is often seen in young adults.")
-q("append","A 19-year-old says the pain started around the belly button last night and is now sharp in the lower right abdomen. Which other findings fit appendicitis? "+SATA,
- ["*Rebound tenderness and guarding","*Low-grade fever","*Anorexia and nausea",
-  "Pain in the lower left quadrant with leukocytosis || That pattern is diverticulitis.","Inspiratory arrest during RUQ palpation || That's Murphy's sign (cholecystitis)."],
- "Classic: periumbilical pain that migrates to the RLQ (McBurney's point).")
-q("append","Which tests are used to diagnose appendicitis?",
- ["*CT scan or abdominal ultrasound","HIDA scan || Gallbladder function test.","ERCP || Used for bile/pancreatic ducts.","Upper endoscopy || Used for the esophagus and stomach."],
- "Treatment is surgery (appendectomy).")
-q("append2","A client with RLQ pain at McBurney's point is being admitted. Which order should the nurse question?",
- ["*Tap-water enema to relieve constipation","Keep NPO || Correct; surgery is expected.","CT scan of the abdomen || Correct for diagnosis.","Monitor the pain trend || Correct."],
- "Enemas, laxatives and heat can increase pressure and cause rupture.")
-q("append2","A client with appendicitis had 8/10 RLQ pain that suddenly dropped to 1/10. An hour later the abdomen is rigid and the temperature is rising. What does the nurse suspect?",
- ["*Rupture with peritonitis; notify the provider immediately","The pain medication is working || Sudden relief then rigidity is a red flag.",
-  "Normal recovery || Not without surgery.","Gastroenteritis || Doesn't fit."],
- "Concerns: abscess, perforation, peritonitis. Untreated cases risk rupture within 24–72 hours.")
+ ["*A blockage of the appendix (a hard stool or swollen lymph tissue)","Pouches in the colon || Diverticulosis.","A gallstone || Cholecystitis.","Acid reflux || GERD."],
+ "The blockage leads to swelling and bacterial overgrowth.")
+q("append","Which findings fit appendicitis? "+SATA,
+ ["*Rebound tenderness and guarding","*Low-grade fever","*Loss of appetite and nausea","*Pain at McBurney's point","Stops breathing in when the RUQ is pressed || Murphy's sign."],
+ "Classic: belly button pain that moves to the RLQ.")
+q("append","Which tests diagnose appendicitis?",
+ ["*CT scan or ultrasound","HIDA scan || Gallbladder.","ERCP || Bile ducts.","Upper endoscopy || Esophagus and stomach."],
+ "Treatment is an appendectomy.")
+q("append","Which nursing actions are correct for suspected appendicitis? "+SATA,
+ ["*Keep NPO","*Prepare for surgery","*Watch the pain trend","Give an enema || Can cause rupture.","Apply a heating pad || Can cause rupture."],
+ "Concerns: abscess, perforation, peritonitis.")
+q("append2","A client with suspected appendicitis asks for a laxative and a warm compress. What should the nurse do?",
+ ["*Decline both; heat and laxatives can cause rupture","Give both || Both are risky.","Give the laxative only || Risky.","Give the compress only || Risky."],
+ "Never heat, laxatives or enemas.")
+q("append2","Which order should the nurse question for a client with suspected appendicitis?",
+ ["*A soapsuds enema","NPO || Correct.","A CT scan || Correct.","IV fluids || Correct."],
+ "Enemas raise pressure and can cause rupture.")
+q("append2","A client with appendicitis says, 'My pain suddenly went from a 9 to a 1.' What does the nurse suspect?",
+ ["*Rupture","It went away on its own || Sudden relief is a red flag.","The pain medicine worked || Not the concern.","Dumping syndrome || Not related."],
+ "Rupture risk is highest 24–72 hours after symptoms start.")
+q("append2","An hour after sudden pain relief, a client with appendicitis has a rigid abdomen and rising fever. What should the nurse do?",
+ ["*Notify the provider immediately; suspect rupture with peritonitis","Give more pain medicine || Not the priority.","Encourage walking || Not appropriate.","Document as improving || Not improving."],
+ "Peritonitis can progress to sepsis.")
 q("append2","Why is a client with suspected appendicitis kept NPO?",
- ["*In anticipation of emergent surgery (appendectomy)","To rest the pancreas || That's pancreatitis.","To prevent dumping syndrome || Not related.","Because NPO cures the infection || Surgery is the treatment."],
- "Keep NPO, prepare for appendectomy, and monitor for rupture.")
+ ["*Because emergency surgery is expected","To rest the pancreas || Pancreatitis.","To prevent dumping || Not related.","NPO cures it || Surgery is the cure."],
+ "Prepare for appendectomy.")
 
 # ---------- diverticulitis ----------
-q("divert","Which finding is most common in diverticulitis?",
- ["RLQ pain at McBurney's point || Appendicitis.","*LLQ abdominal pain",
-  "Pain relieved by food || Duodenal ulcer.","Heartburn when lying flat || GERD."],
- "Also fever, leukocytosis, bowel habit changes, sometimes a tender mass.")
-q("divert","A client is admitted with an acute diverticulitis flare. Which diet order does the nurse expect?",
- ["High-fiber diet || That's for after the attack resolves.","*NPO or clear liquids to rest the bowel",
-  "Regular diet || Not during a flare.","High-sugar diet || Not related."],
- "NCLEX alert: high fiber protects between attacks, but the bowel is rested during a flare. Timing of diet teaching matters.")
-q("divert","After diverticulitis resolves, which teaching prevents recurrence?",
- ["*A high-fiber diet","Strict low-fiber diet || Low fiber is a risk factor.","Stay sedentary || A risk factor.","Strain with bowel movements || A risk factor."],
- "Risk factors: low-fiber diet, aging, obesity, sedentary life, smoking, straining.")
+q("divert","A client has lower LEFT abdominal pain, fever and a high WBC. What is likely?",
+ ["*Diverticulitis","Appendicitis || Lower right.","Duodenal ulcer || Epigastric.","GERD || Chest burning."],
+ "Also changes in bowel habits.")
+q("divert","A client is admitted with a diverticulitis flare. Which diet does the nurse expect?",
+ ["*NPO or clear liquids to rest the bowel","High fiber || After the flare.","Regular diet || Not yet.","High sugar || Not related."],
+ "High fiber prevents flares, but not during one.")
+q("divert","After a diverticulitis flare resolves, which diet prevents another one?",
+ ["*High fiber","Low fiber || A risk factor.","High fat || Not the teaching.","No change || Fiber helps."],
+ "Also avoid straining, smoking and a sedentary life.")
 q("divert","Which are complications of diverticulitis? "+SATA,
- ["*Abscess","*Perforation and peritonitis","*Fistula","*Bowel obstruction or stricture",
-  "Pernicious anemia || Not related."],
- "Acute management: NPO/clear liquids, IV antibiotics, pain control, monitor for perforation.")
+ ["*Abscess","*Perforation","*Fistula","*Bowel obstruction","Pernicious anemia || Not related."],
+ "Treatment: rest the bowel, IV antibiotics, pain control.")
 
 # ---------- perforation ----------
-q("perf","What is the hallmark imaging finding of GI perforation?",
- ["*Free air on x-ray or CT","Cardiomegaly || Heart failure.","Pleural effusion only || Not the hallmark.","A fecalith || Appendicitis cause."],
- "Perforation requires emergent surgical repair; delay increases mortality.")
-q("perf","Which nursing actions apply to a perforated ulcer? "+SATA,
- ["*Notify the provider now","*Keep NPO and prepare for emergent surgery","*IV fluids, broad-spectrum antibiotics and NG decompression",
-  "*Frequent vital signs to watch for shock",
-  "Give the PPI and reassess in 4 hours || Not routine pain; it's a surgical emergency."],
- "Signs: sudden severe diffuse pain, rigid board-like abdomen, rebound tenderness, fever, tachycardia, hypotension → shock.")
+q("perf","Which imaging finding confirms a GI perforation?",
+ ["*Free air under the diaphragm on x-ray or CT","An enlarged heart || Heart failure.","A fecalith || Appendicitis cause.","A hiatal hernia || Not perforation."],
+ "Perforation needs emergency surgery.")
+q("perf","A client with a perforated ulcer is being prepared for surgery. Which actions are correct? "+SATA,
+ ["*Notify the provider immediately","*Keep NPO","*Start IV fluids and antibiotics","*Insert an NG tube for decompression","*Check vitals often for shock","Give a PPI and recheck in 4 hours || An emergency."],
+ "Signs: sudden severe pain, rigid abdomen, fever, fast heart rate, low BP.")
 q("perf","Which conditions can lead to perforation? "+SATA,
- ["*Untreated peptic ulcer disease","*Ruptured appendicitis","*Diverticulitis","*Trauma",
-  "Barrett's esophagus surveillance || Not a listed cause."],
- "Also severe gastritis or ischemia.")
+ ["*Untreated peptic ulcer","*Ruptured appendix","*Diverticulitis","*Abdominal trauma","GERD alone || Not a listed cause."],
+ "Delay increases mortality.")
 
 # ---------- peritonitis ----------
-q("periton","A client with peritonitis has a rigid abdomen and absent bowel sounds. What should the nurse do?",
- ["Chart 'no output' and recheck tomorrow || Reassess, don't just chart.",
-  "*Recognize paralytic ileus from peritoneal inflammation, reassess and report",
-  "Give a laxative || Not indicated.","Encourage a regular diet || Keep NPO."],
- "NCLEX alert: absent bowel sounds + rigid abdomen = paralytic ileus.")
+q("periton","A client with peritonitis has a hard abdomen and no bowel sounds. What is happening?",
+ ["*Paralytic ileus from the inflamed peritoneum; reassess and report","Normal after surgery || Not with peritonitis.","Constipation; give a laxative || Not indicated.","Improvement || Not improving."],
+ "Don't just chart 'no bowel sounds.'")
 q("periton","Why is peritonitis so dangerous? "+SATA,
- ["*It can rapidly progress to sepsis and septic shock","*Fluid shifts into the peritoneal space (third-spacing)","*Bowel motility decreases (paralytic ileus)",
-  "It always resolves without treatment || High mortality without prompt treatment."],
- "Causes: perforation, ruptured appendix or diverticulum, peritoneal dialysis infection, post-surgical contamination.")
+ ["*It can quickly become sepsis","*Fluid shifts out of the vessels into the abdomen","*The bowel stops moving","It always clears up on its own || High mortality."],
+ "Causes: perforation, ruptured appendix, dialysis infection.")
 q("periton","Which treatments are expected for peritonitis? "+SATA,
- ["*IV broad-spectrum antibiotics","*Aggressive fluid resuscitation","*NPO with NG tube decompression","*Surgery",
-  "Heating pad to the abdomen || Not a treatment."],
- "Monitor closely for progression to sepsis.")
+ ["*IV antibiotics","*Large amounts of IV fluid","*NPO with an NG tube","*Surgery","A heating pad on the belly || Not a treatment."],
+ "Watch for sepsis.")
 
 # ---------- sepsis ----------
-q("sepsis","A client with suspected sepsis from a perforated bowel has orders for blood cultures, IV antibiotics and IV fluids. What comes first?",
- ["*Draw blood cultures","Give the antibiotics || Cultures come before antibiotics.","Start vasopressors || Fluids first; vasopressors PRN.","Check the lactate in 6 hours || Monitor lactate, but cultures first."],
- "1-hour sepsis bundle: cultures, then antibiotics (within 1 hour), then fluids.")
-q("sepsis","Within what time should broad-spectrum antibiotics be given for sepsis?",
- ["6 hours || Too long.","*1 hour","24 hours || Too long.","Only after culture results || Don't wait for results."],
- "One of the most heavily tested time-sensitive protocols.")
-q("sepsis","Which sign of sepsis is a LATE, ominous sign?",
- ["Fever || Early.","Tachycardia || Early.","*Hypotension","Tachypnea || Early."],
- "Septic shock = sepsis + persistent hypotension despite fluids.")
+q("sepsis","A septic client has orders for blood cultures, IV antibiotics and IV fluids. Which comes FIRST?",
+ ["*Blood cultures","IV antibiotics || After cultures.","Vasopressors || Fluids first.","A lactate in 6 hours || Cultures first."],
+ "1-hour sepsis bundle: cultures, then antibiotics within 1 hour, then fluids.")
+q("sepsis","How soon must antibiotics be given for sepsis?",
+ ["*Within 1 hour","Within 6 hours || Too long.","Within 24 hours || Too long.","After culture results || Don't wait."],
+ "A heavily tested time rule.")
+q("sepsis","Which sign of sepsis is LATE and ominous?",
+ ["*Low blood pressure","Fever || Early.","Fast heart rate || Early.","Fast breathing || Early."],
+ "Septic shock = low BP despite fluids.")
 q("sepsis","Which findings suggest sepsis? "+SATA,
- ["*Fever or hypothermia","*Tachycardia","*Tachypnea","*Altered mental status",
-  "Bradycardia with warm, dry skin || Not the lecture's sepsis picture."],
- "Progression: infection → SIRS → sepsis → septic shock. Trend vitals and lactate.")
-q("sepsis","Which are risk factors for sepsis from a GI source? "+SATA,
- ["*Untreated peritonitis, perforation or abscess","*Immunosuppression and older age","*Indwelling lines such as TPN or central lines","*Delayed antibiotics",
-  "A high-fiber diet || Not a risk factor."],
- "Early recognition dramatically improves survival.")
-
-# ---------- PPN vs TPN (professor: know the difference) ----------
-q("tpn","A client needs IV nutrition for 3 days while recovering, and has only a peripheral IV. Which is appropriate?",
- ["*PPN","TPN || TPN requires a central line and is for long-term, complete nutrition.","Enteral feeding through a PEG || The question asks about IV nutrition.","Neither can be given IV || Both PPN and TPN are IV."],
- "PPN = peripheral line, short-term. TPN = central line, long-term, complete nutrition.")
-q("tpn","A client with short bowel syndrome needs complete nutrition for months. Which is appropriate?",
- ["PPN || Short-term and peripheral only.","*TPN through a central line","Enteral feeding || Requires a functioning GI tract.","Clear liquids by mouth || Not complete nutrition."],
- "Parenteral nutrition is used when the gut is nonfunctional: obstruction, severe malabsorption, prolonged ileus, short bowel syndrome.")
-q("tpn","Which statements correctly compare PPN and TPN? "+SATA,
- ["*PPN is given through a peripheral vein","*TPN is given through a central line","*PPN is for short-term use","*TPN provides long-term, complete nutrition",
-  "PPN goes into the stomach through a tube || That's enteral nutrition.","TPN can be given through any peripheral IV || TPN needs a central line."],
- "Both bypass the GI tract entirely and need strict aseptic technique.")
-q("tpn","Which statement is true of BOTH PPN and TPN?",
- ["*They bypass the GI tract and require strict aseptic technique","Both require a central line || Only TPN.",
-  "Both are for long-term nutrition || PPN is short-term.","Both require a functioning gut || That's enteral nutrition."],
- "High infection risk with any parenteral line.")
+ ["*Fever or low temperature","*Fast heart rate","*Fast breathing","*New confusion","A slow heart rate with warm, dry skin || Not the picture."],
+ "Trend vitals and lactate.")
+q("sepsis","Which clients are at higher risk for sepsis from a GI source? "+SATA,
+ ["*A client with untreated peritonitis","*An older adult on immunosuppressants","*A client with a TPN central line","*A client whose antibiotics were delayed","A client on a high-fiber diet || Not a risk."],
+ "Early recognition saves lives.")
 
 # ---------- Murphy's vs McBurney's (professor: both will appear as choices) ----------
-q("signs","A client has periumbilical pain that has moved to the right lower quadrant, with rebound tenderness. Which finding is the nurse assessing?",
- ["Murphy's sign || That's inspiratory arrest with RUQ palpation, for cholecystitis.","*McBurney's point tenderness",
-  "Cullen's sign || Periumbilical bruising in pancreatitis.","Grey Turner's sign || Flank bruising in pancreatitis."],
- "McBurney's point = RLQ = appendicitis. Murphy's sign = RUQ = cholecystitis.")
-q("signs","During right upper quadrant palpation, a client suddenly stops breathing in. Which condition does this suggest?",
- ["Appendicitis || That's McBurney's point in the RLQ.","*Cholecystitis","Diverticulitis || LLQ pain.","Peptic ulcer disease || Epigastric pain."],
- "Murphy's sign = inspiratory arrest with RUQ palpation.")
-q("signs","Match the sign to its condition. Which pairings are correct? "+SATA,
- ["*Murphy's sign: cholecystitis","*McBurney's point: appendicitis",
-  "Murphy's sign: appendicitis || Murphy's = gallbladder (RUQ).","McBurney's point: cholecystitis || McBurney's = appendix (RLQ)."],
- "Memory tip: Murphy = upper (gallbladder, RUQ); McBurney = lower (appendix, RLQ).")
-q("signs","Where is McBurney's point?",
- ["Right upper quadrant || That's where Murphy's sign is checked.","*Right lower quadrant","Left lower quadrant || Diverticulitis pain.","Epigastric area || Pancreatitis and ulcer pain."],
- "Appendicitis pain starts periumbilical, then migrates to McBurney's point.")
-
-# ---------- extra depth on the four FOCUS conditions (all from the professor's slides) ----------
-q("hh","A client with a hiatal hernia reports heartburn and regurgitation. When are these symptoms usually worse?",
- ["*When lying flat and after large meals","When sitting upright || Upright helps; gravity is the first-line defense.","Only in the morning before eating || Not the pattern taught.","During exercise only || Not the pattern taught."],
- "Hiatal hernia symptoms: heartburn and regurgitation worse lying flat, dysphagia, fullness or belching, worse after large meals.")
-q("hh2","A client with a hiatal hernia has substernal chest pain. Why does the nurse take it seriously?",
- ["*Hiatal hernia pain can mimic cardiac pain, so cardiac causes must be ruled out","It always means the hernia has strangulated || Not always.",
-  "It's never related to the hernia || It can be.","It means the client has GERD only || Not the point."],
- "Substernal chest pain is listed as a hiatal hernia symptom that can mimic cardiac pain.")
-q("hh2","Which interventions are correct for a client with a hiatal hernia? "+SATA,
- ["*Small, frequent meals","*Remain upright 1–2 hours after eating","*Elevate the head of the bed","*Weight reduction and avoid tight clothing","*Avoid straining and heavy lifting",
-  "Lie down right after meals to rest the stomach || Worsens reflux."],
- "Surgical fundoplication if severe.")
-q("hh","In a sliding hiatal hernia, what moves up into the chest?",
- ["*The stomach and the GE junction","Only the fundus, beside the esophagus || That's a paraesophageal (rolling) hernia.","The appendix || Not related.","The colon || Not related."],
- "Sliding (~95%) is worse when supine. Paraesophageal: the fundus rolls up and the GE junction stays put; higher strangulation risk.")
-q("gerd","Which are risk factors for GERD? "+SATA,
- ["*Hiatal hernia","*Obesity","*Smoking and alcohol","*Caffeine, fatty or spicy foods, chocolate","*Pregnancy and delayed gastric emptying"],
- "An incompetent LES lets gastric contents reflux into the esophagus.")
-q("gerd","Which findings fit GERD? "+SATA,
- ["*Heartburn (pyrosis)","*Regurgitation of sour material","*Chronic cough, hoarseness or sore throat","*Dysphagia or odynophagia",
-  "RUQ pain with inspiratory arrest || Murphy's sign, cholecystitis."],
- "Symptoms are worse after meals and when supine.")
-q("gerd2","A client with GERD asks why they must keep taking the PPI when they feel fine. Best response?",
- ["*'Symptoms can hide ongoing damage to the esophagus, so keep taking it as prescribed.'","'You can stop once the heartburn is gone.' || Symptoms can mask damage.",
-  "'Take it only when you have heartburn.' || Not the teaching.","'It's only for your stomach, not your esophagus.' || Not accurate."],
- "Teach adherence: untreated GERD can lead to esophagitis, strictures and Barrett's esophagus.")
-q("meds","How do PPIs such as pantoprazole and omeprazole work?",
- ["*Inhibit gastric secretions, which raises the pH","Neutralize acid that's already there || Antacids.","Coat the ulcer with a gel || Sucralfate.","Speed up gastric emptying || Metoclopramide."],
- "Take 30–60 minutes before the first meal; long-term use causes osteoporosis and hypomagnesemia.")
-q("meds","How do H2 blockers such as famotidine work?",
- ["*Block histamine receptors to decrease acid secretion and raise pH","Inhibit the proton pump || PPIs.","Neutralize acid || Antacids.","Form a protective coating || Sucralfate."],
- "Can be taken with or without food; cimetidine raises anticoagulant and phenytoin levels.")
-q("meds2","A client takes sucralfate and several other oral medications. What should the nurse teach?",
- ["*Separate them, because sucralfate can decrease absorption of other medications","Take them all together for convenience || Absorption drops.",
-  "Take sucralfate after meals || Empty stomach, before meals.","Crush sucralfate into food || Not the teaching."],
- "Sucralfate works locally as a gel coating; it isn't systemic.")
-q("gastritis","Which type of gastritis is sudden, irritant-caused and usually resolves once the cause is removed?",
- ["*Acute gastritis","Chronic gastritis || Long-standing, often H. pylori, can lead to atrophy.","Barrett's esophagus || Not gastritis.","Peritonitis || Not gastritis."],
- "Causes: NSAIDs and aspirin, alcohol, H. pylori, severe physiologic stress (burns, trauma, sepsis), bile reflux.")
-q("gastritis","Which findings are expected with gastritis? "+SATA,
- ["*Epigastric pain or burning","*Nausea, vomiting and bloating","*Anorexia and early satiety",
-  "*Hematemesis or melena if erosive or bleeding","LLQ pain || Diverticulitis."],
- "Hematemesis or melena can occur with erosive or bleeding gastritis; treat it as a red flag.")
-q("gastritis2","What is the treatment approach for gastritis? "+SATA,
- ["*Remove the causative agent such as NSAIDs or alcohol","*PPIs, H2 blockers or antacids","*H. pylori eradication if positive","*Small, bland, non-irritating meals",
-  "High-fat meals to coat the stomach || Not taught."],
- "Monitor for signs of GI bleeding.")
-q("pud","When does gastric ulcer pain usually occur?",
- ["*30–60 minutes after eating, worsening with food","2–3 hours after eating and at night || Duodenal.","Only when fasting overnight || Duodenal pattern.","It's relieved by food || Duodenal."],
- "Weight loss is common with gastric ulcers because eating hurts.")
-q("pud","What is peptic ulcer disease?",
- ["*Erosion of the GI mucosa through the muscularis mucosae from an imbalance between acid/pepsin and mucosal defenses",
-  "Inflammation of the gallbladder || Cholecystitis.","An outpouching of the colon || Diverticulosis.","Backflow into the esophagus || GERD."],
- "Risk factors: H. pylori (majority), chronic NSAIDs, smoking, alcohol, physiologic stress (Curling's and Cushing's ulcers).")
-q("pud2","What is the treatment for H. pylori-related peptic ulcer disease?",
- ["*Triple or quadruple therapy as prescribed, plus a PPI","Surgery for every ulcer || Not first-line.","NSAIDs for the pain || NSAIDs cause ulcers.","Antacids alone || Doesn't eradicate H. pylori."],
- "Also avoid NSAIDs, alcohol and smoking; monitor for hemorrhage, perforation and obstruction.")
-q("pud2","Where may peptic ulcer pain radiate?",
- ["*To the back","To the right shoulder || Cholecystitis pattern.","To the left arm || Cardiac pattern.","To the RLQ || Appendicitis pattern."],
- "Burning, gnawing epigastric pain. Sudden severe pain with a rigid abdomen = perforation.")
-
-# ---------- added (student review #2, Nov 4: gastric cancer signs) ----------
-q("gcancer","Which signs fit gastric cancer? "+SATA,
- ["*Vague indigestion early (or no symptoms)","*Early satiety","*Unintended weight loss","*Anemia","*Epigastric pain"],
- "Early signs are vague, so it's often found late. Diagnosis is by endoscopy with biopsy.")
-q("gcancer","A client reports months of vague indigestion, feeling full after a few bites and a 10 lb weight loss. Which condition does the nurse suspect?",
- ["*Gastric cancer","GERD || Heartburn after meals, no weight loss pattern.","Appendicitis || Acute RLQ pain.","Cholecystitis || RUQ pain after fatty meals."],
- "Risk factors: H. pylori, smoked or salted foods, smoking, pernicious anemia, atrophic gastritis.")
+q("signs","The nurse presses the right upper abdomen and the client suddenly stops breathing in. What is this called, and what does it suggest?",
+ ["*Murphy's sign; cholecystitis","McBurney's point; appendicitis || RLQ.","Cullen's sign; pancreatitis || Bruising.","Rebound; diverticulitis || Not this."],
+ "Murphy = upper (gallbladder).")
+q("signs","A client has sharp RLQ pain halfway between the belly button and the hip bone. What is this point called?",
+ ["*McBurney's point (appendicitis)","Murphy's sign (cholecystitis) || RUQ.","Grey Turner's sign || Flank bruising.","Cullen's sign || Belly button bruising."],
+ "McBurney = lower (appendix).")
+q("signs","Which pairings are correct? "+SATA,
+ ["*Murphy's sign: cholecystitis","*McBurney's point: appendicitis","Murphy's sign: appendicitis || Murphy = gallbladder.","McBurney's point: cholecystitis || McBurney = appendix."],
+ "Murphy = upper right. McBurney = lower right.")
+q("signs","In which quadrant is Murphy's sign checked?",
+ ["*Right upper quadrant","Right lower quadrant || McBurney's.","Left lower quadrant || Diverticulitis.","Left upper quadrant || Not used."],
+ "Murphy's sign = cholecystitis.")

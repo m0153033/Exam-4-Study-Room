@@ -462,7 +462,7 @@ q("dc","How much sodium per day does the lecture recommend for heart failure?",
  ["*1.5–2 g","Under 500 mg || Not the lecture's value.","4–5 g || Too much.","No limit || Sodium is limited."],
  "Read labels.")
 q("dc","A client on a fluid restriction asks what counts as fluid. Which items count? "+SATA,
- ["*Ice chips","*Soup broth","*Gelatin","*Coffee","Toast || Not a fluid."],
+ ["*Ice chips","*Soup broth","*Coffee","Toast || Not a fluid."],
  "Anything liquid at room temperature counts.")
 q("dc","Which hospital care fits a heart failure client? "+SATA,
  ["*Space out activities with rest","*Give stool softeners to avoid straining","*Offer small, frequent meals","*Slowly increase activity","Keep on strict bedrest || Avoid long bedrest."],
