@@ -19,6 +19,7 @@ CONCEPTS = {
  "pcdx":"Pancreatic cancer diagnosis & treatment",
  "whipple":"Whipple procedure complications",
 }
+# VERSION 2 (Nov 8): every question re-worded with new scenarios/distractors.
 # Classmate update (Nov 3): pancreatitis and cholecystitis are tested -> focus.
 HI = ["gbpatho","gbsx","gbdx","gbtx","gbcomp","panpatho","panrisk","pansx","panmon","pandx","pancare","creon","whipple"]
 
@@ -26,261 +27,237 @@ SATA = "Select all that apply."
 Q = []
 def q(c, stem, opts, r): Q.append((c, stem, opts, r))
 
-# ---------- cholecystitis patho ----------
-q("gbpatho","What is the role of bile?",
- ["*Helps digest fats in the small intestine","Breaks down carbohydrates || That's amylase.","Absorbs vitamin B12 || Needs intrinsic factor.","Neutralizes stomach acid in the esophagus || Not its role."],
- "The liver makes bile; the gallbladder stores it and contracts to release it into the duodenum after a fatty meal.")
-q("gbpatho","What happens in calculous cholecystitis?",
- ["*A gallstone blocks the cystic duct → bile is trapped → inflammation and distension → ischemia and infection risk",
-  "The pancreas digests itself || Pancreatitis.","No stones are present || That's acalculous.","Bile flows too freely || Bile is trapped."],
- "Calculous cholecystitis is about 90–95% of cases.")
-q("gbpatho","Which client is most at risk for ACALCULOUS cholecystitis?",
- ["A healthy 42-year-old woman || Fits gallstone (calculous) risk.","*A critically ill client with sepsis or trauma",
-  "A teen after a fatty meal || Not the typical picture.","A client on a low-fat diet || Not a risk factor."],
- "Acalculous (5–10%): no stones; bile stasis, ischemia, trauma or sepsis.")
+# ---------- cholecystitis patho (FOCUS) ----------
+q("gbpatho","What does the gallbladder do?",
+ ["*Stores bile made by the liver and squeezes it into the duodenum after a fatty meal","Makes insulin || Pancreas.","Makes bile || The liver makes it.","Absorbs B12 || Ileum, with intrinsic factor."],
+ "Bile helps digest fats.")
+q("gbpatho","A gallstone blocks the cystic duct. What happens next?",
+ ["*Bile is trapped, the gallbladder swells and inflames, and it can become ischemic or infected","The pancreas digests itself || Pancreatitis.",
+  "Bile flows faster || It's trapped.","Nothing; stones always pass || Calculous cholecystitis develops."],
+ "Calculous cholecystitis: about 90–95% of cases.")
+q("gbpatho","An ICU client with sepsis and no gallstones develops cholecystitis. What type is this?",
+ ["*Acalculous cholecystitis","Calculous cholecystitis || Needs a stone.","Pancreatitis || Different organ.","Appendicitis || Different organ."],
+ "Acalculous (5–10%): bile stasis, ischemia, trauma or sepsis.")
+q("gbpatho","When does the gallbladder squeeze hardest, often triggering pain in cholecystitis?",
+ ["*After a fatty meal","During sleep || Not the trigger.","After drinking water || Not the trigger.","During exercise || Not the trigger."],
+ "That's why pain often starts after fried or fatty food.")
 
 # ---------- risk factors ----------
-q("gbrisk","Which are the '4 F's' of gallstone risk? "+SATA,
- ["*Female","*Fat (BMI over 30)","*Fertile","*Forty",
-  "Fit || Not one of the 4 F's."],
- "Estrogen and progesterone (pregnancy, oral contraceptives) make the gallbladder sluggish, so bile clumps.")
-q("gbrisk","Which gallstone risk factors are MODIFIABLE? "+SATA,
- ["*Obesity","*Rapid weight loss","*High-fat, low-fiber diet","*Hormone therapy or oral contraceptives",
-  "Family history of gallstones || Non-modifiable.","Native American ethnicity || Non-modifiable."],
- "Non-modifiable: female, over 40, Native American ethnicity, family history. The slide lists pregnancy under modifiable.")
-q("gbrisk","Why do oral contraceptives raise gallstone risk?",
- ["*Estrogen and progesterone make the gallbladder sluggish, so bile moves less and clumps",
-  "They block the pancreatic duct || Not the mechanism.","They increase fiber absorption || Not related.","They destroy intrinsic factor || Not related."],
- "Pregnancy increases risk for the same hormonal reason.")
+q("gbrisk","Which client fits the '4 F's' of gallstone risk?",
+ ["*A 43-year-old woman with obesity who has had three children","A 20-year-old male athlete || Doesn't fit.","A 12-year-old girl || Doesn't fit.","A thin 30-year-old man || Doesn't fit."],
+ "Female, Fat, Fertile, Forty.")
+q("gbrisk","Which gallstone risk factors can the client CHANGE? "+SATA,
+ ["*Obesity","*Crash dieting (rapid weight loss)","*A high-fat, low-fiber diet","*Taking oral contraceptives","Being female || Can't change.","Native American ethnicity || Can't change."],
+ "The slide also lists pregnancy as modifiable.")
+q("gbrisk","Why do pregnancy and birth control pills raise gallstone risk?",
+ ["*Estrogen and progesterone make the gallbladder sluggish, so bile clumps","They block the pancreatic duct || Not the reason.","They raise fiber intake || Not the reason.","They destroy intrinsic factor || Not related."],
+ "Hormones slow bile movement.")
 
-# ---------- signs ----------
-q("gbsx","During palpation of the RUQ, the client suddenly stops inhaling. What is this called?",
- ["Cullen's sign || Periumbilical bruising in pancreatitis.","*Murphy's sign","Grey Turner's sign || Flank bruising in pancreatitis.","McBurney's point || Appendicitis location."],
- "Murphy's sign = inspiratory arrest with RUQ palpation, classic for cholecystitis.")
+# ---------- signs (FOCUS) ----------
+q("gbsx","A 41-year-old with obesity has had right upper quadrant pain for 8 hours since eating fried chicken, and it spreads to the right shoulder. What does the nurse suspect?",
+ ["*Acute cholecystitis","Acute pancreatitis || Epigastric pain to the back.","Appendicitis || RLQ.","GERD || Chest burning."],
+ "RUQ pain lasting more than 6 hours, often after eating.")
+q("gbsx","During RUQ palpation, the client suddenly catches their breath and stops inhaling. What is this?",
+ ["*A positive Murphy's sign (cholecystitis)","McBurney's point (appendicitis) || RLQ.","Cullen's sign (pancreatitis) || Bruising.","Grey Turner's sign (pancreatitis) || Flank bruising."],
+ "Murphy = upper right = gallbladder.")
 q("gbsx","Which findings fit acute cholecystitis? "+SATA,
- ["*RUQ pain radiating to the right shoulder or mid-sternum","*Pain that worsens after eating","*Fever, nausea and vomiting","*Possible jaundice",
-  "LLQ pain || Diverticulitis.","Painless jaundice with weight loss || Pancreatic cancer."],
- "RUQ pain lasting more than 6 hours. Also anorexia, distended abdomen, tachycardia, possibly a palpable gallbladder.")
-q("gbsx","The CHOLY mnemonic describes cholecystitis. What does the 'Y' stand for?",
- ["*Yellow (jaundice, occasionally)","Young age || Risk is over forty.","Yawning || Not related.","Yeast infection || Not related."],
- "C: colicky RUQ pain; H: high fever; O: obstruction of bile flow; L: leukocytosis; Y: yellow.")
+ ["*RUQ pain spreading to the right shoulder","*Pain that worsens after eating","*Fever with nausea and vomiting","*Possible yellow skin","Lower left abdominal pain || Diverticulitis.","Painless jaundice with weight loss || Pancreatic cancer."],
+ "Also a fast heart rate and a distended abdomen.")
+q("gbsx","In the CHOLY mnemonic for cholecystitis, what does the 'L' stand for?",
+ ["*Leukocytosis (high WBC)","Left-sided pain || Pain is right-sided.","Low-grade fever only || H is high fever.","Lipase || Pancreatitis."],
+ "C: colicky RUQ pain · H: high fever · O: obstructed bile · L: leukocytosis · Y: yellow.")
+q("gbsx","Which finding points to cholecystitis rather than appendicitis?",
+ ["*A positive Murphy's sign","Tenderness at McBurney's point || Appendicitis.","Pain moving from the belly button to the RLQ || Appendicitis.","LLQ tenderness || Diverticulitis."],
+ "Know both: they'll appear together as answer choices.")
+q("gbsx","Which statement is correct?",
+ ["*Murphy's sign = cholecystitis; McBurney's point = appendicitis","Both point to appendicitis || Murphy is gallbladder.","Both point to cholecystitis || McBurney is appendix.","Murphy = appendicitis; McBurney = cholecystitis || Reversed."],
+ "Murphy = upper right. McBurney = lower right.")
 
-# ---------- diagnosis ----------
-q("gbdx","What is the first-line imaging test for suspected cholecystitis?",
- ["*Ultrasound","HIDA scan || Used if ultrasound is inconclusive.","ERCP || Invasive; can treat duct stones.","CT || For complications or unclear diagnosis."],
- "Ultrasound shows gallstones, wall thickening over 3 mm and pericholecystic fluid.")
-q("gbdx","On a HIDA scan, the gallbladder isn't visualized. What does this mean?",
- ["Normal gallbladder function || Non-visualization is a positive result.","*Positive for acute cholecystitis",
-  "Pancreatic cancer || Not what HIDA shows.","The test failed || Not the interpretation."],
- "HIDA (cholescintigraphy) evaluates gallbladder function and bile flow; used if ultrasound is inconclusive.")
-q("gbdx","Which lab findings are expected with cholecystitis? "+SATA,
- ["*Elevated WBC","*Elevated CRP","*Mildly elevated AST, ALT and ALP","*Elevated bilirubin if the obstruction reaches the common bile duct",
-  "Low WBC || WBC rises with inflammation."],
- "Fever is also expected.")
+# ---------- diagnosis (FOCUS) ----------
+q("gbdx","Which test is done FIRST when cholecystitis is suspected?",
+ ["*Abdominal ultrasound","HIDA scan || If ultrasound is unclear.","ERCP || Invasive; treats duct stones.","CT || For complications."],
+ "Ultrasound: stones, a thick gallbladder wall, fluid around it.")
+q("gbdx","The ultrasound is unclear. Which test does the nurse expect next?",
+ ["*HIDA scan","ERCP || Not the next step.","Colonoscopy || Not related.","Chest x-ray || Not related."],
+ "HIDA evaluates gallbladder function and bile flow.")
+q("gbdx","The HIDA scan report says the gallbladder did not fill. What does this mean?",
+ ["*Positive for acute cholecystitis (the cystic duct is blocked)","Normal || Non-filling is abnormal.","The test failed || Not the meaning.","Pancreatic cancer || Not what HIDA shows."],
+ "Non-visualization = cystic duct obstruction.")
+q("gbdx","Which lab results are expected with cholecystitis? "+SATA,
+ ["*High WBC","*High CRP","*Slightly high AST, ALT and ALP","*High bilirubin if the common bile duct is blocked","A low WBC || WBC rises."],
+ "Fever is common.")
 
 # ---------- MRCP / ERCP / HIDA ----------
-q("ducts","Which procedure can actually REMOVE gallstones from the ducts?",
- ["MRCP || Noninvasive imaging only.","*ERCP","HIDA scan || Evaluates function and bile flow.","Ultrasound || Imaging only."],
- "ERCP = endoscopic retrograde cholangiopancreatography: direct visualization and treatment of duct problems.")
-q("ducts","Which test gives NONINVASIVE images of the biliary and pancreatic ducts?",
- ["ERCP || Endoscopic and invasive.","*MRCP","HIDA || Looks at function, not detailed duct anatomy.","Whipple || A surgery."],
- "Think 'image vs treat': MRCP images; ERCP can treat.")
-q("ducts","Which complication is a known risk after ERCP?",
- ["*Pancreatitis","Dumping syndrome || After gastrectomy.","Pernicious anemia || Not related.","Appendicitis || Not related."],
- "Post-ERCP pancreatitis is listed among pancreatitis causes.")
+q("ducts","Which procedure can both see AND remove gallstones stuck in the ducts?",
+ ["*ERCP","MRCP || Images only.","HIDA || Function only.","Ultrasound || Images only."],
+ "MRCP images; ERCP can treat.")
+q("ducts","Which test gives detailed images of the bile and pancreatic ducts WITHOUT a scope?",
+ ["*MRCP","ERCP || Uses a scope.","HIDA || Function, not anatomy.","Whipple || A surgery."],
+ "Think 'image vs treat.'")
+q("ducts","Which complication should the nurse watch for after an ERCP?",
+ ["*Pancreatitis","Dumping syndrome || After gastric surgery.","Pernicious anemia || Not related.","Appendicitis || Not related."],
+ "Post-ERCP pancreatitis is a listed cause.")
 
-# ---------- treatment ----------
-q("gbtx","Which medical management is expected for acute cholecystitis? "+SATA,
- ["*NPO","*IV fluids","*Pain control (NSAIDs or opioids)","*Broad-spectrum antibiotics such as ceftriaxone + metronidazole",
-  "High-fat diet to empty the gallbladder || Low-fat diet."],
- "Surgery: laparoscopic cholecystectomy, usually within 48 hours; percutaneous cholecystostomy if unstable.")
-q("gbtx","What diet teaching follows a cholecystectomy?",
- ["High-fat diet to stimulate bile || Not taught.","*Fat-restricted diet for 4–6 weeks",
-  "No restrictions || The lecture teaches restriction.","Clear liquids for 6 months || Not taught."],
- "Post-op issues: pain control, bleeding, infection, respiratory issues.")
-q("gbtx","Which post-op problems should the nurse monitor after a cholecystectomy? "+SATA,
- ["*Pain","*Bleeding","*Infection","*Respiratory issues",
-  "Gingival hyperplasia || Not related."],
- "Laparoscopic: abdomen inflated with CO2, small puncture sites. Open: right-side incision with a drain.")
-q("gbtx","A cholecystitis client is too unstable for surgery. Which procedure might be done?",
- ["Whipple || Pancreatic cancer surgery.","*Percutaneous cholecystostomy","Fundoplication || Hiatal hernia.","Appendectomy || Not related."],
- "Stable clients usually get laparoscopic cholecystectomy within 48 hours.")
+# ---------- treatment (FOCUS) ----------
+q("gbtx","A client is admitted with acute cholecystitis. Which orders does the nurse expect? "+SATA,
+ ["*NPO","*IV fluids","*Pain medicine","*IV antibiotics such as ceftriaxone with metronidazole","A high-fat meal || Triggers pain."],
+ "Surgery: laparoscopic cholecystectomy, usually within 48 hours.")
+q("gbtx","A client is confirmed to have acute cholecystitis. What is the IMMEDIATE diet order?",
+ ["*NPO","Low-fat diet || Later.","Regular diet || Not now.","Clear liquids with cream || Not appropriate."],
+ "NPO rests the gallbladder.")
+q("gbtx","What diet should a client follow after cholecystectomy?",
+ ["*Low-fat for 4–6 weeks","High-fat to stimulate bile || Not taught.","No restrictions || Restrict fat.","Liquids only for 6 months || Not taught."],
+ "The body adjusts to bile flowing straight from the liver.")
+q("gbtx","After a cholecystectomy, which problems does the nurse watch for? "+SATA,
+ ["*Pain","*Bleeding","*Infection","*Breathing problems","Gum overgrowth || Not related."],
+ "Laparoscopic: CO2 inflation and small puncture sites. Open: right-side incision with a drain.")
+q("gbtx","A client with cholecystitis is too unstable for surgery. What may be done instead?",
+ ["*Percutaneous cholecystostomy (a drain into the gallbladder)","Whipple procedure || Pancreatic cancer.","Fundoplication || Hiatal hernia.","Appendectomy || Not related."],
+ "Stable clients get laparoscopic surgery.")
 
-# ---------- complications ----------
-q("gbcomp","A client with cholecystitis develops a rigid abdomen, rebound tenderness and confusion. What should the nurse do?",
- ["Give the scheduled pain medicine and reassess later || Signs of a surgical emergency.","*Notify the provider immediately; this could be perforation or sepsis",
-  "Start a low-fat diet || Not the priority.","Apply heat || Not indicated."],
- "Watch for worsening: rigid abdomen, rebound tenderness, jaundice, mental status changes, fever, tachycardia, hypotension.")
-q("gbcomp","Why does the nurse monitor amylase and lipase in a client with cholecystitis?",
- ["*To rule out pancreatitis","To check for B12 deficiency || Not related.","To check kidney function || BUN/Cr.","To check clotting || Not related."],
- "Also monitor LFTs, WBC and bilirubin.")
+# ---------- complications (FOCUS) ----------
+q("gbcomp","A client with cholecystitis becomes confused, with a rigid abdomen and BP 86/50. What should the nurse do?",
+ ["*Notify the provider immediately; suspect perforation or sepsis","Give pain medicine and recheck later || An emergency.","Start a low-fat diet || Not the priority.","Apply heat || Not indicated."],
+ "Escalate: rigid abdomen, rebound, jaundice, mental status changes, fever, low BP.")
+q("gbcomp","Why are lipase and amylase checked in a client with cholecystitis?",
+ ["*To rule out pancreatitis","To check the kidneys || BUN/creatinine.","To check B12 || Not related.","To check clotting || Not related."],
+ "A gallstone can also block the pancreatic duct.")
+q("gbcomp","Which findings in a cholecystitis client need escalation? "+SATA,
+ ["*New jaundice","*Rebound tenderness","*Low blood pressure","*New confusion","Mild nausea that's improving || Not a red flag."],
+ "Signs of perforation, obstruction or sepsis.")
 
-# ---------- pancreatitis patho ----------
-q("panpatho","What is the basic mechanism of pancreatitis?",
- ["*Pancreatic enzymes activate inside the pancreas and digest it (autodigestion)","Bile is trapped in the gallbladder || Cholecystitis.",
-  "Intrinsic factor is lost || Pernicious anemia.","Myelin is destroyed || MS."],
- "Trigger (gallstones, alcohol) → enzyme activation → autodigestion and inflammation → possible necrosis, infection, systemic inflammatory response.")
+# ---------- pancreatitis patho (FOCUS) ----------
+q("panpatho","A client asks what is happening in pancreatitis. What is the best answer?",
+ ["*Digestive enzymes turn on inside the pancreas and start digesting it","Bile is trapped in the gallbladder || Cholecystitis.","The stomach lining erodes || PUD.","The appendix is blocked || Appendicitis."],
+ "This is called autodigestion.")
 q("panpatho","Which enzyme does the lecture name as digesting the pancreas itself?",
- ["Pepsin || A stomach enzyme.","*Trypsin","Acetylcholinesterase || Neuro enzyme.","Lactase || Not named."],
- "The pancreatic duct becomes obstructed while enzymes are hypersecreted; enzymes and bile reflux back into the pancreas.")
+ ["*Trypsin","Pepsin || Stomach.","Lactase || Not named.","Insulin || A hormone."],
+ "Enzymes and bile back up into the pancreas.")
+q("panpatho","What sequence describes acute pancreatitis?",
+ ["*A trigger (gallstone or alcohol) → enzymes activate early → the pancreas digests itself → inflammation, possible necrosis and infection","Infection → stones → pain || Not the sequence.",
+  "Low insulin → ketones → acidosis || That's DKA.","Acid reflux → ulcer → bleed || Not pancreatitis."],
+ "Can trigger a body-wide inflammatory response.")
 
-# ---------- causes ----------
-q("panrisk","What are the two most common causes of pancreatitis?",
- ["*Gallstones and alcohol","Mumps and trauma || Listed, but less common.","Smoking and tumors || Listed, but less common.","Genetics and autoimmunity || Listed, but less common."],
- "Gallstones block the duct; alcohol damages cells and increases enzyme secretion.")
+# ---------- causes (FOCUS) ----------
+q("panrisk","What are the two MOST common causes of pancreatitis?",
+ ["*Gallstones and alcohol","Mumps and trauma || Less common.","Smoking and tumors || Less common.","Genetics and autoimmune disease || Less common."],
+ "Gallstones block the duct; alcohol damages the cells.")
+q("panrisk","A client with a triglyceride level of 1,200 mg/dL is at risk for which condition?",
+ ["*Acute pancreatitis","Appendicitis || Not related.","Hiatal hernia || Not related.","Pernicious anemia || Not related."],
+ "Triglycerides over 1,000 can trigger pancreatitis.")
 q("panrisk","Which can trigger pancreatitis? "+SATA,
- ["*Triglycerides over 1,000 mg/dL","*Thiazide diuretics, corticosteroids, valproic acid or estrogens","*ERCP","*Abdominal trauma","*Mumps or CMV",
-  "Low-fat diet || Recommended, not a cause."],
- "Idiopathic in 10–20% of cases.")
+ ["*Thiazide diuretics or corticosteroids","*Valproic acid","*An ERCP","*Abdominal trauma","*Mumps","A low-fat diet || Recommended."],
+ "10–20% of cases have no known cause.")
+q("panrisk","A client who drinks a fifth of vodka daily and a client with gallstones are both at risk for which condition?",
+ ["*Pancreatitis","Appendicitis || Not caused this way.","Diverticulitis || Not caused this way.","Gastroenteritis || Infectious."],
+ "The top two causes.")
 
-# ---------- acute vs chronic ----------
-q("pansx","Which pain is classic for ACUTE pancreatitis?",
- ["*Sudden severe epigastric pain radiating to the back","RUQ pain to the right shoulder || Cholecystitis.",
-  "Periumbilical pain moving to the RLQ || Appendicitis.","LLQ pain || Diverticulitis."],
- "Also nausea/vomiting, fever, tachycardia, tenderness, possible jaundice and a rigid board-like abdomen.")
-q("pansx","A client with acute pancreatitis has bluish discoloration around the umbilicus. What is this called?",
- ["Grey Turner's sign || Flank discoloration.","*Cullen's sign","Murphy's sign || Cholecystitis.","Trousseau's sign || Not taught here."],
- "Cullen's = periumbilical; Grey Turner's = flank.")
+# ---------- acute vs chronic (FOCUS) ----------
+q("pansx","A client has sudden, severe pain in the upper middle abdomen that bores through to the back after a night of heavy drinking. What is the likely diagnosis?",
+ ["*Acute pancreatitis","Cholecystitis || RUQ to the right shoulder.","Appendicitis || RLQ.","Diverticulitis || LLQ."],
+ "Also nausea, vomiting, fever, fast heart rate and possibly a rigid abdomen.")
+q("pansx","A client with pancreatitis has bluish bruising around the belly button. What is this called?",
+ ["*Cullen's sign","Grey Turner's sign || Flank bruising.","Murphy's sign || Cholecystitis.","McBurney's point || Appendicitis."],
+ "Cullen's = belly button; Grey Turner's = flanks.")
+q("pansx","A client with pancreatitis has bluish bruising on the flanks. What is this called?",
+ ["*Grey Turner's sign","Cullen's sign || Around the belly button.","Murphy's sign || Cholecystitis.","Homan's sign || Not related."],
+ "Both mean bleeding into the tissues.")
 q("pansx","Which findings suggest CHRONIC pancreatitis? "+SATA,
- ["*Steatorrhea (fatty stools)","*Weight loss","*Diabetes mellitus","*Persistent abdominal pain",
-  "Murphy's sign || Cholecystitis.","Sudden pain relief || An appendicitis red flag."],
- "The damaged pancreas makes too few digestive enzymes and too little insulin.")
-q("pansx","Why do clients with chronic pancreatitis develop diabetes?",
- ["*Pancreatic damage reduces insulin production","Too much bile || Not the mechanism.","High-fiber diet || Not the mechanism.","Steroid overuse only || Not the main reason."],
- "Blood glucose control and monitoring are part of care and teaching.")
+ ["*Fatty, foul-smelling stools","*Weight loss","*New diabetes","*Ongoing abdominal pain","Murphy's sign || Cholecystitis."],
+ "The damaged pancreas makes too few enzymes and too little insulin.")
+q("pansx","Why do clients with chronic pancreatitis often develop diabetes?",
+ ["*Damage to the pancreas reduces insulin production","Too much bile || Not the reason.","High fiber intake || Not the reason.","Steroids only || Not the main reason."],
+ "Glucose monitoring is part of the teaching.")
 
-# ---------- complications ----------
-q("panmon","A client with acute pancreatitis becomes hypotensive and tachycardic with cold, clammy skin. What is happening?",
- ["*Shock from protein-rich fluid shifting into the peritoneal cavity","Expected pain response || These are shock signs.",
-  "Hypoglycemia || Glucose rises in pancreatitis.","Dumping syndrome || Not related."],
- "Shock, low O2, AKI or new respiratory distress = urgent escalation, not routine pain management.")
-q("panmon","Which complications should the nurse monitor for in acute pancreatitis? "+SATA,
- ["*Hypovolemic shock","*Acute kidney injury","*Respiratory distress with pleural effusions or infiltrates","*Hypocalcemia, which can lead to clotting problems and DIC",
-  "Hyperactive bowel sounds from overeating || NPO; ileus is the concern."],
- "Respiratory compromise shows on ABGs as respiratory acidosis.")
-q("panmon","Hypocalcemia in acute pancreatitis can lead to which complication, per the lecture?",
- ["*Coagulation problems and DIC","Gingival hyperplasia || Phenytoin.","Dumping syndrome || Not related.","Barrett's esophagus || Not related."],
- "Monitor electrolytes and labs frequently.")
+# ---------- complications (FOCUS) ----------
+q("panmon","A client with acute pancreatitis becomes cold and clammy with BP 82/48 and HR 128. What is happening?",
+ ["*Hypovolemic shock from fluid shifting into the abdomen","Expected pain response || Shock signs.","Low blood sugar || Glucose rises.","Dumping syndrome || Not related."],
+ "Escalate right away.")
+q("panmon","A client with pancreatitis is suddenly short of breath with an O2 sat of 87%. What should the nurse do?",
+ ["*Escalate urgently; respiratory distress is a complication","Give more pain medicine and recheck later || Not routine.","Encourage oral fluids || NPO.","Document as expected || A red flag."],
+ "Pleural effusions and infiltrates can develop.")
+q("panmon","Which complications should the nurse watch for in acute pancreatitis? "+SATA,
+ ["*Shock","*Acute kidney injury","*Breathing trouble with pleural effusions","*Low calcium","Hyperactive bowel sounds from overeating || NPO; ileus is the concern."],
+ "Low calcium can lead to clotting problems and DIC.")
+q("panmon","A client with pancreatitis has a low calcium level. Which complication does the lecture link to this?",
+ ["*Clotting problems and DIC","Gum overgrowth || Phenytoin.","Barrett's esophagus || GERD.","Dumping syndrome || Not related."],
+ "Monitor electrolytes often.")
+q("panmon","Which findings in pancreatitis need URGENT escalation? "+SATA,
+ ["*Low blood pressure","*Low O2 sat","*Falling urine output","*New breathing trouble","Pain of 6/10 that is improving with IV opioids || Expected."],
+ "Not routine pain management.")
 
-# ---------- labs ----------
-q("pandx","Which labs are elevated in acute pancreatitis? "+SATA,
- ["*Amylase","*Lipase","*WBC","*Glucose","*Triglycerides",
-  "Calcium || Calcium is LOW (hypocalcemia)."],
- "Also elevated ALT/AST and bilirubin. ABGs may show metabolic acidosis.")
-q("pandx","Which imaging may be used to evaluate pancreatitis? "+SATA,
- ["*Abdominal ultrasound","*CT scan","*MRI","*ERCP",
-  "HIDA scan only || HIDA is for gallbladder function."],
- "Diagnosis is based on history, risk factors, exam, labs and imaging.")
+# ---------- labs & imaging (FOCUS) ----------
+q("pandx","Which lab results confirm acute pancreatitis?",
+ ["*High lipase and amylase","Low WBC || WBC rises.","High troponin || Heart.","Low glucose || Glucose rises."],
+ "Lipase is the more specific test.")
+q("pandx","Which labs are HIGH in acute pancreatitis? "+SATA,
+ ["*Lipase","*Amylase","*WBC","*Glucose","*Triglycerides","Calcium || Calcium is low."],
+ "Also AST, ALT and bilirubin.")
+q("pandx","Which imaging can be used to evaluate pancreatitis? "+SATA,
+ ["*Abdominal ultrasound","*CT scan","*MRI","*ERCP","A HIDA scan only || Gallbladder function."],
+ "Diagnosis combines history, exam, labs and imaging.")
 
-# ---------- care ----------
-q("pancare","Why is a client with acute pancreatitis kept NPO?",
- ["*To rest the pancreas","To prepare for a Whipple || Not routine.","To prevent dumping syndrome || Not related.","To raise blood glucose || Not the reason."],
- "Plus IV opioids, IV fluids and electrolytes, glucose control, labs and VS monitoring.")
-q("pancare","When is an NG tube used in pancreatitis?",
- ["*For vomiting or severe distention, to decompress an ileus","For every client || Not routine.","To give pancreatic enzymes || Not the purpose.","To give alcohol withdrawal meds || Not the purpose."],
- "Surgery may be needed to resect and debride infected, necrotic pancreas.")
+# ---------- care (FOCUS) ----------
+q("pancare","A client with acute pancreatitis asks for breakfast. What should the nurse say?",
+ ["*You'll stay NPO for now so the pancreas can rest","A high-fat meal will give you energy || Stimulates the pancreas.","Eat whatever you like || Not yet.","Drink some juice only || NPO."],
+ "Initial care: NPO, IV fluids, IV pain control, glucose control, frequent labs.")
+q("pancare","Which initial orders are expected for acute pancreatitis? "+SATA,
+ ["*NPO","*IV fluids and electrolytes","*IV opioids for pain","*Blood glucose monitoring","A high-fat diet || Stimulates the pancreas."],
+ "Frequent labs and vital signs.")
+q("pancare","When does a client with pancreatitis need an NG tube?",
+ ["*For vomiting or severe abdominal swelling (ileus)","For every client || Not routine.","To give Creon || Not the purpose.","To give alcohol || Never."],
+ "Surgery may be needed to remove dead, infected tissue.")
+q("pancare","Which discharge statement shows correct pancreatitis teaching?",
+ ["*I'll stop drinking and smoking and eat low-fat, high-protein meals","I'll have a beer now and then || Avoid alcohol.","I'll eat high-fat food to gain weight || Low-fat.","I don't need to check my sugar || Glucose monitoring is taught."],
+ "Report worsening pain, fever or jaundice.")
 q("pancare","Which discharge teaching is correct for pancreatitis? "+SATA,
- ["*Avoid alcohol and smoking","*Low-fat, high-protein diet","*Monitor blood glucose","*Seek help for worsening pain, fever or jaundice",
-  "High-fat diet to rebuild weight || Low-fat diet."],
- "Enzyme supplementation for chronic pancreatitis.")
+ ["*Avoid alcohol","*Stop smoking","*Low-fat, high-protein diet","*Check blood sugar","*Report pain, fever or yellow skin","Eat a high-fat diet || Low-fat."],
+ "Chronic pancreatitis needs enzyme replacement.")
 
 # ---------- Creon ----------
-q("creon","When should a client take pancreatic enzymes (Creon)?",
- ["Once daily at bedtime || Not the instruction.","*With every meal and snack",
-  "Only when stools are fatty || Taken routinely with food.","On an empty stomach || Taken with food."],
- "Creon contains lipase (fats), amylase (carbohydrates) and protease (proteins).")
-q("creon","A client on Creon has trouble swallowing capsules. What should the nurse teach?",
- ["Crush the capsule and mix with water || Don't crush or chew.","*Sprinkle the contents on an acidic soft food like applesauce",
-  "Chew the capsule well || Don't chew.","Skip the dose || Needed with every meal."],
- "Swallow whole; sprinkling on acidic soft food is allowed if swallowing is hard.")
-q("creon","Which findings show pancreatic enzyme replacement is working? "+SATA,
- ["*Less steatorrhea","*Weight gain","*Less bloating",
-  "Higher lipase level || Not the effectiveness measure.","More frequent fatty stools || Shows it isn't working."],
- "Adjust dose if symptoms persist.")
-q("creon","Which enzyme in Creon breaks down fats?",
- ["Amylase || Carbohydrates.","Protease || Proteins.","*Lipase","Trypsin inhibitor || Not in Creon."],
- "Creon is a pancreatic enzyme replacement therapy (PERT).")
+q("creon","A client with chronic pancreatitis is prescribed pancrelipase (Creon). When is it taken?",
+ ["*With every meal and snack","Once a day at bedtime || Not the instruction.","Only when stools are greasy || Routinely with food.","On an empty stomach || With food."],
+ "These clients lack the enzymes; Creon replaces them.")
+q("creon","A client can't swallow Creon capsules. What should the nurse teach?",
+ ["*Open the capsule and sprinkle it on an acidic soft food like applesauce","Crush it in water || Don't crush.","Chew it || Don't chew.","Skip it || Needed with meals."],
+ "Swallow whole whenever possible.")
+q("creon","Which findings show Creon is working? "+SATA,
+ ["*Fewer fatty stools","*Weight gain","*Less bloating","A higher lipase level || Not the measure.","More greasy stools || Not working."],
+ "The dose may be adjusted if symptoms continue.")
+q("creon","Which enzyme in Creon breaks down FAT?",
+ ["*Lipase","Amylase || Carbohydrates.","Protease || Proteins.","Insulin || A hormone."],
+ "Amylase = carbs; protease = protein.")
 
 # ---------- pancreatic cancer ----------
-q("pcsx","What is the classic presenting sign of pancreatic cancer in the head of the pancreas?",
- ["Murphy's sign || Cholecystitis.","*Painless jaundice with dark urine",
-  "Severe epigastric pain after a binge || Acute pancreatitis.","Bloody diarrhea || Not taught."],
- "The tumor obstructs the ducts. Clients usually seek care because of jaundice.")
+q("pcsx","A 70-year-old smoker has yellow skin, dark urine and no pain. What does the nurse suspect?",
+ ["*Pancreatic cancer in the head of the pancreas","Cholecystitis || Painful.","Acute pancreatitis || Very painful.","Appendicitis || RLQ pain."],
+ "Painless jaundice is the classic sign.")
 q("pcsx","Which are risk factors for pancreatic cancer? "+SATA,
- ["*Smoking","*Chronic pancreatitis","*Diabetes","*High red-meat intake","*Older age and male sex",
-  "High-fiber diet || Not a listed risk."],
- "Also chemical exposure and family history. It's a leading cause of cancer deaths in the U.S.")
+ ["*Smoking","*Chronic pancreatitis","*Diabetes","*A diet high in red meat","*Older age","A high-fiber diet || Not a risk."],
+ "Also male sex, chemical exposure and family history.")
 q("pcsx","Which findings suggest pancreatic cancer? "+SATA,
- ["*Unexplained weight loss","*Dull abdominal pain radiating to the back","*New-onset diabetes","*Steatorrhea",
-  "Inspiratory arrest with RUQ palpation || Murphy's sign, cholecystitis."],
- "Usually discovered late; most commonly adenocarcinoma in the head of the pancreas.")
-
-q("pcdx","Which tumor markers are elevated in pancreatic cancer? "+SATA,
- ["*CA 19-9","*CEA",
-  "BNP || Heart failure.","PSA || Prostate.","Troponin || Cardiac."],
- "Also elevated amylase, lipase and alkaline phosphatase.")
-q("pcdx","What is the best imaging for visualizing a pancreatic tumor?",
- ["*CT or MRI with contrast","HIDA scan || Gallbladder function.","Plain abdominal x-ray || Not the best.","ECG || Not imaging."],
+ ["*Unexplained weight loss","*Dull pain that spreads to the back","*New diabetes","*Fatty stools","Murphy's sign || Cholecystitis."],
+ "Usually found late.")
+q("pcdx","Which tumor markers are high in pancreatic cancer? "+SATA,
+ ["*CA 19-9","*CEA","BNP || Heart failure.","PSA || Prostate.","Troponin || Heart."],
+ "Also amylase, lipase and alkaline phosphatase.")
+q("pcdx","Which imaging best shows a pancreatic tumor?",
+ ["*CT or MRI with contrast","A HIDA scan || Gallbladder.","A plain x-ray || Not the best.","An ECG || Not imaging."],
  "PET scans may also be used.")
 
 # ---------- Whipple ----------
-q("whipple","What does the Whipple procedure (pancreaticoduodenectomy) remove?",
- ["*Head of the pancreas, duodenum, gallbladder and bile duct","The whole stomach only || Gastrectomy.","The appendix || Appendectomy.","The colon || Not the Whipple."],
- "The remaining organs are reconnected so food can move through. Increasingly done robotically or laparoscopically.")
-q("whipple","After a Whipple, the drain output is high and has high amylase. What should the nurse suspect?",
- ["Bile leak || Shows bilious drainage.","*Pancreatic fistula","Normal output || Report high-amylase output.","DVT || Not a drain finding."],
- "Monitor drain amount and color.")
-q("whipple","Bilious drainage appears in a surgical drain after a Whipple. What does this suggest?",
- ["*Bile leak","Pancreatic fistula || High-amylase output.","Delayed gastric emptying || Managed with NPO and NG.","Expected serous drainage || Bilious isn't expected."],
- "Report unexpected drain output promptly.")
-q("whipple","Which nursing measures prevent DVT/PE after a Whipple? "+SATA,
- ["*Early ambulation","*SCDs","*Anticoagulants if ordered",
-  "Strict bedrest || Increases DVT risk.","Keep knees elevated on pillows all day || Not a DVT prevention measure."],
- "Priorities: complications, pain, nutrition/GI function, infection control, teaching.")
-q("whipple","Match each Whipple complication to its nursing check. Which pairs are correct? "+SATA,
- ["*Hemorrhage: vitals, drain output, H&H","*Infection: temperature, WBC, wound and drain site","*Delayed gastric emptying: NPO initially, possible NG tube",
-  "Pancreatic fistula: monitor blood glucose only || Monitor drain amount/color and high-amylase output."],
- "Unexpected drain output, bleeding, fever or hemodynamic changes after a Whipple → prompt evaluation.")
-
-# ---------- Murphy's vs McBurney's (professor: both will appear as choices) ----------
-q("gbsx","A client with suspected gallbladder disease is being examined. Which finding supports cholecystitis rather than appendicitis?",
- ["Tenderness at McBurney's point || That's appendicitis (RLQ).","*Positive Murphy's sign",
-  "Pain moving from the umbilicus to the RLQ || Appendicitis.","LLQ tenderness || Diverticulitis."],
- "Murphy's sign: inspiratory arrest during RUQ palpation = cholecystitis.")
-q("gbsx","Which statement about Murphy's sign and McBurney's point is correct?",
- ["*Murphy's sign suggests cholecystitis; McBurney's point tenderness suggests appendicitis",
-  "Both suggest appendicitis || Murphy's is gallbladder.","Both suggest cholecystitis || McBurney's is appendix.",
-  "Murphy's suggests appendicitis; McBurney's suggests cholecystitis || Reversed."],
- "Murphy = RUQ gallbladder. McBurney = RLQ appendix.")
-
-# ---------- added scenarios (cholecystitis & pancreatitis focus) ----------
-q("gbsx","A 42-year-old client with a BMI of 34 reports RUQ pain for 7 hours that began after a fried-food dinner and radiates to the right shoulder. What does the nurse suspect?",
- ["*Acute cholecystitis","Acute pancreatitis || Pain is epigastric radiating to the back.","Appendicitis || RLQ at McBurney's point.","Peptic ulcer disease || Epigastric pain, not RUQ after fatty food."],
- "RUQ pain over 6 hours, often after eating, may radiate to the right shoulder or mid-sternum. Think 4 F's.")
-q("gbdx","A client's ultrasound for cholecystitis is unclear. Which test does the nurse expect next?",
- ["*HIDA scan","ERCP right away || Used to treat duct stones, not first follow-up.","Colonoscopy || Not related.","Upper GI series || Not the lecture's choice."],
- "Ultrasound first; HIDA if unclear (gallbladder not visualized = cystic duct obstruction); CT for unclear cases or complications.")
-q("gbtx","A client is admitted with acute cholecystitis. Which orders does the nurse expect? "+SATA,
- ["*NPO","*IV fluids","*Analgesia","*Antibiotics as ordered","High-fat meal to empty the gallbladder || Fat triggers contraction and pain."],
- "Early laparoscopic cholecystectomy is common; low-fat diet when appropriate.")
-q("gbcomp","A client with cholecystitis becomes yellow, hypotensive and confused. What is the priority?",
- ["*Report immediately; possible perforation or sepsis","Recheck in 4 hours || Too slow.","Give a low-fat snack || Not the priority.","Document as expected || These are red flags."],
- "Escalate: rigid abdomen, rebound, jaundice, hypotension or mental-status changes.")
-q("panrisk","A client who drinks heavily, and another with gallstones, are both at risk for which condition?",
- ["*Acute pancreatitis","Appendicitis || Caused by obstruction of the appendix.","Gastroenteritis || Infectious cause.","Diverticulitis || Colon outpouchings."],
- "The two most common causes are gallstones and alcohol. Also triglycerides over 1,000, certain drugs, post-ERCP, trauma, smoking.")
-q("pansx","A client has sudden severe epigastric pain radiating to the back, vomiting, fever and tachycardia. Which lab results confirm the suspected diagnosis?",
- ["*Elevated lipase and amylase","Low WBC || WBC rises.","Elevated troponin || Cardiac.","Low glucose || Glucose often rises."],
- "Also elevated WBC, AST/ALT, bilirubin, glucose and triglycerides; possible hypocalcemia.")
-q("panmon","A client with acute pancreatitis has new shortness of breath and an O2 saturation of 88%. What should the nurse do?",
- ["*Treat it as urgent and escalate; respiratory distress is a complication","Give more IV pain medication and recheck later || Not routine pain management.",
-  "Encourage oral fluids || The client is NPO.","Document it as expected || A red flag."],
- "Watch for hypotension, shock, AKI, respiratory distress and pleural effusions.")
-q("pancare","A client with acute pancreatitis asks for something to eat. What does the nurse explain?",
- ["*Stay NPO for now to rest the pancreas and decrease enzyme stimulation","Eat a high-fat meal for energy || Fat stimulates the pancreas.",
-  "Drink alcohol to relax || Alcohol is a cause.","Eat anything you like || Not initially."],
- "Initial care: NPO, IV fluids and electrolytes, IV analgesia, glucose control, frequent labs and vital signs.")
-q("pancare","Which statement by a client recovering from pancreatitis shows correct teaching?",
- ["*I will avoid alcohol and smoking and eat a low-fat, high-protein diet","I can drink beer on weekends || Avoid alcohol.",
-  "I will eat a high-fat diet || Low-fat diet.","I don't need to watch my blood sugar || Glucose monitoring is taught."],
- "Report worsening pain, fever or jaundice.")
+q("whipple","A client asks what the Whipple procedure removes. What is the answer?",
+ ["*The head of the pancreas, the duodenum, the gallbladder and the bile duct","The whole stomach only || Gastrectomy.","The appendix || Appendectomy.","The colon || Not the Whipple."],
+ "The remaining organs are reconnected.")
+q("whipple","After a Whipple, the drain output is large and tests high in amylase. What does the nurse suspect?",
+ ["*A pancreatic fistula","A bile leak || Bilious drainage.","Normal drainage || Report it.","A DVT || Not a drain finding."],
+ "Watch drain amount and color.")
+q("whipple","After a Whipple, the drain shows greenish-yellow bile. What does this suggest?",
+ ["*A bile leak","A pancreatic fistula || High-amylase drainage.","Normal drainage || Not expected.","Delayed gastric emptying || Not a drain finding."],
+ "Report unexpected drain output right away.")
+q("whipple","How does the nurse prevent clots after a Whipple? "+SATA,
+ ["*Early walking","*SCDs","*Anticoagulants if ordered","Strict bedrest || Raises clot risk.","Pillows under the knees all day || Not prevention."],
+ "Also watch for bleeding, infection and fistula.")
+q("whipple","Which Whipple complication and nursing check are matched correctly? "+SATA,
+ ["*Bleeding: vitals, drain output, H&H","*Infection: temperature, WBC, wound","*Delayed gastric emptying: NPO at first, possibly an NG tube","Pancreatic fistula: check blood glucose only || Check drain amount, color and amylase."],
+ "Report fever, bleeding or unexpected drain output.")
