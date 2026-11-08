@@ -241,7 +241,7 @@ q("comm","Which communication practices are correct during a Code Blue? "+SATA,
 q("comm","Which SBAR parts are matched correctly? "+SATA,
  ["*Situation: what's happening now","*Background: history and recent changes","*Assessment: findings and vital signs","*Recommendation: what you need done","Background: what you want done || Recommendation."],
  "A structured handoff.")
-q("comm","A nurse calls the provider: 'Mr. Lee in 214 is short of breath with an O2 sat of 86%.' Which part of SBAR is this?",
+q("comm","A nurse calls the provider: 'I'm calling about Mr. Lee in room 214. He is suddenly short of breath.' Which part of SBAR is this?",
  ["*Situation","Background || History.","Assessment || Detailed findings.","Recommendation || What you need."],
  "Situation = what's happening right now.")
 q("comm","Why does each Code Blue member need one clear role?",
