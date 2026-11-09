@@ -1,0 +1,4520 @@
+{
+ "main": {
+  "WEEKS": [
+   [
+    "6.2",
+    "Aneurysms"
+   ],
+   [
+    "7.1",
+    "Psych + eye"
+   ],
+   [
+    "7.3",
+    "Eating disorders"
+   ],
+   [
+    "8.1",
+    "Obstruction"
+   ],
+   [
+    "8.2",
+    "Kidney failure"
+   ],
+   [
+    "9.1",
+    "Cognition"
+   ],
+   [
+    "9.2",
+    "Bipolar + psychosis"
+   ],
+   [
+    "NT",
+    "Not tested"
+   ]
+  ],
+  "D": [
+   {
+    "g": "labetalol",
+    "w": "6.2",
+    "cls": "Beta blocker",
+    "grp": "bb",
+    "u": [
+     "bb",
+     "bp",
+     "hr"
+    ],
+    "use": "Aneurysm: first-line HR + BP control",
+    "f": [
+     "First-line for an aneurysm: lowers HR to 60–70 bpm and the force of ejection",
+     "Titrated to keep a stable aneurysm's SBP about 100–120 mmHg"
+    ],
+    "tip": "-lol = beta blocker. Slower, gentler beats = less wall stress. Never stop abruptly."
+   },
+   {
+    "g": "esmolol",
+    "w": "6.2",
+    "cls": "Beta blocker",
+    "grp": "bb",
+    "u": [
+     "bb",
+     "bp",
+     "hr",
+     "taper"
+    ],
+    "use": "Aneurysm: first-line HR + BP control",
+    "f": [
+     "First-line for an aneurysm: lowers HR to 60–70 bpm and the force of ejection",
+     "Teach: do not abruptly stop a beta blocker"
+    ],
+    "tip": "-lol = beta blocker. Slower, gentler beats = less wall stress."
+   },
+   {
+    "g": "nicardipine",
+    "w": "6.2",
+    "cls": "Calcium channel blocker",
+    "grp": "ccb",
+    "u": [
+     "ccb",
+     "bp"
+    ],
+    "use": "Pre-op aneurysm: IV BP titration",
+    "f": [
+     "IV infusion titrated per protocol with an arterial line to hold BP in the ordered window"
+    ],
+    "tip": "-dipine = calcium channel blocker. (-apine without the d = antipsychotic.)"
+   },
+   {
+    "g": "lisinopril",
+    "w": [
+     "6.2",
+     "8.2"
+    ],
+    "cls": "ACE inhibitor",
+    "grp": "acei",
+    "u": [
+     "bp",
+     "raas"
+    ],
+    "use": "BP control (aneurysm second line); CKD kidney protection",
+    "f": [
+     "Hold before hemodialysis as ordered: dialysis already drops BP (tutor tip)",
+     "Second-line aneurysm BP agent, added after beta blockers",
+     "In CKD: lowers intraglomerular pressure to protect the kidney"
+    ],
+    "tip": "-pril = ACE inhibitor."
+   },
+   {
+    "g": "losartan",
+    "w": [
+     "6.2",
+     "8.2"
+    ],
+    "cls": "ARB",
+    "grp": "arb",
+    "u": [
+     "bp",
+     "raas"
+    ],
+    "use": "BP control (aneurysm second line); CKD kidney protection",
+    "f": [
+     "Hold before hemodialysis as ordered: dialysis already drops BP (tutor tip)",
+     "Second-line aneurysm BP agent, added after beta blockers",
+     "In CKD: lowers intraglomerular pressure to protect the kidney"
+    ],
+    "tip": "-sartan = ARB."
+   },
+   {
+    "g": "amlodipine",
+    "w": "6.2",
+    "cls": "Calcium channel blocker",
+    "grp": "ccb",
+    "u": [
+     "ccb",
+     "bp"
+    ],
+    "use": "BP control (aneurysm second line)",
+    "f": [
+     "Second-line aneurysm BP agent, added after beta blockers"
+    ],
+    "tip": "-dipine = calcium channel blocker."
+   },
+   {
+    "g": "atorvastatin",
+    "w": "6.2",
+    "cls": "Statin",
+    "grp": "statin",
+    "u": [
+     "athero"
+    ],
+    "use": "Atherosclerotic disease: plaque + lipids",
+    "f": [
+     "Stabilizes plaque and manages lipids in atherosclerotic aneurysm disease"
+    ],
+    "tip": "-statin = lipids down, plaque stable."
+   },
+   {
+    "g": "aspirin",
+    "w": "6.2",
+    "cls": "Antiplatelet",
+    "grp": "plt",
+    "u": [
+     "plt",
+     "bleed"
+    ],
+    "use": "Prevents clots after endovascular repair",
+    "f": [
+     "Half of DAPT, paired with a P2Y12 inhibitor, to prevent clots during and after stenting or coiling"
+    ]
+   },
+   {
+    "g": "clopidogrel",
+    "w": "6.2",
+    "cls": "Antiplatelet: P2Y12 inhibitor",
+    "grp": "plt",
+    "u": [
+     "plt",
+     "bleed"
+    ],
+    "cno": [
+     "Antiplatelet"
+    ],
+    "use": "Prevents clots after endovascular repair",
+    "f": [
+     "P2Y12 inhibitor paired with aspirin as DAPT after stenting or coiling"
+    ],
+    "tip": "-grel = clot-stopping antiplatelet."
+   },
+   {
+    "g": "diazepam",
+    "w": "7.1",
+    "cls": "Benzodiazepine",
+    "grp": "benzo",
+    "u": [
+     "benzo",
+     "taper"
+    ],
+    "cno": [
+     "Skeletal muscle relaxant"
+    ],
+    "use": "Anxiety, muscle spasm, status epilepticus, alcohol withdrawal",
+    "f": [
+     "Uses beyond anxiety: muscle spasm, status epilepticus, acute alcohol withdrawal, anesthesia induction",
+     "Paradoxical reaction: confusion or anxiety instead of calm"
+    ],
+    "tip": "-pam / -lam = benzo = more GABA. Reverse with flumazenil."
+   },
+   {
+    "g": "alprazolam",
+    "w": "7.1",
+    "cls": "Benzodiazepine",
+    "grp": "benzo",
+    "u": [
+     "benzo",
+     "taper"
+    ],
+    "cno": [
+     "Skeletal muscle relaxant"
+    ],
+    "use": "Anxiety disorders",
+    "f": [
+     "Benzo with the biggest tolerance + physical dependence concern",
+     "Taper over 1–2 weeks; abrupt stop can cause withdrawal seizures"
+    ],
+    "tip": "-pam / -lam = benzo = more GABA. Reverse with flumazenil."
+   },
+   {
+    "g": "flumazenil",
+    "w": "7.1",
+    "cls": "Benzodiazepine antagonist",
+    "grp": "fluma",
+    "u": [
+     "benzo"
+    ],
+    "use": "Reverses benzodiazepine sedation",
+    "f": [
+     "Given IV to reverse benzodiazepine overdose sedation"
+    ],
+    "tip": "FLUsh out the benzo."
+   },
+   {
+    "g": "buspirone",
+    "w": "7.1",
+    "cls": "Anxiolytic (non-benzodiazepine)",
+    "grp": "busp",
+    "u": [
+     "anx",
+     "gf"
+    ],
+    "use": "Anxiety (GAD), short-term",
+    "f": [
+     "Give on a schedule, NOT PRN: the effect is delayed",
+     "Grapefruit juice raises levels; an MAOI within 2 weeks can cause severe hypertension",
+     "Little sedation or misuse risk compared with benzos"
+    ],
+    "tip": "BUSpirone rides on a schedule, like a bus."
+   },
+   {
+    "g": "fluoxetine",
+    "b": "Prozac",
+    "w": [
+     "7.1",
+     "7.3"
+    ],
+    "cls": "SSRI",
+    "grp": "ssri",
+    "u": [
+     "sero",
+     "am",
+     "lowna",
+     "wt"
+    ],
+    "use": "Depression; the only FDA-approved drug for bulimia",
+    "f": [
+     "SSRI vs SNRI (exam tip): fluoxetine = serotonin only; venlafaxine adds norepinephrine, so watch BP",
+     "Give in the morning; can cause hyponatremia and sexual dysfunction",
+     "Wait 14 days after an MAOI; wait 5 weeks after stopping it before an MAOI",
+     "Only FDA-approved medication for bulimia nervosa",
+     "Black box: suicidal thoughts in clients under 25, especially early or with dose changes"
+    ],
+    "tip": "SSRI = serotonin only. Too much serotonin = serotonin syndrome (agitation, tremor, fever, sweating)."
+   },
+   {
+    "g": "venlafaxine",
+    "w": "7.1",
+    "cls": "SNRI",
+    "grp": "snri",
+    "u": [
+     "sero",
+     "am",
+     "taper"
+    ],
+    "use": "Depression, GAD, social anxiety",
+    "f": [
+     "SSRI vs SNRI (exam tip): adds norepinephrine to serotonin, so BP rises; fluoxetine doesn't",
+     "Raises BP: monitor it regularly",
+     "Taper over 2–4 weeks; abrupt stop causes agitation, headache, tachycardia",
+     "Give with food and in the morning"
+    ],
+    "tip": "SNRI = serotonin + norepinephrine. Norepinephrine = BP goes up."
+   },
+   {
+    "g": "amitriptyline",
+    "w": "7.1",
+    "cls": "Tricyclic antidepressant (TCA)",
+    "grp": "tca",
+    "u": [
+     "sero",
+     "qt",
+     "taper",
+     "orth"
+    ],
+    "use": "Major depression",
+    "f": [
+     "Give at bedtime: sedating and anticholinergic",
+     "Overdose can cause fatal dysrhythmias: limit the supply in at-risk clients",
+     "Teach: rise slowly; gum or hard candy for dry mouth"
+    ],
+    "tip": "TCA: Tired, Can't pee/poop/see (anticholinergic), Arrhythmia in overdose."
+   },
+   {
+    "g": "bupropion",
+    "w": "7.1",
+    "cls": "Atypical antidepressant",
+    "grp": "bupr",
+    "u": [
+     "sero",
+     "am"
+    ],
+    "use": "Depression, seasonal affective disorder, smoking cessation",
+    "f": [
+     "Raises seizure risk: avoid with a seizure disorder or eating disorder history",
+     "Causes weight loss and insomnia; swallow SR/XR tablets whole"
+    ],
+    "tip": "Think UP: activation up, seizure risk up, weight down."
+   },
+   {
+    "g": "phenelzine",
+    "w": "7.1",
+    "cls": "MAOI",
+    "grp": "maoi",
+    "u": [
+     "sero",
+     "crisis",
+     "orth"
+    ],
+    "use": "Depression not helped by other antidepressants",
+    "f": [
+     "Tyramine (aged cheese, smoked meat, beer) can cause hypertensive crisis",
+     "Safer foods: fresh whole foods, fruits, and vegetables",
+     "Common effect: orthostatic hypotension"
+    ],
+    "tip": "MAOI + tyramine = BP through the roof."
+   },
+   {
+    "g": "phentolamine",
+    "w": "7.1",
+    "cls": "Alpha-adrenergic blocker",
+    "grp": "alpha",
+    "u": [
+     "alpha",
+     "crisis",
+     "orth",
+     "bph"
+    ],
+    "use": "MAOI hypertensive crisis (IV)",
+    "f": [
+     "Given IV to treat MAOI–tyramine hypertensive crisis"
+    ]
+   },
+   {
+    "g": "nifedipine",
+    "w": "7.1",
+    "cls": "Calcium channel blocker",
+    "grp": "ccb",
+    "u": [
+     "ccb",
+     "bp",
+     "crisis"
+    ],
+    "use": "MAOI hypertensive crisis (sublingual)",
+    "f": [
+     "Given sublingually to treat MAOI–tyramine hypertensive crisis"
+    ],
+    "tip": "-dipine = calcium channel blocker."
+   },
+   {
+    "g": "lithium",
+    "w": [
+     "7.1",
+     "9.2"
+    ],
+    "cls": "Mood stabilizer",
+    "grp": "li",
+    "u": [
+     "li",
+     "wt"
+    ],
+    "use": "Bipolar disorder: acute mania + maintenance",
+    "f": [
+     "Week 7.1 example: therapeutic 0.8–1.2 mEq/L; 1.5 mEq/L can be toxic",
+     "Week 9.2 maintenance level: 0.6–1.2 mEq/L",
+     "Early toxicity: nausea + muscle weakness; fine tremor turning coarse",
+     "Drink 2–3 L/day and keep sodium intake consistent",
+     "NSAIDs, diuretics, and ACE inhibitors raise the toxicity risk",
+     "Vomiting, diarrhea, heat, or hard exercise can push the level up",
+     "Severe tremor, blackout, seizure, or arrhythmia: hold the dose, notify the provider, draw a level",
+     "Side effects: thirst + polyuria, goiter/hypothyroidism, renal toxicity"
+    ],
+    "tip": "Lithium acts like salt. Low water + low sodium = lithium climbs."
+   },
+   {
+    "g": "chlorpromazine",
+    "w": [
+     "7.1",
+     "9.2"
+    ],
+    "cls": "Antipsychotic: 1st generation",
+    "grp": "fga",
+    "u": [
+     "apsych",
+     "blood",
+     "qt",
+     "wt",
+     "orth"
+    ],
+    "use": "Schizophrenia, acute mania, N/V, intractable hiccups",
+    "f": [
+     "Orthostatic hypotension: rise slowly, fall precautions (Beecher tests antipsychotic side effects)",
+     "Schizophrenia carries a high suicide risk: assess it with every client on an antipsychotic",
+     "Also used for nausea/vomiting and intractable hiccups",
+     "Classic EPS risk: acute dystonia, parkinsonism, akathisia, tardive dyskinesia",
+     "Can cause photosensitivity and severe dysrhythmias",
+     "Teach: sugarless gum, high-fiber food, and 2–3 L fluids/day for anticholinergic effects"
+    ],
+    "tip": "1st gen = blocks dopamine hard = movement problems (EPS)."
+   },
+   {
+    "g": "haloperidol",
+    "w": [
+     "7.1",
+     "9.1",
+     "9.2"
+    ],
+    "cls": "Antipsychotic: 1st generation",
+    "grp": "fga",
+    "u": [
+     "apsych",
+     "blood",
+     "qt",
+     "wt",
+     "orth"
+    ],
+    "use": "Schizophrenia / psychosis",
+    "f": [
+     "Orthostatic hypotension: rise slowly, fall precautions (Beecher tests antipsychotic side effects)",
+     "High-potency antipsychotic: NMS is more common with it than with chlorpromazine",
+     "1st gen: treats mainly POSITIVE symptoms",
+     "In Alzheimer's: a last resort for psychosis, because antipsychotics act as a chemical restraint"
+    ],
+    "tip": "1st gen = blocks dopamine hard = movement problems (EPS)."
+   },
+   {
+    "g": "risperidone",
+    "b": "Risperdal",
+    "w": [
+     "7.1",
+     "9.2"
+    ],
+    "cls": "Antipsychotic: 2nd generation (atypical)",
+    "grp": "sga",
+    "u": [
+     "apsych",
+     "blood",
+     "qt",
+     "wt",
+     "dmrisk",
+     "orth"
+    ],
+    "use": "Schizophrenia (+ and – symptoms), bipolar, autism irritability",
+    "f": [
+     "Orthostatic hypotension: rise slowly, fall precautions",
+     "Agranulocytosis: report sore throat or fever; monitor blood counts",
+     "Monitor weight, blood glucose, and cholesterol/triglycerides",
+     "Blocks serotonin more than dopamine; EPS less often than 1st gen",
+     "Clozapine raises its levels; carbamazepine lowers them"
+    ],
+    "tip": "2nd gen = metabolic: weight, sugar, lipids."
+   },
+   {
+    "g": "olanzapine",
+    "b": "Zyprexa",
+    "w": "NT",
+    "cls": "Antipsychotic: 2nd generation (atypical)",
+    "grp": "sga",
+    "u": [
+     "apsych",
+     "blood",
+     "qt",
+     "wt",
+     "dmrisk",
+     "orth"
+    ],
+    "use": "Schizophrenia; acute mania",
+    "f": [
+     "2nd gen: treats positive AND negative symptoms; current drugs of choice",
+     "Teach: minimize weight gain; watch for new-onset diabetes",
+     "Antipsychotics can cause agranulocytosis: monitor blood counts"
+    ],
+    "tip": "-apine = antipsychotic (-dipine = calcium channel blocker)."
+   },
+   {
+    "g": "quetiapine",
+    "b": "Seroquel",
+    "w": "NT",
+    "cls": "Antipsychotic: 2nd generation (atypical)",
+    "grp": "sga",
+    "u": [
+     "apsych",
+     "blood",
+     "qt",
+     "wt",
+     "dmrisk",
+     "orth"
+    ],
+    "use": "Schizophrenia; acute mania",
+    "f": [
+     "2nd gen: treats positive AND negative symptoms; current drugs of choice",
+     "Teach: minimize weight gain; watch for new-onset diabetes",
+     "Antipsychotics can prolong the QT interval"
+    ],
+    "tip": "-apine = antipsychotic (-dipine = calcium channel blocker)."
+   },
+   {
+    "g": "paliperidone",
+    "b": "Invega",
+    "w": "NT",
+    "cls": "Antipsychotic: 2nd generation (atypical)",
+    "grp": "sga",
+    "u": [
+     "apsych",
+     "blood",
+     "qt",
+     "wt",
+     "dmrisk",
+     "orth"
+    ],
+    "use": "Schizophrenia",
+    "f": [
+     "2nd gen: treats positive AND negative symptoms; current drugs of choice",
+     "Teach: minimize weight gain; watch for new-onset diabetes",
+     "Hyperprolactinemia from antipsychotics can cause gynecomastia"
+    ],
+    "tip": "-idone = antipsychotic."
+   },
+   {
+    "g": "aripiprazole",
+    "b": "Abilify",
+    "w": "NT",
+    "cls": "Antipsychotic: 2nd generation (atypical)",
+    "grp": "sga",
+    "u": [
+     "apsych",
+     "blood",
+     "qt",
+     "wt",
+     "dmrisk",
+     "orth"
+    ],
+    "use": "Schizophrenia; acute mania",
+    "f": [
+     "2nd gen: treats positive AND negative symptoms; current drugs of choice",
+     "Teach: minimize weight gain; watch for new-onset diabetes",
+     "Give a trial of 6–12 weeks before switching antipsychotics"
+    ]
+   },
+   {
+    "g": "cariprazine",
+    "b": "Vraylar",
+    "w": "NT",
+    "cls": "Antipsychotic: 2nd generation (atypical)",
+    "grp": "sga",
+    "u": [
+     "apsych",
+     "blood",
+     "qt",
+     "wt",
+     "dmrisk",
+     "orth"
+    ],
+    "use": "Schizophrenia",
+    "f": [
+     "2nd gen: treats positive AND negative symptoms; current drugs of choice",
+     "Teach: minimize weight gain; watch for new-onset diabetes"
+    ]
+   },
+   {
+    "g": "lurasidone",
+    "b": "Latuda",
+    "w": "NT",
+    "cls": "Antipsychotic: 2nd generation (atypical)",
+    "grp": "sga",
+    "u": [
+     "apsych",
+     "blood",
+     "qt",
+     "wt",
+     "dmrisk",
+     "orth"
+    ],
+    "use": "Schizophrenia; acute mania",
+    "f": [
+     "2nd gen: treats positive AND negative symptoms; current drugs of choice",
+     "Teach: minimize weight gain; watch for new-onset diabetes",
+     "Antipsychotics take about 1–2 weeks to start changing symptoms"
+    ],
+    "tip": "-idone = antipsychotic."
+   },
+   {
+    "g": "lumateperone",
+    "b": "Caplyta",
+    "w": "NT",
+    "cls": "Antipsychotic: 2nd generation (atypical)",
+    "grp": "sga",
+    "u": [
+     "apsych",
+     "blood",
+     "qt",
+     "wt",
+     "dmrisk",
+     "orth"
+    ],
+    "use": "Schizophrenia; acute mania",
+    "f": [
+     "2nd gen: treats positive AND negative symptoms; current drugs of choice",
+     "Teach: minimize weight gain; watch for new-onset diabetes"
+    ]
+   },
+   {
+    "g": "diphenhydramine",
+    "w": "7.1",
+    "cls": "Anticholinergic (antihistamine)",
+    "grp": "dph",
+    "u": [
+     "eps"
+    ],
+    "use": "Acute dystonia from antipsychotics",
+    "f": [
+     "Given IM or IV for acute dystonia (hours to days after an antipsychotic is started)"
+    ]
+   },
+   {
+    "g": "dantrolene",
+    "w": [
+     "7.1",
+     "9.2"
+    ],
+    "cls": "Skeletal muscle relaxant",
+    "grp": "nms",
+    "u": [
+     "nms"
+    ],
+    "use": "Neuroleptic malignant syndrome",
+    "f": [
+     "Given with bromocriptine for NMS: high fever + rigidity + unstable VS"
+    ]
+   },
+   {
+    "g": "bromocriptine",
+    "w": [
+     "7.1",
+     "9.2"
+    ],
+    "cls": "Dopamine agonist",
+    "grp": "nms",
+    "u": [
+     "nms"
+    ],
+    "use": "Neuroleptic malignant syndrome",
+    "f": [
+     "Given with dantrolene for NMS: high fever + rigidity + unstable VS"
+    ]
+   },
+   {
+    "g": "latanoprost",
+    "w": "7.1",
+    "cls": "Prostaglandin analog (eye)",
+    "grp": "pga",
+    "u": [
+     "eye"
+    ],
+    "use": "Glaucoma: increases aqueous outflow",
+    "f": [
+     "Give in the evening",
+     "Can darken the iris, eyelids, and eyelashes"
+    ],
+    "tip": "-prost = prostaglandin = drains the eye."
+   },
+   {
+    "g": "timolol",
+    "w": "7.1",
+    "cls": "Beta blocker",
+    "grp": "bb",
+    "u": [
+     "bb",
+     "eye",
+     "hr"
+    ],
+    "use": "Glaucoma: decreases aqueous production",
+    "f": [
+     "Exam tip: likely eye-drop question. Absorbed drops can slow the HR: press the inner corner of the eye 60 seconds",
+     "The only glaucoma prototype that lowers aqueous humor PRODUCTION"
+    ],
+    "tip": "Timolol turns the tap down (less fluid made)."
+   },
+   {
+    "g": "pilocarpine",
+    "w": "7.1",
+    "cls": "Cholinergic agonist (eye)",
+    "grp": "piloc",
+    "u": [
+     "eye",
+     "miotic",
+     "chol",
+     "hr"
+    ],
+    "use": "Glaucoma: increases aqueous outflow",
+    "f": [
+     "Systemic effects: urinary urgency, bradycardia, bronchoconstriction",
+     "Report floaters, flashes, or a curtain over vision (retinal detachment)"
+    ],
+    "tip": "Pupil constricts: low-light vision drops. Press the inner corner of the eye for 60 seconds."
+   },
+   {
+    "g": "echothiophate",
+    "w": "7.1",
+    "cls": "Cholinesterase inhibitor (eye)",
+    "grp": "echo",
+    "u": [
+     "eye",
+     "miotic",
+     "chol",
+     "hr"
+    ],
+    "cno": [
+     "Cholinesterase inhibitor (Alzheimer's)"
+    ],
+    "use": "Glaucoma: increases aqueous outflow",
+    "f": [
+     "Long-term use can cause cataracts",
+     "Blocks acetylcholine breakdown to constrict the ciliary muscle"
+    ],
+    "tip": "Pupil constricts: low-light vision drops. Press the inner corner of the eye for 60 seconds."
+   },
+   {
+    "g": "lisdexamfetamine",
+    "b": "Vyvanse",
+    "w": "7.3",
+    "cls": "CNS stimulant (amphetamine)",
+    "grp": "lisdex",
+    "u": [
+     "stim",
+     "am"
+    ],
+    "use": "Binge eating disorder (moderate–severe, adults); ADHD",
+    "f": [
+     "First FDA-approved drug for moderate-to-severe binge eating disorder",
+     "Schedule II with a black box for abuse and addiction; NOT for weight loss",
+     "Cardiac evaluation first; monitor BP and HR; take in the morning"
+    ],
+    "tip": "Vyvanse = binge eating. Fluoxetine = bulimia."
+   },
+   {
+    "g": "thiamine",
+    "w": "7.3",
+    "cls": "Vitamin B1",
+    "grp": "thia",
+    "u": [
+     "refeed"
+    ],
+    "use": "Given before refeeding a malnourished client",
+    "f": [
+     "Often given before feeds start in a client at risk for refeeding syndrome"
+    ]
+   },
+   {
+    "g": "tamsulosin",
+    "b": "Flomax",
+    "w": "8.1",
+    "cls": "Alpha-adrenergic blocker",
+    "grp": "alpha",
+    "u": [
+     "alpha",
+     "orth",
+     "bph"
+    ],
+    "use": "BPH symptoms; helps kidney stones pass",
+    "f": [
+     "Relaxes prostate smooth muscle to improve urine flow",
+     "Used to help a ureteral stone pass"
+    ],
+    "tip": "Alpha blockers RELAX. -osin = alpha blocker."
+   },
+   {
+    "g": "terazosin",
+    "w": "8.1",
+    "cls": "Alpha-adrenergic blocker",
+    "grp": "alpha",
+    "u": [
+     "alpha",
+     "orth",
+     "bph"
+    ],
+    "use": "BPH: relaxes prostate smooth muscle",
+    "f": [
+     "Relaxes prostate smooth muscle to improve urine flow"
+    ],
+    "tip": "Alpha blockers RELAX. -osin = alpha blocker."
+   },
+   {
+    "g": "finasteride",
+    "b": "Proscar",
+    "w": "8.1",
+    "cls": "5-alpha reductase inhibitor",
+    "grp": "5ari",
+    "u": [
+     "bph"
+    ],
+    "use": "BPH: shrinks the prostate over time",
+    "f": [
+     "BPH order (tutor): rule out with DRE + transrectal ultrasound → meds like finasteride → TURP",
+     "Shrinks the prostate gradually; combined with an alpha blocker for moderate–severe symptoms"
+    ],
+    "tip": "5-ARIs SHRINK. -steride = shrink."
+   },
+   {
+    "g": "dutasteride",
+    "w": "8.1",
+    "cls": "5-alpha reductase inhibitor",
+    "grp": "5ari",
+    "u": [
+     "bph"
+    ],
+    "use": "BPH: shrinks the prostate over time",
+    "f": [
+     "Shrinks the prostate gradually; combined with an alpha blocker for moderate–severe symptoms"
+    ],
+    "tip": "5-ARIs SHRINK. -steride = shrink."
+   },
+   {
+    "g": "ketorolac",
+    "w": "8.1",
+    "cls": "NSAID",
+    "grp": "nsaid",
+    "u": [
+     "stonepain",
+     "bleed"
+    ],
+    "use": "Kidney stone pain + inflammation",
+    "f": [
+     "NSAIDs are nephrotoxic: an intrarenal cause of AKI",
+     "First-line for renal colic: relieves pain and inflammation",
+     "Avoid after TURP because of bleeding risk"
+    ]
+   },
+   {
+    "g": "morphine",
+    "w": "8.1",
+    "cls": "Opioid agonist",
+    "grp": "opi",
+    "u": [
+     "stonepain"
+    ],
+    "use": "Severe kidney stone pain",
+    "f": [
+     "Opioid for severe renal colic",
+     "In kidney failure, opioid doses need review because clearance drops"
+    ],
+    "tip": "Watch respiratory depression. Reversed by naloxone."
+   },
+   {
+    "g": "BCG",
+    "w": "8.2",
+    "cls": "Intravesical immunotherapy",
+    "grp": "bcg",
+    "u": [
+     "bladder"
+    ],
+    "use": "Bladder (urothelial) cancer",
+    "f": [
+     "Bacille Calmette-Guérin: instilled directly into the bladder to treat bladder cancer"
+    ]
+   },
+   {
+    "g": "dapagliflozin",
+    "b": "Farxiga",
+    "w": "8.2",
+    "cls": "SGLT2 inhibitor",
+    "grp": "sglt2",
+    "u": [
+     "dm"
+    ],
+    "use": "Slows CKD progression; type 2 diabetes",
+    "f": [
+     "Slows chronic kidney disease progression and lowers fasting glucose and A1C"
+    ],
+    "tip": "-gliflozin = sugar out in the urine, kidney protected."
+   },
+   {
+    "g": "epoetin alfa",
+    "b": "Epogen",
+    "w": "8.2",
+    "cls": "Erythropoiesis-stimulating agent (ESA)",
+    "grp": "esa",
+    "u": [
+     "anemia"
+    ],
+    "use": "Anemia of CKD",
+    "f": [
+     "Replaces the erythropoietin failing kidneys stop making, to raise RBCs"
+    ],
+    "tip": "-poetin = erythropoiesis (making RBCs)."
+   },
+   {
+    "g": "furosemide",
+    "w": "8.2",
+    "cls": "Loop diuretic",
+    "grp": "loop",
+    "u": [
+     "diur"
+    ],
+    "use": "Fluid overload in kidney disease",
+    "f": [
+     "Loop/thiazide diuretics work only while the kidneys still make urine (early CKD stages)"
+    ]
+   },
+   {
+    "g": "heparin",
+    "w": "8.2",
+    "cls": "Anticoagulant",
+    "grp": "hep",
+    "u": [
+     "hep",
+     "bleed"
+    ],
+    "use": "Keeps hemodialysis tubing from clotting",
+    "f": [
+     "Added to hemodialysis tubing so blood doesn't clot; held with an acute bleed",
+     "Risky in CKD because platelet function is poor"
+    ]
+   },
+   {
+    "g": "insulin",
+    "w": "8.2",
+    "cls": "Hormone: antidiabetic",
+    "grp": "ins",
+    "u": [
+     "dm"
+    ],
+    "use": "Diabetes",
+    "f": [
+     "Dose often needs to go DOWN as CKD progresses: failing kidneys clear less"
+    ]
+   },
+   {
+    "g": "magnesium-containing antacids",
+    "w": "8.2",
+    "cls": "Antacid",
+    "grp": "mgant",
+    "u": [
+     "mg"
+    ],
+    "use": "Heartburn, but AVOID in kidney failure",
+    "f": [
+     "Avoid in kidney failure: the kidneys can't clear magnesium"
+    ]
+   },
+   {
+    "g": "donepezil",
+    "w": "NT",
+    "cls": "Cholinesterase inhibitor (Alzheimer's)",
+    "grp": "chei",
+    "u": [
+     "alz",
+     "chol",
+     "hr"
+    ],
+    "cno": [
+     "Cholinesterase inhibitor (eye)"
+    ],
+    "use": "Alzheimer's: mild to moderate",
+    "tip": "More acetylcholine helps memory, but too much ACh slows the heart.",
+    "f": [
+     "Delays the breakdown of acetylcholine; eases symptoms but does not cure",
+     "Can cause bradycardia: used carefully with heart disease"
+    ]
+   },
+   {
+    "g": "rivastigmine",
+    "w": "NT",
+    "cls": "Cholinesterase inhibitor (Alzheimer's)",
+    "grp": "chei",
+    "u": [
+     "alz",
+     "chol",
+     "hr"
+    ],
+    "cno": [
+     "Cholinesterase inhibitor (eye)"
+    ],
+    "use": "Alzheimer's: mild to moderate",
+    "tip": "More acetylcholine helps memory, but too much ACh slows the heart.",
+    "f": [
+     "Delays the breakdown of acetylcholine; eases symptoms but does not cure",
+     "Can cause bradycardia: used carefully with heart disease"
+    ]
+   },
+   {
+    "g": "galantamine",
+    "w": "NT",
+    "cls": "Cholinesterase inhibitor (Alzheimer's)",
+    "grp": "chei",
+    "u": [
+     "alz",
+     "chol",
+     "hr"
+    ],
+    "cno": [
+     "Cholinesterase inhibitor (eye)"
+    ],
+    "use": "Alzheimer's: mild to moderate",
+    "tip": "More acetylcholine helps memory, but too much ACh slows the heart.",
+    "f": [
+     "Delays the breakdown of acetylcholine; eases symptoms but does not cure",
+     "Can cause bradycardia: used carefully with heart disease"
+    ]
+   },
+   {
+    "g": "memantine",
+    "w": "NT",
+    "cls": "NMDA receptor antagonist",
+    "grp": "nmda",
+    "u": [
+     "alz",
+     "chol",
+     "hr"
+    ],
+    "use": "Alzheimer's: moderate to severe",
+    "f": [
+     "Blocks excess glutamate that damages nerve cells",
+     "May slow cognitive decline but does not change the course of the disease"
+    ],
+    "tip": "Memantine = Moderate-to-severe. Blocks glutamate (NMDA)."
+   },
+   {
+    "g": "sertraline",
+    "b": "Zoloft",
+    "w": "NT",
+    "cls": "SSRI",
+    "grp": "ssri",
+    "u": [
+     "sero"
+    ],
+    "use": "Alzheimer's: mood and behavior",
+    "f": [
+     "SSRI used in Alzheimer's to decrease impulsivity"
+    ]
+   },
+   {
+    "g": "aducanumab",
+    "w": "NT",
+    "cls": "Monoclonal antibody",
+    "grp": "aduc",
+    "u": [
+     "alz"
+    ],
+    "use": "Alzheimer's disease",
+    "f": [
+     "Listed on the Alzheimer's medication slide; no details given in lecture"
+    ],
+    "tip": "-mab = monoclonal antibody."
+   },
+   {
+    "g": "divalproex",
+    "b": "Depakote",
+    "w": "NT",
+    "grp": "aed",
+    "u": [
+     "aed",
+     "wt"
+    ],
+    "cls": "Mood stabilizer: antiepileptic",
+    "use": "Bipolar: acute mania",
+    "f": [
+     "Also called valproate / valproic acid",
+     "Hepatotoxic: monitor liver enzymes; take with food",
+     "Can cause thrombocytopenia and pancreatitis",
+     "Other anticonvulsants change its levels"
+    ],
+    "tip": "Depakote: check the liver, platelets, and pancreas."
+   },
+   {
+    "g": "lamotrigine",
+    "b": "Lamictal",
+    "w": "NT",
+    "grp": "aed",
+    "u": [
+     "aed"
+    ],
+    "cls": "Mood stabilizer: antiepileptic",
+    "use": "Bipolar: maintenance therapy",
+    "f": [
+     "Report any rash: Stevens–Johnson syndrome risk",
+     "May work especially well for rapid cycling",
+     "Can cause double or blurred vision",
+     "Interacts with oral contraceptives"
+    ],
+    "tip": "LamicTAL: watch for a rash."
+   },
+   {
+    "g": "carbamazepine",
+    "b": "Tegretol",
+    "w": "NT",
+    "grp": "aed",
+    "u": [
+     "aed",
+     "blood",
+     "lowna",
+     "gf"
+    ],
+    "cls": "Mood stabilizer: antiepileptic",
+    "use": "Bipolar: acute mania",
+    "f": [
+     "Blood dyscrasias: leukopenia, anemia, thrombocytopenia",
+     "Can cause low sodium (hypo-osmolarity) and skin disorders",
+     "Interacts with warfarin and grapefruit juice"
+    ],
+    "tip": "Tegretol: check the blood counts and the sodium."
+   }
+  ],
+  "LESSONS": [
+   {
+    "id": "bb",
+    "t": "Beta blockers",
+    "sfx": [
+     "-lol"
+    ],
+    "d": [
+     "labetalol",
+     "esmolol"
+    ],
+    "how": "They block adrenaline's signal to the heart, so it beats slower and with less force.",
+    "why": [
+     [
+      "Heart rate and BP drop",
+      "Slower, gentler beats. For an aneurysm, that means less stress on the weak wall."
+     ],
+     [
+      "Stopping suddenly is dangerous",
+      "The heart gets hit with adrenaline again: rebound fast heart rate and high BP."
+     ],
+     [
+      "Dizziness",
+      "BP is lower, especially when standing up."
+     ]
+    ],
+    "watch": [
+     "Check apical pulse and BP before giving; hold and notify if below the ordered limits",
+     "Teach: never stop it suddenly",
+     "Teach: rise slowly"
+    ]
+   },
+   {
+    "id": "ccb",
+    "t": "Calcium channel blockers",
+    "sfx": [
+     "-dipine"
+    ],
+    "d": [
+     "nicardipine",
+     "amlodipine",
+     "nifedipine"
+    ],
+    "how": "They block calcium from getting into the muscle of artery walls, so the arteries relax and widen.",
+    "why": [
+     [
+      "BP drops",
+      "Wider arteries = less pressure."
+     ],
+     [
+      "Headache, flushing, dizziness",
+      "Blood vessels are wide open."
+     ],
+     [
+      "Nifedipine is used in an MAOI crisis",
+      "It brings a dangerously high BP down quickly."
+     ]
+    ],
+    "watch": [
+     "Check BP before giving; watch for hypotension",
+     "Don't mix up -dipine (BP drug) with -apine (antipsychotic)"
+    ]
+   },
+   {
+    "id": "raas",
+    "t": "ACE inhibitors & ARBs",
+    "sfx": [
+     "-pril",
+     "-sartan"
+    ],
+    "d": [
+     "lisinopril",
+     "losartan"
+    ],
+    "how": "They block angiotensin, the hormone that squeezes arteries and makes the body hold salt and water. Result: BP comes down.",
+    "why": [
+     [
+      "BP drops",
+      "Arteries relax and the body holds less fluid."
+     ],
+     [
+      "They protect the kidneys in CKD",
+      "Pressure inside the kidney's filters goes down."
+     ],
+     [
+      "Potassium can go up",
+      "Less aldosterone, so the kidney keeps potassium."
+     ],
+     [
+      "Dry cough (ACE inhibitors only)",
+      "ACE inhibitors let bradykinin build up. ARBs don't, so an ARB is the usual swap."
+     ]
+    ],
+    "watch": [
+     "Check BP and potassium",
+     "Hold before hemodialysis as ordered",
+     "Swelling of the lips, tongue, or face (angioedema) is an emergency",
+     "They raise lithium levels"
+    ]
+   },
+   {
+    "id": "plaque",
+    "t": "Statin & antiplatelets",
+    "sfx": [
+     "-statin",
+     "-grel"
+    ],
+    "d": [
+     "atorvastatin",
+     "aspirin",
+     "clopidogrel"
+    ],
+    "how": "The statin lowers cholesterol and steadies plaque. Antiplatelets stop platelets from sticking together into a clot.",
+    "why": [
+     [
+      "Bleeding risk with antiplatelets",
+      "Platelets can't clump to plug a leak."
+     ],
+     [
+      "Aspirin + clopidogrel are given together (DAPT)",
+      "They block platelets two different ways after a stent or coil."
+     ],
+     [
+      "Muscle pain on a statin matters",
+      "It can be a sign of muscle breakdown."
+     ]
+    ],
+    "watch": [
+     "Bleeding: gums, black stools, easy bruising",
+     "Report unexplained muscle pain on a statin"
+    ]
+   },
+   {
+    "id": "anx",
+    "t": "Anxiety: benzos & buspirone",
+    "sfx": [
+     "-pam",
+     "-lam"
+    ],
+    "d": [
+     "diazepam",
+     "alprazolam",
+     "flumazenil",
+     "buspirone"
+    ],
+    "how": "Benzos boost GABA, the brain's brake pedal, so the brain calms down fast. Buspirone works differently and slowly, over weeks.",
+    "why": [
+     [
+      "Sleepy, slowed breathing",
+      "Too much brake, and worse with alcohol or opioids."
+     ],
+     [
+      "Withdrawal seizures if a benzo is stopped suddenly",
+      "The brain got used to the extra brake. Taper it."
+     ],
+     [
+      "Buspirone is scheduled, not PRN",
+      "Its effect builds up over time, so a single dose does little."
+     ]
+    ],
+    "watch": [
+     "Respiratory rate, sedation, fall risk",
+     "Flumazenil (IV) reverses a benzo overdose",
+     "No alcohol or other CNS depressants"
+    ]
+   },
+   {
+    "id": "ssri",
+    "t": "SSRIs & SNRIs",
+    "sfx": [
+     "SSRI",
+     "SNRI"
+    ],
+    "d": [
+     "fluoxetine",
+     "sertraline",
+     "venlafaxine"
+    ],
+    "how": "They keep serotonin (SNRIs: serotonin + norepinephrine) around longer between nerve cells. Mood lifts over several weeks.",
+    "why": [
+     [
+      "Serotonin syndrome: agitation, tremor, fever, sweating",
+      "Too much serotonin, especially if combined with an MAOI."
+     ],
+     [
+      "Venlafaxine raises BP",
+      "Norepinephrine tightens blood vessels."
+     ],
+     [
+      "Usually given in the morning",
+      "They can be activating and cause insomnia."
+     ]
+    ],
+    "watch": [
+     "Exam tip: know SSRI vs SNRI. Venlafaxine raises BP; fluoxetine causes hyponatremia",
+     "Suicidal thoughts in clients under 25, especially early on",
+     "Takes weeks to work; don't stop suddenly",
+     "Fluoxetine = the bulimia drug"
+    ]
+   },
+   {
+    "id": "oldad",
+    "t": "TCAs, bupropion & MAOIs",
+    "sfx": [
+     "TCA",
+     "MAOI"
+    ],
+    "d": [
+     "amitriptyline",
+     "bupropion",
+     "phenelzine",
+     "phentolamine"
+    ],
+    "how": "Older or different antidepressants. TCAs and MAOIs raise serotonin and norepinephrine; bupropion raises dopamine and norepinephrine.",
+    "why": [
+     [
+      "TCA: dry mouth, constipation, can't pee, blurry vision",
+      "TCAs also block acetylcholine (anticholinergic)."
+     ],
+     [
+      "TCA overdose can kill",
+      "It causes deadly heart rhythms. Limit the supply."
+     ],
+     [
+      "MAOI + aged cheese = hypertensive crisis",
+      "The MAOI stops tyramine from being broken down, and tyramine shoots BP up."
+     ],
+     [
+      "Bupropion raises seizure risk",
+      "It lowers the seizure threshold."
+     ]
+    ],
+    "watch": [
+     "MAOI: give a tyramine food list; crisis → phentolamine IV or nifedipine SL",
+     "Wait 14 days when switching to or from an MAOI",
+     "TCA at bedtime; rise slowly"
+    ]
+   },
+   {
+    "id": "li",
+    "t": "Lithium",
+    "sfx": [
+     "Mood stabilizer"
+    ],
+    "d": [
+     "lithium"
+    ],
+    "how": "A mood stabilizer the body handles almost like salt (sodium). Its safe range is narrow.",
+    "why": [
+     [
+      "Dehydration or low salt makes the level climb",
+      "When the kidney holds on to sodium, it holds on to lithium too."
+     ],
+     [
+      "Thirst and lots of urine",
+      "Lithium affects how the kidney concentrates urine."
+     ],
+     [
+      "Toxicity happens easily",
+      "The toxic level is close to the therapeutic level."
+     ]
+    ],
+    "watch": [
+     "Draw levels on schedule",
+     "2–3 L fluids a day, steady salt intake",
+     "NSAIDs, diuretics, ACE inhibitors raise the level",
+     "Coarse tremor, vomiting, confusion → hold and notify"
+    ]
+   },
+   {
+    "id": "aed",
+    "t": "Anticonvulsant mood stabilizers",
+    "sfx": [
+     "Depakote",
+     "Lamictal",
+     "Tegretol"
+    ],
+    "d": [
+     "divalproex",
+     "lamotrigine",
+     "carbamazepine"
+    ],
+    "how": "Seizure drugs that also calm the brain's overfiring in mania. Learn each one's big danger.",
+    "why": [
+     [
+      "Depakote: check the liver",
+      "It can damage the liver (also platelets and pancreas)."
+     ],
+     [
+      "Lamictal: report any rash",
+      "It can cause Stevens–Johnson syndrome."
+     ],
+     [
+      "Tegretol: check blood counts and sodium",
+      "It can suppress the bone marrow and lower sodium."
+     ]
+    ],
+    "watch": [
+     "Depakote: liver enzymes; take with food",
+     "Lamictal: any rash → report",
+     "Tegretol: CBC and sodium; no grapefruit"
+    ]
+   },
+   {
+    "id": "fga",
+    "t": "1st-gen antipsychotics",
+    "sfx": [
+     "Typical"
+    ],
+    "d": [
+     "chlorpromazine",
+     "haloperidol"
+    ],
+    "how": "They block dopamine strongly all over the brain. That quiets hallucinations and delusions (positive symptoms).",
+    "why": [
+     [
+      "EPS: dystonia, parkinsonism, akathisia, tardive dyskinesia",
+      "The brain needs dopamine for smooth movement too."
+     ],
+     [
+      "Dry mouth, constipation",
+      "Anticholinergic effects."
+     ],
+     [
+      "NMS: high fever, rigid muscles, unstable vitals",
+      "A rare dopamine-blocking emergency, more likely with haloperidol."
+     ]
+    ],
+    "watch": [
+     "Watch for EPS and NMS",
+     "Orthostatic hypotension: rise slowly, fall precautions",
+     "Assess suicide risk: high in schizophrenia",
+     "Teach: sugarless gum, fiber, 2–3 L fluids"
+    ]
+   },
+   {
+    "id": "rescue",
+    "t": "Fixing antipsychotic side effects",
+    "sfx": [
+     "EPS",
+     "NMS"
+    ],
+    "d": [
+     "diphenhydramine",
+     "dantrolene",
+     "bromocriptine"
+    ],
+    "how": "Rescue drugs. Diphenhydramine for acute dystonia; dantrolene + bromocriptine together for NMS.",
+    "why": [
+     [
+      "Diphenhydramine stops acute dystonia",
+      "It's anticholinergic and rebalances acetylcholine against the blocked dopamine."
+     ],
+     [
+      "Dantrolene for NMS",
+      "It relaxes the rigid skeletal muscles."
+     ],
+     [
+      "Bromocriptine for NMS",
+      "It gives back the dopamine activity the antipsychotic blocked."
+     ]
+    ],
+    "watch": [
+     "Acute dystonia: give IM/IV promptly; watch the airway",
+     "NMS: stop the antipsychotic and cool the client"
+    ]
+   },
+   {
+    "id": "sga",
+    "t": "2nd-gen antipsychotics",
+    "sfx": [
+     "-apine",
+     "-idone"
+    ],
+    "d": [
+     "risperidone",
+     "olanzapine",
+     "quetiapine",
+     "paliperidone",
+     "aripiprazole",
+     "cariprazine",
+     "lurasidone",
+     "lumateperone"
+    ],
+    "how": "They block serotonin and dopamine. They treat positive AND negative symptoms with fewer movement problems. Learn the class, not each drug.",
+    "why": [
+     [
+      "Weight gain, high blood sugar, high lipids",
+      "Metabolic side effects are this class's big problem."
+     ],
+     [
+      "Less EPS than 1st gen",
+      "They block dopamine less hard."
+     ]
+    ],
+    "watch": [
+     "Weight, blood glucose, lipids",
+     "Orthostatic hypotension: rise slowly",
+     "Blood counts (agranulocytosis) and QT",
+     "1–2 weeks to start working; 6–12 week trial before switching"
+    ]
+   },
+   {
+    "id": "eye",
+    "t": "Glaucoma drops",
+    "sfx": [
+     "-prost",
+     "-lol"
+    ],
+    "d": [
+     "latanoprost",
+     "timolol",
+     "pilocarpine",
+     "echothiophate"
+    ],
+    "how": "They lower eye pressure by draining fluid out (latanoprost, pilocarpine, echothiophate) or making less of it (timolol).",
+    "why": [
+     [
+      "Small pupils with pilocarpine and echothiophate",
+      "More acetylcholine constricts the pupil, so seeing in dim light is hard."
+     ],
+     [
+      "HR can slow",
+      "Drops get absorbed into the body."
+     ],
+     [
+      "The iris darkens with latanoprost",
+      "A prostaglandin effect on pigment."
+     ]
+    ],
+    "watch": [
+     "Timolol is the likely exam eye drop: lowers PRODUCTION, can slow HR",
+     "Press the inner corner of the eye for 60 seconds after drops",
+     "Latanoprost in the evening",
+     "Report flashes, floaters, or a curtain over vision"
+    ]
+   },
+   {
+    "id": "ed",
+    "t": "Eating disorder meds",
+    "sfx": [
+     "Vyvanse"
+    ],
+    "d": [
+     "lisdexamfetamine",
+     "thiamine"
+    ],
+    "how": "Vyvanse is a stimulant that cuts binge eating. Thiamine protects a starved body before feeding starts. (Fluoxetine for bulimia is in the SSRI lesson.)",
+    "why": [
+     [
+      "Vyvanse raises BP and HR",
+      "It's a stimulant."
+     ],
+     [
+      "Thiamine before refeeding",
+      "Feeding uses up vitamin B1 fast, and low B1 harms the heart and brain."
+     ]
+    ],
+    "watch": [
+     "Vyvanse: cardiac check first; BP and HR; take in the morning",
+     "Not for weight loss; Schedule II"
+    ]
+   },
+   {
+    "id": "bph",
+    "t": "BPH: alpha blockers & 5-ARIs",
+    "sfx": [
+     "-osin",
+     "-steride"
+    ],
+    "d": [
+     "tamsulosin",
+     "terazosin",
+     "finasteride",
+     "dutasteride"
+    ],
+    "how": "Alpha blockers relax the prostate so urine flows now. 5-ARIs shrink the prostate slowly over months.",
+    "why": [
+     [
+      "Dizziness when standing (alpha blockers)",
+      "They relax blood vessels too: orthostatic hypotension."
+     ],
+     [
+      "Tamsulosin helps a stone pass",
+      "It relaxes the smooth muscle of the ureter."
+     ],
+     [
+      "5-ARIs take months",
+      "They shrink the tissue slowly by blocking a hormone."
+     ]
+    ],
+    "watch": [
+     "Alpha blocker at bedtime; rise slowly",
+     "Pregnant women shouldn't handle crushed 5-ARI tablets"
+    ]
+   },
+   {
+    "id": "pain",
+    "t": "Kidney stone pain",
+    "sfx": [
+     "NSAID",
+     "Opioid"
+    ],
+    "d": [
+     "ketorolac",
+     "morphine"
+    ],
+    "how": "Ketorolac (NSAID) cuts inflammation and spasm pain. Morphine (opioid) is for severe pain.",
+    "why": [
+     [
+      "Ketorolac: bleeding risk, hard on the kidneys",
+      "It blocks prostaglandins that protect the stomach, platelets, and kidney blood flow."
+     ],
+     [
+      "Morphine: slow breathing",
+      "Opioids depress the breathing center."
+     ]
+    ],
+    "watch": [
+     "Respiratory rate and sedation; naloxone reverses opioids",
+     "Strain the urine"
+    ]
+   },
+   {
+    "id": "ckd",
+    "t": "Treating kidney failure",
+    "sfx": [
+     "-gliflozin",
+     "-poetin"
+    ],
+    "d": [
+     "dapagliflozin",
+     "epoetin alfa",
+     "furosemide"
+    ],
+    "how": "Protect what's left of the kidney and replace what it can no longer do.",
+    "why": [
+     [
+      "Farxiga sends sugar out in the urine",
+      "It blocks sugar reabsorption in the kidney (SGLT2)."
+     ],
+     [
+      "Epogen is needed",
+      "Failing kidneys stop making erythropoietin, so anemia develops."
+     ],
+     [
+      "Loop diuretics stop working late in CKD",
+      "They need kidneys that still make urine."
+     ]
+    ],
+    "watch": [
+     "Epogen: watch BP and the hemoglobin",
+     "Furosemide: potassium, BP, I&O, daily weight"
+    ]
+   },
+   {
+    "id": "renal",
+    "t": "Drugs that change in kidney failure",
+    "sfx": [
+     "Dose ↓",
+     "Avoid"
+    ],
+    "d": [
+     "insulin",
+     "magnesium-containing antacids",
+     "heparin",
+     "BCG"
+    ],
+    "how": "The kidneys clear many drugs. When they fail, some drugs build up, so doses change or the drug is avoided.",
+    "why": [
+     [
+      "Insulin dose often goes down",
+      "Failing kidneys clear less insulin, so it lasts longer: hypoglycemia risk."
+     ],
+     [
+      "No magnesium antacids",
+      "Magnesium builds up."
+     ],
+     [
+      "Heparin is risky",
+      "Platelets don't work well in CKD, so bleeding is more likely."
+     ],
+     [
+      "BCG goes straight into the bladder",
+      "It's immunotherapy for bladder cancer."
+     ]
+    ],
+    "watch": [
+     "Watch for low blood sugar in CKD",
+     "Heparin: bleeding; held with an acute bleed"
+    ]
+   },
+   {
+    "id": "alz",
+    "t": "Alzheimer's drugs",
+    "sfx": [
+     "Cholinesterase inhibitors",
+     "-mab"
+    ],
+    "d": [
+     "donepezil",
+     "rivastigmine",
+     "galantamine",
+     "memantine",
+     "aducanumab"
+    ],
+    "how": "Cholinesterase inhibitors keep more acetylcholine (a memory chemical) around. Memantine blocks glutamate that damages nerve cells.",
+    "why": [
+     [
+      "Slow heart rate",
+      "Extra acetylcholine slows the heart."
+     ],
+     [
+      "They don't cure",
+      "They only ease symptoms."
+     ],
+     [
+      "Memantine is for later stages",
+      "It's used for moderate to severe disease."
+     ]
+    ],
+    "watch": [
+     "Check HR before giving",
+     "Sertraline (in the SSRI lesson) helps mood and impulsivity"
+    ]
+   }
+  ]
+ },
+ "bs": {
+  "D": [
+   {
+    "g": "labetalol",
+    "cls": "Beta blocker",
+    "grp": "bb",
+    "u": [
+     "bb",
+     "bp",
+     "hr"
+    ],
+    "use": "Aneurysm: first-line HR + BP control",
+    "tip": "-lol = beta blocker. Slower, gentler beats = less wall stress. Never stop abruptly.",
+    "warn": "Check HR and BP first; never stop it suddenly"
+   },
+   {
+    "g": "esmolol",
+    "cls": "Beta blocker",
+    "grp": "bb",
+    "u": [
+     "bb",
+     "bp",
+     "hr",
+     "taper"
+    ],
+    "use": "Aneurysm: first-line HR + BP control",
+    "tip": "-lol = beta blocker. Slower, gentler beats = less wall stress.",
+    "warn": "Check HR and BP first; never stop it suddenly"
+   },
+   {
+    "g": "nicardipine",
+    "cls": "Calcium channel blocker",
+    "grp": "ccb",
+    "u": [
+     "ccb",
+     "bp"
+    ],
+    "use": "Pre-op aneurysm: IV BP titration",
+    "tip": "-dipine = calcium channel blocker. (-apine without the d = antipsychotic.)",
+    "warn": "Hypotension: titrate IV with an arterial line"
+   },
+   {
+    "g": "lisinopril",
+    "cls": "ACE inhibitor",
+    "grp": "acei",
+    "u": [
+     "bp",
+     "raas"
+    ],
+    "use": "BP control (aneurysm second line); CKD kidney protection",
+    "tip": "-pril = ACE inhibitor.",
+    "warn": "Angioedema, dry cough, high potassium"
+   },
+   {
+    "g": "losartan",
+    "cls": "ARB",
+    "grp": "arb",
+    "u": [
+     "bp",
+     "raas"
+    ],
+    "use": "BP control (aneurysm second line); CKD kidney protection",
+    "tip": "-sartan = ARB.",
+    "warn": "High potassium; raises lithium levels"
+   },
+   {
+    "g": "amlodipine",
+    "cls": "Calcium channel blocker",
+    "grp": "ccb",
+    "u": [
+     "ccb",
+     "bp"
+    ],
+    "use": "BP control (aneurysm second line)",
+    "tip": "-dipine = calcium channel blocker.",
+    "warn": "Hypotension, headache, flushing"
+   },
+   {
+    "g": "atorvastatin",
+    "cls": "Statin",
+    "grp": "statin",
+    "u": [
+     "athero"
+    ],
+    "use": "Atherosclerotic disease: plaque + lipids",
+    "tip": "-statin = lipids down, plaque stable.",
+    "warn": "Report unexplained muscle pain"
+   },
+   {
+    "g": "aspirin",
+    "cls": "Antiplatelet",
+    "grp": "plt",
+    "u": [
+     "plt",
+     "bleed"
+    ],
+    "use": "Prevents clots after endovascular repair",
+    "warn": "Bleeding: gums, black stools, bruising"
+   },
+   {
+    "g": "clopidogrel",
+    "cls": "Antiplatelet: P2Y12 inhibitor",
+    "cno": [
+     "Antiplatelet"
+    ],
+    "grp": "plt",
+    "u": [
+     "plt",
+     "bleed"
+    ],
+    "use": "Prevents clots after endovascular repair",
+    "tip": "-grel = clot-stopping antiplatelet.",
+    "warn": "Bleeding: gums, black stools, bruising"
+   },
+   {
+    "g": "diazepam",
+    "cls": "Benzodiazepine",
+    "cno": [
+     "Skeletal muscle relaxant"
+    ],
+    "grp": "benzo",
+    "u": [
+     "benzo",
+     "taper"
+    ],
+    "use": "Anxiety, muscle spasm, status epilepticus, alcohol withdrawal",
+    "tip": "-pam / -lam = benzo = more GABA. Reverse with flumazenil.",
+    "warn": "Respiratory depression with alcohol or opioids"
+   },
+   {
+    "g": "alprazolam",
+    "cls": "Benzodiazepine",
+    "cno": [
+     "Skeletal muscle relaxant"
+    ],
+    "grp": "benzo",
+    "u": [
+     "benzo",
+     "taper"
+    ],
+    "use": "Anxiety disorders",
+    "tip": "-pam / -lam = benzo = more GABA. Reverse with flumazenil.",
+    "warn": "Dependence: taper, or withdrawal seizures can happen"
+   },
+   {
+    "g": "flumazenil",
+    "cls": "Benzodiazepine antagonist",
+    "grp": "fluma",
+    "u": [
+     "benzo"
+    ],
+    "use": "Reverses benzodiazepine sedation",
+    "tip": "FLUsh out the benzo.",
+    "warn": "IV only; keep monitoring breathing and sedation"
+   },
+   {
+    "g": "buspirone",
+    "cls": "Anxiolytic (non-benzodiazepine)",
+    "grp": "busp",
+    "u": [
+     "anx",
+     "gf"
+    ],
+    "use": "Anxiety (GAD), short-term",
+    "tip": "BUSpirone rides on a schedule, like a bus.",
+    "warn": "No grapefruit juice; not within 2 weeks of an MAOI"
+   },
+   {
+    "g": "fluoxetine",
+    "b": "Prozac",
+    "cls": "SSRI",
+    "grp": "ssri",
+    "u": [
+     "sero",
+     "am",
+     "lowna",
+     "wt"
+    ],
+    "use": "Depression; the only FDA-approved drug for bulimia",
+    "tip": "SSRI = serotonin only. Too much serotonin = serotonin syndrome (agitation, tremor, fever, sweating).",
+    "warn": "Suicidal thoughts under 25; hyponatremia"
+   },
+   {
+    "g": "venlafaxine",
+    "cls": "SNRI",
+    "grp": "snri",
+    "u": [
+     "sero",
+     "am",
+     "taper"
+    ],
+    "use": "Depression, GAD, social anxiety",
+    "tip": "SNRI = serotonin + norepinephrine. Norepinephrine = BP goes up.",
+    "warn": "Raises BP; taper over 2–4 weeks"
+   },
+   {
+    "g": "amitriptyline",
+    "cls": "Tricyclic antidepressant (TCA)",
+    "grp": "tca",
+    "u": [
+     "sero",
+     "qt",
+     "taper"
+    ],
+    "use": "Major depression",
+    "tip": "TCA: Tired, Can't pee/poop/see (anticholinergic), Arrhythmia in overdose.",
+    "warn": "Overdose causes fatal dysrhythmias"
+   },
+   {
+    "g": "bupropion",
+    "cls": "Atypical antidepressant",
+    "grp": "bupr",
+    "u": [
+     "sero",
+     "am"
+    ],
+    "use": "Depression, seasonal affective disorder, smoking cessation",
+    "tip": "Think UP: activation up, seizure risk up, weight down.",
+    "warn": "Seizures: avoid with seizure or eating disorder history"
+   },
+   {
+    "g": "phenelzine",
+    "cls": "MAOI",
+    "grp": "maoi",
+    "u": [
+     "sero",
+     "crisis"
+    ],
+    "use": "Depression not helped by other antidepressants",
+    "tip": "MAOI + tyramine = BP through the roof.",
+    "warn": "Tyramine foods cause hypertensive crisis"
+   },
+   {
+    "g": "phentolamine",
+    "cls": "Alpha-adrenergic blocker",
+    "grp": "alpha",
+    "u": [
+     "alpha",
+     "crisis"
+    ],
+    "use": "MAOI hypertensive crisis (IV)",
+    "warn": "Crisis drug: monitor BP closely as it drops"
+   },
+   {
+    "g": "nifedipine",
+    "cls": "Calcium channel blocker",
+    "grp": "ccb",
+    "u": [
+     "ccb",
+     "bp",
+     "crisis"
+    ],
+    "use": "MAOI hypertensive crisis (sublingual)",
+    "tip": "-dipine = calcium channel blocker.",
+    "warn": "Hypotension, headache, flushing"
+   },
+   {
+    "g": "lithium",
+    "cls": "Mood stabilizer",
+    "grp": "li",
+    "u": [
+     "li",
+     "wt"
+    ],
+    "use": "Bipolar disorder: acute mania + maintenance",
+    "tip": "Lithium acts like salt. Low water + low sodium = lithium climbs.",
+    "warn": "Narrow range: dehydration, low sodium, NSAIDs raise the level"
+   },
+   {
+    "g": "chlorpromazine",
+    "cls": "Antipsychotic: 1st generation",
+    "grp": "fga",
+    "u": [
+     "apsych",
+     "blood",
+     "qt",
+     "wt"
+    ],
+    "use": "Schizophrenia, acute mania, N/V, intractable hiccups",
+    "tip": "1st gen = blocks dopamine hard = movement problems (EPS).",
+    "warn": "EPS, orthostatic hypotension, photosensitivity"
+   },
+   {
+    "g": "haloperidol",
+    "cls": "Antipsychotic: 1st generation",
+    "grp": "fga",
+    "u": [
+     "apsych",
+     "blood",
+     "qt",
+     "wt"
+    ],
+    "use": "Schizophrenia / psychosis",
+    "tip": "1st gen = blocks dopamine hard = movement problems (EPS).",
+    "warn": "NMS and EPS: high-potency dopamine blocker"
+   },
+   {
+    "g": "risperidone",
+    "b": "Risperdal",
+    "cls": "Antipsychotic: 2nd generation (atypical)",
+    "grp": "sga",
+    "u": [
+     "apsych",
+     "blood",
+     "qt",
+     "wt",
+     "dmrisk"
+    ],
+    "use": "Schizophrenia (+ and – symptoms), bipolar, autism irritability",
+    "tip": "2nd gen = metabolic: weight, sugar, lipids. Also orthostatic hypotension: rise slowly.",
+    "warn": "Weight gain, high blood sugar, high lipids: monitor them"
+   },
+   {
+    "g": "olanzapine",
+    "b": "Zyprexa",
+    "cls": "Antipsychotic: 2nd generation (atypical)",
+    "grp": "sga",
+    "u": [
+     "apsych",
+     "blood",
+     "qt",
+     "wt",
+     "dmrisk"
+    ],
+    "use": "Schizophrenia; acute mania",
+    "tip": "-apine = antipsychotic (-dipine = calcium channel blocker).",
+    "warn": "Weight gain, high blood sugar, high lipids: monitor them"
+   },
+   {
+    "g": "quetiapine",
+    "b": "Seroquel",
+    "cls": "Antipsychotic: 2nd generation (atypical)",
+    "grp": "sga",
+    "u": [
+     "apsych",
+     "blood",
+     "qt",
+     "wt",
+     "dmrisk"
+    ],
+    "use": "Schizophrenia; acute mania",
+    "tip": "-apine = antipsychotic (-dipine = calcium channel blocker).",
+    "warn": "Weight gain, high blood sugar, high lipids: monitor them"
+   },
+   {
+    "g": "paliperidone",
+    "b": "Invega",
+    "cls": "Antipsychotic: 2nd generation (atypical)",
+    "grp": "sga",
+    "u": [
+     "apsych",
+     "blood",
+     "qt",
+     "wt",
+     "dmrisk"
+    ],
+    "use": "Schizophrenia",
+    "tip": "-idone = antipsychotic.",
+    "warn": "Weight gain, high blood sugar, high lipids: monitor them"
+   },
+   {
+    "g": "aripiprazole",
+    "b": "Abilify",
+    "cls": "Antipsychotic: 2nd generation (atypical)",
+    "grp": "sga",
+    "u": [
+     "apsych",
+     "blood",
+     "qt",
+     "wt",
+     "dmrisk"
+    ],
+    "use": "Schizophrenia; acute mania",
+    "warn": "Weight gain, high blood sugar, high lipids: monitor them"
+   },
+   {
+    "g": "cariprazine",
+    "b": "Vraylar",
+    "cls": "Antipsychotic: 2nd generation (atypical)",
+    "grp": "sga",
+    "u": [
+     "apsych",
+     "blood",
+     "qt",
+     "wt",
+     "dmrisk"
+    ],
+    "use": "Schizophrenia",
+    "warn": "Weight gain, high blood sugar, high lipids: monitor them"
+   },
+   {
+    "g": "lurasidone",
+    "b": "Latuda",
+    "cls": "Antipsychotic: 2nd generation (atypical)",
+    "grp": "sga",
+    "u": [
+     "apsych",
+     "blood",
+     "qt",
+     "wt",
+     "dmrisk"
+    ],
+    "use": "Schizophrenia; acute mania",
+    "tip": "-idone = antipsychotic.",
+    "warn": "Weight gain, high blood sugar, high lipids: monitor them"
+   },
+   {
+    "g": "lumateperone",
+    "b": "Caplyta",
+    "cls": "Antipsychotic: 2nd generation (atypical)",
+    "grp": "sga",
+    "u": [
+     "apsych",
+     "blood",
+     "qt",
+     "wt",
+     "dmrisk"
+    ],
+    "use": "Schizophrenia; acute mania",
+    "warn": "Weight gain, high blood sugar, high lipids: monitor them"
+   },
+   {
+    "g": "diphenhydramine",
+    "cls": "Anticholinergic (antihistamine)",
+    "grp": "dph",
+    "u": [
+     "eps"
+    ],
+    "use": "Acute dystonia from antipsychotics",
+    "warn": "Sedation and anticholinergic effects"
+   },
+   {
+    "g": "dantrolene",
+    "cls": "Skeletal muscle relaxant",
+    "grp": "nms",
+    "u": [
+     "nms"
+    ],
+    "use": "Neuroleptic malignant syndrome",
+    "warn": "NMS emergency: stop the antipsychotic, cool the client"
+   },
+   {
+    "g": "bromocriptine",
+    "cls": "Dopamine agonist",
+    "grp": "nms",
+    "u": [
+     "nms"
+    ],
+    "use": "Neuroleptic malignant syndrome",
+    "warn": "NMS emergency: stop the antipsychotic, cool the client"
+   },
+   {
+    "g": "latanoprost",
+    "cls": "Prostaglandin analog (eye)",
+    "grp": "pga",
+    "u": [
+     "eye"
+    ],
+    "use": "Glaucoma: increases aqueous outflow",
+    "tip": "-prost = prostaglandin = drains the eye.",
+    "warn": "Darkens the iris, eyelids, and lashes"
+   },
+   {
+    "g": "timolol",
+    "cls": "Beta blocker",
+    "grp": "bb",
+    "u": [
+     "bb",
+     "eye",
+     "hr"
+    ],
+    "use": "Glaucoma: decreases aqueous production",
+    "tip": "Timolol turns the tap down (less fluid made).",
+    "warn": "Can slow the heart rate"
+   },
+   {
+    "g": "pilocarpine",
+    "cls": "Cholinergic agonist (eye)",
+    "grp": "piloc",
+    "u": [
+     "eye",
+     "miotic",
+     "chol",
+     "hr"
+    ],
+    "use": "Glaucoma: increases aqueous outflow",
+    "tip": "Pupil constricts: low-light vision drops. Press the inner corner of the eye for 60 seconds.",
+    "warn": "Poor vision in dim light; report flashes or floaters"
+   },
+   {
+    "g": "echothiophate",
+    "cls": "Cholinesterase inhibitor (eye)",
+    "cno": [
+     "Cholinesterase inhibitor (Alzheimer's)"
+    ],
+    "grp": "echo",
+    "u": [
+     "eye",
+     "miotic",
+     "chol",
+     "hr"
+    ],
+    "use": "Glaucoma: increases aqueous outflow",
+    "tip": "Pupil constricts: low-light vision drops. Press the inner corner of the eye for 60 seconds.",
+    "warn": "Cataracts with long-term use"
+   },
+   {
+    "g": "lisdexamfetamine",
+    "b": "Vyvanse",
+    "cls": "CNS stimulant (amphetamine)",
+    "grp": "lisdex",
+    "u": [
+     "stim",
+     "am"
+    ],
+    "use": "Binge eating disorder (moderate–severe, adults); ADHD",
+    "tip": "Vyvanse = binge eating. Fluoxetine = bulimia.",
+    "warn": "Abuse and addiction (Schedule II); raises BP and HR"
+   },
+   {
+    "g": "thiamine",
+    "cls": "Vitamin B1",
+    "grp": "thia",
+    "u": [
+     "refeed"
+    ],
+    "use": "Given before refeeding a malnourished client",
+    "warn": "Give before feeding starts (refeeding syndrome risk)"
+   },
+   {
+    "g": "tamsulosin",
+    "b": "Flomax",
+    "cls": "Alpha-adrenergic blocker",
+    "grp": "alpha",
+    "u": [
+     "alpha"
+    ],
+    "use": "BPH symptoms; helps kidney stones pass",
+    "tip": "Alpha blockers RELAX. -osin = alpha blocker.",
+    "warn": "Orthostatic hypotension: rise slowly"
+   },
+   {
+    "g": "terazosin",
+    "cls": "Alpha-adrenergic blocker",
+    "grp": "alpha",
+    "u": [
+     "alpha"
+    ],
+    "use": "BPH: relaxes prostate smooth muscle",
+    "tip": "Alpha blockers RELAX. -osin = alpha blocker.",
+    "warn": "Orthostatic hypotension: rise slowly"
+   },
+   {
+    "g": "finasteride",
+    "b": "Proscar",
+    "cls": "5-alpha reductase inhibitor",
+    "grp": "5ari",
+    "u": [
+     "bph"
+    ],
+    "use": "BPH: shrinks the prostate over time",
+    "tip": "5-ARIs SHRINK. -steride = shrink.",
+    "warn": "Pregnant women shouldn't handle crushed tablets"
+   },
+   {
+    "g": "dutasteride",
+    "cls": "5-alpha reductase inhibitor",
+    "grp": "5ari",
+    "u": [
+     "bph"
+    ],
+    "use": "BPH: shrinks the prostate over time",
+    "tip": "5-ARIs SHRINK. -steride = shrink.",
+    "warn": "Pregnant women shouldn't handle crushed tablets"
+   },
+   {
+    "g": "ketorolac",
+    "cls": "NSAID",
+    "grp": "nsaid",
+    "u": [
+     "stonepain",
+     "bleed"
+    ],
+    "use": "Kidney stone pain + inflammation",
+    "warn": "Bleeding risk: avoid after TURP"
+   },
+   {
+    "g": "morphine",
+    "cls": "Opioid agonist",
+    "grp": "opi",
+    "u": [
+     "stonepain"
+    ],
+    "use": "Severe kidney stone pain",
+    "tip": "Watch respiratory depression. Reversed by naloxone.",
+    "warn": "Respiratory depression: reverse with naloxone"
+   },
+   {
+    "g": "BCG",
+    "cls": "Intravesical immunotherapy",
+    "grp": "bcg",
+    "u": [
+     "bladder"
+    ],
+    "use": "Bladder (urothelial) cancer",
+    "warn": "Goes directly into the bladder only"
+   },
+   {
+    "g": "dapagliflozin",
+    "b": "Farxiga",
+    "cls": "SGLT2 inhibitor",
+    "grp": "sglt2",
+    "u": [
+     "dm"
+    ],
+    "use": "Slows CKD progression; type 2 diabetes",
+    "tip": "-gliflozin = sugar out in the urine, kidney protected.",
+    "warn": "Urinary and genital infections; dehydration"
+   },
+   {
+    "g": "epoetin alfa",
+    "b": "Epogen",
+    "cls": "Erythropoiesis-stimulating agent (ESA)",
+    "grp": "esa",
+    "u": [
+     "anemia"
+    ],
+    "use": "Anemia of CKD",
+    "tip": "-poetin = erythropoiesis (making RBCs).",
+    "warn": "Raises BP; watch the hemoglobin"
+   },
+   {
+    "g": "furosemide",
+    "cls": "Loop diuretic",
+    "grp": "loop",
+    "u": [
+     "diur"
+    ],
+    "use": "Fluid overload in kidney disease",
+    "warn": "Low potassium; only works while kidneys make urine"
+   },
+   {
+    "g": "heparin",
+    "cls": "Anticoagulant",
+    "grp": "hep",
+    "u": [
+     "hep",
+     "bleed"
+    ],
+    "use": "Keeps hemodialysis tubing from clotting",
+    "warn": "Bleeding: hold it with an acute bleed"
+   },
+   {
+    "g": "insulin",
+    "cls": "Hormone: antidiabetic",
+    "grp": "ins",
+    "u": [
+     "dm"
+    ],
+    "use": "Diabetes",
+    "warn": "Hypoglycemia as CKD worsens: dose often goes down"
+   },
+   {
+    "g": "magnesium-containing antacids",
+    "cls": "Antacid",
+    "grp": "mgant",
+    "u": [
+     "mg"
+    ],
+    "use": "Heartburn, but AVOID in kidney failure",
+    "warn": "Avoid in kidney failure: magnesium builds up"
+   },
+   {
+    "g": "donepezil",
+    "cls": "Cholinesterase inhibitor (Alzheimer's)",
+    "cno": [
+     "Cholinesterase inhibitor (eye)"
+    ],
+    "grp": "chei",
+    "u": [
+     "alz",
+     "chol",
+     "hr"
+    ],
+    "use": "Alzheimer's: mild to moderate",
+    "tip": "More acetylcholine helps memory, but too much ACh slows the heart.",
+    "warn": "Bradycardia: check HR first"
+   },
+   {
+    "g": "rivastigmine",
+    "cls": "Cholinesterase inhibitor (Alzheimer's)",
+    "cno": [
+     "Cholinesterase inhibitor (eye)"
+    ],
+    "grp": "chei",
+    "u": [
+     "alz",
+     "chol",
+     "hr"
+    ],
+    "use": "Alzheimer's: mild to moderate",
+    "tip": "More acetylcholine helps memory, but too much ACh slows the heart.",
+    "warn": "Bradycardia: check HR first"
+   },
+   {
+    "g": "galantamine",
+    "cls": "Cholinesterase inhibitor (Alzheimer's)",
+    "cno": [
+     "Cholinesterase inhibitor (eye)"
+    ],
+    "grp": "chei",
+    "u": [
+     "alz",
+     "chol",
+     "hr"
+    ],
+    "use": "Alzheimer's: mild to moderate",
+    "tip": "More acetylcholine helps memory, but too much ACh slows the heart.",
+    "warn": "Bradycardia: check HR first"
+   },
+   {
+    "g": "memantine",
+    "cls": "NMDA receptor antagonist",
+    "grp": "nmda",
+    "u": [
+     "alz",
+     "chol",
+     "hr"
+    ],
+    "use": "Alzheimer's: moderate to severe",
+    "tip": "Memantine = Moderate-to-severe. Blocks glutamate (NMDA).",
+    "warn": "Dizziness, headache, confusion"
+   },
+   {
+    "g": "sertraline",
+    "b": "Zoloft",
+    "cls": "SSRI",
+    "grp": "ssri",
+    "u": [
+     "sero"
+    ],
+    "use": "Alzheimer's: mood and behavior",
+    "warn": "Serotonin syndrome; suicidal thoughts under 25"
+   },
+   {
+    "g": "aducanumab",
+    "cls": "Monoclonal antibody",
+    "grp": "aduc",
+    "u": [
+     "alz"
+    ],
+    "use": "Alzheimer's disease",
+    "tip": "-mab = monoclonal antibody.",
+    "warn": "Brain swelling or bleeding (ARIA): MRI monitoring"
+   },
+   {
+    "g": "divalproex",
+    "b": "Depakote",
+    "cls": "Mood stabilizer: antiepileptic",
+    "grp": "aed",
+    "u": [
+     "aed",
+     "wt"
+    ],
+    "use": "Bipolar: acute mania",
+    "tip": "Depakote: check the liver, platelets, and pancreas.",
+    "warn": "Liver toxicity; low platelets; pancreatitis"
+   },
+   {
+    "g": "lamotrigine",
+    "b": "Lamictal",
+    "cls": "Mood stabilizer: antiepileptic",
+    "grp": "aed",
+    "u": [
+     "aed"
+    ],
+    "use": "Bipolar: maintenance therapy",
+    "tip": "LamicTAL: watch for a rash.",
+    "warn": "Any rash: Stevens–Johnson syndrome risk"
+   },
+   {
+    "g": "carbamazepine",
+    "b": "Tegretol",
+    "cls": "Mood stabilizer: antiepileptic",
+    "grp": "aed",
+    "u": [
+     "aed",
+     "blood",
+     "lowna",
+     "gf"
+    ],
+    "use": "Bipolar: acute mania",
+    "tip": "Tegretol: check the blood counts and the sodium.",
+    "warn": "Blood dyscrasias; low sodium; no grapefruit"
+   }
+  ],
+  "LESSONS": [
+   {
+    "id": "bb",
+    "t": "Beta blockers",
+    "d": [
+     "labetalol",
+     "esmolol"
+    ]
+   },
+   {
+    "id": "ccb",
+    "t": "Calcium channel blockers",
+    "d": [
+     "nicardipine",
+     "amlodipine",
+     "nifedipine"
+    ]
+   },
+   {
+    "id": "raas",
+    "t": "ACE inhibitors & ARBs",
+    "d": [
+     "lisinopril",
+     "losartan"
+    ]
+   },
+   {
+    "id": "plaque",
+    "t": "Statin & antiplatelets",
+    "d": [
+     "atorvastatin",
+     "aspirin",
+     "clopidogrel"
+    ]
+   },
+   {
+    "id": "anx",
+    "t": "Anxiety: benzos & buspirone",
+    "d": [
+     "diazepam",
+     "alprazolam",
+     "flumazenil",
+     "buspirone"
+    ]
+   },
+   {
+    "id": "ssri",
+    "t": "SSRIs & SNRIs",
+    "d": [
+     "fluoxetine",
+     "sertraline",
+     "venlafaxine"
+    ]
+   },
+   {
+    "id": "oldad",
+    "t": "TCAs, bupropion & MAOIs",
+    "d": [
+     "amitriptyline",
+     "bupropion",
+     "phenelzine",
+     "phentolamine"
+    ]
+   },
+   {
+    "id": "li",
+    "t": "Lithium",
+    "d": [
+     "lithium"
+    ]
+   },
+   {
+    "id": "aed",
+    "t": "Anticonvulsant mood stabilizers",
+    "d": [
+     "divalproex",
+     "lamotrigine",
+     "carbamazepine"
+    ]
+   },
+   {
+    "id": "fga",
+    "t": "1st-gen antipsychotics",
+    "d": [
+     "chlorpromazine",
+     "haloperidol"
+    ]
+   },
+   {
+    "id": "rescue",
+    "t": "Fixing antipsychotic side effects",
+    "d": [
+     "diphenhydramine",
+     "dantrolene",
+     "bromocriptine"
+    ]
+   },
+   {
+    "id": "sga",
+    "t": "2nd-gen antipsychotics",
+    "d": [
+     "risperidone",
+     "olanzapine",
+     "quetiapine",
+     "paliperidone",
+     "aripiprazole",
+     "cariprazine",
+     "lurasidone",
+     "lumateperone"
+    ]
+   },
+   {
+    "id": "eye",
+    "t": "Glaucoma drops",
+    "d": [
+     "latanoprost",
+     "timolol",
+     "pilocarpine",
+     "echothiophate"
+    ]
+   },
+   {
+    "id": "ed",
+    "t": "Eating disorder meds",
+    "d": [
+     "lisdexamfetamine",
+     "thiamine"
+    ]
+   },
+   {
+    "id": "bph",
+    "t": "BPH: alpha blockers & 5-ARIs",
+    "d": [
+     "tamsulosin",
+     "terazosin",
+     "finasteride",
+     "dutasteride"
+    ]
+   },
+   {
+    "id": "pain",
+    "t": "Kidney stone pain",
+    "d": [
+     "ketorolac",
+     "morphine"
+    ]
+   },
+   {
+    "id": "ckd",
+    "t": "Treating kidney failure",
+    "d": [
+     "dapagliflozin",
+     "epoetin alfa",
+     "furosemide"
+    ]
+   },
+   {
+    "id": "renal",
+    "t": "Drugs that change in kidney failure",
+    "d": [
+     "insulin",
+     "magnesium-containing antacids",
+     "heparin",
+     "BCG"
+    ]
+   },
+   {
+    "id": "alz",
+    "t": "Alzheimer's drugs",
+    "d": [
+     "donepezil",
+     "rivastigmine",
+     "galantamine",
+     "memantine",
+     "aducanumab"
+    ]
+   }
+  ],
+  "WK": {
+   "labetalol": [
+    "6.2"
+   ],
+   "esmolol": [
+    "6.2"
+   ],
+   "nicardipine": [
+    "6.2"
+   ],
+   "lisinopril": [
+    "6.2",
+    "8.2"
+   ],
+   "losartan": [
+    "6.2",
+    "8.2"
+   ],
+   "amlodipine": [
+    "6.2"
+   ],
+   "atorvastatin": [
+    "6.2"
+   ],
+   "aspirin": [
+    "6.2"
+   ],
+   "clopidogrel": [
+    "6.2"
+   ],
+   "diazepam": [
+    "7.1"
+   ],
+   "alprazolam": [
+    "7.1"
+   ],
+   "flumazenil": [
+    "7.1"
+   ],
+   "buspirone": [
+    "7.1"
+   ],
+   "fluoxetine": [
+    "7.1",
+    "7.3"
+   ],
+   "venlafaxine": [
+    "7.1"
+   ],
+   "amitriptyline": [
+    "7.1"
+   ],
+   "bupropion": [
+    "7.1"
+   ],
+   "phenelzine": [
+    "7.1"
+   ],
+   "phentolamine": [
+    "7.1"
+   ],
+   "nifedipine": [
+    "7.1"
+   ],
+   "lithium": [
+    "7.1",
+    "9.2"
+   ],
+   "chlorpromazine": [
+    "7.1",
+    "9.2"
+   ],
+   "haloperidol": [
+    "7.1",
+    "9.1",
+    "9.2"
+   ],
+   "risperidone": [
+    "7.1",
+    "9.2"
+   ],
+   "olanzapine": [
+    "NT"
+   ],
+   "quetiapine": [
+    "NT"
+   ],
+   "paliperidone": [
+    "NT"
+   ],
+   "aripiprazole": [
+    "NT"
+   ],
+   "cariprazine": [
+    "NT"
+   ],
+   "lurasidone": [
+    "NT"
+   ],
+   "lumateperone": [
+    "NT"
+   ],
+   "diphenhydramine": [
+    "7.1"
+   ],
+   "dantrolene": [
+    "7.1",
+    "9.2"
+   ],
+   "bromocriptine": [
+    "7.1",
+    "9.2"
+   ],
+   "latanoprost": [
+    "7.1"
+   ],
+   "timolol": [
+    "7.1"
+   ],
+   "pilocarpine": [
+    "7.1"
+   ],
+   "echothiophate": [
+    "7.1"
+   ],
+   "lisdexamfetamine": [
+    "7.3"
+   ],
+   "thiamine": [
+    "7.3"
+   ],
+   "tamsulosin": [
+    "8.1"
+   ],
+   "terazosin": [
+    "8.1"
+   ],
+   "finasteride": [
+    "8.1"
+   ],
+   "dutasteride": [
+    "8.1"
+   ],
+   "ketorolac": [
+    "8.1"
+   ],
+   "morphine": [
+    "8.1"
+   ],
+   "BCG": [
+    "8.2"
+   ],
+   "dapagliflozin": [
+    "8.2"
+   ],
+   "epoetin alfa": [
+    "8.2"
+   ],
+   "furosemide": [
+    "8.2"
+   ],
+   "heparin": [
+    "8.2"
+   ],
+   "insulin": [
+    "8.2"
+   ],
+   "magnesium-containing antacids": [
+    "8.2"
+   ],
+   "donepezil": [
+    "NT"
+   ],
+   "rivastigmine": [
+    "NT"
+   ],
+   "galantamine": [
+    "NT"
+   ],
+   "memantine": [
+    "NT"
+   ],
+   "sertraline": [
+    "NT"
+   ],
+   "aducanumab": [
+    "NT"
+   ],
+   "divalproex": [
+    "NT"
+   ],
+   "lamotrigine": [
+    "NT"
+   ],
+   "carbamazepine": [
+    "NT"
+   ]
+  }
+ },
+ "si": {
+  "G": {
+   "cls": [
+    {
+     "k": "bb",
+     "l": "Beta blocker",
+     "s": "-lol",
+     "d": [
+      "labetalol",
+      "esmolol",
+      "timolol"
+     ],
+     "w": "Block adrenaline at the heart: slower, gentler beats. Timolol does it in the eye too."
+    },
+    {
+     "k": "ccb",
+     "l": "Calcium channel blocker",
+     "s": "-dipine",
+     "d": [
+      "nicardipine",
+      "amlodipine",
+      "nifedipine"
+     ],
+     "w": "Block calcium in artery walls so arteries relax and BP drops."
+    },
+    {
+     "k": "acei",
+     "l": "ACE inhibitor",
+     "s": "-pril",
+     "d": [
+      "lisinopril"
+     ],
+     "w": "Block angiotensin; can cause dry cough and angioedema."
+    },
+    {
+     "k": "arb",
+     "l": "ARB",
+     "s": "-sartan",
+     "d": [
+      "losartan"
+     ],
+     "w": "Block angiotensin's receptor; no cough, so it's the usual swap."
+    },
+    {
+     "k": "plt",
+     "l": "Antiplatelet",
+     "s": "-grel, aspirin",
+     "d": [
+      "aspirin",
+      "clopidogrel"
+     ],
+     "w": "Stop platelets from clumping. Together = DAPT after a stent or coil."
+    },
+    {
+     "k": "statin",
+     "l": "Statin",
+     "s": "-statin",
+     "d": [
+      "atorvastatin"
+     ],
+     "w": "Lower lipids and steady plaque."
+    },
+    {
+     "k": "benzo",
+     "l": "Benzodiazepine",
+     "s": "-pam, -lam",
+     "d": [
+      "diazepam",
+      "alprazolam"
+     ],
+     "w": "Boost GABA, the brain's brake. Fast calm; dependence and respiratory depression."
+    },
+    {
+     "k": "ssri",
+     "l": "SSRI",
+     "s": "serotonin only",
+     "d": [
+      "fluoxetine",
+      "sertraline"
+     ],
+     "w": "Keep serotonin around longer. Weeks to work."
+    },
+    {
+     "k": "snri",
+     "l": "SNRI",
+     "s": "serotonin + NE",
+     "d": [
+      "venlafaxine"
+     ],
+     "w": "Serotonin plus norepinephrine, so BP can rise."
+    },
+    {
+     "k": "tca",
+     "l": "Tricyclic (TCA)",
+     "s": "",
+     "d": [
+      "amitriptyline"
+     ],
+     "w": "Older antidepressant; anticholinergic; deadly in overdose."
+    },
+    {
+     "k": "maoi",
+     "l": "MAOI",
+     "s": "",
+     "d": [
+      "phenelzine"
+     ],
+     "w": "Stops monoamine breakdown; tyramine → hypertensive crisis."
+    },
+    {
+     "k": "aed",
+     "l": "Mood stabilizer: antiepileptic",
+     "s": "Depakote, Lamictal, Tegretol",
+     "d": [
+      "divalproex",
+      "lamotrigine",
+      "carbamazepine"
+     ],
+     "w": "Seizure drugs that also calm mania."
+    },
+    {
+     "k": "fga",
+     "l": "1st-gen antipsychotic",
+     "s": "typical",
+     "d": [
+      "chlorpromazine",
+      "haloperidol"
+     ],
+     "w": "Block dopamine hard: positive symptoms, lots of EPS."
+    },
+    {
+     "k": "sga",
+     "l": "2nd-gen antipsychotic",
+     "s": "-apine, -idone",
+     "d": [
+      "risperidone",
+      "olanzapine",
+      "quetiapine",
+      "paliperidone",
+      "aripiprazole",
+      "cariprazine",
+      "lurasidone",
+      "lumateperone"
+     ],
+     "w": "Block serotonin + dopamine: positive AND negative symptoms, metabolic side effects."
+    },
+    {
+     "k": "alpha",
+     "l": "Alpha blocker",
+     "s": "-osin",
+     "d": [
+      "tamsulosin",
+      "terazosin",
+      "phentolamine"
+     ],
+     "w": "Relax smooth muscle (prostate, vessels): orthostatic hypotension."
+    },
+    {
+     "k": "5ari",
+     "l": "5-alpha reductase inhibitor",
+     "s": "-steride",
+     "d": [
+      "finasteride",
+      "dutasteride"
+     ],
+     "w": "Shrink the prostate slowly over months."
+    },
+    {
+     "k": "chei",
+     "l": "Cholinesterase inhibitor",
+     "s": "more acetylcholine",
+     "d": [
+      "donepezil",
+      "rivastigmine",
+      "galantamine",
+      "echothiophate"
+     ],
+     "w": "Stop acetylcholine breakdown. Brain (Alzheimer's) or eye (echothiophate). Can slow HR."
+    },
+    {
+     "k": "nmda",
+     "l": "NMDA antagonist",
+     "s": "blocks glutamate",
+     "d": [
+      "memantine"
+     ],
+     "w": "Blocks excess glutamate; moderate-to-severe Alzheimer's."
+    },
+    {
+     "k": "pga",
+     "l": "Prostaglandin analog",
+     "s": "-prost",
+     "d": [
+      "latanoprost"
+     ],
+     "w": "Drains fluid out of the eye."
+    },
+    {
+     "k": "chag",
+     "l": "Cholinergic agonist",
+     "s": "",
+     "d": [
+      "pilocarpine"
+     ],
+     "w": "Acts like acetylcholine: constricts the pupil, opens drainage."
+    },
+    {
+     "k": "nsaid",
+     "l": "NSAID",
+     "s": "",
+     "d": [
+      "ketorolac"
+     ],
+     "w": "Blocks prostaglandins: pain and inflammation down, bleeding risk up."
+    },
+    {
+     "k": "opi",
+     "l": "Opioid",
+     "s": "",
+     "d": [
+      "morphine"
+     ],
+     "w": "Severe pain; respiratory depression; reversed by naloxone."
+    },
+    {
+     "k": "loop",
+     "l": "Loop diuretic",
+     "s": "",
+     "d": [
+      "furosemide"
+     ],
+     "w": "Pulls fluid off; potassium drops."
+    },
+    {
+     "k": "sglt2",
+     "l": "SGLT2 inhibitor",
+     "s": "-gliflozin",
+     "d": [
+      "dapagliflozin"
+     ],
+     "w": "Sends sugar out in the urine; protects the kidney."
+    },
+    {
+     "k": "esa",
+     "l": "ESA",
+     "s": "-poetin",
+     "d": [
+      "epoetin alfa"
+     ],
+     "w": "Replaces erythropoietin to make RBCs."
+    },
+    {
+     "k": "dpa",
+     "l": "Dopamine agonist",
+     "s": "",
+     "d": [
+      "bromocriptine"
+     ],
+     "w": "Gives back dopamine activity (used for NMS)."
+    }
+   ],
+   "use": [
+    {
+     "k": "aneur",
+     "l": "Aneurysm: HR + BP control",
+     "d": [
+      "labetalol",
+      "esmolol",
+      "nicardipine",
+      "amlodipine",
+      "lisinopril",
+      "losartan"
+     ],
+     "w": "Lower the force on the weak wall. Beta blockers first-line; ACE/ARB/CCB second-line; nicardipine IV pre-op."
+    },
+    {
+     "k": "dapt",
+     "l": "Prevent clots after stent or coil",
+     "d": [
+      "aspirin",
+      "clopidogrel"
+     ],
+     "w": "Dual antiplatelet therapy (DAPT)."
+    },
+    {
+     "k": "anx",
+     "l": "Anxiety",
+     "d": [
+      "diazepam",
+      "alprazolam",
+      "buspirone"
+     ],
+     "w": "Benzos work fast; buspirone is scheduled and slow."
+    },
+    {
+     "k": "dep",
+     "l": "Depression",
+     "d": [
+      "fluoxetine",
+      "venlafaxine",
+      "amitriptyline",
+      "bupropion",
+      "phenelzine"
+     ],
+     "w": "Raise serotonin, norepinephrine, or dopamine."
+    },
+    {
+     "k": "crisis",
+     "l": "MAOI hypertensive crisis",
+     "d": [
+      "phentolamine",
+      "nifedipine"
+     ],
+     "w": "Phentolamine IV or nifedipine SL brings BP down fast."
+    },
+    {
+     "k": "bip",
+     "l": "Bipolar / mania",
+     "d": [
+      "lithium",
+      "divalproex",
+      "lamotrigine",
+      "carbamazepine"
+     ],
+     "w": "Mood stabilizers. Lamictal is for maintenance."
+    },
+    {
+     "k": "scz",
+     "l": "Schizophrenia / psychosis",
+     "d": [
+      "chlorpromazine",
+      "haloperidol",
+      "risperidone",
+      "olanzapine",
+      "quetiapine",
+      "paliperidone",
+      "aripiprazole",
+      "cariprazine",
+      "lurasidone",
+      "lumateperone"
+     ],
+     "w": "Antipsychotics: 1st gen for positive symptoms, 2nd gen for positive and negative."
+    },
+    {
+     "k": "rescue",
+     "l": "Antipsychotic side-effect rescue",
+     "d": [
+      "diphenhydramine",
+      "dantrolene",
+      "bromocriptine"
+     ],
+     "w": "Diphenhydramine for dystonia; dantrolene + bromocriptine for NMS."
+    },
+    {
+     "k": "benzorev",
+     "l": "Reverse a benzo overdose",
+     "d": [
+      "flumazenil"
+     ],
+     "w": "Flumazenil IV."
+    },
+    {
+     "k": "glauc",
+     "l": "Glaucoma",
+     "d": [
+      "latanoprost",
+      "timolol",
+      "pilocarpine",
+      "echothiophate"
+     ],
+     "w": "Drain fluid out, or (timolol) make less of it."
+    },
+    {
+     "k": "ed",
+     "l": "Eating disorders",
+     "d": [
+      "fluoxetine",
+      "lisdexamfetamine",
+      "thiamine"
+     ],
+     "w": "Fluoxetine = bulimia; Vyvanse = binge eating; thiamine before refeeding."
+    },
+    {
+     "k": "bph",
+     "l": "BPH (enlarged prostate)",
+     "d": [
+      "tamsulosin",
+      "terazosin",
+      "finasteride",
+      "dutasteride"
+     ],
+     "w": "Alpha blockers relax it now; 5-ARIs shrink it over months."
+    },
+    {
+     "k": "stone",
+     "l": "Kidney stones",
+     "d": [
+      "ketorolac",
+      "morphine",
+      "tamsulosin"
+     ],
+     "w": "Pain control; tamsulosin helps the stone pass."
+    },
+    {
+     "k": "ckd",
+     "l": "Kidney failure care",
+     "d": [
+      "dapagliflozin",
+      "epoetin alfa",
+      "furosemide",
+      "heparin",
+      "lisinopril",
+      "losartan"
+     ],
+     "w": "Protect the kidney, fix anemia, remove fluid, keep dialysis tubing open."
+    },
+    {
+     "k": "alz",
+     "l": "Alzheimer's",
+     "d": [
+      "donepezil",
+      "rivastigmine",
+      "galantamine",
+      "memantine",
+      "aducanumab",
+      "sertraline"
+     ],
+     "w": "Boost acetylcholine, block glutamate; sertraline for mood/impulsivity."
+    },
+    {
+     "k": "bladder",
+     "l": "Bladder cancer",
+     "d": [
+      "BCG"
+     ],
+     "w": "Instilled directly into the bladder."
+    },
+    {
+     "k": "lipid",
+     "l": "Lipids / plaque",
+     "d": [
+      "atorvastatin"
+     ],
+     "w": "Statin."
+    }
+   ],
+   "warn": [
+    {
+     "k": "bleed",
+     "l": "Bleeding",
+     "d": [
+      "aspirin",
+      "clopidogrel",
+      "heparin",
+      "ketorolac"
+     ],
+     "w": "Platelets or clotting are blocked: watch gums, stools, bruising."
+    },
+    {
+     "k": "ortho",
+     "l": "Orthostatic hypotension: rise slowly",
+     "d": [
+      "tamsulosin",
+      "terazosin",
+      "phenelzine",
+      "amitriptyline"
+     ],
+     "w": "Vessels relax or BP reflexes are blunted, so standing up drops BP."
+    },
+    {
+     "k": "brady",
+     "l": "Slow heart rate: check HR",
+     "d": [
+      "labetalol",
+      "esmolol",
+      "timolol",
+      "donepezil",
+      "rivastigmine",
+      "galantamine",
+      "pilocarpine"
+     ],
+     "w": "Beta blockade or extra acetylcholine slows the heart."
+    },
+    {
+     "k": "highbp",
+     "l": "Raises BP",
+     "d": [
+      "venlafaxine",
+      "epoetin alfa",
+      "lisdexamfetamine",
+      "phenelzine"
+     ],
+     "w": "Norepinephrine, more RBCs, a stimulant, or tyramine (MAOI)."
+    },
+    {
+     "k": "sero",
+     "l": "Serotonin syndrome / suicidal thoughts <25",
+     "d": [
+      "fluoxetine",
+      "sertraline",
+      "venlafaxine"
+     ],
+     "w": "Too much serotonin: agitation, tremor, fever, sweating."
+    },
+    {
+     "k": "resp",
+     "l": "Respiratory depression",
+     "d": [
+      "diazepam",
+      "alprazolam",
+      "morphine"
+     ],
+     "w": "CNS depressants; worse together or with alcohol."
+    },
+    {
+     "k": "taper",
+     "l": "Don't stop suddenly: taper",
+     "d": [
+      "alprazolam",
+      "diazepam",
+      "venlafaxine",
+      "labetalol",
+      "esmolol"
+     ],
+     "w": "Withdrawal seizures (benzos), rebound HR/BP (beta blockers), discontinuation symptoms (SNRI)."
+    },
+    {
+     "k": "meta",
+     "l": "Weight gain, high glucose + lipids",
+     "d": [
+      "risperidone",
+      "olanzapine",
+      "quetiapine",
+      "paliperidone",
+      "aripiprazole",
+      "cariprazine",
+      "lurasidone",
+      "lumateperone"
+     ],
+     "w": "The 2nd-gen antipsychotic metabolic problem."
+    },
+    {
+     "k": "eps",
+     "l": "EPS and NMS",
+     "d": [
+      "chlorpromazine",
+      "haloperidol"
+     ],
+     "w": "Strong dopamine block disrupts movement."
+    },
+    {
+     "k": "antichol",
+     "l": "Anticholinergic: dry mouth, can't pee",
+     "d": [
+      "amitriptyline",
+      "chlorpromazine",
+      "diphenhydramine"
+     ],
+     "w": "Acetylcholine is blocked."
+    },
+    {
+     "k": "hik",
+     "l": "High potassium",
+     "d": [
+      "lisinopril",
+      "losartan"
+     ],
+     "w": "Less aldosterone, so the kidney keeps potassium."
+    },
+    {
+     "k": "lowk",
+     "l": "Low potassium",
+     "d": [
+      "furosemide"
+     ],
+     "w": "Loop diuretics wash potassium out."
+    },
+    {
+     "k": "lowna",
+     "l": "Low sodium",
+     "d": [
+      "fluoxetine",
+      "carbamazepine"
+     ],
+     "w": "Hyponatremia."
+    },
+    {
+     "k": "li",
+     "l": "Raises lithium levels",
+     "d": [
+      "lisinopril",
+      "ketorolac",
+      "furosemide"
+     ],
+     "w": "ACE inhibitors, NSAIDs, and diuretics make the kidney hold lithium."
+    },
+    {
+     "k": "gf",
+     "l": "Grapefruit interaction",
+     "d": [
+      "buspirone",
+      "carbamazepine"
+     ],
+     "w": "Grapefruit raises the drug level."
+    },
+    {
+     "k": "blood",
+     "l": "Blood count problems",
+     "d": [
+      "carbamazepine",
+      "divalproex",
+      "olanzapine"
+     ],
+     "w": "Leukopenia, low platelets, agranulocytosis."
+    },
+    {
+     "k": "kid",
+     "l": "Builds up in kidney failure",
+     "d": [
+      "magnesium-containing antacids",
+      "insulin",
+      "morphine"
+     ],
+     "w": "Failing kidneys clear less, so dose down or avoid."
+    },
+    {
+     "k": "pupil",
+     "l": "Small pupils: poor vision in dim light",
+     "d": [
+      "pilocarpine",
+      "echothiophate"
+     ],
+     "w": "Extra acetylcholine constricts the pupil."
+    },
+    {
+     "k": "seiz",
+     "l": "Seizure risk",
+     "d": [
+      "bupropion"
+     ],
+     "w": "Lowers the seizure threshold."
+    },
+    {
+     "k": "rash",
+     "l": "Rash: Stevens–Johnson",
+     "d": [
+      "lamotrigine"
+     ],
+     "w": "Any rash gets reported."
+    },
+    {
+     "k": "liver",
+     "l": "Liver toxicity",
+     "d": [
+      "divalproex"
+     ],
+     "w": "Monitor liver enzymes."
+    },
+    {
+     "k": "tyr",
+     "l": "Tyramine foods → crisis",
+     "d": [
+      "phenelzine"
+     ],
+     "w": "MAOI can't break down tyramine."
+    },
+    {
+     "k": "hypo",
+     "l": "Low blood sugar",
+     "d": [
+      "insulin"
+     ],
+     "w": "Especially as kidney failure worsens."
+    }
+   ]
+  },
+  "TRICKY": {
+   "cls": [
+    [
+     "ccb",
+     "sga"
+    ],
+    [
+     "bb",
+     "alpha",
+     "ccb"
+    ],
+    [
+     "alpha",
+     "5ari"
+    ],
+    [
+     "ssri",
+     "snri",
+     "tca",
+     "maoi"
+    ],
+    [
+     "chei",
+     "nmda",
+     "chag"
+    ],
+    [
+     "acei",
+     "arb",
+     "bb"
+    ],
+    [
+     "fga",
+     "sga",
+     "aed"
+    ],
+    [
+     "benzo",
+     "ssri",
+     "sga"
+    ],
+    [
+     "pga",
+     "bb",
+     "chag",
+     "chei"
+    ]
+   ],
+   "use": [
+    [
+     "bph",
+     "stone"
+    ],
+    [
+     "dep",
+     "anx",
+     "bip"
+    ],
+    [
+     "scz",
+     "rescue",
+     "bip"
+    ],
+    [
+     "glauc",
+     "alz"
+    ],
+    [
+     "aneur",
+     "ckd",
+     "dapt"
+    ],
+    [
+     "ed",
+     "dep"
+    ]
+   ],
+   "warn": [
+    [
+     "ortho",
+     "brady"
+    ],
+    [
+     "bleed",
+     "kid"
+    ],
+    [
+     "resp",
+     "taper"
+    ],
+    [
+     "meta",
+     "eps",
+     "antichol"
+    ],
+    [
+     "hik",
+     "lowk",
+     "lowna"
+    ],
+    [
+     "highbp",
+     "sero"
+    ],
+    [
+     "li",
+     "gf",
+     "blood"
+    ]
+   ]
+  },
+  "LOOK": [
+   {
+    "t": "Tamsulosin vs finasteride",
+    "d": {
+     "tamsulosin": [
+      "Relaxes prostate smooth muscle",
+      "Works right away on urine flow",
+      "Helps a kidney stone pass",
+      "Rise slowly: orthostatic hypotension"
+     ],
+     "finasteride": [
+      "Shrinks the prostate",
+      "Takes months to work",
+      "Pregnant women shouldn't handle crushed tablets",
+      "-steride = shrink"
+     ]
+    }
+   },
+   {
+    "t": "Donepezil vs memantine",
+    "d": {
+     "donepezil": [
+      "Cholinesterase inhibitor",
+      "Mild to moderate Alzheimer's",
+      "Can cause bradycardia",
+      "Delays acetylcholine breakdown"
+     ],
+     "memantine": [
+      "NMDA receptor antagonist",
+      "Moderate to severe Alzheimer's",
+      "Blocks excess glutamate"
+     ]
+    }
+   },
+   {
+    "t": "Dantrolene vs bromocriptine vs diphenhydramine",
+    "d": {
+     "dantrolene": [
+      "Skeletal muscle relaxant",
+      "Relaxes rigid muscles in NMS"
+     ],
+     "bromocriptine": [
+      "Dopamine agonist",
+      "Gives back dopamine activity in NMS"
+     ],
+     "diphenhydramine": [
+      "Anticholinergic antihistamine",
+      "Acute dystonia, IM or IV"
+     ]
+    }
+   },
+   {
+    "t": "Fluoxetine vs Vyvanse",
+    "d": {
+     "fluoxetine": [
+      "Only FDA-approved drug for bulimia",
+      "SSRI",
+      "Can cause hyponatremia",
+      "Wait 14 days after an MAOI"
+     ],
+     "lisdexamfetamine": [
+      "First drug approved for binge eating disorder",
+      "CNS stimulant, Schedule II",
+      "Cardiac evaluation first",
+      "NOT for weight loss"
+     ]
+    }
+   },
+   {
+    "t": "Depakote vs Lamictal vs Tegretol",
+    "d": {
+     "divalproex": [
+      "Hepatotoxic: watch liver enzymes",
+      "Pancreatitis",
+      "Take with food"
+     ],
+     "lamotrigine": [
+      "Report any rash (Stevens–Johnson)",
+      "Maintenance; good for rapid cycling",
+      "Double or blurred vision"
+     ],
+     "carbamazepine": [
+      "Blood dyscrasias: check the CBC",
+      "Low sodium",
+      "Interacts with warfarin and grapefruit"
+     ]
+    }
+   },
+   {
+    "t": "Lithium vs Depakote",
+    "d": {
+     "lithium": [
+      "Drink 2–3 L a day, steady salt",
+      "NSAIDs and diuretics raise the level",
+      "Thirst, polyuria, goiter",
+      "Fine tremor turning coarse = toxicity"
+     ],
+     "divalproex": [
+      "Monitor liver enzymes",
+      "Low platelets",
+      "Pancreatitis"
+     ]
+    }
+   },
+   {
+    "t": "Benzo vs buspirone vs flumazenil",
+    "d": {
+     "alprazolam": [
+      "Fast calm by boosting GABA",
+      "Taper: withdrawal seizures",
+      "Respiratory depression with alcohol or opioids"
+     ],
+     "buspirone": [
+      "Scheduled, NOT PRN: delayed effect",
+      "Little sedation or misuse risk",
+      "Grapefruit juice raises levels"
+     ],
+     "flumazenil": [
+      "Reverses benzo overdose",
+      "Given IV"
+     ]
+    }
+   },
+   {
+    "t": "SSRI vs SNRI vs TCA vs MAOI",
+    "d": {
+     "fluoxetine": [
+      "Serotonin only",
+      "Can cause hyponatremia"
+     ],
+     "venlafaxine": [
+      "Raises BP",
+      "Taper over 2–4 weeks"
+     ],
+     "amitriptyline": [
+      "Give at bedtime: sedating",
+      "Overdose: fatal dysrhythmias"
+     ],
+     "phenelzine": [
+      "Avoid aged cheese and smoked meat",
+      "Hypertensive crisis with tyramine"
+     ]
+    }
+   },
+   {
+    "t": "1st gen vs 2nd gen antipsychotic",
+    "d": {
+     "haloperidol": [
+      "Treats mainly POSITIVE symptoms",
+      "Lots of EPS",
+      "NMS more common (high potency)"
+     ],
+     "risperidone": [
+      "Treats positive AND negative symptoms",
+      "Weight gain, glucose, lipids",
+      "Less EPS"
+     ]
+    }
+   },
+   {
+    "t": "SSRI vs SNRI (exam tip)",
+    "d": {
+     "fluoxetine": [
+      "Serotonin only",
+      "Hyponatremia",
+      "Give in the morning",
+      "Only FDA drug for bulimia"
+     ],
+     "venlafaxine": [
+      "Serotonin + norepinephrine",
+      "Raises BP: monitor it",
+      "Taper over 2–4 weeks",
+      "Give with food"
+     ]
+    }
+   },
+   {
+    "t": "Antipsychotic side effects (Beecher)",
+    "d": {
+     "chlorpromazine": [
+      "Orthostatic hypotension: rise slowly",
+      "Photosensitivity: sunscreen",
+      "Anticholinergic: gum, fiber, fluids"
+     ],
+     "risperidone": [
+      "Weight gain, glucose, lipids",
+      "Agranulocytosis: sore throat or fever"
+     ]
+    }
+   },
+   {
+    "t": "Before hemodialysis: hold or give?",
+    "d": {
+     "lisinopril": [
+      "Hold as ordered: dialysis drops BP"
+     ],
+     "heparin": [
+      "Keeps dialysis tubing from clotting"
+     ],
+     "epoetin alfa": [
+      "Treats anemia of CKD"
+     ]
+    }
+   },
+   {
+    "t": "Glaucoma drops",
+    "d": {
+     "latanoprost": [
+      "Give in the evening",
+      "Darkens the iris and lashes"
+     ],
+     "timolol": [
+      "Makes LESS fluid (lowers production)",
+      "Can slow the heart",
+      "Likely exam eye drop"
+     ],
+     "pilocarpine": [
+      "Report flashes or a curtain over vision",
+      "Urinary urgency, bronchoconstriction"
+     ],
+     "echothiophate": [
+      "Cataracts with long-term use",
+      "Cholinesterase inhibitor in the eye"
+     ]
+    }
+   },
+   {
+    "t": "Labetalol vs lisinopril vs nicardipine",
+    "d": {
+     "labetalol": [
+      "First-line for an aneurysm",
+      "Lowers HR to 60–70"
+     ],
+     "lisinopril": [
+      "Angioedema and dry cough",
+      "Protects the kidney in CKD"
+     ],
+     "nicardipine": [
+      "IV drip with an arterial line",
+      "Pre-op BP titration"
+     ]
+    }
+   },
+   {
+    "t": "Lisinopril vs losartan",
+    "d": {
+     "lisinopril": [
+      "Dry cough (bradykinin builds up)",
+      "-pril"
+     ],
+     "losartan": [
+      "The usual swap when cough happens",
+      "-sartan"
+     ]
+    }
+   },
+   {
+    "t": "Clopidogrel vs heparin vs ketorolac",
+    "d": {
+     "clopidogrel": [
+      "P2Y12 inhibitor",
+      "Paired with aspirin as DAPT"
+     ],
+     "heparin": [
+      "Keeps dialysis tubing from clotting",
+      "Anticoagulant"
+     ],
+     "ketorolac": [
+      "First-line for renal colic",
+      "Avoid after TURP"
+     ]
+    }
+   },
+   {
+    "t": "Ketorolac vs morphine",
+    "d": {
+     "ketorolac": [
+      "NSAID",
+      "Pain AND inflammation"
+     ],
+     "morphine": [
+      "Severe pain",
+      "Reversed by naloxone",
+      "Dose needs review in kidney failure"
+     ]
+    }
+   },
+   {
+    "t": "Kidney failure meds",
+    "d": {
+     "dapagliflozin": [
+      "Sends sugar out in the urine",
+      "Slows CKD progression"
+     ],
+     "epoetin alfa": [
+      "Treats anemia of CKD",
+      "Raises RBCs"
+     ],
+     "furosemide": [
+      "Works only while kidneys still make urine",
+      "Pulls off extra fluid"
+     ]
+    }
+   },
+   {
+    "t": "In kidney failure: dose down, avoid, or risky?",
+    "d": {
+     "insulin": [
+      "Dose often goes DOWN",
+      "Hypoglycemia risk"
+     ],
+     "magnesium-containing antacids": [
+      "Avoid: magnesium builds up"
+     ],
+     "heparin": [
+      "Risky: platelets work poorly in CKD"
+     ]
+    }
+   },
+   {
+    "t": "Nicardipine vs olanzapine (-dipine vs -apine)",
+    "d": {
+     "nicardipine": [
+      "Calcium channel blocker",
+      "Lowers BP",
+      "-dipine"
+     ],
+     "olanzapine": [
+      "2nd-gen antipsychotic",
+      "Schizophrenia",
+      "-apine"
+     ]
+    }
+   }
+  ],
+  "DRUGS": {
+   "labetalol": "Beta blocker",
+   "esmolol": "Beta blocker",
+   "timolol": "Beta blocker",
+   "nicardipine": "Calcium channel blocker",
+   "amlodipine": "Calcium channel blocker",
+   "nifedipine": "Calcium channel blocker",
+   "lisinopril": "ACE inhibitor",
+   "losartan": "ARB",
+   "aspirin": "Antiplatelet",
+   "clopidogrel": "Antiplatelet",
+   "atorvastatin": "Statin",
+   "diazepam": "Benzodiazepine",
+   "alprazolam": "Benzodiazepine",
+   "fluoxetine": "SSRI",
+   "sertraline": "SSRI",
+   "venlafaxine": "SNRI",
+   "amitriptyline": "Tricyclic (TCA)",
+   "phenelzine": "MAOI",
+   "divalproex": "Mood stabilizer: antiepileptic",
+   "lamotrigine": "Mood stabilizer: antiepileptic",
+   "carbamazepine": "Mood stabilizer: antiepileptic",
+   "chlorpromazine": "1st-gen antipsychotic",
+   "haloperidol": "1st-gen antipsychotic",
+   "risperidone": "2nd-gen antipsychotic",
+   "olanzapine": "2nd-gen antipsychotic",
+   "quetiapine": "2nd-gen antipsychotic",
+   "paliperidone": "2nd-gen antipsychotic",
+   "aripiprazole": "2nd-gen antipsychotic",
+   "cariprazine": "2nd-gen antipsychotic",
+   "lurasidone": "2nd-gen antipsychotic",
+   "lumateperone": "2nd-gen antipsychotic",
+   "tamsulosin": "Alpha blocker",
+   "terazosin": "Alpha blocker",
+   "phentolamine": "Alpha blocker",
+   "finasteride": "5-alpha reductase inhibitor",
+   "dutasteride": "5-alpha reductase inhibitor",
+   "donepezil": "Cholinesterase inhibitor",
+   "rivastigmine": "Cholinesterase inhibitor",
+   "galantamine": "Cholinesterase inhibitor",
+   "echothiophate": "Cholinesterase inhibitor",
+   "memantine": "NMDA antagonist",
+   "latanoprost": "Prostaglandin analog",
+   "pilocarpine": "Cholinergic agonist",
+   "ketorolac": "NSAID",
+   "morphine": "Opioid",
+   "furosemide": "Loop diuretic",
+   "dapagliflozin": "SGLT2 inhibitor",
+   "epoetin alfa": "ESA",
+   "bromocriptine": "Dopamine agonist",
+   "lithium": "Mood stabilizer",
+   "diphenhydramine": "Anticholinergic antihistamine",
+   "dantrolene": "Skeletal muscle relaxant",
+   "flumazenil": "Benzodiazepine antagonist",
+   "heparin": "Anticoagulant",
+   "insulin": "Antidiabetic hormone",
+   "magnesium-containing antacids": "Antacid",
+   "buspirone": "Anxiolytic (non-benzo)",
+   "lisdexamfetamine": "CNS stimulant"
+  },
+  "WK": {
+   "labetalol": [
+    "6.2"
+   ],
+   "esmolol": [
+    "6.2"
+   ],
+   "nicardipine": [
+    "6.2"
+   ],
+   "lisinopril": [
+    "6.2",
+    "8.2"
+   ],
+   "losartan": [
+    "6.2",
+    "8.2"
+   ],
+   "amlodipine": [
+    "6.2"
+   ],
+   "atorvastatin": [
+    "6.2"
+   ],
+   "aspirin": [
+    "6.2"
+   ],
+   "clopidogrel": [
+    "6.2"
+   ],
+   "diazepam": [
+    "7.1"
+   ],
+   "alprazolam": [
+    "7.1"
+   ],
+   "flumazenil": [
+    "7.1"
+   ],
+   "buspirone": [
+    "7.1"
+   ],
+   "fluoxetine": [
+    "7.1",
+    "7.3"
+   ],
+   "venlafaxine": [
+    "7.1"
+   ],
+   "amitriptyline": [
+    "7.1"
+   ],
+   "bupropion": [
+    "7.1"
+   ],
+   "phenelzine": [
+    "7.1"
+   ],
+   "phentolamine": [
+    "7.1"
+   ],
+   "nifedipine": [
+    "7.1"
+   ],
+   "lithium": [
+    "7.1",
+    "9.2"
+   ],
+   "chlorpromazine": [
+    "7.1",
+    "9.2"
+   ],
+   "haloperidol": [
+    "7.1",
+    "9.1",
+    "9.2"
+   ],
+   "risperidone": [
+    "7.1",
+    "9.2"
+   ],
+   "olanzapine": [
+    "NT"
+   ],
+   "quetiapine": [
+    "NT"
+   ],
+   "paliperidone": [
+    "NT"
+   ],
+   "aripiprazole": [
+    "NT"
+   ],
+   "cariprazine": [
+    "NT"
+   ],
+   "lurasidone": [
+    "NT"
+   ],
+   "lumateperone": [
+    "NT"
+   ],
+   "diphenhydramine": [
+    "7.1"
+   ],
+   "dantrolene": [
+    "7.1",
+    "9.2"
+   ],
+   "bromocriptine": [
+    "7.1",
+    "9.2"
+   ],
+   "latanoprost": [
+    "7.1"
+   ],
+   "timolol": [
+    "7.1"
+   ],
+   "pilocarpine": [
+    "7.1"
+   ],
+   "echothiophate": [
+    "7.1"
+   ],
+   "lisdexamfetamine": [
+    "7.3"
+   ],
+   "thiamine": [
+    "7.3"
+   ],
+   "tamsulosin": [
+    "8.1"
+   ],
+   "terazosin": [
+    "8.1"
+   ],
+   "finasteride": [
+    "8.1"
+   ],
+   "dutasteride": [
+    "8.1"
+   ],
+   "ketorolac": [
+    "8.1"
+   ],
+   "morphine": [
+    "8.1"
+   ],
+   "BCG": [
+    "8.2"
+   ],
+   "dapagliflozin": [
+    "8.2"
+   ],
+   "epoetin alfa": [
+    "8.2"
+   ],
+   "furosemide": [
+    "8.2"
+   ],
+   "heparin": [
+    "8.2"
+   ],
+   "insulin": [
+    "8.2"
+   ],
+   "magnesium-containing antacids": [
+    "8.2"
+   ],
+   "donepezil": [
+    "NT"
+   ],
+   "rivastigmine": [
+    "NT"
+   ],
+   "galantamine": [
+    "NT"
+   ],
+   "memantine": [
+    "NT"
+   ],
+   "sertraline": [
+    "NT"
+   ],
+   "aducanumab": [
+    "NT"
+   ],
+   "divalproex": [
+    "NT"
+   ],
+   "lamotrigine": [
+    "NT"
+   ],
+   "carbamazepine": [
+    "NT"
+   ]
+  },
+  "XCLS": [
+   {
+    "k": "x_li",
+    "l": "Mood stabilizer (salt)",
+    "s": "lithium",
+    "d": [
+     "lithium"
+    ]
+   },
+   {
+    "k": "x_busp",
+    "l": "Anxiolytic, non-benzo",
+    "s": "",
+    "d": [
+     "buspirone"
+    ]
+   },
+   {
+    "k": "x_flum",
+    "l": "Benzo antagonist",
+    "s": "reversal",
+    "d": [
+     "flumazenil"
+    ]
+   },
+   {
+    "k": "x_bupr",
+    "l": "Atypical antidepressant",
+    "s": "",
+    "d": [
+     "bupropion"
+    ]
+   },
+   {
+    "k": "x_diph",
+    "l": "Anticholinergic antihistamine",
+    "s": "",
+    "d": [
+     "diphenhydramine"
+    ]
+   },
+   {
+    "k": "x_dant",
+    "l": "Skeletal muscle relaxant",
+    "s": "",
+    "d": [
+     "dantrolene"
+    ]
+   },
+   {
+    "k": "x_stim",
+    "l": "CNS stimulant",
+    "s": "",
+    "d": [
+     "lisdexamfetamine"
+    ]
+   },
+   {
+    "k": "x_thia",
+    "l": "Vitamin B1",
+    "s": "",
+    "d": [
+     "thiamine"
+    ]
+   },
+   {
+    "k": "x_bcg",
+    "l": "Intravesical immunotherapy",
+    "s": "into the bladder",
+    "d": [
+     "BCG"
+    ]
+   },
+   {
+    "k": "x_hep",
+    "l": "Anticoagulant",
+    "s": "",
+    "d": [
+     "heparin"
+    ]
+   },
+   {
+    "k": "x_ins",
+    "l": "Antidiabetic hormone",
+    "s": "",
+    "d": [
+     "insulin"
+    ]
+   },
+   {
+    "k": "x_mg",
+    "l": "Antacid",
+    "s": "",
+    "d": [
+     "magnesium-containing antacids"
+    ]
+   },
+   {
+    "k": "x_aduc",
+    "l": "Monoclonal antibody",
+    "s": "-mab",
+    "d": [
+     "aducanumab"
+    ]
+   }
+  ],
+  "CLS_SECT": [
+   [
+    "Heart, BP + clots",
+    [
+     "bb",
+     "ccb",
+     "acei",
+     "arb",
+     "plt",
+     "x_hep",
+     "statin",
+     "loop"
+    ]
+   ],
+   [
+    "Anxiety",
+    [
+     "benzo",
+     "x_busp",
+     "x_flum"
+    ]
+   ],
+   [
+    "Antidepressants",
+    [
+     "ssri",
+     "snri",
+     "tca",
+     "maoi",
+     "x_bupr"
+    ]
+   ],
+   [
+    "Mood stabilizers",
+    [
+     "x_li",
+     "aed"
+    ]
+   ],
+   [
+    "Antipsychotics + rescue",
+    [
+     "fga",
+     "sga",
+     "x_diph",
+     "x_dant",
+     "dpa"
+    ]
+   ],
+   [
+    "Memory",
+    [
+     "chei",
+     "nmda",
+     "x_aduc"
+    ]
+   ],
+   [
+    "Eye",
+    [
+     "pga",
+     "chag"
+    ]
+   ],
+   [
+    "Kidney + prostate",
+    [
+     "alpha",
+     "5ari",
+     "sglt2",
+     "esa",
+     "x_bcg"
+    ]
+   ],
+   [
+    "Pain",
+    [
+     "nsaid",
+     "opi"
+    ]
+   ],
+   [
+    "Other",
+    [
+     "x_stim",
+     "x_thia",
+     "x_ins",
+     "x_mg"
+    ]
+   ]
+  ]
+ }
+}

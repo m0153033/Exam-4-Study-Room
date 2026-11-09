@@ -1,0 +1,3093 @@
+{
+ "WEEKS": [
+  [
+   "9.3",
+   "Heart failure"
+  ],
+  [
+   "10.1",
+   "Neuro pharm"
+  ],
+  [
+   "10.2",
+   "GI disorders"
+  ],
+  [
+   "10.3",
+   "Gallbladder & pancreas"
+  ],
+  [
+   "11.1",
+   "Glucose"
+  ],
+  [
+   "11.2",
+   "Blood products"
+  ],
+  [
+   "11.3",
+   "Code Blue"
+  ]
+ ],
+ "D": [
+  {
+   "g": "furosemide",
+   "b": "Lasix",
+   "w": [
+    "9.3",
+    "11.2"
+   ],
+   "cls": "Loop diuretic",
+   "grp": "loop",
+   "u": [
+    "diur",
+    "lowk",
+    "pre"
+   ],
+   "use": "Fluid overload: pulmonary and peripheral edema",
+   "f": [
+    "Push IV slowly, 1–2 minutes per 20 mg: a fast push can cause ototoxicity (ringing in the ears)",
+    "Hold and notify if potassium is below 3.5 mEq/L",
+    "Take in the morning: it peaks 1–2 hours after an oral dose",
+    "Relieves symptoms only; no survival benefit",
+    "Given for TACO (transfusion volume overload) with oxygen and sitting upright"
+   ],
+   "tip": "Loop = potassium out. Low potassium + digoxin = toxicity.",
+   "warn": "Low potassium; ringing in the ears with a fast IV push"
+  },
+  {
+   "g": "spironolactone",
+   "b": "Aldactone",
+   "w": "9.3",
+   "cls": "Aldosterone antagonist (potassium-sparing diuretic)",
+   "grp": "spiro",
+   "u": [
+    "hik",
+    "raas",
+    "pillar"
+   ],
+   "use": "HFrEF (one of the four pillars); edema",
+   "f": [
+    "Potassium-sparing: hold if potassium is above 5.0 mEq/L",
+    "Avoid salt substitutes: most are potassium chloride",
+    "Can cause gynecomastia, breast tenderness or menstrual changes",
+    "Weak diuretic alone; it's given because it slows heart scarring and helps clients live longer"
+   ],
+   "tip": "The reverse of furosemide: sodium out, potassium kept.",
+   "warn": "High potassium: peaked T waves"
+  },
+  {
+   "g": "lisinopril",
+   "b": "Zestril",
+   "w": [
+    "9.3",
+    "11.1"
+   ],
+   "cls": "ACE inhibitor",
+   "grp": "acei",
+   "u": [
+    "hik",
+    "raas",
+    "pillar",
+    "bp",
+    "angio",
+    "preg",
+    "hypotn"
+   ],
+   "use": "HFrEF, hypertension, metabolic syndrome BP control",
+   "f": [
+    "Persistent dry cough: report it, the provider may switch to an ARB",
+    "Stop at least 36 hours before starting sacubitril/valsartan",
+    "Monitor closely about 2 hours after the first dose for hypotension"
+   ],
+   "tip": "-pril = ACE inhibitor. Cough comes from bradykinin buildup.",
+   "warn": "Angioedema: lip or tongue swelling is an emergency, even after years"
+  },
+  {
+   "g": "enalapril",
+   "b": "Vasotec",
+   "w": "9.3",
+   "cls": "ACE inhibitor",
+   "grp": "acei",
+   "u": [
+    "hik",
+    "raas",
+    "pillar",
+    "bp",
+    "angio",
+    "preg",
+    "hypotn"
+   ],
+   "use": "HFrEF and hypertension",
+   "f": [
+    "Contraindicated in pregnancy",
+    "Never give with an ARB or ARNI"
+   ],
+   "tip": "-pril = ACE inhibitor.",
+   "warn": "Angioedema and high potassium"
+  },
+  {
+   "g": "losartan",
+   "b": "Cozaar",
+   "w": "9.3",
+   "cls": "ARB (angiotensin II receptor blocker)",
+   "grp": "arb",
+   "u": [
+    "hik",
+    "raas",
+    "pillar",
+    "bp",
+    "angio",
+    "preg",
+    "hypotn"
+   ],
+   "use": "HFrEF when an ACE inhibitor isn't tolerated; hypertension",
+   "f": [
+    "Same benefits as an ACE inhibitor without the bradykinin cough",
+    "The usual switch when an ACE inhibitor causes a dry cough"
+   ],
+   "tip": "-sartan = ARB. No cough.",
+   "warn": "High potassium; contraindicated in pregnancy"
+  },
+  {
+   "g": "valsartan",
+   "b": "Diovan",
+   "w": "9.3",
+   "cls": "ARB (angiotensin II receptor blocker)",
+   "grp": "arb",
+   "u": [
+    "hik",
+    "raas",
+    "pillar",
+    "bp",
+    "angio",
+    "entresto",
+    "preg",
+    "hypotn"
+   ],
+   "use": "HFrEF and hypertension",
+   "f": [
+    "It's half of Entresto: never give valsartan with sacubitril/valsartan"
+   ],
+   "tip": "-sartan = ARB.",
+   "warn": "Duplicate therapy with Entresto"
+  },
+  {
+   "g": "sacubitril/valsartan",
+   "b": "Entresto",
+   "w": "9.3",
+   "cls": "ARNI (angiotensin receptor–neprilysin inhibitor)",
+   "grp": "arni",
+   "u": [
+    "hik",
+    "raas",
+    "pillar",
+    "bp",
+    "angio",
+    "entresto",
+    "preg",
+    "hypotn"
+   ],
+   "use": "HFrEF: preferred over an ACE inhibitor or ARB",
+   "f": [
+    "Wait at least 36 hours after the last ACE inhibitor dose",
+    "Contraindicated with any history of angioedema",
+    "Sacubitril blocks neprilysin so natriuretic peptides last longer"
+   ],
+   "tip": "ARNI = ARB + neprilysin inhibitor.",
+   "warn": "Angioedema if overlapped with an ACE inhibitor",
+   "cno": [
+    "ARB (angiotensin II receptor blocker)"
+   ]
+  },
+  {
+   "g": "carvedilol",
+   "b": "Coreg",
+   "w": "9.3",
+   "cls": "Beta blocker",
+   "grp": "bb",
+   "u": [
+    "bb",
+    "hr",
+    "pillar",
+    "bp",
+    "taper"
+   ],
+   "use": "HFrEF (one of the four pillars)",
+   "f": [
+    "One of only three beta blockers proven for HFrEF (with metoprolol succinate and bisoprolol)"
+   ],
+   "tip": "-lol = beta blocker. Never stop abruptly.",
+   "warn": "Hold for HR under 60; never stop abruptly"
+  },
+  {
+   "g": "metoprolol succinate",
+   "b": "Toprol-XL",
+   "w": "9.3",
+   "cls": "Beta blocker",
+   "grp": "bb",
+   "u": [
+    "bb",
+    "hr",
+    "pillar",
+    "bp",
+    "taper"
+   ],
+   "use": "HFrEF; also hypertension, after MI, A-fib rate control",
+   "f": [
+    "Slows the heart so it has more filling time; over time the EF can improve"
+   ],
+   "tip": "-lol = beta blocker.",
+   "warn": "Hold for HR under 60; never stop abruptly"
+  },
+  {
+   "g": "empagliflozin",
+   "b": "Jardiance",
+   "w": [
+    "9.3",
+    "11.1"
+   ],
+   "cls": "SGLT2 inhibitor",
+   "grp": "sglt2",
+   "u": [
+    "sglt2",
+    "pillar",
+    "pre",
+    "dm",
+    "hypotn"
+   ],
+   "use": "HFrEF and HFpEF (with or without diabetes); type 2 diabetes; CKD",
+   "f": [
+    "Explain why it's prescribed when the client doesn't have diabetes",
+    "Euglycemic DKA: nausea, vomiting and abdominal pain with near-normal glucose",
+    "Usually held about 3 days before surgery and when NPO or acutely ill"
+   ],
+   "tip": "-gliflozin = sugar and sodium out in the urine.",
+   "warn": "Genital yeast infections, UTIs; euglycemic DKA"
+  },
+  {
+   "g": "dapagliflozin",
+   "b": "Farxiga",
+   "w": [
+    "9.3",
+    "11.1"
+   ],
+   "cls": "SGLT2 inhibitor",
+   "grp": "sglt2",
+   "u": [
+    "sglt2",
+    "pillar",
+    "pre",
+    "dm",
+    "hypotn"
+   ],
+   "use": "HF, type 2 diabetes and CKD",
+   "f": [
+    "Report genital pain, redness or swelling with fever right away (Fournier's gangrene, rare)",
+    "Contraindicated in type 1 diabetes and severe renal impairment"
+   ],
+   "tip": "-gliflozin = sugar and sodium out in the urine.",
+   "warn": "Volume depletion and hypotension"
+  },
+  {
+   "g": "digoxin",
+   "b": "Lanoxin",
+   "w": "9.3",
+   "cls": "Cardiac glycoside (positive inotrope)",
+   "grp": "dig",
+   "u": [
+    "inotrope",
+    "hr",
+    "lowk"
+   ],
+   "use": "HFrEF with persistent symptoms; A-fib rate control",
+   "f": [
+    "Apical pulse for 1 full minute: hold if under 60 (adult), 70 (child), 90 (infant)",
+    "Therapeutic level 0.5–2 ng/mL",
+    "Early toxicity is GI: anorexia, nausea, vomiting; then yellow-green halos",
+    "Low potassium is the most common toxicity risk"
+   ],
+   "tip": "Stronger squeeze, slower rate. Antidote: digoxin immune Fab.",
+   "warn": "Toxicity: GI upset, vision halos, bradycardia",
+   "cno": [
+    "IV positive inotrope"
+   ]
+  },
+  {
+   "g": "digoxin immune Fab",
+   "b": "DigiFab",
+   "w": "9.3",
+   "cls": "Antidote",
+   "grp": "fab",
+   "u": [
+    "inotrope",
+    "antidote"
+   ],
+   "use": "Reverses digoxin toxicity",
+   "f": [
+    "The antidote for digoxin toxicity"
+   ],
+   "tip": "Fab grabs the digoxin.",
+   "warn": "Used for digoxin toxicity"
+  },
+  {
+   "g": "hydralazine/isosorbide dinitrate",
+   "b": "BiDil",
+   "w": "9.3",
+   "cls": "Vasodilators",
+   "grp": "vaso",
+   "u": [
+    "vaso",
+    "pde",
+    "bp",
+    "hypotn"
+   ],
+   "use": "HF when an ACE inhibitor, ARB or ARNI isn't tolerated",
+   "f": [
+    "Hydralazine dilates arteries (afterload); the nitrate dilates veins (preload)",
+    "Hydralazine can cause a lupus-like syndrome",
+    "Headache usually eases within a few weeks"
+   ],
+   "tip": "Vasodilator = BP drops. No erectile dysfunction drugs with nitrates.",
+   "warn": "Severe hypotension; reflex tachycardia",
+   "cno": [
+    "Nitrate (vasodilator)"
+   ]
+  },
+  {
+   "g": "nitroglycerin",
+   "b": "Nitrostat",
+   "w": "9.3",
+   "cls": "Nitrate (vasodilator)",
+   "grp": "nitro",
+   "u": [
+    "vaso",
+    "pde",
+    "pre",
+    "bp",
+    "ivonly",
+    "hypotn"
+   ],
+   "use": "Acute decompensated HF and pulmonary edema, if BP allows",
+   "f": [
+    "IV drip on a pump, titrated to BP",
+    "Contraindicated within recent sildenafil or tadalafil use",
+    "Avoid in hypertrophic cardiomyopathy"
+   ],
+   "tip": "Nitrates dilate veins = less blood back to the lungs.",
+   "warn": "Severe hypotension",
+   "cno": [
+    "Vasodilators"
+   ]
+  },
+  {
+   "g": "dobutamine",
+   "b": "Dobutrex",
+   "w": "9.3",
+   "cls": "IV positive inotrope",
+   "grp": "ivino",
+   "u": [
+    "inotrope",
+    "ivino",
+    "taper",
+    "ivonly",
+    "hypotn"
+   ],
+   "use": "Short-term for acute decompensated HF or low output",
+   "f": [
+    "Continuous infusion on a pump with telemetry; don't stop abruptly, wean it",
+    "Check the site for extravasation; a central line is preferred"
+   ],
+   "tip": "IV inotrope = stronger squeeze, short-term.",
+   "warn": "Hypotension and dysrhythmias",
+   "cno": [
+    "Cardiac glycoside (positive inotrope)"
+   ]
+  },
+  {
+   "g": "milrinone",
+   "b": "Primacor",
+   "w": "9.3",
+   "cls": "IV positive inotrope",
+   "grp": "ivino",
+   "u": [
+    "inotrope",
+    "ivino",
+    "taper",
+    "ivonly",
+    "hypotn"
+   ],
+   "use": "Acute decompensated HF; sometimes a bridge to transplant or comfort care in Class IV",
+   "f": [
+    "Sometimes a bridge to transplant or comfort care in NYHA Class IV"
+   ],
+   "tip": "IV inotrope = stronger squeeze.",
+   "warn": "Hypotension",
+   "cno": [
+    "Cardiac glycoside (positive inotrope)"
+   ]
+  },
+  {
+   "g": "baclofen",
+   "b": "Lioresal",
+   "w": "10.1",
+   "cls": "Centrally acting muscle relaxant",
+   "grp": "musc",
+   "u": [
+    "musc",
+    "sedate",
+    "taper"
+   ],
+   "use": "Muscle spasm from MS, spinal cord injury, cerebral palsy",
+   "f": [
+    "Mimics GABA in the CNS",
+    "Taper over 1–2 weeks: abrupt intrathecal withdrawal can be fatal",
+    "Can cause constipation and urinary retention"
+   ],
+   "tip": "Baclofen = brain/spinal cord (GABA).",
+   "warn": "Withdrawal if stopped suddenly; drowsiness"
+  },
+  {
+   "g": "dantrolene",
+   "b": "Dantrium",
+   "w": "10.1",
+   "cls": "Peripherally acting muscle relaxant",
+   "grp": "musc2",
+   "u": [
+    "musc",
+    "sedate",
+    "liver"
+   ],
+   "use": "Muscle spasm; IV for malignant hyperthermia",
+   "f": [
+    "IV form treats malignant hyperthermia (calcium overload in muscle)",
+    "Inhibits calcium release in the muscle fiber",
+    "Monitor liver function tests: liver toxicity"
+   ],
+   "tip": "Dantrolene = muscle fiber (calcium).",
+   "warn": "Liver toxicity; muscle weakness"
+  },
+  {
+   "g": "phenytoin",
+   "b": "Dilantin",
+   "w": "10.1",
+   "cls": "Antiseizure: hydantoin",
+   "grp": "asm",
+   "u": [
+    "asm",
+    "rash",
+    "taper",
+    "oc",
+    "preg"
+   ],
+   "use": "Tonic-clonic and partial seizures",
+   "f": [
+    "Gingival hyperplasia: regular dental checkups, soft toothbrush",
+    "Therapeutic level 10–20 mcg/mL; over 30 can be toxic",
+    "IV form is incompatible with dextrose"
+   ],
+   "tip": "Phenytoin = gums.",
+   "warn": "Gum overgrowth; narrow therapeutic range",
+   "cno": [
+    "Antiseizure"
+   ]
+  },
+  {
+   "g": "carbamazepine",
+   "b": "Tegretol",
+   "w": "10.1",
+   "cls": "Antiseizure",
+   "grp": "asm2",
+   "u": [
+    "asm",
+    "rash",
+    "oc",
+    "blood",
+    "preg",
+    "taper"
+   ],
+   "use": "Partial and tonic-clonic seizures; bipolar; trigeminal neuralgia",
+   "f": [
+    "Bone marrow suppression: monitor CBC and WBC; report fever, sore throat, bruising",
+    "Avoid grapefruit juice",
+    "Clients of Asian descent may be tested for HLA-B*1502 (severe skin reactions)"
+   ],
+   "tip": "Carbamazepine = CBC.",
+   "warn": "Bone marrow suppression; severe rash"
+  },
+  {
+   "g": "valproic acid",
+   "b": "Depakene",
+   "w": "10.1",
+   "cls": "Antiseizure",
+   "grp": "asm3",
+   "u": [
+    "asm",
+    "liver",
+    "teratogen",
+    "preg",
+    "taper",
+    "panc"
+   ],
+   "use": "All seizure types; bipolar mania; migraine prevention",
+   "f": [
+    "Hyperammonemia: report vomiting, confusion, decreased LOC",
+    "Pancreatitis and liver toxicity (may be fatal)",
+    "Neural tube defects: folic acid if pregnancy occurs"
+   ],
+   "tip": "Valproic acid = liver, pancreas, ammonia.",
+   "warn": "Liver toxicity, pancreatitis, high ammonia"
+  },
+  {
+   "g": "oxcarbazepine",
+   "b": "Trileptal",
+   "w": "10.1",
+   "cls": "Antiseizure (2nd/3rd generation)",
+   "grp": "asm4",
+   "u": [
+    "asm",
+    "oc",
+    "rash",
+    "taper"
+   ],
+   "use": "Seizures; neuralgia; migraine",
+   "f": [
+    "Hyponatremia, especially with diuretics: monitor sodium",
+    "Contraindicated with a carbamazepine allergy"
+   ],
+   "tip": "Oxcarbazepine = sodium.",
+   "warn": "Low sodium",
+   "cno": [
+    "Antiseizure"
+   ]
+  },
+  {
+   "g": "lidocaine",
+   "b": "Xylocaine",
+   "w": "10.1",
+   "cls": "Local anesthetic",
+   "grp": "local",
+   "u": [
+    "anes"
+   ],
+   "use": "Local, topical, epidural or spinal anesthesia",
+   "f": [
+    "Blocks sodium influx into nerves",
+    "With epinephrine, avoid fingers, toes and nose (end-artery gangrene)",
+    "If spinal anesthesia drops the BP, lower the head of the bed"
+   ],
+   "tip": "Lidocaine = no sodium in = no pain signal.",
+   "warn": "CNS toxicity: tremor, confusion, seizures"
+  },
+  {
+   "g": "midazolam",
+   "b": "Versed",
+   "w": "10.1",
+   "cls": "Benzodiazepine (sedation)",
+   "grp": "benzo",
+   "u": [
+    "anes",
+    "sedate",
+    "resp",
+    "ivonly"
+   ],
+   "use": "Conscious sedation for procedures; pre-anesthesia",
+   "f": [
+    "Amnesia for the procedure is expected",
+    "Inject IV bolus slowly and wait at least 2 minutes before another dose"
+   ],
+   "tip": "-lam = benzodiazepine = more GABA.",
+   "warn": "Respiratory or cardiac arrest"
+  },
+  {
+   "g": "fentanyl",
+   "b": "Sublimaze",
+   "w": "10.1",
+   "cls": "Opioid (anesthesia adjunct)",
+   "grp": "opi",
+   "u": [
+    "anes",
+    "sedate",
+    "resp",
+    "ivonly"
+   ],
+   "use": "Supplement to general anesthesia",
+   "f": [
+    "Keep naloxone and resuscitation equipment at hand",
+    "Lozenge: suck, don't chew, for more than 15 minutes"
+   ],
+   "tip": "Opioid: watch respirations. Reverse with naloxone.",
+   "warn": "Respiratory depression"
+  },
+  {
+   "g": "methohexital",
+   "b": "Brevital",
+   "w": "10.1",
+   "cls": "Short-acting barbiturate",
+   "grp": "barb",
+   "u": [
+    "anes",
+    "sedate",
+    "resp",
+    "ivonly"
+   ],
+   "use": "Rapid anesthesia induction for brief procedures",
+   "f": [
+    "Given IV only; prevent extravasation and intra-arterial injection",
+    "With midazolam it's duplicate therapy that prolongs anesthesia"
+   ],
+   "tip": "Barbiturate = deep CNS depression.",
+   "warn": "Respiratory depression or apnea"
+  },
+  {
+   "g": "methylphenidate",
+   "b": "Ritalin",
+   "w": "10.1",
+   "cls": "CNS stimulant",
+   "grp": "stim",
+   "u": [
+    "stim",
+    "bp",
+    "taper"
+   ],
+   "use": "ADHD",
+   "f": [
+    "Last dose by 4 p.m. to protect sleep",
+    "Patch: apply in the morning, wear no more than 9 hours",
+    "Monitor height and weight in children; medication holidays can help growth"
+   ],
+   "tip": "Stimulant = more dopamine and norepinephrine.",
+   "warn": "High misuse potential; raises HR and BP"
+  },
+  {
+   "g": "amphetamine/dextroamphetamine",
+   "b": "Adderall",
+   "w": "10.1",
+   "cls": "CNS stimulant (amphetamine)",
+   "grp": "stim2",
+   "u": [
+    "stim",
+    "bp",
+    "taper"
+   ],
+   "use": "ADHD; narcolepsy",
+   "f": [
+    "Contraindicated within 14 days of an MAOI",
+    "Toxicity: psychosis, dysrhythmias, seizures"
+   ],
+   "tip": "Stimulant = energy and focus; high misuse potential.",
+   "warn": "Weight loss; growth suppression in children",
+   "cno": [
+    "CNS stimulant"
+   ]
+  },
+  {
+   "g": "modafinil",
+   "b": "Provigil",
+   "w": "10.1",
+   "cls": "Non-CNS stimulant (wakefulness agent)",
+   "grp": "moda",
+   "u": [
+    "stim",
+    "oc",
+    "rash",
+    "preg"
+   ],
+   "use": "Narcolepsy, shift-work sleepiness, sleep apnea",
+   "f": [
+    "Low misuse potential: blocks norepinephrine reuptake",
+    "Use backup birth control during use and for 30 days after stopping",
+    "Shift workers take it 1 hour before work"
+   ],
+   "tip": "Modafinil = wake up, low misuse.",
+   "warn": "Stevens-Johnson rash; lowers birth control effect"
+  },
+  {
+   "g": "levodopa/carbidopa",
+   "b": "Sinemet",
+   "w": "10.1",
+   "cls": "Dopamine replacement",
+   "grp": "ldopa",
+   "u": [
+    "pd",
+    "orth",
+    "hypotn"
+   ],
+   "use": "Parkinson's disease",
+   "f": [
+    "Carbidopa keeps levodopa from converting to dopamine before it reaches the brain",
+    "Avoid high-protein meals around doses",
+    "Urine and sweat may darken (harmless)",
+    "Full response can take up to 6 months"
+   ],
+   "tip": "Dopamine can't cross the blood-brain barrier; levodopa can.",
+   "warn": "On-off episodes; dyskinesias; orthostatic hypotension"
+  },
+  {
+   "g": "pramipexole",
+   "b": "Mirapex",
+   "w": "10.1",
+   "cls": "Dopamine receptor agonist",
+   "grp": "dopag",
+   "u": [
+    "pd",
+    "orth",
+    "sedate",
+    "taper",
+    "hypotn"
+   ],
+   "use": "Parkinson's disease; restless legs syndrome",
+   "f": [
+    "Sudden 'sleep attacks': avoid driving if drowsy",
+    "For restless legs, take 2–3 hours before bedtime",
+    "Taper slowly over 1 week when stopping"
+   ],
+   "tip": "Agonist = mimics dopamine.",
+   "warn": "Sleep attacks; orthostatic hypotension"
+  },
+  {
+   "g": "selegiline",
+   "b": "Eldepryl",
+   "w": "10.1",
+   "cls": "MAO-B inhibitor",
+   "grp": "maob",
+   "u": [
+    "pd",
+    "tyr",
+    "bp"
+   ],
+   "use": "Parkinson's disease (with levodopa/carbidopa)",
+   "f": [
+    "Take the last dose by noon to prevent insomnia",
+    "Interacts with meperidine, SSRIs and tricyclics",
+    "Tyramine foods can raise BP"
+   ],
+   "tip": "Blocks the enzyme that breaks down dopamine.",
+   "warn": "Hypertensive reactions; insomnia"
+  },
+  {
+   "g": "donepezil",
+   "b": "Aricept",
+   "w": "10.1",
+   "cls": "Cholinesterase inhibitor",
+   "grp": "chei",
+   "u": [
+    "alz",
+    "hr"
+   ],
+   "use": "Mild to moderate Alzheimer's disease",
+   "f": [
+    "Give at bedtime with food",
+    "Can cause bradycardia: monitor HR",
+    "NSAIDs raise the GI bleeding risk"
+   ],
+   "tip": "Donepezil = keep acetylcholine around.",
+   "warn": "Bradycardia; GI bleeding"
+  },
+  {
+   "g": "memantine",
+   "b": "Namenda",
+   "w": "10.1",
+   "cls": "NMDA receptor antagonist",
+   "grp": "nmda",
+   "u": [
+    "alz"
+   ],
+   "use": "Moderate to severe Alzheimer's disease",
+   "f": [
+    "Blocks excess glutamate and calcium influx into neurons",
+    "Antacids that raise urine pH can cause toxicity",
+    "Slows decline; doesn't reverse the disease"
+   ],
+   "tip": "Memantine = block excess glutamate.",
+   "warn": "Dizziness and increased confusion"
+  },
+  {
+   "g": "interferon beta-1a",
+   "b": "Avonex",
+   "w": "10.1",
+   "cls": "Immunomodulator",
+   "grp": "ifn",
+   "u": [
+    "ms",
+    "liver",
+    "inj"
+   ],
+   "use": "Relapsing-remitting multiple sclerosis",
+   "f": [
+    "Flu-like symptoms: premedicate with acetaminophen; they decrease over time",
+    "Myelosuppression: monitor CBC; report bruising, bleeding, fatigue",
+    "Rotate injection sites; cool compress before, warm after"
+   ],
+   "tip": "Immunomodulator = calm the immune attack on myelin.",
+   "warn": "Bone marrow suppression; liver toxicity"
+  },
+  {
+   "g": "sumatriptan",
+   "b": "Imitrex",
+   "w": "10.1",
+   "cls": "Serotonin agonist (triptan)",
+   "grp": "trip",
+   "u": [
+    "sero",
+    "vasoc"
+   ],
+   "use": "Acute migraine or cluster headache",
+   "f": [
+    "Chest, jaw or throat tightness that doesn't resolve: notify the provider at once",
+    "Contraindicated with CAD, previous MI, stroke, severe hypertension, PVD",
+    "Oral: may repeat once after 2 hours; max 200 mg in 24 hours"
+   ],
+   "tip": "Triptan = constrict the dilated vessels.",
+   "warn": "Coronary vasospasm (angina)"
+  },
+  {
+   "g": "famotidine",
+   "b": "Pepcid",
+   "w": "10.2",
+   "cls": "H2 blocker",
+   "grp": "h2",
+   "u": [
+    "acid"
+   ],
+   "use": "GERD, gastritis, PUD",
+   "f": [
+    "Blocks histamine receptors to decrease acid secretion",
+    "Can be taken with or without food"
+   ],
+   "tip": "-tidine = H2 blocker.",
+   "warn": "Cimetidine (same class) raises anticoagulant and phenytoin levels"
+  },
+  {
+   "g": "cimetidine",
+   "b": "Tagamet",
+   "w": "10.2",
+   "cls": "H2 blocker",
+   "grp": "h2",
+   "u": [
+    "acid"
+   ],
+   "use": "GERD and ulcers",
+   "f": [
+    "Increases levels of anticoagulants and phenytoin",
+    "Avoid with metformin (lactic acidosis)"
+   ],
+   "tip": "-tidine = H2 blocker.",
+   "warn": "Drug interactions"
+  },
+  {
+   "g": "pantoprazole",
+   "b": "Protonix",
+   "w": "10.2",
+   "cls": "Proton pump inhibitor (PPI)",
+   "grp": "ppi",
+   "u": [
+    "acid"
+   ],
+   "use": "GERD, gastritis, PUD",
+   "f": [
+    "Take 30–60 minutes before the first meal of the day",
+    "Long-term use: osteoporosis and hypomagnesemia"
+   ],
+   "tip": "-prazole = PPI.",
+   "warn": "Bone loss and low magnesium with long-term use"
+  },
+  {
+   "g": "sucralfate",
+   "b": "Carafate",
+   "w": "10.2",
+   "cls": "Gastric protectant",
+   "grp": "sucra",
+   "u": [
+    "acid",
+    "absorb"
+   ],
+   "use": "Ulcers: coats and protects",
+   "f": [
+    "Forms a gel coating; not absorbed systemically",
+    "Take on an empty stomach before meals"
+   ],
+   "tip": "Sucralfate = Band-Aid for the stomach.",
+   "warn": "Decreases absorption of other medications"
+  },
+  {
+   "g": "aluminum hydroxide",
+   "b": "Amphojel",
+   "w": "10.2",
+   "cls": "Antacid",
+   "grp": "antacid",
+   "u": [
+    "acid",
+    "absorb"
+   ],
+   "use": "Heartburn, GERD",
+   "f": [
+    "Neutralizes gastric acid",
+    "Take 1–3 hours after eating; separate from other medications"
+   ],
+   "tip": "Antacids neutralize; they don't stop secretion.",
+   "warn": "Diarrhea or constipation"
+  },
+  {
+   "g": "metoclopramide",
+   "b": "Reglan",
+   "w": "10.2",
+   "cls": "Prokinetic",
+   "grp": "proki",
+   "u": [
+    "gimotility"
+   ],
+   "use": "GERD: increases gastric peristalsis",
+   "f": [
+    "Not to be used longer than 12 weeks: tardive dyskinesia"
+   ],
+   "tip": "Prokinetic = move it along.",
+   "warn": "Tardive dyskinesia"
+  },
+  {
+   "g": "vitamin B12",
+   "b": null,
+   "w": "10.2",
+   "cls": "Vitamin",
+   "grp": "b12",
+   "u": [
+    "b12"
+   ],
+   "use": "Pernicious anemia; after gastrectomy or gastric bypass",
+   "f": [
+    "Lifelong injections (or high-dose oral) when intrinsic factor is gone",
+    "Diet alone can't correct it without intrinsic factor"
+   ],
+   "tip": "No intrinsic factor = no B12 absorption.",
+   "warn": "Untreated: irreversible nerve damage"
+  },
+  {
+   "g": "pancrelipase",
+   "b": "Creon",
+   "w": "10.3",
+   "cls": "Pancreatic enzyme replacement",
+   "grp": "pert",
+   "u": [
+    "pert"
+   ],
+   "use": "Chronic pancreatitis: digestive enzyme replacement",
+   "f": [
+    "Take with every meal and snack",
+    "Swallow whole; or sprinkle on acidic soft food like applesauce",
+    "Working = less steatorrhea and bloating, weight gain"
+   ],
+   "tip": "Lipase = fats, amylase = carbs, protease = proteins.",
+   "warn": "Don't crush or chew"
+  },
+  {
+   "g": "ceftriaxone",
+   "b": "Rocephin",
+   "w": "10.3",
+   "cls": "Antibiotic (cephalosporin)",
+   "grp": "abx",
+   "u": [
+    "abx"
+   ],
+   "use": "Acute cholecystitis (with metronidazole)",
+   "f": [
+    "Broad-spectrum antibiotic paired with metronidazole for acute cholecystitis"
+   ],
+   "tip": "-cef/-ceph = cephalosporin.",
+   "warn": "Given with metronidazole for acute cholecystitis",
+   "cno": [
+    "Antibiotic"
+   ]
+  },
+  {
+   "g": "metronidazole",
+   "b": "Flagyl",
+   "w": "10.3",
+   "cls": "Antibiotic",
+   "grp": "abx2",
+   "u": [
+    "abx"
+   ],
+   "use": "Acute cholecystitis (with ceftriaxone)",
+   "f": [
+    "Covers anaerobes alongside ceftriaxone for cholecystitis"
+   ],
+   "tip": "Paired with ceftriaxone.",
+   "warn": "Given with ceftriaxone for acute cholecystitis"
+  },
+  {
+   "g": "metformin",
+   "b": "Glucophage",
+   "w": "11.1",
+   "cls": "Biguanide",
+   "grp": "bigu",
+   "u": [
+    "dm",
+    "lactic",
+    "meal",
+    "contrast"
+   ],
+   "use": "First-line for type 2 diabetes and prediabetes; metabolic syndrome",
+   "f": [
+    "Hold at least 48 hours after IV contrast",
+    "Avoid alcohol and cimetidine: lactic acidosis",
+    "Take with meals; can cause B12 and folate malabsorption",
+    "Safest oral agent in pregnancy (gestational diabetes)"
+   ],
+   "tip": "Metformin blocks the liver's glucose production.",
+   "warn": "Lactic acidosis"
+  },
+  {
+   "g": "semaglutide",
+   "b": "Ozempic, Wegovy",
+   "w": "11.1",
+   "cls": "GLP-1 receptor agonist",
+   "grp": "glp1",
+   "u": [
+    "glp1",
+    "dm",
+    "gi",
+    "panc",
+    "inj"
+   ],
+   "use": "Type 2 diabetes; weight management; CV risk reduction",
+   "f": [
+    "Weekly subcutaneous injection; rotate sites",
+    "Contraindicated with a personal or family history of medullary thyroid carcinoma",
+    "Eat smaller portions and stop when full to prevent nausea"
+   ],
+   "tip": "GLP-1 = insulin only when glucose is high; slows the stomach.",
+   "warn": "Pancreatitis: severe abdominal pain to the back"
+  },
+  {
+   "g": "liraglutide",
+   "b": "Victoza, Saxenda",
+   "w": "11.1",
+   "cls": "GLP-1 receptor agonist",
+   "grp": "glp1",
+   "u": [
+    "glp1",
+    "dm",
+    "gi",
+    "panc",
+    "inj"
+   ],
+   "use": "Type 2 diabetes; weight management",
+   "f": [
+    "Can cause gallbladder disease from slowed gastric emptying"
+   ],
+   "tip": "-glutide = GLP-1.",
+   "warn": "Pancreatitis; severe dehydration from vomiting"
+  },
+  {
+   "g": "pramlintide",
+   "b": "Symlin",
+   "w": "11.1",
+   "cls": "Amylin mimetic",
+   "grp": "amylin",
+   "u": [
+    "dm",
+    "hypo",
+    "gi",
+    "meal",
+    "inj"
+   ],
+   "use": "Type 1 and type 2 diabetes, added to insulin",
+   "f": [
+    "Give SC 30 minutes before meals; it peaks in 20 minutes",
+    "Never mix in the same syringe as insulin",
+    "Contraindicated with gastroparesis"
+   ],
+   "tip": "Amylin mimetic: an add-on to insulin.",
+   "warn": "Severe hypoglycemia with insulin"
+  },
+  {
+   "g": "glipizide",
+   "b": "Glucotrol",
+   "w": "11.1",
+   "cls": "Sulfonylurea",
+   "grp": "sulf",
+   "u": [
+    "dm",
+    "hypo",
+    "secret",
+    "preg",
+    "meal"
+   ],
+   "use": "Type 2 diabetes; drug of choice for MODY",
+   "f": [
+    "Take 30 minutes before meals",
+    "Contraindicated in pregnancy: crosses the placenta",
+    "Weight gain and increased cardiovascular risk"
+   ],
+   "tip": "Sulfonylurea = long-acting pancreas squeezer.",
+   "warn": "Hypoglycemia"
+  },
+  {
+   "g": "repaglinide",
+   "b": "Prandin",
+   "w": "11.1",
+   "cls": "Meglitinide",
+   "grp": "megl",
+   "u": [
+    "dm",
+    "hypo",
+    "secret",
+    "meal"
+   ],
+   "use": "Type 2 diabetes",
+   "f": [
+    "Skip a meal, skip the dose",
+    "Fast onset, short duration; up to 3–4 times a day"
+   ],
+   "tip": "Meglitinide = short-acting pancreas squeezer.",
+   "warn": "Hypoglycemia if taken without a meal"
+  },
+  {
+   "g": "pioglitazone",
+   "b": "Actos",
+   "w": "11.1",
+   "cls": "Thiazolidinedione (TZD)",
+   "grp": "tzd",
+   "u": [
+    "dm",
+    "sens"
+   ],
+   "use": "Type 2 diabetes, usually in combination",
+   "f": [
+    "Fluid retention can cause heart failure: contraindicated in HF",
+    "Increases bladder cancer risk"
+   ],
+   "tip": "-glitazone = insulin sensitizer.",
+   "warn": "Fluid retention and heart failure"
+  },
+  {
+   "g": "acarbose",
+   "b": "Precose",
+   "w": "11.1",
+   "cls": "Alpha-glucosidase inhibitor",
+   "grp": "agi",
+   "u": [
+    "dm",
+    "meal"
+   ],
+   "use": "Type 2 diabetes: after-meal glucose",
+   "f": [
+    "Take with the first bite of each meal",
+    "Flatulence, diarrhea and abdominal pain",
+    "Avoid with IBD, cirrhosis or chronic intestinal disorders"
+   ],
+   "tip": "Blocks the enzyme that breaks down carbs.",
+   "warn": "GI upset"
+  },
+  {
+   "g": "sitagliptin",
+   "b": "Januvia",
+   "w": "11.1",
+   "cls": "Gliptin (DPP-4 inhibitor)",
+   "grp": "dpp4",
+   "u": [
+    "dm",
+    "angio",
+    "rash",
+    "panc"
+   ],
+   "use": "Type 2 diabetes, often with metformin",
+   "f": [
+    "Doesn't cause hypoglycemia on its own",
+    "Contraindicated with a history of pancreatitis"
+   ],
+   "tip": "-gliptin = DPP-4 inhibitor.",
+   "warn": "Stevens-Johnson syndrome, angioedema, pancreatitis"
+  },
+  {
+   "g": "atorvastatin",
+   "b": "Lipitor",
+   "w": "11.1",
+   "cls": "Statin (HMG-CoA reductase inhibitor)",
+   "grp": "statin",
+   "u": [
+    "lipid",
+    "liver"
+   ],
+   "use": "Metabolic syndrome: lowers LDL and triglycerides",
+   "f": [
+    "Report unexplained muscle pain or weakness (rhabdomyolysis)",
+    "Baseline and periodic liver function tests"
+   ],
+   "tip": "-statin = lipids down, plaque steady.",
+   "warn": "Rhabdomyolysis"
+  },
+  {
+   "g": "insulin lispro",
+   "b": "Humalog",
+   "w": "11.1",
+   "cls": "Rapid-acting insulin",
+   "grp": "rapid",
+   "u": [
+    "ins",
+    "hypo",
+    "meal",
+    "inj"
+   ],
+   "use": "Mealtime coverage and correction doses",
+   "f": [
+    "Onset 5–15 minutes, peak 1–2 hours, duration 2–4 hours",
+    "Give when the meal tray is at the bedside or after the first bite"
+   ],
+   "tip": "Rapid-acting = mealtime insulin.",
+   "warn": "Hypoglycemia if the meal is delayed"
+  },
+  {
+   "g": "regular insulin",
+   "b": "Humulin R",
+   "w": "11.1",
+   "cls": "Short-acting insulin",
+   "grp": "short",
+   "u": [
+    "ins",
+    "hypo",
+    "ivonly",
+    "lowk",
+    "inj"
+   ],
+   "use": "Short-acting coverage; IV infusion for DKA",
+   "f": [
+    "The insulin given IV for DKA: 0.1 units/kg/hr",
+    "Onset 30 minutes, peak 2–3 hours",
+    "Clear: draw it up before cloudy NPH when mixing"
+   ],
+   "tip": "Regular = the IV insulin.",
+   "warn": "Hypoglycemia; low potassium on an IV drip"
+  },
+  {
+   "g": "NPH insulin",
+   "b": "Humulin N",
+   "w": "11.1",
+   "cls": "Intermediate-acting insulin",
+   "grp": "nph",
+   "u": [
+    "ins",
+    "hypo",
+    "inj"
+   ],
+   "use": "Basal coverage, often twice daily",
+   "f": [
+    "Cloudy insulin: drawn up after clear regular insulin",
+    "Peaks 4–12 hours after the dose"
+   ],
+   "tip": "NPH = cloudy, intermediate, peaks.",
+   "warn": "Hypoglycemia at the peak"
+  },
+  {
+   "g": "insulin glargine",
+   "b": "Lantus",
+   "w": "11.1",
+   "cls": "Long-acting insulin",
+   "grp": "long",
+   "u": [
+    "ins",
+    "hypo",
+    "inj"
+   ],
+   "use": "Steady basal coverage",
+   "f": [
+    "No pronounced peak; lasts 20–24 hours",
+    "Keep taking basal insulin on sick days"
+   ],
+   "tip": "Long-acting = no peak, steady basal.",
+   "warn": "Hypoglycemia"
+  },
+  {
+   "g": "glucagon",
+   "b": "GlucaGen",
+   "w": "11.1",
+   "cls": "Antihypoglycemic hormone",
+   "grp": "glucagon",
+   "u": [
+    "hypo",
+    "antidote",
+    "inj"
+   ],
+   "use": "Severe hypoglycemia when the client can't take carbs by mouth",
+   "f": [
+    "Given IM, SC or nasally by family or significant others",
+    "Turn the client on their side afterward to prevent aspiration"
+   ],
+   "tip": "Glucagon tells the liver to release stored glucose.",
+   "warn": "Vomiting and aspiration"
+  },
+  {
+   "g": "acetaminophen",
+   "b": "Tylenol",
+   "w": "11.2",
+   "cls": "Antipyretic / analgesic",
+   "grp": "apap",
+   "u": [
+    "fever"
+   ],
+   "use": "Febrile non-hemolytic transfusion reaction",
+   "f": [
+    "Antipyretic for a febrile non-hemolytic reaction, after the transfusion is stopped",
+    "The transfusion restarts only if the provider approves"
+   ],
+   "tip": "Fever reaction: stop, assess, antipyretic.",
+   "warn": "Stop the transfusion first"
+  },
+  {
+   "g": "epinephrine",
+   "b": "EpiPen",
+   "w": [
+    "11.2",
+    "11.3"
+   ],
+   "cls": "Adrenergic agonist",
+   "grp": "epi",
+   "u": [
+    "anaph",
+    "code"
+   ],
+   "use": "Anaphylactic transfusion reaction; ACLS medication in a Code Blue",
+   "f": [
+    "Given for an anaphylactic transfusion reaction: wheezing, bronchospasm, hypotension, shock",
+    "Highest risk in IgA-deficient clients with anti-IgA antibodies",
+    "Code Blue closed-loop example: \"Give 1 mg epinephrine IV\" is read back before it's given"
+   ],
+   "tip": "Anaphylaxis: stop, airway, epinephrine.",
+   "warn": "Onset seconds to minutes after starting"
+  },
+  {
+   "g": "epoetin alfa",
+   "b": "Epogen",
+   "w": "11.2",
+   "cls": "Erythropoiesis-stimulating agent (ESA)",
+   "grp": "esa",
+   "u": [
+    "bloodless"
+   ],
+   "use": "Bloodless care: promotes RBC production (with iron)",
+   "f": [
+    "Paired with iron to promote RBC production in a client who refuses blood",
+    "Darbepoetin is another ESA listed for bloodless care"
+   ],
+   "tip": "-poetin = makes RBCs.",
+   "warn": "Works over time, not instantly like a transfusion"
+  },
+  {
+   "g": "amiodarone",
+   "b": "Pacerone",
+   "w": "11.3",
+   "cls": "Antidysrhythmic (ACLS medication)",
+   "grp": "amio",
+   "u": [
+    "code"
+   ],
+   "use": "Code Blue: ACLS medication given by the medication role",
+   "f": [
+    "Listed with epinephrine as an ACLS medication given by the medication role during a Code Blue"
+   ],
+   "tip": "Code meds: epinephrine and amiodarone.",
+   "warn": "Given only per the team leader's order, with closed-loop read-back"
+  },
+  {
+   "g": "tranexamic acid",
+   "b": "Cyklokapron",
+   "w": "11.2",
+   "cls": "Antifibrinolytic",
+   "grp": "txa",
+   "u": [
+    "bloodless",
+    "clot"
+   ],
+   "use": "Bloodless care: prevents clot breakdown",
+   "f": [
+    "Prevents clot breakdown to limit bleeding",
+    "Aminocaproic acid works the same way"
+   ],
+   "tip": "Antifibrinolytic = the clot stays put.",
+   "warn": "Clot risk"
+  },
+  {
+   "g": "desmopressin",
+   "b": "DDAVP",
+   "w": "11.2",
+   "cls": "Hemostatic (vasopressin analog)",
+   "grp": "ddavp",
+   "u": [
+    "bloodless",
+    "clot"
+   ],
+   "use": "Bloodless care: enhances clotting",
+   "f": [
+    "Listed among non-blood alternatives because it enhances clotting"
+   ],
+   "tip": "Desmopressin helps blood clot.",
+   "warn": "Clot risk"
+  }
+ ],
+ "LESSONS": [
+  {
+   "id": "loop",
+   "t": "Loop diuretics",
+   "sfx": [
+    "-semide"
+   ],
+   "d": [
+    "furosemide"
+   ],
+   "how": "They make the kidneys dump sodium and water at the loop of Henle, so fluid comes off fast.",
+   "why": [
+    [
+     "Edema and crackles get better",
+     "Less fluid volume = less preload."
+    ],
+    [
+     "Potassium drops",
+     "Potassium is washed out with the water."
+    ],
+    [
+     "Ringing in the ears",
+     "A fast IV push shifts inner-ear fluid all at once."
+    ]
+   ],
+   "watch": [
+    "Check BP and potassium first; hold for K+ under 3.5",
+    "Daily weight, strict I&O, lung sounds",
+    "Teach: take it in the morning, rise slowly"
+   ]
+  },
+  {
+   "id": "raas",
+   "t": "ACE inhibitors, ARBs & ARNI",
+   "sfx": [
+    "-pril",
+    "-sartan",
+    "Entresto"
+   ],
+   "d": [
+    "lisinopril",
+    "enalapril",
+    "losartan",
+    "valsartan",
+    "sacubitril/valsartan"
+   ],
+   "how": "They block angiotensin, the hormone that squeezes arteries and makes the body hold salt and water.",
+   "why": [
+    [
+     "BP drops and the heart works less",
+     "Lower afterload and preload; they help HFrEF clients live longer."
+    ],
+    [
+     "Potassium goes up",
+     "Less aldosterone, so the kidney keeps potassium."
+    ],
+    [
+     "Dry cough (ACE inhibitors only)",
+     "Bradykinin builds up; ARBs don't do this."
+    ],
+    [
+     "Angioedema",
+     "Swelling of lips, tongue or airway is an emergency."
+    ]
+   ],
+   "watch": [
+    "Check BP, potassium and creatinine",
+    "Never combine an ACE inhibitor with an ARB or ARNI",
+    "36 hours off the ACE inhibitor before Entresto",
+    "All contraindicated in pregnancy"
+   ]
+  },
+  {
+   "id": "spiro",
+   "t": "Aldosterone antagonist",
+   "sfx": [
+    "Aldactone"
+   ],
+   "d": [
+    "spironolactone"
+   ],
+   "how": "It blocks aldosterone, so the kidney lets go of sodium and water but keeps potassium.",
+   "why": [
+    [
+     "Clients live longer",
+     "It slows scarring and stiffening of the heart."
+    ],
+    [
+     "Potassium rises",
+     "It's potassium-sparing; worse with ACE/ARB/ARNI."
+    ],
+    [
+     "Breast tenderness or enlargement",
+     "Hormonal side effect."
+    ]
+   ],
+   "watch": [
+    "Hold for K+ over 5.0 or rising creatinine",
+    "Teach: no salt substitutes or potassium supplements"
+   ]
+  },
+  {
+   "id": "bb",
+   "t": "Beta blockers",
+   "sfx": [
+    "-lol"
+   ],
+   "d": [
+    "carvedilol",
+    "metoprolol succinate"
+   ],
+   "how": "They block adrenaline at the heart, so it beats slower with less work.",
+   "why": [
+    [
+     "More filling time",
+     "A slower heart fills better, and EF can improve over time."
+    ],
+    [
+     "Stopping suddenly is dangerous",
+     "Rebound fast heart rate and high BP."
+    ]
+   ],
+   "watch": [
+    "Check apical HR and BP; hold for HR under 60",
+    "Never stop abruptly"
+   ]
+  },
+  {
+   "id": "sglt2",
+   "t": "SGLT2 inhibitors",
+   "sfx": [
+    "-gliflozin"
+   ],
+   "d": [
+    "empagliflozin",
+    "dapagliflozin"
+   ],
+   "how": "They make the kidney spill sodium and glucose into the urine.",
+   "why": [
+    [
+     "Mild diuresis and lower preload",
+     "Helps HF with or without diabetes."
+    ],
+    [
+     "Genital and urinary infections",
+     "Sugar in the urine feeds bacteria and yeast."
+    ],
+    [
+     "Euglycemic DKA",
+     "Ketoacidosis can happen with near-normal glucose."
+    ]
+   ],
+   "watch": [
+    "Explain the reason if the client has no diabetes",
+    "Hold when NPO or acutely ill (per order)"
+   ]
+  },
+  {
+   "id": "ino",
+   "t": "Digoxin & IV inotropes",
+   "sfx": [
+    "Lanoxin"
+   ],
+   "d": [
+    "digoxin",
+    "digoxin immune Fab",
+    "dobutamine",
+    "milrinone"
+   ],
+   "how": "They make the heart squeeze harder. Digoxin also slows conduction through the AV node.",
+   "why": [
+    [
+     "Better cardiac output",
+     "Stronger contraction."
+    ],
+    [
+     "Digoxin toxicity with low potassium",
+     "Low K+ lets digoxin bind more."
+    ]
+   ],
+   "watch": [
+    "Apical pulse 1 full minute before digoxin",
+    "IV inotropes: pump, telemetry, wean, don't stop"
+   ]
+  },
+  {
+   "id": "vaso",
+   "t": "Vasodilators",
+   "sfx": [
+    "nitrates"
+   ],
+   "d": [
+    "hydralazine/isosorbide dinitrate",
+    "nitroglycerin"
+   ],
+   "how": "They open blood vessels: hydralazine relaxes arteries, nitrates relax veins.",
+   "why": [
+    [
+     "BP drops",
+     "Wider vessels = less resistance."
+    ],
+    [
+     "Headache and flushing",
+     "Vessels are wide open."
+    ],
+    [
+     "Deadly with ED drugs",
+     "Sildenafil or tadalafil plus a nitrate = severe hypotension."
+    ]
+   ],
+   "watch": [
+    "Check BP before and after",
+    "Ask about sildenafil or tadalafil use"
+   ]
+  },
+  {
+   "id": "musc",
+   "t": "Muscle relaxants",
+   "sfx": [
+    "baclofen",
+    "dantrolene"
+   ],
+   "d": [
+    "baclofen",
+    "dantrolene"
+   ],
+   "how": "Baclofen calms overactive signals in the brain and spinal cord; dantrolene stops calcium release in the muscle itself.",
+   "why": [
+    [
+     "Drowsiness and weakness",
+     "Both relax the system."
+    ],
+    [
+     "Malignant hyperthermia is treated",
+     "IV dantrolene stops the calcium overload."
+    ]
+   ],
+   "watch": [
+    "Start low and go slow",
+    "Baclofen: taper; dantrolene: check liver function"
+   ]
+  },
+  {
+   "id": "asm",
+   "t": "Antiseizure medications",
+   "sfx": [
+    "Dilantin",
+    "Tegretol",
+    "Depakene",
+    "Trileptal"
+   ],
+   "d": [
+    "phenytoin",
+    "carbamazepine",
+    "valproic acid",
+    "oxcarbazepine"
+   ],
+   "how": "They calm overexcited neurons: block sodium entry, raise GABA, or lower glutamate.",
+   "why": [
+    [
+     "Each has a signature problem",
+     "Phenytoin = gums; carbamazepine = blood counts; valproic acid = liver, pancreas, ammonia; oxcarbazepine = sodium."
+    ],
+    [
+     "Severe rash",
+     "Stevens-Johnson syndrome can occur."
+    ]
+   ],
+   "watch": [
+    "Never stop abruptly",
+    "Several reduce birth control effectiveness"
+   ]
+  },
+  {
+   "id": "anes",
+   "t": "Anesthesia & sedation",
+   "sfx": [
+    "lidocaine",
+    "-lam"
+   ],
+   "d": [
+    "lidocaine",
+    "midazolam",
+    "fentanyl",
+    "methohexital"
+   ],
+   "how": "Local anesthetics block sodium in one area; general agents depress the whole CNS.",
+   "why": [
+    [
+     "Respiratory depression",
+     "CNS depressants stack on each other."
+    ],
+    [
+     "Amnesia with midazolam",
+     "Expected; reassure the client."
+    ]
+   ],
+   "watch": [
+    "Airway and breathing come first",
+    "Naloxone at the bedside with opioids"
+   ]
+  },
+  {
+   "id": "stim",
+   "t": "Stimulants & wakefulness",
+   "sfx": [
+    "Ritalin",
+    "Adderall",
+    "Provigil"
+   ],
+   "d": [
+    "methylphenidate",
+    "amphetamine/dextroamphetamine",
+    "modafinil"
+   ],
+   "how": "Stimulants raise dopamine and norepinephrine; modafinil keeps norepinephrine around longer.",
+   "why": [
+    [
+     "Higher HR and BP, insomnia",
+     "More fight-or-flight signal."
+    ],
+    [
+     "Poor appetite and growth suppression",
+     "Monitor weight and height in children."
+    ]
+   ],
+   "watch": [
+    "Take in the morning; avoid caffeine",
+    "Taper; don't stop abruptly"
+   ]
+  },
+  {
+   "id": "pd",
+   "t": "Parkinson's drugs",
+   "sfx": [
+    "Sinemet",
+    "Mirapex",
+    "Eldepryl"
+   ],
+   "d": [
+    "levodopa/carbidopa",
+    "pramipexole",
+    "selegiline"
+   ],
+   "how": "Give more dopamine (levodopa), mimic it (pramipexole), or stop its breakdown (selegiline).",
+   "why": [
+    [
+     "Orthostatic hypotension",
+     "Rise slowly."
+    ],
+    [
+     "Dyskinesias",
+     "Too much dopamine effect."
+    ]
+   ],
+   "watch": [
+    "Levodopa: avoid high-protein meals",
+    "Pramipexole: sleep attacks",
+    "Selegiline: last dose by noon"
+   ]
+  },
+  {
+   "id": "alz",
+   "t": "Alzheimer's drugs",
+   "sfx": [
+    "Aricept",
+    "Namenda"
+   ],
+   "d": [
+    "donepezil",
+    "memantine"
+   ],
+   "how": "Donepezil keeps acetylcholine around; memantine blocks excess glutamate.",
+   "why": [
+    [
+     "They slow decline",
+     "They don't reverse or cure the disease."
+    ],
+    [
+     "Bradycardia with donepezil",
+     "More acetylcholine slows the heart."
+    ]
+   ],
+   "watch": [
+    "Check HR with donepezil",
+    "Watch dizziness and confusion with memantine"
+   ]
+  },
+  {
+   "id": "ms",
+   "t": "MS & migraine",
+   "sfx": [
+    "interferon",
+    "-triptan"
+   ],
+   "d": [
+    "interferon beta-1a",
+    "sumatriptan"
+   ],
+   "how": "Interferon calms the immune attack on myelin; sumatriptan constricts dilated vessels in a migraine.",
+   "why": [
+    [
+     "Bone marrow suppression (interferon)",
+     "Infection, bleeding, fatigue."
+    ],
+    [
+     "Chest tightness (sumatriptan)",
+     "Coronary vasospasm."
+    ]
+   ],
+   "watch": [
+    "Interferon: CBC and LFTs",
+    "Sumatriptan: not with heart disease"
+   ]
+  },
+  {
+   "id": "acid",
+   "t": "Acid reducers & GI protectants",
+   "sfx": [
+    "-tidine",
+    "-prazole"
+   ],
+   "d": [
+    "famotidine",
+    "cimetidine",
+    "pantoprazole",
+    "sucralfate",
+    "aluminum hydroxide",
+    "metoclopramide"
+   ],
+   "how": "H2 blockers and PPIs lower acid secretion; antacids neutralize it; sucralfate coats; metoclopramide moves food along.",
+   "why": [
+    [
+     "Timing matters",
+     "PPI before the first meal; antacids 1–3 hours after; sucralfate on an empty stomach."
+    ],
+    [
+     "Absorption problems",
+     "Antacids and sucralfate block other meds."
+    ]
+   ],
+   "watch": [
+    "Metoclopramide: no more than 12 weeks",
+    "Long-term PPIs: bone and magnesium loss"
+   ]
+  },
+  {
+   "id": "pancgb",
+   "t": "Pancreas, gallbladder & B12",
+   "sfx": [
+    "Creon"
+   ],
+   "d": [
+    "pancrelipase",
+    "ceftriaxone",
+    "metronidazole",
+    "vitamin B12"
+   ],
+   "how": "Replace what's missing: enzymes for a damaged pancreas, B12 when intrinsic factor is gone; antibiotics for infected gallbladders.",
+   "why": [
+    [
+     "Steatorrhea improves with enzymes",
+     "Fat is finally digested."
+    ],
+    [
+     "Lifelong B12 after gastrectomy",
+     "No intrinsic factor."
+    ]
+   ],
+   "watch": [
+    "Creon with every meal and snack",
+    "B12 is lifelong"
+   ]
+  },
+  {
+   "id": "oral",
+   "t": "Oral diabetes drugs",
+   "sfx": [
+    "metformin",
+    "-glitazone",
+    "-gliptin"
+   ],
+   "d": [
+    "metformin",
+    "glipizide",
+    "repaglinide",
+    "pioglitazone",
+    "acarbose",
+    "sitagliptin"
+   ],
+   "how": "Some make more insulin (sulfonylureas, meglitinides), some help insulin work (metformin, TZDs), some slow carb absorption (acarbose), some boost incretins (gliptins).",
+   "why": [
+    [
+     "Hypoglycemia with the 'squeezers'",
+     "Glipizide and repaglinide push insulin out."
+    ],
+    [
+     "Metformin and lactic acidosis",
+     "Alcohol, cimetidine, IV contrast."
+    ]
+   ],
+   "watch": [
+    "Skip a meal, skip repaglinide",
+    "TZDs: watch for fluid and HF"
+   ]
+  },
+  {
+   "id": "inj",
+   "t": "GLP-1s & amylin",
+   "sfx": [
+    "-glutide",
+    "Symlin"
+   ],
+   "d": [
+    "semaglutide",
+    "liraglutide",
+    "pramlintide"
+   ],
+   "how": "GLP-1s release insulin only when glucose is high and slow the stomach; amylin mimetics slow the stomach after meals.",
+   "why": [
+    [
+     "Weight loss and fullness",
+     "Slower gastric emptying."
+    ],
+    [
+     "Nausea",
+     "Eat small portions."
+    ]
+   ],
+   "watch": [
+    "GLP-1: pancreatitis warning",
+    "Pramlintide: separate syringe, 30 minutes before meals"
+   ]
+  },
+  {
+   "id": "ins",
+   "t": "Insulins & glucagon",
+   "sfx": [
+    "lispro",
+    "glargine",
+    "NPH"
+   ],
+   "d": [
+    "insulin lispro",
+    "regular insulin",
+    "NPH insulin",
+    "insulin glargine",
+    "glucagon"
+   ],
+   "how": "Insulin moves glucose and potassium into cells. Types differ by onset, peak and duration. Glucagon does the opposite.",
+   "why": [
+    [
+     "Hypoglycemia at the peak",
+     "Know each type's peak."
+    ],
+    [
+     "Potassium drops on an insulin drip",
+     "Insulin pushes K+ into cells."
+    ]
+   ],
+   "watch": [
+    "Rotate sites",
+    "Clear before cloudy",
+    "Glucagon: turn on side after"
+   ]
+  },
+  {
+   "id": "blood",
+   "t": "Transfusion, bloodless-care & code meds",
+   "sfx": [
+    "Epogen",
+    "TXA"
+   ],
+   "d": [
+    "acetaminophen",
+    "epinephrine",
+    "amiodarone",
+    "epoetin alfa",
+    "tranexamic acid",
+    "desmopressin"
+   ],
+   "how": "During a reaction, meds treat the reaction after the transfusion stops. For clients who refuse blood, meds help make RBCs or limit bleeding.",
+   "why": [
+    [
+     "Acetaminophen for a febrile reaction",
+     "Fever from donor WBC cytokines."
+    ],
+    [
+     "Epinephrine and amiodarone in a Code Blue",
+     "ACLS meds, given with closed-loop read-back."
+    ],
+    [
+     "Epinephrine for anaphylaxis",
+     "Airway and blood pressure collapse."
+    ],
+    [
+     "EPO plus iron, TXA, desmopressin",
+     "Non-blood options a Jehovah's Witness may accept."
+    ]
+   ],
+   "watch": [
+    "Stop the transfusion before anything else",
+    "Ask each client which alternatives they accept"
+   ]
+  },
+  {
+   "id": "lipid",
+   "t": "Statin",
+   "sfx": [
+    "-statin"
+   ],
+   "d": [
+    "atorvastatin"
+   ],
+   "how": "Lowers LDL and triglycerides and stabilizes plaque.",
+   "why": [
+    [
+     "Muscle pain",
+     "Rhabdomyolysis risk."
+    ]
+   ],
+   "watch": [
+    "Baseline and periodic liver tests"
+   ]
+  }
+ ],
+ "SORT": {
+  "cls": [
+   {
+    "k": "loop",
+    "l": "Loop diuretic",
+    "s": "-semide",
+    "d": [
+     "furosemide"
+    ],
+    "w": "Pulls fluid off fast; potassium drops."
+   },
+   {
+    "k": "acei",
+    "l": "ACE inhibitor",
+    "s": "-pril",
+    "d": [
+     "lisinopril",
+     "enalapril"
+    ],
+    "w": "Block angiotensin; dry cough and angioedema."
+   },
+   {
+    "k": "arb",
+    "l": "ARB",
+    "s": "-sartan",
+    "d": [
+     "losartan",
+     "valsartan"
+    ],
+    "w": "Block angiotensin's receptor; no cough."
+   },
+   {
+    "k": "arni",
+    "l": "ARNI",
+    "s": "Entresto",
+    "d": [
+     "sacubitril/valsartan"
+    ],
+    "w": "ARB plus neprilysin inhibitor."
+   },
+   {
+    "k": "spiro",
+    "l": "Aldosterone antagonist",
+    "s": "potassium-sparing",
+    "d": [
+     "spironolactone"
+    ],
+    "w": "Keeps potassium."
+   },
+   {
+    "k": "bb",
+    "l": "Beta blocker",
+    "s": "-lol",
+    "d": [
+     "carvedilol",
+     "metoprolol succinate"
+    ],
+    "w": "Slower, easier beats."
+   },
+   {
+    "k": "sglt2",
+    "l": "SGLT2 inhibitor",
+    "s": "-gliflozin",
+    "d": [
+     "empagliflozin",
+     "dapagliflozin"
+    ],
+    "w": "Sugar and sodium out in the urine."
+   },
+   {
+    "k": "ino",
+    "l": "Positive inotrope",
+    "s": "stronger squeeze",
+    "d": [
+     "digoxin",
+     "dobutamine",
+     "milrinone"
+    ],
+    "w": "Raise contractility."
+   },
+   {
+    "k": "vaso",
+    "l": "Vasodilator",
+    "s": "nitrates",
+    "d": [
+     "hydralazine/isosorbide dinitrate",
+     "nitroglycerin"
+    ],
+    "w": "Open vessels; BP drops."
+   },
+   {
+    "k": "musc",
+    "l": "Muscle relaxant",
+    "s": "",
+    "d": [
+     "baclofen",
+     "dantrolene"
+    ],
+    "w": "Central (GABA) or peripheral (calcium)."
+   },
+   {
+    "k": "asm",
+    "l": "Antiseizure",
+    "s": "",
+    "d": [
+     "phenytoin",
+     "carbamazepine",
+     "valproic acid",
+     "oxcarbazepine"
+    ],
+    "w": "Calm overexcited neurons."
+   },
+   {
+    "k": "anes",
+    "l": "Anesthesia / sedation",
+    "s": "",
+    "d": [
+     "lidocaine",
+     "midazolam",
+     "fentanyl",
+     "methohexital"
+    ],
+    "w": "Local sodium block or CNS depression."
+   },
+   {
+    "k": "stim",
+    "l": "Stimulant / wakefulness",
+    "s": "",
+    "d": [
+     "methylphenidate",
+     "amphetamine/dextroamphetamine",
+     "modafinil"
+    ],
+    "w": "More dopamine and norepinephrine."
+   },
+   {
+    "k": "pd",
+    "l": "Parkinson's drug",
+    "s": "",
+    "d": [
+     "levodopa/carbidopa",
+     "pramipexole",
+     "selegiline"
+    ],
+    "w": "More dopamine effect."
+   },
+   {
+    "k": "alz",
+    "l": "Alzheimer's drug",
+    "s": "",
+    "d": [
+     "donepezil",
+     "memantine"
+    ],
+    "w": "More acetylcholine or less glutamate."
+   },
+   {
+    "k": "acid",
+    "l": "Acid reducer",
+    "s": "-tidine, -prazole",
+    "d": [
+     "famotidine",
+     "cimetidine",
+     "pantoprazole"
+    ],
+    "w": "Less acid secretion."
+   },
+   {
+    "k": "gipro",
+    "l": "GI protectant / antacid",
+    "s": "",
+    "d": [
+     "sucralfate",
+     "aluminum hydroxide"
+    ],
+    "w": "Coat or neutralize."
+   },
+   {
+    "k": "oral",
+    "l": "Oral diabetes drug",
+    "s": "",
+    "d": [
+     "metformin",
+     "glipizide",
+     "repaglinide",
+     "pioglitazone",
+     "acarbose",
+     "sitagliptin"
+    ],
+    "w": "Type 2 glucose control."
+   },
+   {
+    "k": "inj",
+    "l": "Injectable non-insulin",
+    "s": "-glutide, Symlin",
+    "d": [
+     "semaglutide",
+     "liraglutide",
+     "pramlintide"
+    ],
+    "w": "GLP-1 or amylin."
+   },
+   {
+    "k": "ins",
+    "l": "Insulin",
+    "s": "",
+    "d": [
+     "insulin lispro",
+     "regular insulin",
+     "NPH insulin",
+     "insulin glargine"
+    ],
+    "w": "Moves glucose into cells."
+   },
+   {
+    "k": "bclot",
+    "l": "Clotting helper",
+    "s": "",
+    "d": [
+     "tranexamic acid",
+     "desmopressin"
+    ],
+    "w": "Limit bleeding without blood."
+   }
+  ],
+  "use": [
+   {
+    "k": "fluid",
+    "l": "Fluid overload / edema",
+    "d": [
+     "furosemide",
+     "spironolactone"
+    ],
+    "w": "Diuretics."
+   },
+   {
+    "k": "pillars",
+    "l": "HFrEF four pillars",
+    "d": [
+     "sacubitril/valsartan",
+     "carvedilol",
+     "spironolactone",
+     "empagliflozin"
+    ],
+    "w": "Lower death and hospitalization."
+   },
+   {
+    "k": "acutehf",
+    "l": "Acute decompensated HF",
+    "d": [
+     "dobutamine",
+     "milrinone",
+     "nitroglycerin"
+    ],
+    "w": "IV, short-term."
+   },
+   {
+    "k": "mh",
+    "l": "Malignant hyperthermia",
+    "d": [
+     "dantrolene"
+    ],
+    "w": "IV dantrolene."
+   },
+   {
+    "k": "sz",
+    "l": "Seizures",
+    "d": [
+     "phenytoin",
+     "carbamazepine",
+     "valproic acid",
+     "oxcarbazepine"
+    ],
+    "w": "Antiseizure meds."
+   },
+   {
+    "k": "sed",
+    "l": "Procedures / anesthesia",
+    "d": [
+     "lidocaine",
+     "midazolam",
+     "fentanyl",
+     "methohexital"
+    ],
+    "w": "Local or general."
+   },
+   {
+    "k": "adhd",
+    "l": "ADHD / narcolepsy",
+    "d": [
+     "methylphenidate",
+     "amphetamine/dextroamphetamine",
+     "modafinil"
+    ],
+    "w": "Stimulants."
+   },
+   {
+    "k": "pd",
+    "l": "Parkinson's disease",
+    "d": [
+     "levodopa/carbidopa",
+     "pramipexole",
+     "selegiline"
+    ],
+    "w": "Dopamine support."
+   },
+   {
+    "k": "alz",
+    "l": "Alzheimer's disease",
+    "d": [
+     "donepezil",
+     "memantine"
+    ],
+    "w": "Slow decline."
+   },
+   {
+    "k": "mig",
+    "l": "Acute migraine",
+    "d": [
+     "sumatriptan"
+    ],
+    "w": "Constricts vessels."
+   },
+   {
+    "k": "gerd",
+    "l": "GERD / ulcers",
+    "d": [
+     "famotidine",
+     "pantoprazole",
+     "sucralfate",
+     "aluminum hydroxide",
+     "metoclopramide"
+    ],
+    "w": "Acid control and motility."
+   },
+   {
+    "k": "panc",
+    "l": "Chronic pancreatitis",
+    "d": [
+     "pancrelipase"
+    ],
+    "w": "Enzyme replacement."
+   },
+   {
+    "k": "chole",
+    "l": "Acute cholecystitis",
+    "d": [
+     "ceftriaxone",
+     "metronidazole"
+    ],
+    "w": "Broad-spectrum antibiotics."
+   },
+   {
+    "k": "t2",
+    "l": "Type 2 diabetes (oral)",
+    "d": [
+     "metformin",
+     "glipizide",
+     "repaglinide",
+     "pioglitazone",
+     "acarbose",
+     "sitagliptin"
+    ],
+    "w": "Oral agents."
+   },
+   {
+    "k": "lowbg",
+    "l": "Severe hypoglycemia",
+    "d": [
+     "glucagon"
+    ],
+    "w": "When the client can't take carbs by mouth."
+   },
+   {
+    "k": "dka",
+    "l": "DKA IV infusion",
+    "d": [
+     "regular insulin"
+    ],
+    "w": "0.1 units/kg/hr."
+   },
+   {
+    "k": "txrx",
+    "l": "Transfusion reaction treatment",
+    "d": [
+     "acetaminophen",
+     "epinephrine",
+     "furosemide"
+    ],
+    "w": "Febrile → antipyretic; anaphylaxis → epinephrine; TACO → diuretic."
+   },
+   {
+    "k": "acls",
+    "l": "Code Blue (ACLS) medications",
+    "d": [
+     "epinephrine",
+     "amiodarone"
+    ],
+    "w": "Given by the medication role on the leader's order."
+   },
+   {
+    "k": "bloodless",
+    "l": "Bloodless care (refuses blood)",
+    "d": [
+     "epoetin alfa",
+     "tranexamic acid",
+     "desmopressin"
+    ],
+    "w": "Make RBCs or limit bleeding."
+   }
+  ],
+  "warn": [
+   {
+    "k": "lowk",
+    "l": "Low potassium",
+    "d": [
+     "furosemide"
+    ],
+    "w": "Loop diuretics wash K+ out."
+   },
+   {
+    "k": "hik",
+    "l": "High potassium",
+    "d": [
+     "spironolactone",
+     "lisinopril",
+     "losartan",
+     "sacubitril/valsartan"
+    ],
+    "w": "Less aldosterone effect."
+   },
+   {
+    "k": "angio",
+    "l": "Angioedema",
+    "d": [
+     "lisinopril",
+     "enalapril",
+     "sacubitril/valsartan",
+     "sitagliptin"
+    ],
+    "w": "Airway emergency."
+   },
+   {
+    "k": "brady",
+    "l": "Bradycardia: check HR",
+    "d": [
+     "carvedilol",
+     "metoprolol succinate",
+     "digoxin",
+     "donepezil"
+    ],
+    "w": "Slower heart."
+   },
+   {
+    "k": "hypo",
+    "l": "Hypoglycemia",
+    "d": [
+     "glipizide",
+     "repaglinide",
+     "pramlintide",
+     "insulin lispro",
+     "NPH insulin"
+    ],
+    "w": "Too much insulin effect."
+   },
+   {
+    "k": "lactic",
+    "l": "Lactic acidosis",
+    "d": [
+     "metformin"
+    ],
+    "w": "Alcohol, cimetidine, IV contrast."
+   },
+   {
+    "k": "panc",
+    "l": "Pancreatitis",
+    "d": [
+     "semaglutide",
+     "liraglutide",
+     "valproic acid",
+     "sitagliptin"
+    ],
+    "w": "Severe abdominal pain to the back."
+   },
+   {
+    "k": "liver",
+    "l": "Liver toxicity",
+    "d": [
+     "dantrolene",
+     "valproic acid",
+     "atorvastatin"
+    ],
+    "w": "Check liver function tests."
+   },
+   {
+    "k": "marrow",
+    "l": "Bone marrow suppression",
+    "d": [
+     "carbamazepine",
+     "interferon beta-1a"
+    ],
+    "w": "CBC: infection, bleeding, fatigue."
+   },
+   {
+    "k": "resp",
+    "l": "Respiratory depression",
+    "d": [
+     "midazolam",
+     "fentanyl",
+     "methohexital"
+    ],
+    "w": "CNS depressants."
+   },
+   {
+    "k": "taper",
+    "l": "Don't stop suddenly",
+    "d": [
+     "baclofen",
+     "phenytoin",
+     "carvedilol",
+     "methylphenidate",
+     "dobutamine"
+    ],
+    "w": "Withdrawal or rebound."
+   },
+   {
+    "k": "hypotn",
+    "l": "Severe hypotension",
+    "d": [
+     "nitroglycerin",
+     "hydralazine/isosorbide dinitrate"
+    ],
+    "w": "Vasodilation; never with ED drugs."
+   },
+   {
+    "k": "rhabdo",
+    "l": "Muscle breakdown",
+    "d": [
+     "atorvastatin"
+    ],
+    "w": "Rhabdomyolysis."
+   },
+   {
+    "k": "td",
+    "l": "Tardive dyskinesia",
+    "d": [
+     "metoclopramide"
+    ],
+    "w": "Limit to 12 weeks."
+   },
+   {
+    "k": "lowna",
+    "l": "Low sodium",
+    "d": [
+     "oxcarbazepine"
+    ],
+    "w": "Especially with diuretics."
+   },
+   {
+    "k": "gums",
+    "l": "Gum overgrowth",
+    "d": [
+     "phenytoin"
+    ],
+    "w": "Dental care."
+   },
+   {
+    "k": "vaso",
+    "l": "Coronary vasospasm",
+    "d": [
+     "sumatriptan"
+    ],
+    "w": "Chest tightness."
+   },
+   {
+    "k": "hf",
+    "l": "Fluid retention → heart failure",
+    "d": [
+     "pioglitazone"
+    ],
+    "w": "TZDs."
+   }
+  ]
+ },
+ "TRICKY": {
+  "cls": [
+   [
+    "acei",
+    "arb",
+    "arni"
+   ],
+   [
+    "loop",
+    "spiro"
+   ],
+   [
+    "acid",
+    "gipro"
+   ],
+   [
+    "ino",
+    "vaso"
+   ],
+   [
+    "oral",
+    "inj",
+    "ins"
+   ],
+   [
+    "pd",
+    "alz"
+   ],
+   [
+    "musc",
+    "anes"
+   ]
+  ],
+  "use": [
+   [
+    "fluid",
+    "pillars",
+    "acutehf"
+   ],
+   [
+    "sz",
+    "sed"
+   ],
+   [
+    "pd",
+    "alz",
+    "mig"
+   ],
+   [
+    "gerd",
+    "panc",
+    "chole"
+   ],
+   [
+    "t2",
+    "lowbg",
+    "dka"
+   ]
+  ],
+  "warn": [
+   [
+    "lowk",
+    "hik"
+   ],
+   [
+    "angio",
+    "hypotn"
+   ],
+   [
+    "hypo",
+    "lactic"
+   ],
+   [
+    "liver",
+    "marrow"
+   ],
+   [
+    "panc",
+    "liver"
+   ],
+   [
+    "brady",
+    "taper"
+   ]
+  ]
+ },
+ "LOOK": [
+  {
+   "t": "Furosemide vs spironolactone",
+   "d": {
+    "furosemide": [
+     "Potassium drops",
+     "Push IV slowly: ototoxicity",
+     "Symptom relief only"
+    ],
+    "spironolactone": [
+     "Potassium rises",
+     "No salt substitutes",
+     "Helps clients live longer"
+    ]
+   }
+  },
+  {
+   "t": "Lisinopril vs losartan vs Entresto",
+   "d": {
+    "lisinopril": [
+     "Dry cough",
+     "-pril"
+    ],
+    "losartan": [
+     "The swap when cough happens",
+     "-sartan"
+    ],
+    "sacubitril/valsartan": [
+     "Wait 36 hours after an ACE inhibitor",
+     "Preferred for HFrEF"
+    ]
+   }
+  },
+  {
+   "t": "Digoxin vs dobutamine",
+   "d": {
+    "digoxin": [
+     "Apical pulse 1 full minute",
+     "Yellow-green halos",
+     "Oral, long-term"
+    ],
+    "dobutamine": [
+     "IV drip on a pump",
+     "Wean, don't stop",
+     "Short-term"
+    ]
+   }
+  },
+  {
+   "t": "Phenytoin vs carbamazepine vs valproic acid vs oxcarbazepine",
+   "d": {
+    "phenytoin": [
+     "Gingival hyperplasia",
+     "Level 10–20 mcg/mL"
+    ],
+    "carbamazepine": [
+     "Bone marrow suppression",
+     "Avoid grapefruit"
+    ],
+    "valproic acid": [
+     "High ammonia",
+     "Pancreatitis"
+    ],
+    "oxcarbazepine": [
+     "Low sodium"
+    ]
+   }
+  },
+  {
+   "t": "Baclofen vs dantrolene",
+   "d": {
+    "baclofen": [
+     "Mimics GABA in the CNS",
+     "Fatal intrathecal withdrawal"
+    ],
+    "dantrolene": [
+     "Blocks calcium in the muscle",
+     "IV for malignant hyperthermia"
+    ]
+   }
+  },
+  {
+   "t": "Levodopa/carbidopa vs pramipexole vs selegiline",
+   "d": {
+    "levodopa/carbidopa": [
+     "Avoid high-protein meals",
+     "Dark urine and sweat"
+    ],
+    "pramipexole": [
+     "Sleep attacks",
+     "For restless legs too"
+    ],
+    "selegiline": [
+     "Last dose by noon",
+     "Tyramine interactions"
+    ]
+   }
+  },
+  {
+   "t": "Donepezil vs memantine",
+   "d": {
+    "donepezil": [
+     "Bradycardia",
+     "Mild to moderate Alzheimer's"
+    ],
+    "memantine": [
+     "Blocks glutamate",
+     "Moderate to severe Alzheimer's"
+    ]
+   }
+  },
+  {
+   "t": "Methylphenidate vs modafinil",
+   "d": {
+    "methylphenidate": [
+     "High misuse potential",
+     "Last dose by 4 p.m."
+    ],
+    "modafinil": [
+     "Low misuse potential",
+     "Backup birth control for 30 days after"
+    ]
+   }
+  },
+  {
+   "t": "PPI vs antacid vs sucralfate",
+   "d": {
+    "pantoprazole": [
+     "30–60 minutes before the first meal",
+     "Osteoporosis long-term"
+    ],
+    "aluminum hydroxide": [
+     "1–3 hours after eating",
+     "Neutralizes acid"
+    ],
+    "sucralfate": [
+     "Gel coating",
+     "Empty stomach before meals"
+    ]
+   }
+  },
+  {
+   "t": "Glipizide vs repaglinide vs metformin",
+   "d": {
+    "glipizide": [
+     "Long-acting pancreas squeezer",
+     "Drug of choice for MODY"
+    ],
+    "repaglinide": [
+     "Skip a meal, skip the dose"
+    ],
+    "metformin": [
+     "Hold 48 hours after IV contrast",
+     "First-line for type 2"
+    ]
+   }
+  },
+  {
+   "t": "Semaglutide vs pramlintide",
+   "d": {
+    "semaglutide": [
+     "Weekly injection",
+     "Medullary thyroid cancer history = contraindicated"
+    ],
+    "pramlintide": [
+     "30 minutes before meals",
+     "Never mix with insulin"
+    ]
+   }
+  },
+  {
+   "t": "Transfusion reaction meds",
+   "d": {
+    "acetaminophen": [
+     "Febrile non-hemolytic reaction"
+    ],
+    "epinephrine": [
+     "Anaphylactic reaction"
+    ],
+    "furosemide": [
+     "TACO: volume overload"
+    ]
+   }
+  },
+  {
+   "t": "Lispro vs NPH vs glargine",
+   "d": {
+    "insulin lispro": [
+     "Onset 5–15 minutes",
+     "Give with the meal tray"
+    ],
+    "NPH insulin": [
+     "Cloudy",
+     "Peaks 4–12 hours"
+    ],
+    "insulin glargine": [
+     "No peak",
+     "Lasts 20–24 hours"
+    ]
+   }
+  }
+ ],
+ "XCLS": [
+  {
+   "k": "x_fab",
+   "l": "Antidote (digoxin)",
+   "s": "Fab",
+   "d": [
+    "digoxin immune Fab"
+   ]
+  },
+  {
+   "k": "x_ifn",
+   "l": "Immunomodulator",
+   "s": "interferon",
+   "d": [
+    "interferon beta-1a"
+   ]
+  },
+  {
+   "k": "x_trip",
+   "l": "Serotonin agonist (triptan)",
+   "s": "-triptan",
+   "d": [
+    "sumatriptan"
+   ]
+  },
+  {
+   "k": "x_proki",
+   "l": "Prokinetic",
+   "s": "",
+   "d": [
+    "metoclopramide"
+   ]
+  },
+  {
+   "k": "x_b12",
+   "l": "Vitamin",
+   "s": "",
+   "d": [
+    "vitamin B12"
+   ]
+  },
+  {
+   "k": "x_pert",
+   "l": "Pancreatic enzyme replacement",
+   "s": "Creon",
+   "d": [
+    "pancrelipase"
+   ]
+  },
+  {
+   "k": "x_abx",
+   "l": "Antibiotic",
+   "s": "",
+   "d": [
+    "ceftriaxone",
+    "metronidazole"
+   ]
+  },
+  {
+   "k": "x_statin",
+   "l": "Statin",
+   "s": "-statin",
+   "d": [
+    "atorvastatin"
+   ]
+  },
+  {
+   "k": "x_glucagon",
+   "l": "Antihypoglycemic hormone",
+   "s": "",
+   "d": [
+    "glucagon"
+   ]
+  },
+  {
+   "k": "x_apap",
+   "l": "Antipyretic / analgesic",
+   "s": "",
+   "d": [
+    "acetaminophen"
+   ]
+  },
+  {
+   "k": "x_epi",
+   "l": "Adrenergic agonist",
+   "s": "",
+   "d": [
+    "epinephrine"
+   ]
+  },
+  {
+   "k": "x_amio",
+   "l": "Antidysrhythmic",
+   "s": "",
+   "d": [
+    "amiodarone"
+   ]
+  },
+  {
+   "k": "x_esa",
+   "l": "Erythropoiesis-stimulating agent",
+   "s": "-poetin",
+   "d": [
+    "epoetin alfa"
+   ]
+  }
+ ],
+ "CLS_SECT": [
+  [
+   "Heart failure",
+   [
+    "loop",
+    "acei",
+    "arb",
+    "arni",
+    "spiro",
+    "bb",
+    "sglt2",
+    "ino",
+    "x_fab",
+    "vaso"
+   ]
+  ],
+  [
+   "Neuro",
+   [
+    "musc",
+    "asm",
+    "anes",
+    "stim",
+    "pd",
+    "alz",
+    "x_ifn",
+    "x_trip"
+   ]
+  ],
+  [
+   "GI, gallbladder + pancreas",
+   [
+    "acid",
+    "gipro",
+    "x_proki",
+    "x_b12",
+    "x_pert",
+    "x_abx"
+   ]
+  ],
+  [
+   "Glucose + metabolic",
+   [
+    "oral",
+    "inj",
+    "ins",
+    "x_glucagon",
+    "x_statin"
+   ]
+  ],
+  [
+   "Blood products + Code Blue",
+   [
+    "x_apap",
+    "x_epi",
+    "x_amio",
+    "x_esa",
+    "bclot"
+   ]
+  ]
+ ]
+}

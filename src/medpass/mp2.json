@@ -1,0 +1,882 @@
+{
+ "WEEKS": [
+  [
+   "4.1",
+   "Pain"
+  ],
+  [
+   "4.2",
+   "Sleep"
+  ],
+  [
+   "4.3",
+   "Cancer"
+  ],
+  [
+   "5.1",
+   "Rhythms"
+  ],
+  [
+   "5.2",
+   "Osteoporosis"
+  ],
+  [
+   "5.3",
+   "OA"
+  ],
+  [
+   "6.1",
+   "Trauma"
+  ]
+ ],
+ "D": [
+  {
+   "g": "aspirin",
+   "w": "4.1",
+   "cls": "NSAID: COX-1 inhibitor",
+   "grp": "cox1",
+   "u": [
+    "pain",
+    "nsaid"
+   ],
+   "use": "Pain + inflammation (blocks COX-1)",
+   "tip": "COX-1 protects the stomach, platelets, and kidneys. Block it and you lose those protections: GI ulcer, bleeding, kidney damage.",
+   "f": [
+    "COX-1 inhibitor: risk of GI ulcer, bleeding, and kidney dysfunction"
+   ]
+  },
+  {
+   "g": "ibuprofen",
+   "w": "4.1",
+   "cls": "NSAID: COX-1 inhibitor",
+   "grp": "cox1",
+   "u": [
+    "pain",
+    "nsaid"
+   ],
+   "use": "Pain + inflammation (blocks COX-1)",
+   "tip": "COX-1 protects the stomach, platelets, and kidneys. Block it and you lose those protections: GI ulcer, bleeding, kidney damage.",
+   "f": [
+    "COX-1 inhibitor: risk of GI ulcer, bleeding, and kidney dysfunction",
+    "NSAID for OA pain; a PPI may be added with long-term use"
+   ]
+  },
+  {
+   "g": "naproxen",
+   "w": "4.1",
+   "cls": "NSAID: COX-1 inhibitor",
+   "grp": "cox1",
+   "u": [
+    "pain",
+    "nsaid"
+   ],
+   "use": "Pain + inflammation (blocks COX-1)",
+   "tip": "COX-1 protects the stomach, platelets, and kidneys. Block it and you lose those protections: GI ulcer, bleeding, kidney damage.",
+   "f": [
+    "COX-1 inhibitor: risk of GI ulcer, bleeding, and kidney dysfunction",
+    "NSAID for OA pain; watch GI upset and bleeding"
+   ]
+  },
+  {
+   "g": "celecoxib",
+   "w": "4.1",
+   "cls": "NSAID: COX-2 inhibitor",
+   "grp": "cox2",
+   "u": [
+    "pain",
+    "nsaid"
+   ],
+   "use": "Pain + inflammation (blocks COX-2)",
+   "tip": "-coxib = COX-2. Think 2 = heart and brain: hypertension, clots, MI, stroke.",
+   "f": [
+    "COX-2 inhibitor: risk of hypertension, clots, MI, and stroke",
+    "Causes vasoconstriction and increases platelet aggregation"
+   ]
+  },
+  {
+   "g": "valdecoxib",
+   "w": "4.1",
+   "cls": "NSAID: COX-2 inhibitor",
+   "grp": "cox2",
+   "u": [
+    "pain",
+    "nsaid"
+   ],
+   "use": "Pain + inflammation (blocks COX-2)",
+   "tip": "-coxib = COX-2. Think 2 = heart and brain: hypertension, clots, MI, stroke.",
+   "f": [
+    "COX-2 inhibitor: risk of hypertension, clots, MI, and stroke"
+   ]
+  },
+  {
+   "g": "acetaminophen",
+   "w": "4.1",
+   "cls": "Non-opioid analgesic",
+   "grp": "apap",
+   "u": [
+    "pain"
+   ],
+   "use": "Pain + fever, NOT inflammation",
+   "f": [
+    "Maximum daily dose: 4,000 mg",
+    "Main danger: hepatotoxicity; alcohol raises the risk",
+    "Works only in the CNS; lowers fever through the hypothalamus",
+    "Primary pain-relief choice for osteoarthritis"
+   ],
+   "tip": "No effect on inflammation. Think liver + 4 grams a day."
+  },
+  {
+   "g": "morphine",
+   "w": "4.1",
+   "cls": "Opioid agonist",
+   "grp": "opi",
+   "u": [
+    "pain",
+    "opioid"
+   ],
+   "use": "Strong pain relief (mu receptor)",
+   "f": [
+    "Priority danger: respiratory depression and hypoxia",
+    "Opioid side effects: constipation, hypotension, sedation, euphoria/addiction"
+   ],
+   "tip": "Opioid agonists are reversed by naloxone."
+  },
+  {
+   "g": "fentanyl",
+   "w": "4.1",
+   "cls": "Opioid agonist",
+   "grp": "opi",
+   "u": [
+    "pain",
+    "opioid"
+   ],
+   "use": "Strong pain relief (mu receptor)",
+   "f": [
+    "Priority danger: respiratory depression and hypoxia"
+   ],
+   "tip": "Opioid agonists are reversed by naloxone."
+  },
+  {
+   "g": "hydromorphone",
+   "w": "4.1",
+   "cls": "Opioid agonist",
+   "grp": "opi",
+   "u": [
+    "pain",
+    "opioid"
+   ],
+   "use": "Strong pain relief (mu receptor)",
+   "f": [
+    "Priority danger: respiratory depression and hypoxia"
+   ],
+   "tip": "-morphone = opioid. Reversed by naloxone."
+  },
+  {
+   "g": "naloxone",
+   "w": "4.1",
+   "cls": "Opioid antagonist",
+   "grp": "nalox",
+   "u": [
+    "opioid"
+   ],
+   "use": "Reverses opioid effects",
+   "f": [
+    "Binds opioid receptors to block or reverse the response"
+   ],
+   "tip": "NO-loxone: NO more opioid."
+  },
+  {
+   "g": "tramadol",
+   "w": "4.1",
+   "cls": "Dual-mechanism analgesic",
+   "grp": "tram",
+   "u": [
+    "pain",
+    "opioid"
+   ],
+   "use": "Pain relief (dual mechanism)",
+   "f": [
+    "Dual-mechanism analgesic that activates opioid receptors; respiratory suppression is rare"
+   ]
+  },
+  {
+   "g": "allopurinol",
+   "w": "4.1",
+   "cls": "Antihyperuricemic",
+   "grp": "allo",
+   "u": [
+    "uric"
+   ],
+   "cno": [
+    "Uric acid–lowering enzyme"
+   ],
+   "use": "Gout; also tumor lysis syndrome",
+   "f": [
+    "Lowers uric acid; teach hydration to prevent uric acid kidney stones",
+    "Prototype drug for gout"
+   ],
+   "tip": "Allo-PURIN-ol: lowers the uric acid made from purines."
+  },
+  {
+   "g": "ropinirole",
+   "b": "Requip",
+   "w": "4.2",
+   "cls": "Dopamine agonist",
+   "grp": "ropi",
+   "u": [
+    "rls"
+   ],
+   "use": "Moderate–severe restless legs (also Parkinson's)",
+   "f": [
+    "Taken at night for restless legs syndrome",
+    "May raise the INR in a client on warfarin",
+    "Adverse effects: somnolence, syncope, falls; caution in older or confused clients"
+   ],
+   "tip": "Requip for Restless legs."
+  },
+  {
+   "g": "clonazepam",
+   "w": "4.2",
+   "cls": "Benzodiazepine",
+   "grp": "benzo",
+   "u": [
+    "rls",
+    "sedate",
+    "spasm"
+   ],
+   "cno": [
+    "Muscle relaxant"
+   ],
+   "use": "RLS, anxiety, muscle spasm, more restful sleep",
+   "f": [
+    "Benzodiazepine option for RLS and more restful sleep"
+   ],
+   "tip": "-pam / -lam = benzodiazepine."
+  },
+  {
+   "g": "lorazepam",
+   "w": "4.2",
+   "cls": "Benzodiazepine",
+   "grp": "benzo",
+   "u": [
+    "rls",
+    "sedate",
+    "spasm"
+   ],
+   "cno": [
+    "Muscle relaxant"
+   ],
+   "use": "RLS, anxiety, muscle spasm, more restful sleep",
+   "f": [
+    "Benzodiazepine option for RLS and more restful sleep"
+   ],
+   "tip": "-pam / -lam = benzodiazepine."
+  },
+  {
+   "g": "codeine",
+   "w": "4.2",
+   "cls": "Opioid agonist",
+   "grp": "opi",
+   "u": [
+    "pain",
+    "opioid"
+   ],
+   "use": "Pain; restless legs in severe cases only",
+   "f": [
+    "Opioid used for restless legs only in severe cases"
+   ]
+  },
+  {
+   "g": "hydrocodone",
+   "w": "4.2",
+   "cls": "Opioid agonist",
+   "grp": "opi",
+   "u": [
+    "pain",
+    "opioid"
+   ],
+   "use": "Pain; restless legs in severe cases only",
+   "f": [
+    "Opioid used for restless legs only in severe cases"
+   ],
+   "tip": "-codone = opioid."
+  },
+  {
+   "g": "oxycodone",
+   "w": "4.2",
+   "cls": "Opioid agonist",
+   "grp": "opi",
+   "u": [
+    "pain",
+    "opioid"
+   ],
+   "use": "Pain; restless legs in severe cases only",
+   "f": [
+    "Opioid used for restless legs only in severe cases",
+    "For OA pain when milder options fail: start low and go slow"
+   ],
+   "tip": "-codone = opioid."
+  },
+  {
+   "g": "ferrous sulfate",
+   "w": "4.2",
+   "cls": "Iron supplement",
+   "grp": "iron",
+   "u": [
+    "iron"
+   ],
+   "use": "Iron deficiency (a restless legs trigger)",
+   "f": [
+    "Common side effect: constipation",
+    "Given PO or IV when iron and ferritin are low"
+   ],
+   "tip": "Iron causes constipation. Teach fluids, fiber, and walking."
+  },
+  {
+   "g": "docusate",
+   "w": "4.2",
+   "cls": "Stool softener",
+   "grp": "bowel",
+   "u": [
+    "bowel"
+   ],
+   "use": "Constipation (e.g., from iron)",
+   "f": [
+    "Stool softener for iron-induced constipation"
+   ]
+  },
+  {
+   "g": "senna",
+   "w": "4.2",
+   "cls": "Laxative",
+   "grp": "bowel",
+   "u": [
+    "bowel"
+   ],
+   "use": "Constipation (e.g., from iron)",
+   "f": [
+    "Laxative for iron-induced constipation"
+   ]
+  },
+  {
+   "g": "metoclopramide",
+   "b": "Reglan",
+   "w": "4.2",
+   "cls": "Dopamine-blocking antiemetic",
+   "grp": "meto",
+   "u": [
+    "trig"
+   ],
+   "use": "Nausea, but can TRIGGER restless legs",
+   "f": [
+    "Dopamine-blocking antiemetic that can trigger restless legs"
+   ]
+  },
+  {
+   "g": "haloperidol",
+   "b": "Haldol",
+   "w": "4.2",
+   "cls": "Neuroleptic",
+   "grp": "halo",
+   "u": [
+    "trig"
+   ],
+   "use": "Psychosis, but can TRIGGER restless legs",
+   "f": [
+    "Neuroleptic that can trigger restless legs"
+   ]
+  },
+  {
+   "g": "zolpidem",
+   "b": "Ambien",
+   "w": "4.2",
+   "cls": "Sedative-hypnotic (non-benzo)",
+   "grp": "zolp",
+   "u": [
+    "sleep",
+    "sedate"
+   ],
+   "use": "Insomnia",
+   "f": [
+    "Plan at least 7 hours of sleep (4 hours for the small middle-of-the-night dose)",
+    "Boxed warning: complex sleep behaviors like sleep-driving. Stop it and notify the provider",
+    "Take right before getting into bed; never with alcohol or other sleep drugs",
+    "Schedule IV controlled substance"
+   ],
+   "tip": "In bed, 7 hours, no alcohol."
+  },
+  {
+   "g": "melatonin",
+   "w": "4.2",
+   "cls": "Hormone supplement (circadian rhythm)",
+   "grp": "mela",
+   "u": [
+    "sleep"
+   ],
+   "use": "Insomnia, jet lag, shift work",
+   "f": [
+    "Start at 1 mg, about 30 minutes before bed",
+    "OTC and non-habit forming; may be preferred over zolpidem in older adults"
+   ]
+  },
+  {
+   "g": "modafinil",
+   "b": "Provigil",
+   "w": "4.2",
+   "cls": "Wake-promoting agent (non-amphetamine)",
+   "grp": "moda",
+   "u": [
+    "narco"
+   ],
+   "use": "Narcolepsy: first line",
+   "f": [
+    "First-line, non-amphetamine wake-promoting drug for narcolepsy"
+   ],
+   "tip": "-dafinil = daytime, fully awake."
+  },
+  {
+   "g": "armodafinil",
+   "b": "Nuvigil",
+   "w": "4.2",
+   "cls": "Wake-promoting agent (non-amphetamine)",
+   "grp": "moda",
+   "u": [
+    "narco"
+   ],
+   "use": "Narcolepsy: first line",
+   "f": [
+    "First-line, non-amphetamine wake-promoting drug for narcolepsy"
+   ],
+   "tip": "-dafinil = daytime, fully awake."
+  },
+  {
+   "g": "methylphenidate",
+   "b": "Ritalin",
+   "w": "4.2",
+   "cls": "CNS stimulant",
+   "grp": "mph",
+   "u": [
+    "narco"
+   ],
+   "use": "Narcolepsy: used rarely",
+   "f": [
+    "Narcolepsy stimulant used rarely because of addiction potential"
+   ]
+  },
+  {
+   "g": "filgrastim",
+   "b": "Neupogen",
+   "w": "4.3",
+   "cls": "Growth factor: neutrophils",
+   "grp": "gcsf",
+   "u": [
+    "marrow"
+   ],
+   "use": "Neutropenia: raises neutrophils",
+   "f": [
+    "Growth factor that increases neutrophils after chemotherapy"
+   ],
+   "tip": "-grastim = granulocytes (neutrophils)."
+  },
+  {
+   "g": "pegfilgrastim",
+   "b": "Neulasta",
+   "w": "4.3",
+   "cls": "Growth factor: neutrophils",
+   "grp": "gcsf",
+   "u": [
+    "marrow"
+   ],
+   "use": "Neutropenia: raises neutrophils",
+   "f": [
+    "Growth factor that increases neutrophils after chemotherapy"
+   ],
+   "tip": "-grastim = granulocytes (neutrophils)."
+  },
+  {
+   "g": "epoetin alfa",
+   "b": "Epogen, Procrit",
+   "w": "4.3",
+   "cls": "Growth factor: red blood cells",
+   "grp": "esa",
+   "u": [
+    "marrow"
+   ],
+   "use": "Anemia: raises RBCs",
+   "f": [
+    "Growth factor that increases red blood cell production"
+   ],
+   "tip": "-poetin = erythropoiesis (making RBCs)."
+  },
+  {
+   "g": "darbepoetin alfa",
+   "b": "Aranesp",
+   "w": "4.3",
+   "cls": "Growth factor: red blood cells",
+   "grp": "esa",
+   "u": [
+    "marrow"
+   ],
+   "use": "Anemia: raises RBCs",
+   "f": [
+    "Growth factor that increases red blood cell production"
+   ],
+   "tip": "-poetin = erythropoiesis (making RBCs)."
+  },
+  {
+   "g": "dexrazoxane",
+   "w": "4.3",
+   "cls": "Cytoprotectant",
+   "grp": "dexra",
+   "u": [
+    "chemo"
+   ],
+   "use": "Protects organs during anthracycline chemo",
+   "f": [
+    "Cytoprotectant paired with anthracyclines"
+   ]
+  },
+  {
+   "g": "rasburicase",
+   "w": "4.3",
+   "cls": "Uric acid–lowering enzyme",
+   "grp": "rasb",
+   "u": [
+    "uric"
+   ],
+   "cno": [
+    "Antihyperuricemic"
+   ],
+   "use": "Tumor lysis syndrome with kidney impairment",
+   "f": [
+    "Used for tumor lysis syndrome when the kidneys are impaired"
+   ]
+  },
+  {
+   "g": "furosemide",
+   "w": "4.3",
+   "cls": "Loop diuretic",
+   "grp": "furo",
+   "u": [
+    "ca"
+   ],
+   "use": "Hypercalcemia, after rapid IV rehydration",
+   "f": [
+    "Given after rapid rehydration to treat hypercalcemia"
+   ]
+  },
+  {
+   "g": "phenytoin",
+   "b": "Dilantin",
+   "w": "4.3",
+   "cls": "Anticonvulsant",
+   "grp": "pheny",
+   "u": [
+    "seize"
+   ],
+   "cno": [
+    "Neuropathic pain agent (antiepileptic)"
+   ],
+   "use": "Seizures",
+   "f": [
+    "Can cause gingival hyperplasia"
+   ]
+  },
+  {
+   "g": "adenosine",
+   "w": "5.1",
+   "cls": "Antidysrhythmic: SVT converter",
+   "grp": "aden",
+   "u": [
+    "svt"
+   ],
+   "use": "Stable SVT",
+   "f": [
+    "Rapid IV push at the port closest to the patient, then a 20 mL saline flush",
+    "A brief pause or asystole right after the dose is expected",
+    "Contraindicated in 2nd- or 3rd-degree AV block; caution with asthma",
+    "Half-life under 10 seconds"
+   ],
+   "tip": "The heart hits pause, and that is expected. Warn the patient first."
+  },
+  {
+   "g": "amiodarone",
+   "w": "5.1",
+   "cls": "Antidysrhythmic: VT",
+   "grp": "amio",
+   "u": [
+    "vt"
+   ],
+   "cno": [
+    "Antidysrhythmic + local anesthetic"
+   ],
+   "use": "Stable VT with a pulse; pulseless VT/VF",
+   "f": [
+    "IV option for stable VT with a pulse, along with correcting K and Mg"
+   ]
+  },
+  {
+   "g": "lidocaine",
+   "w": "5.1",
+   "cls": "Antidysrhythmic + local anesthetic",
+   "grp": "lido",
+   "u": [
+    "vt",
+    "pain"
+   ],
+   "cno": [
+    "Antidysrhythmic: VT",
+    "Topical analgesic",
+    "Topical NSAID"
+   ],
+   "use": "Stable VT; OA pain patch",
+   "f": [
+    "Patch teaching: 12 hours on, 12 hours off",
+    "IV option for stable VT with a pulse"
+   ]
+  },
+  {
+   "g": "epinephrine",
+   "w": "5.1",
+   "cls": "Adrenergic agonist",
+   "grp": "epi",
+   "u": [
+    "arrest"
+   ],
+   "use": "Cardiac arrest: asystole, PEA, pulseless VT/VF",
+   "f": [
+    "Given with CPR for asystole and PEA, which are not shockable"
+   ]
+  },
+  {
+   "g": "magnesium sulfate",
+   "w": "5.1",
+   "cls": "Electrolyte / membrane stabilizer",
+   "grp": "mg",
+   "u": [
+    "tors"
+   ],
+   "use": "Torsades de pointes",
+   "f": [
+    "First-line for torsades, even when the Mg level is normal",
+    "Earliest toxicity sign: loss of deep tendon reflexes",
+    "Infuse on a pump; never IV push for routine replacement"
+   ],
+   "tip": "Torsades = Twisting = magnesium."
+  },
+  {
+   "g": "calcium gluconate",
+   "w": "5.1",
+   "cls": "Antidote",
+   "grp": "cagl",
+   "u": [
+    "tors"
+   ],
+   "use": "Reverses magnesium toxicity",
+   "f": [
+    "Antidote for magnesium sulfate toxicity"
+   ]
+  },
+  {
+   "g": "atropine",
+   "w": "5.1",
+   "cls": "Anticholinergic",
+   "grp": "atro",
+   "u": [
+    "brady"
+   ],
+   "use": "Symptomatic bradycardia",
+   "f": [
+    "Must not delay transcutaneous pacing",
+    "Side effects: dry mouth, urinary retention, blurred vision, tachycardia",
+    "Use cautiously after an MI because it raises oxygen demand"
+   ],
+   "tip": "A-trope-UP: pushes the heart rate up."
+  },
+  {
+   "g": "digoxin",
+   "w": "5.1",
+   "cls": "Cardiac glycoside",
+   "grp": "dig",
+   "u": [
+    "dig"
+   ],
+   "use": null,
+   "f": [
+    "Toxicity can cause PVCs and heart block; check the drug level"
+   ]
+  },
+  {
+   "g": "alendronate",
+   "w": "5.2",
+   "cls": "Bisphosphonate",
+   "grp": "bis",
+   "u": [
+    "bone"
+   ],
+   "use": "Osteoporosis: first line",
+   "f": [
+    "Empty stomach, full 8 oz of water, stay upright 30 minutes",
+    "Risks: esophagitis; rare osteonecrosis of the jaw",
+    "Not recommended for clients with GERD"
+   ],
+   "tip": "-dronate = bisphosphonate. Empty stomach, Eight ounces, Erect."
+  },
+  {
+   "g": "ibandronate",
+   "w": "5.2",
+   "cls": "Bisphosphonate",
+   "grp": "bis",
+   "u": [
+    "bone"
+   ],
+   "use": "Osteoporosis: first line",
+   "f": [
+    "Empty stomach, full 8 oz of water, stay upright 30 minutes",
+    "Risks: esophagitis; rare osteonecrosis of the jaw"
+   ],
+   "tip": "-dronate = bisphosphonate. Empty stomach, Eight ounces, Erect."
+  },
+  {
+   "g": "calcitonin",
+   "w": "5.2",
+   "cls": "Hormone (keeps calcium in bone)",
+   "grp": "calci",
+   "u": [
+    "bone",
+    "ca"
+   ],
+   "use": "Osteoporosis (nasal spray); hypercalcemia",
+   "f": [
+    "Assess for a salmon allergy first",
+    "Nasal spray: one spray a day, alternate nostrils",
+    "Works in 12–24 hours for hypercalcemia but is never used alone"
+   ],
+   "tip": "Calci-TONIN tones calcium IN to the bone."
+  },
+  {
+   "g": "denosumab",
+   "w": "5.2",
+   "cls": "RANKL inhibitor",
+   "grp": "deno",
+   "u": [
+    "bone"
+   ],
+   "use": "Osteoporosis: SQ every 6 months",
+   "f": [
+    "Given SQ every 6 months; blocks osteoclast activity"
+   ],
+   "tip": "-mab = monoclonal antibody."
+  },
+  {
+   "g": "diclofenac",
+   "w": "5.3",
+   "cls": "Topical NSAID",
+   "grp": "topic",
+   "u": [
+    "pain",
+    "topical"
+   ],
+   "use": "OA pain, rubbed on the skin",
+   "f": [
+    "Topical for OA: wash hands after, keep away from eyes"
+   ]
+  },
+  {
+   "g": "capsaicin",
+   "w": "5.3",
+   "cls": "Topical analgesic",
+   "grp": "topic",
+   "u": [
+    "pain",
+    "topical"
+   ],
+   "use": "OA pain, rubbed on the skin",
+   "f": [
+    "Topical for OA: warmth on application can be expected"
+   ]
+  },
+  {
+   "g": "cyclobenzaprine",
+   "w": "5.3",
+   "cls": "Muscle relaxant",
+   "grp": "mr",
+   "u": [
+    "sedate",
+    "spasm"
+   ],
+   "cno": [
+    "Benzodiazepine"
+   ],
+   "use": "Muscle spasm in OA",
+   "f": [
+    "Muscle relaxant; teach that sleepiness can occur"
+   ]
+  },
+  {
+   "g": "diazepam",
+   "w": "5.3",
+   "cls": "Muscle relaxant",
+   "grp": "mr",
+   "u": [
+    "sedate",
+    "spasm"
+   ],
+   "cno": [
+    "Benzodiazepine"
+   ],
+   "use": "Muscle spasm in OA",
+   "f": [
+    "Muscle relaxant; teach that sleepiness can occur"
+   ]
+  },
+  {
+   "g": "hyaluronic acid",
+   "b": "Synvisc",
+   "w": "5.3",
+   "cls": "Joint lubricant injection",
+   "grp": "hya",
+   "u": [
+    "joint"
+   ],
+   "use": "OA: lubricates the joint",
+   "f": [
+    "Gel-like joint injection, about twice a year"
+   ]
+  },
+  {
+   "g": "pregabalin",
+   "w": "6.1",
+   "cls": "Neuropathic pain agent (antiepileptic)",
+   "grp": "gaba",
+   "u": [
+    "phantom"
+   ],
+   "cno": [
+    "Anticonvulsant"
+   ],
+   "use": "Phantom limb pain",
+   "f": [
+    "Neuropathic drug for phantom limb pain after amputation"
+   ],
+   "tip": "GABA calms phantom nerves."
+  },
+  {
+   "g": "gabapentin",
+   "w": "6.1",
+   "cls": "Neuropathic pain agent (antiepileptic)",
+   "grp": "gaba",
+   "u": [
+    "phantom"
+   ],
+   "cno": [
+    "Anticonvulsant"
+   ],
+   "use": "Phantom limb pain",
+   "f": [
+    "Neuropathic drug for phantom limb pain after amputation"
+   ],
+   "tip": "GABA calms phantom nerves."
+  }
+ ]
+}
