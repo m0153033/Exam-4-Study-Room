@@ -4,10 +4,12 @@ belongs to. Overlap tags and families are prefixed by exam, so distractors stay 
 import json, os, sys, copy
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-import mp1_data, mp2_extra
+import mp1_data, mp2_extra, mp5_data
 J = lambda f: json.load(open(os.path.join(HERE, f), encoding="utf-8"))
 
 EXAMS = []   # (id, label, drugs, lessons, sort, tricky, look, xcls, sect)
+# ---- Exam 5 (added lecture by lecture) ----
+EXAMS.append(("5", "Exam 5", mp5_data.DRUGS, mp5_data.LESSONS, mp5_data.SORT, mp5_data.TRICKY, mp5_data.LOOK, mp5_data.XCLS, mp5_data.CLS_SECT))
 # ---- Exam 4 ----
 m4 = J("mp4.json")
 EXAMS.append(("4", "Exam 4", m4["D"], m4["LESSONS"], m4["SORT"], m4["TRICKY"], m4["LOOK"], m4["XCLS"], m4["CLS_SECT"]))
