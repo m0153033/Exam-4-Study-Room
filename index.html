@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>Exam 4 Study Room</title>
+<title>Study Room</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Mono:wght@500&display=swap">
@@ -145,7 +145,7 @@ table.adm .num, table.adm th:not(:first-child){text-align:right;font-family:var(
 
 <div class="wrap" id="app">
   <div class="topbar">
-    <div class="brand"><b>Exam 4 Study Room</b><span class="eyebrow">PN III · Exam Nov 9</span></div>
+    <div class="brand"><b>Study Room</b><span class="eyebrow">PN III · Exams 1–5 + Final</span></div>
     <div class="row" style="gap:6px"><span id="conn" class="row" style="gap:6px;font-size:14px;color:var(--muted)"></span><button class="linkbtn" id="homeBtn" hidden>Leave / start over</button></div>
   </div>
   <section id="scr" aria-live="polite"></section>
@@ -159,6 +159,11 @@ if (typeof WHY === "object") BANK.forEach(q => { if (!q.w && WHY[q.id]) q.w = WH
 const isHi = (t, c) => !!(HI[t] && HI[t].includes(c));
 const qCount = t => BANK.filter(q => q.t === t).length;
 const READY = Object.keys(TOPICS).filter(t => qCount(t) > 0);
+const EXBYID = Object.fromEntries(EXAMS.map(e => [e.id, e]));
+const examTopics = ex => ex === "final" ? READY.slice() : ((EXBYID[ex] || { topics: [] }).topics.filter(t => READY.includes(t)));
+const examOfTopic = t => (EXAMS.find(e => e.topics.includes(t)) || {}).id;
+const examName = ex => ex === "final" ? "Final" : (EXBYID[ex] || {}).name || "";
+const EXAM_LIST = EXAMS.map(e => e.id).concat("final");
 /* ===== ENGINE: pure helpers (no DOM) ===== */
 const BYID = Object.fromEntries(BANK.map(q => [q.id, q]));
 function hash(str){ let h = 2166136261 >>> 0; for (let i = 0; i < str.length; i++){ h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
@@ -205,7 +210,7 @@ function freshest(pool, seen, seed){
   const order = shuffled(pool.map(q => q.id), seed);
   return order.sort((a, b) => (seen[a] || 0) - (seen[b] || 0));
 }
-function buildDeck(topics, mode, sess, seen){
+function buildDeck(topics, mode, sess, seen, final){
   seen = seen || {};
   const per = {};
   for (const t of topics){
@@ -222,7 +227,7 @@ function buildDeck(topics, mode, sess, seen){
     return shuffled(out, sess + "quick");
   }
   const ids = [];
-  for (const t of Object.keys(per)) for (const l of per[t]){ ids.push(l[0]); if (l.length > 1 && isHi(t, getQ(l[0]).c)) ids.push(l[1]); }
+  for (const t of Object.keys(per)) for (const l of per[t]){ ids.push(l[0]); if (!final && l.length > 1 && isHi(t, getQ(l[0]).c)) ids.push(l[1]); }
   return shuffled(ids.concat(math), sess + "deck");
 }
 function pickFollowup(q, queue, sess, n, seen){
@@ -291,7 +296,7 @@ const S = {
   hist: LS.get("hist", {}),
   seen: LS.get("seen", {}),
   openRev: new Set(),         // review sections the viewer opened (stay open across refreshes)   // question id -> times asked on this device (drives fresh-first decks)
-  setup: { topics: READY.slice(), mode: "full" },
+  setup: (() => { const ex = EXAM_LIST.includes(LS.get("exam", "")) && examTopics(LS.get("exam", "")).length ? LS.get("exam", "") : "e4"; return { exam: ex, topics: examTopics(ex), mode: "full" }; })(),
   keys: LS.get("keys", {}),   // sess -> password this device entered
   unlock: null, pwErr: ""
 };
@@ -299,7 +304,7 @@ const S = {
 /* ---------- connection: direct device-to-device, no accounts needed ----------
    The host's browser listens at an address made from the room password.
    Players type the password, connect straight to the host, and swap small status messages. */
-const PEER_PREFIX = "pn3-exam4-studyroom-v1-";
+const PEER_PREFIX = "pn3-studyroom-v1-";
 /* Study log + admin panel. STATS_URL is the Google Apps Script web app that writes to the owner's Google Sheet.
    The admin password is checked by that script, not here. Scores are never sent: only name, room, and question counts. */
 const STATS_URL = "";
@@ -462,8 +467,8 @@ function hostsList(){
 /* ================= HOST / SOLO ENGINE ================= */
 function newGame(role){
   const sess = newId() + newId();
-  const deck = buildDeck(S.setup.topics, S.setup.mode, sess, S.seen);
-  S.G = { sess, role, hostPlays: role === "solo" ? true : S.hostPlays, hostNick: role === "host" ? (S.roomName || ((S.nick || "Host") + "'s room")) : (S.nick || "Host"),
+  const deck = buildDeck(S.setup.topics, S.setup.mode, sess, S.seen, S.setup.exam === "final");
+  S.G = { sess, exam: S.setup.exam, role, hostPlays: role === "solo" ? true : S.hostPlays, hostNick: role === "host" ? (S.roomName || ((S.nick || "Host") + "'s room")) : (S.nick || "Host"),
     topics: S.setup.topics.slice(), mode: S.setup.mode, queue: deck, base: deck.length, i: 0, rev: 0,
     phase: role === "solo" ? "q" : "lobby", ans: {}, players: {}, revealed: [], fu: {}, fuFrom: {}, fuN: 0, votes: {}, t: Date.now(), pw: role === "solo" ? null : newPw() };
   if (S.G.hostPlays) S.G.players.me = { n: S.nick || "Me", c: 0 };
@@ -686,23 +691,24 @@ function roomNote(){
   return "";
 }
 function blueprintCard(){
-  const rows = Object.keys(TOPICS).map(t => { const n = qCount(t), b = BLUEPRINT[t] || [0, 0];
-    return `<div class="bar" style="grid-template-columns:minmax(0,1fr) auto auto"><span class="lbl" style="white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:break-word;hyphens:auto;color:var(--ink)">${esc(TOPICS[t])}</span><span class="mono muted" style="font-size:13px">${b[0]} on exam${b[1] ? " · " + b[1] + " CJ" : ""}</span>${n ? `<span class="pill ok">${n} ready</span>` : `<span class="pill">Coming soon</span>`}</div>`; }).join("");
-  return `<div class="card stack" style="gap:10px"><div class="eyebrow">Exam 4 blueprint · ${READY.length} of ${Object.keys(TOPICS).length} lectures loaded</div><div class="stack" style="gap:8px">${rows}</div></div>`;
+  const rows = EXAMS.map(e => { const ts = e.topics, ready = ts.filter(t => READY.includes(t)), n = ready.reduce((a, t) => a + qCount(t), 0);
+    const bp = ts.some(t => BLUEPRINT[t]) ? `<span class="mono muted" style="font-size:13px">${ts.reduce((a, t) => a + ((BLUEPRINT[t] || [0])[0]), 0)} on exam</span>` : "";
+    return `<div class="bar" style="grid-template-columns:minmax(0,1fr) auto auto"><span class="lbl" style="white-space:normal;overflow:visible;text-overflow:clip;color:var(--ink)"><b>${esc(e.name)}</b>${e.date ? ` · ${esc(e.date)}` : ""}<br><span class="muted" style="font-size:13px">${ready.length ? ready.map(t => esc(TOPICS[t])).join(" · ") : ts.map(t => esc(TOPICS[t])).join(" · ")}</span></span>${bp}${n ? `<span class="pill ok">${n} ready</span>` : `<span class="pill">Coming soon</span>`}</div>`; }).join("");
+  return `<div class="card stack" style="gap:10px"><div class="eyebrow">What's in the room · ${READY.length} lectures loaded</div><div class="stack" style="gap:12px">${rows}</div><p class="muted" style="font-size:14px"><b>Final</b> mixes every loaded exam: one question per concept, so every topic gets covered once.</p></div>`;
 }
 function vHome(){
   const saved = LS.get("game", null);
   const resume = saved && saved.phase !== "end" && saved.revealed && saved.revealed.length ? `<div class="card row" style="justify-content:space-between"><div><div class="eyebrow">Unfinished game on this device</div><p>${esc(saved.revealed.length)} answered · ${esc(saved.queue.length - saved.i)} left</p></div><button class="btn primary" data-act="resume">Resume</button></div>` : "";
   const toast = S.toast ? `<div class="banner" role="status">${esc(S.toast)}</div>` : ""; S.toast = "";
   return `<div class="stack" style="gap:20px">${toast}
-    <div class="stack" style="gap:8px"><h1>Review everything on Exam 4, together.</h1>
-    <p class="muted" style="max-width:62ch">Every concept from the Exam 4 lectures comes up at least once. Miss one and a fresh question on that topic comes up a few questions later. Nobody sees anyone else's answers or score; your results stay on your own device.</p></div>
+    <div class="stack" style="gap:8px"><h1>Study every PN III exam, together.</h1>
+    <p class="muted" style="max-width:62ch">Pick Exam 1, 2, 3, 4 or 5, or the Final. Every concept from those lectures comes up at least once. Miss one and a fresh question on that topic comes up a few questions later. Nobody sees anyone else's answers or score; your results stay on your own device.</p></div>
     ${resume}
     <div class="modes">
       <button class="mode" data-act="pick" data-role="host"><span class="tag">Group</span><h3>Host a group</h3><p class="muted">Open a room and get a one-word password. Friends open this site on any phone or laptop and type it in. No accounts or sign-ups.</p></button>
       <button class="mode" data-act="pick" data-role="player"><span class="tag">Group</span><h3>Join a group</h3><p class="muted">Type the host's password and you're in. You'll see each question and answer right here.</p></button>
       <button class="mode" data-act="pick" data-role="solo"><span class="tag">Solo</span><h3>Play by yourself</h3><p class="muted">Same questions, follow-ups and review report, on one device.</p></button>
-      <a class="mode" href="medpass.html"><span class="tag">Medications</span><h3>Med Pass</h3><p class="muted">Learn, sort and test the 68 Exam 4 meds by week. Opens on its own page.</p></a>
+      <a class="mode" href="medpass.html"><span class="tag">Medications</span><h3>Exam 4 Med Pass</h3><p class="muted">Learn, sort and test the 68 Exam 4 meds by week. Opens on its own page.</p></a>
     </div>
     ${READY.length ? "" : `<div class="banner">Questions are being added one lecture at a time. Check back soon.</div>`}
     ${blueprintCard()}
@@ -758,16 +764,21 @@ function vName(){
     <div class="row"><button class="btn primary big" data-act="nameNext">Continue</button></div>
   </div>`;
 }
-function deckCount(){ const sess = "count"; return { full: buildDeck(S.setup.topics, "full", sess, S.seen).length, quick: buildDeck(S.setup.topics, "quick", sess, S.seen).length }; }
+function deckCount(){ const sess = "count", f = S.setup.exam === "final"; return { full: buildDeck(S.setup.topics, "full", sess, S.seen, f).length, quick: buildDeck(S.setup.topics, "quick", sess, S.seen, f).length }; }
 function bankStats(){ const ts = S.setup.topics.filter(t => t !== "math"); const pool = BANK.filter(q => ts.includes(q.t)); const fresh = pool.filter(q => !S.seen[q.id]).length; return { pool: pool.length, fresh }; }
 function vSetup(){
-  const c = deckCount();
-  const chips = Object.keys(TOPICS).map(t => READY.includes(t) ? `<button class="chip" aria-pressed="${S.setup.topics.includes(t)}" data-act="topic" data-t="${t}">${esc(TOPICS[t])}</button>` : `<button class="chip" disabled style="opacity:.5;cursor:not-allowed">${esc(TOPICS[t])} · soon</button>`).join("");
+  const c = deckCount(), ex = S.setup.exam, fin = ex === "final";
+  const exChips = EXAM_LIST.map(id => { const ok = examTopics(id).length > 0; return ok ? `<button class="chip" aria-pressed="${ex === id}" data-act="exam" data-ex="${id}">${esc(examName(id))}</button>` : `<button class="chip" disabled style="opacity:.5;cursor:not-allowed">${esc(examName(id))} · soon</button>`; }).join("");
+  const chips = fin
+    ? EXAMS.filter(e => examTopics(e.id).length).map(e => { const ts = examTopics(e.id), on = ts.every(t => S.setup.topics.includes(t)); return `<button class="chip" aria-pressed="${on}" data-act="finalEx" data-ex="${e.id}">${esc(e.name)}</button>`; }).join("")
+    : (EXBYID[ex] ? EXBYID[ex].topics : []).map(t => READY.includes(t) ? `<button class="chip" aria-pressed="${S.setup.topics.includes(t)}" data-act="topic" data-t="${t}">${esc(TOPICS[t])}</button>` : `<button class="chip" disabled style="opacity:.5;cursor:not-allowed">${esc(TOPICS[t])} · soon</button>`).join("");
   return `<div class="card stack" style="gap:18px">
-    <div class="stack" style="gap:6px"><div class="eyebrow">Set up the round</div><h2>What are we covering?</h2></div>
+    <div class="stack" style="gap:6px"><div class="eyebrow">Set up the round</div><h2>Which exam?</h2></div>
+    <div class="chips">${exChips}</div>
+    <div class="stack" style="gap:6px"><h2>${fin ? "Which exams go into the Final?" : "Which lectures?"}</h2>${fin ? `<p class="muted">One question per concept from every exam you pick, so each topic gets covered once.</p>` : ""}</div>
     <div class="chips">${chips}</div>
     <div class="stack" style="gap:8px">
-      <label class="row" style="gap:10px"><input type="radio" name="mode" value="full" ${S.setup.mode === "full" ? "checked" : ""}> <span><b>Full coverage</b> — every concept once, freshest questions first · <span class="mono">${c.full}</span> questions + follow-ups</span></label>
+      <label class="row" style="gap:10px"><input type="radio" name="mode" value="full" ${S.setup.mode === "full" ? "checked" : ""}> <span><b>Full coverage</b> — every concept once${fin ? "" : " (key concepts twice)"}, freshest questions first · <span class="mono">${c.full}</span> questions + follow-ups</span></label>
       <label class="row" style="gap:10px"><input type="radio" name="mode" value="quick" ${S.setup.mode === "quick" ? "checked" : ""}> <span><b>Quick round</b> — <span class="mono">${c.quick}</span> questions spread across the topics</span></label>
     </div>
     <p class="muted"><span class="mono">${bankStats().fresh}</span> of <span class="mono">${bankStats().pool}</span> questions in these topics haven't come up on this device yet; each game uses those first.</p>
@@ -776,7 +787,7 @@ function vSetup(){
 }
 function inviteText(G){
   const link = location.href.split("#")[0];
-  return `Join my Exam 4 study room:\n${link}\nTap "Join a group" and type the password ${G.pw}.`;
+  return `Join my study room (${examName(G.exam)}):\n${link}\nTap "Join a group" and type the password ${G.pw}.`;
 }
 function vLobby(){
   const G = S.G, ps = playerRecs().filter(r => r.live);
@@ -793,7 +804,7 @@ function vLobby(){
     <div class="card stack" style="gap:16px">
       <div class="stack" style="gap:4px"><div class="eyebrow">${esc(G.hostNick)}</div><h2>${ps.length + (G.hostPlays ? 1 : 0)} in the room</h2></div>
       <div class="roster">${roster}</div>
-      <p class="muted">${G.queue.length} questions · ${G.topics.length} topics · ${G.mode === "full" ? "full coverage" : "quick round"}</p>
+      <p class="muted"><b>${esc(examName(G.exam))}</b> · ${G.queue.length} questions · ${G.topics.length} topics · ${G.mode === "full" ? "full coverage" : "quick round"}</p>
       ${roomNote()}
       <div class="row"><button class="btn primary big" data-act="start" ${activeKeys().length ? "" : "disabled"}>Start</button><button class="btn danger" data-act="close">Close room</button></div>
     </div>
@@ -1020,6 +1031,8 @@ document.addEventListener("click", e => {
     if (S.pendingRole === "player"){ S.role = null; S.joinErr = ""; S.view = "join"; render(); const f = $("#pwIn"); if (f) f.focus(); }
     else { S.view = "setup"; render(); }
   }
+  else if (act === "exam"){ const ex = b.dataset.ex; if (!examTopics(ex).length) return; S.setup.exam = ex; S.setup.topics = examTopics(ex); LS.set("exam", ex); render(); }
+  else if (act === "finalEx"){ const ts = examTopics(b.dataset.ex), on = ts.every(t => S.setup.topics.includes(t)); S.setup.topics = on ? S.setup.topics.filter(t => !ts.includes(t)) : S.setup.topics.concat(ts.filter(t => !S.setup.topics.includes(t))); S.setup.topics.sort((a, b) => Object.keys(TOPICS).indexOf(a) - Object.keys(TOPICS).indexOf(b)); render(); }
   else if (act === "topic"){ const t = b.dataset.t; if (!READY.includes(t)) return; const i = S.setup.topics.indexOf(t); if (i >= 0) S.setup.topics.splice(i, 1); else S.setup.topics.push(t); S.setup.topics.sort((a, b) => Object.keys(TOPICS).indexOf(a) - Object.keys(TOPICS).indexOf(b)); render(); }
   else if (act === "create"){
     newGame(S.pendingRole);

@@ -27,11 +27,33 @@ DRUGS = {  # generic -> brand
  "miglitol":"Glyset","sitagliptin":"Januvia","pramlintide":"Symlin","insulin lispro":"Humalog","lispro":"Humalog",
  "insulin aspart":"NovoLog","aspart":"NovoLog","glulisine":"Apidra","glargine":"Lantus","detemir":"Levemir","degludec":"Tresiba",
  "albuterol":"ProAir","amlodipine":"Norvasc","prednisone":"Deltasone","tranexamic acid":"Cyklokapron","desmopressin":"DDAVP","epinephrine":"EpiPen",
+ # Exams 1-3
+ "alprazolam":"Xanax","diazepam":"Valium","lorazepam":"Ativan","clonazepam":"Klonopin","buspirone":"BuSpar","fluoxetine":"Prozac",
+ "venlafaxine":"Effexor XR","bupropion":"Wellbutrin","lithium":"Lithobid","chlorpromazine":"Thorazine","haloperidol":"Haldol",
+ "risperidone":"Risperdal","clozapine":"Clozaril","bromocriptine":"Parlodel","timolol":"Timoptic","pilocarpine":"Isopto Carpine",
+ "latanoprost":"Xalatan","brinzolamide":"Azopt","moxifloxacin":"Vigamox","lisdexamfetamine":"Vyvanse","nifedipine":"Procardia",
+ "labetalol":"Trandate","esmolol":"Brevibloc","nicardipine":"Cardene","phentolamine":"Regitine","finasteride":"Proscar",
+ "dutasteride":"Avodart","tamsulosin":"Flomax","terazosin":"Hytrin","oxybutynin":"Ditropan","allopurinol":"Zyloprim",
+ "celecoxib":"Celebrex","oxycodone":"Roxicodone","hydromorphone":"Dilaudid","tramadol":"Ultram","cyclobenzaprine":"Flexeril",
+ "alendronate":"Fosamax","ibandronate":"Boniva","denosumab":"Prolia","rasburicase":"Elitek","filgrastim":"Neupogen",
+ "pegfilgrastim":"Neulasta","epoetin alfa":"Epogen","darbepoetin":"Aranesp","dexrazoxane":"Zinecard","gabapentin":"Neurontin",
+ "pregabalin":"Lyrica","zolpidem":"Ambien","modafinil":"Provigil","armodafinil":"Nuvigil","adenosine":"Adenocard",
+ "amiodarone":"Pacerone","apixaban":"Eliquis","rivaroxaban":"Xarelto","diltiazem":"Cardizem","verapamil":"Calan",
+ "metoprolol tartrate":"Lopressor","metoprolol":"Lopressor","andexanet alfa":"Andexxa","clopidogrel":"Plavix",
+ "ipratropium":"Atrovent","umeclidinium":"Incruse Ellipta","salmeterol":"Serevent","theophylline":"Theo-24",
+ "fluticasone":"Flovent","beclomethasone":"Qvar","cromolyn":"NasalCrom","montelukast":"Singulair","diphenhydramine":"Benadryl",
+ "cetirizine":"Zyrtec","phenylephrine":"Neo-Synephrine","dextromethorphan":"Delsym","guaifenesin":"Mucinex",
+ "acetylcysteine":"Mucomyst","vardenafil":"Levitra","avanafil":"Stendra","alprostadil":"Caverject","vancomycin":"Vancocin",
+ "gentamicin":"Garamycin","ceftriaxone":"Rocephin","amoxicillin":"Amoxil","erythromycin":"Ery-Tab","colchicine":"Colcrys",
+ "hydrochlorothiazide":"Microzide","ondansetron":"Zofran","azithromycin":"Zithromax",
+ "levofloxacin":"Levaquin","ciprofloxacin":"Cipro","indomethacin":"Indocin","naltrexone":"Vivitrol",
 }
 # brand written alone (no generic) -> generic to put in front
 BRAND_ONLY = {"Entresto":"sacubitril/valsartan","Jardiance":"empagliflozin","Farxiga":"dapagliflozin","Ozempic":"semaglutide",
  "Creon":"pancrelipase","Januvia":"sitagliptin","Symlin":"pramlintide","Lasix":"furosemide","Mylanta":"aluminum/magnesium hydroxide",
- "Tums":"calcium carbonate","DigiFab":"digoxin immune Fab","Humalog":"insulin lispro","Lantus":"insulin glargine"}
+ "Tums":"calcium carbonate","DigiFab":"digoxin immune Fab","Humalog":"insulin lispro","Lantus":"insulin glargine",
+ "Eliquis":"apixaban","Xarelto":"rivaroxaban","Coumadin":"warfarin","Zofran":"ondansetron","Lovenox":"enoxaparin","Reglan":"metoclopramide",
+ "Haldol":"haloperidol","Requip":"ropinirole","Ambien":"zolpidem","Provigil":"modafinil","Neupogen":"filgrastim","Dilantin":"phenytoin","Azopt":"brinzolamide","Andexxa":"andexanet alfa","Intermezzo":"zolpidem"}
 
 ABBR = {
  "IV":"intravenous","IM":"intramuscular","SC":"subcutaneous","SUBQ":"subcutaneous","SubQ":"subcutaneous","PO":"by mouth","PRN":"as needed",
@@ -75,9 +97,43 @@ ABBR = {
  "DPP-4":"dipeptidyl peptidase-4","NPH":"neutral protamine Hagedorn","TZD":"thiazolidinedione","TZDs":"thiazolidinediones",
  "AGI":"alpha-glucosidase inhibitor","AGIs":"alpha-glucosidase inhibitors","CV":"cardiovascular","CHF":"congestive heart failure",
  "PRBCs":"packed red blood cells","PRBC":"packed red blood cell","RBCs":"red blood cells","WBCs":"white blood cells","FFP":"fresh frozen plasma","TRALI":"transfusion-related acute lung injury","TACO":"transfusion-associated circulatory overload","ITP":"immune thrombocytopenia","IgA":"immunoglobulin A","PT/INR":"prothrombin time/international normalized ratio","aPTT":"activated partial thromboplastin time","Hgb":"hemoglobin","Hct":"hematocrit","LR":"lactated Ringer's","NS":"normal saline","EPO":"erythropoietin","ICU":"intensive care unit", "RRT":"Rapid Response Team","ERT":"Emergency Response Team","SBAR":"Situation, Background, Assessment, Recommendation","ROSC":"return of spontaneous circulation","BLS":"Basic Life Support","ACLS":"Advanced Cardiovascular Life Support","AED":"automated external defibrillator","AHA":"American Heart Association","ED":"emergency department","ER":"emergency room","NP":"nurse practitioner","PA":"physician assistant","MD":"physician","PCTs":"patient care technicians","ABCs":"airway, breathing, circulation","IO":"intraosseous","RT":"respiratory therapist", "O2":"oxygen","SCDs":"sequential compression devices","D50":"50% dextrose","D10":"10% dextrose","D5":"5% dextrose","D5W":"5% dextrose in water","A-fib":"atrial fibrillation","VTE":"venous thromboembolism","GIP":"glucose-dependent insulinotropic polypeptide","RN":"registered nurse","TBSA":"total body surface area","SMBG":"self-monitoring of blood glucose",
+ # Exams 1-3
+ "AAA":"abdominal aortic aneurysm","AAAs":"abdominal aortic aneurysms","TAA":"thoracic aortic aneurysm","EVAR":"endovascular aneurysm repair",
+ "CTA":"computed tomography angiography","MRA":"magnetic resonance angiography","PRBC":"packed red blood cells","Hgb":"hemoglobin","Hct":"hematocrit",
+ "H/H":"hemoglobin and hematocrit","H&H":"hemoglobin and hematocrit","UO":"urine output","MODS":"multiple organ dysfunction syndrome",
+ "SSRI":"selective serotonin reuptake inhibitor","SSRIs":"selective serotonin reuptake inhibitors","SNRI":"serotonin-norepinephrine reuptake inhibitor",
+ "SNRIs":"serotonin-norepinephrine reuptake inhibitors","TCA":"tricyclic antidepressant","TCAs":"tricyclic antidepressants","MAOI":"monoamine oxidase inhibitor",
+ "MAOIs":"monoamine oxidase inhibitors","MAO":"monoamine oxidase","GABA":"gamma-aminobutyric acid","ADH":"antidiuretic hormone",
+ "NMS":"neuroleptic malignant syndrome","EPS":"extrapyramidal symptoms","TD":"tardive dyskinesia","ECT":"electroconvulsive therapy",
+ "CBT":"cognitive behavioral therapy","DBT":"dialectical behavior therapy","OCD":"obsessive-compulsive disorder","GAD":"generalized anxiety disorder",
+ "PTSD":"post-traumatic stress disorder","ADHD":"attention-deficit/hyperactivity disorder","SAD":"seasonal affective disorder","IOP":"intraocular pressure",
+ "BED":"binge eating disorder","ARFID":"avoidant/restrictive food intake disorder","BMI":"body mass index","IBW":"ideal body weight",
+ "BPH":"benign prostatic hyperplasia","TURP":"transurethral resection of the prostate","TUIP":"transurethral incision of the prostate","CBI":"continuous bladder irrigation",
+ "DRE":"digital rectal exam","ESWL":"extracorporeal shock wave lithotripsy","PCNL":"percutaneous nephrolithotomy","URS":"ureteroscopy",
+ "IVP":"intravenous pyelogram","KUB":"kidneys, ureters and bladder x-ray","UA":"urinalysis","GFR":"glomerular filtration rate","eGFR":"estimated glomerular filtration rate",
+ "ESKD":"end-stage kidney disease","CRRT":"continuous renal replacement therapy","HD":"hemodialysis","CAPD":"continuous ambulatory peritoneal dialysis",
+ "APD":"automated peritoneal dialysis","RCC":"renal cell carcinoma","BCG":"bacillus Calmette-Guérin","EPO":"erythropoietin",
+ "ESA":"erythropoiesis-stimulating agent","PTH":"parathyroid hormone","CAM":"Confusion Assessment Method","MMSE":"Mini-Mental State Examination",
+ "CJD":"Creutzfeldt-Jakob disease","ICU":"intensive care unit","ADL":"activity of daily living","ADLs":"activities of daily living",
+ "COX":"cyclooxygenase","RLS":"restless legs syndrome","OSA":"obstructive sleep apnea","CSA":"central sleep apnea","CPAP":"continuous positive airway pressure",
+ "PSG":"polysomnography","HSAT":"home sleep apnea test","REM":"rapid eye movement","SVT":"supraventricular tachycardia","PVC":"premature ventricular contraction",
+ "PVCs":"premature ventricular contractions","PEA":"pulseless electrical activity","AFib":"atrial fibrillation","SVC":"superior vena cava",
+ "TLS":"tumor lysis syndrome","SIADH":"syndrome of inappropriate antidiuretic hormone","ANC":"absolute neutrophil count","HPV":"human papillomavirus",
+ "TNM":"tumor, node, metastasis","DEXA":"dual-energy x-ray absorptiometry","SERMs":"selective estrogen receptor modulators","RANKL":"receptor activator of nuclear factor kappa-B ligand",
+ "OA":"osteoarthritis","RA":"rheumatoid arthritis","THR":"total hip replacement","TKR":"total knee replacement","ROM":"range of motion",
+ "NWB":"non-weight-bearing","PWB":"partial weight-bearing","FWB":"full weight-bearing","SCDs":"sequential compression devices","CK":"creatine kinase",
+ "ESR":"erythrocyte sedimentation rate","FES":"fat embolism syndrome","ORIF":"open reduction internal fixation","PPI":"proton pump inhibitor","PPIs":"proton pump inhibitors",
+ "INR":"international normalized ratio","PT/INR":"prothrombin time/international normalized ratio","aPTT":"activated partial thromboplastin time",
+ "QTc":"corrected QT interval","SABA":"short-acting beta-2 agonist","LABA":"long-acting beta-2 agonist","BBB":"blood-brain barrier","cAMP":"cyclic adenosine monophosphate",
+ "SA":"sinoatrial","LAA":"left atrial appendage","DOAC":"direct oral anticoagulant","DOACs":"direct oral anticoagulants","HIT":"heparin-induced thrombocytopenia",
+ "TTE":"transthoracic echocardiogram","ASO":"antistreptolysin O","hsCRP":"high-sensitivity C-reactive protein","IE":"infective endocarditis",
+ "AICD":"automatic implantable cardioverter-defibrillator","PICC":"peripherally inserted central catheter","PDE-5":"phosphodiesterase-5",
+ "IIEF-5":"International Index of Erectile Function","HOB":"head of bed","eMAR":"electronic medication administration record",
+ "N/V":"nausea and vomiting","GU":"genitourinary","VTE":"venous thromboembolism","BB/CCB":"beta blocker/calcium channel blocker","CCB":"calcium channel blocker","CCBs":"calcium channel blockers",
+ "ACEI":"angiotensin-converting enzyme inhibitor","TEE":"transesophageal echocardiogram","RVR":"rapid ventricular response","AV-node":"atrioventricular-node",
 }
 _GEN = {k.lower(): (k, v) for k, v in DRUGS.items()}
-_keys = sorted(list(DRUGS) + list(BRAND_ONLY) + list(ABBR), key=len, reverse=True)
+_keys = sorted(set(list(DRUGS) + list(BRAND_ONLY) + list(ABBR) + ["PD","AV","AD"]), key=len, reverse=True)
 _parts = []
 for k in _keys:
     esc = re.escape(k)
@@ -88,14 +144,17 @@ for k in _keys:
         _parts.append(r"(?<![\w-])" + esc + r2)
 _RX = re.compile("|".join(_parts))
 
-def format_question(texts):
+def format_question(texts, skip=(), extra=None):
     """texts: list of strings in reading order. Returns formatted list."""
+    extra = extra or {}
     whole = " ".join(texts)
     seen = set()
     out = []
     for t in texts:
         def sub(m, t=t):
-            word = m.group(0); rest = t[m.end():]; pre = t[:m.start()]
+            word = m.group(0)
+            if word in skip or word.lower() in skip: return word
+            rest = t[m.end():]; pre = t[:m.start()]
             paren = re.match(r" ?\(([^)]*)\)", rest); paren = paren.group(1).lower() if paren else ""
             low = word.lower()
             if low in _GEN:
@@ -111,12 +170,12 @@ def format_question(texts):
                 seen.add(word); seen.add(gen)
                 if gen.lower() in whole.lower(): return word
                 return f"{gen} ({word})"
-            if word in ABBR:
+            if word in ABBR or word in extra:
                 if word in seen: return word
                 seen.add(word)
-                exp = ABBR[word].lower()
+                full = extra.get(word, ABBR.get(word)); exp = full.lower()
                 if exp in paren or (pre.endswith("(") and exp in pre.lower()): return word
-                return f"{word} ({ABBR[word]})"
+                return f"{word} ({full})"
             return word
         out.append(_RX.sub(sub, t))
     return out

@@ -1,14 +1,16 @@
-# Exam 4 Study Room
+# Study Room
 
-A free group quiz site for PN III Exam 4 (Nov 9, 2026). No accounts needed.
+A free group quiz site for PN III. Pick **Exam 1, 2, 3, 4, 5** or the **Final**. No accounts needed.
 
-- **Host a group:** open the site, tap *Host a group*, and share the one-word room password.
+- **Host a group:** open the site, tap *Host a group*, pick the exam and share the one-word room password.
 - **Join a group:** open the site, tap *Join a group*, and type the password.
 - **Solo:** practice on your own.
-- **Med Pass:** `medpass.html`, learn, sort and test the Exam 4 medications (also linked from the home screen).
+- **Final:** one question per concept from every exam you pick, so every topic is covered once.
+- **Exam 4 Med Pass:** `medpass.html`, learn, sort and test the Exam 4 medications.
 
 Phones connect directly to the host's screen, so the host keeps their tab open while the group plays.
 If someone can't connect on school or hospital Wi-Fi, switching to phone data usually fixes it.
 
 ## Updating questions
-Questions are written per lecture in `src/*_bank.py`. Run `python3 src/gen_questions.py` to rebuild `questions.js`; that's the only file that changes when questions are added.
+Exam 1 and Exam 4 questions are written per lecture in `src/*_bank.py`; Exams 2 and 3 live in `src/imported/`.
+Run `python3 src/gen_questions.py` to rebuild `questions.js`. Exam 5 lectures get their own `src/ex5*_bank.py` files.
