@@ -258,3 +258,125 @@ q("pi","How does raltegravir work?",
 q("pi","Match each HIV drug with its signature effect. "+SATA,
  ["*Zidovudine — bone marrow suppression","*Delavirdine — rash","*Raltegravir — muscle injury (high CK)","*Enfuvirtide — injection-site reactions","Ritonavir — no interactions || Ritonavir has many interactions."],
  "Know the signature adverse effect of each.")
+
+# ================= ATI Pharmacology Made Easy supplement (PowerPoint stays the main source) =================
+q("nadir","Which teaching applies to a client with chemotherapy-induced neutropenia? "+SATA,
+ ["*Use scrupulous handwashing and avoid people who are ill","*Wash fresh fruits and vegetables well and cook foods properly","*Report fever, sore throat or unusual fatigue","*Frequent oral care to prevent stomatitis","Take rectal temperatures daily || Not part of the teaching."],
+ "ATI repeats this teaching for nearly every chemo drug.")
+q("nadir","A client with thrombocytopenia after chemotherapy needs an injection. Which actions reduce bleeding? "+SATA,
+ ["*Use a small-gauge needle","*Apply prolonged pressure to the puncture site","*Teach use of a soft toothbrush and electric razor","Massage the site vigorously || Increases bruising."],
+ "Watch for bleeding from the gums and GI tract (melena).")
+q("nadir","Why might an infected wound in a leukopenic client on cyclophosphamide NOT contain pus?",
+ ["*There are too few white cells to form pus","The wound is healing normally || Infection can be hidden.","Cyclophosphamide sterilizes wounds || Not true.","Pus only forms with fever || Not the reason."],
+ "Fever may also be a late sign in leukopenia, so monitor closely.")
+q("antimet","A client on high-dose methotrexate develops severe bone marrow depression. Which antidote does the nurse expect?",
+ ["*Leucovorin","Mesna || Protects the bladder from cyclophosphamide.","Protamine || Reverses heparin.","Vitamin K || Reverses warfarin."],
+ "Leucovorin is a reduced form of folic acid.")
+q("antimet","Which instructions are correct for a client on methotrexate? "+SATA,
+ ["*Avoid alcohol","*Report yellowing of the skin or eyes","*Report shortness of breath","*Use contraception during and after therapy","Take extra folic acid on your own || Folic acid changes the response to methotrexate."],
+ "Methotrexate can cause liver damage and pulmonary fibrosis; NSAIDs and salicylates can cause toxicity.")
+q("antimet","A client takes allopurinol for gout and is starting mercaptopurine. What is the concern?",
+ ["*Allopurinol can cause mercaptopurine toxicity, so the dose is reduced","No interaction || There is one.","Allopurinol makes mercaptopurine ineffective || It raises levels.","It causes hemorrhagic cystitis || Cyclophosphamide."],
+ "Mercaptopurine is oral only; watch bilirubin and transaminases.")
+q("antimet","Which medication is given with intrathecal cytarabine?",
+ ["*Dexamethasone","Mesna || With cyclophosphamide.","Leucovorin || With high-dose methotrexate.","Hyaluronidase || For vincristine extravasation."],
+ "Intrathecal cytarabine can cause arachnoiditis: nausea, vomiting, headache, fever.")
+q("alkyl","Besides hemorrhagic cystitis, which effects are listed for cyclophosphamide? "+SATA,
+ ["*Alopecia","*Severe nausea and vomiting","*Leukopenia","*Hyperkalemia and hyponatremia","Bradycardia during infusion || Paclitaxel."],
+ "Tell clients early about hair loss; it grows back.")
+q("alkyl","Which instruction helps protect the bladder during cyclophosphamide?",
+ ["*Void before the dose and increase fluid intake","Hold urine as long as possible || Increases bladder contact.","Restrict fluids to 1 L || Opposite.","Take with a diuretic only || Not the teaching."],
+ "Report blood in the urine or pain with voiding; mesna is given with each dose.")
+q("alkyl","When is the critical time for low counts after IV carmustine?",
+ ["*4–6 weeks after each treatment","Day 1 || Too early.","10–14 days || That's most chemo, not carmustine.","After 1 year || Too late."],
+ "Carmustine has a delayed nadir; it can also cause irreversible pulmonary fibrosis.")
+q("alkyl","A client on carmustine reports a new cough and shortness of breath. Why is this a concern?",
+ ["*Carmustine can cause pulmonary fibrosis","It's expected nausea || Not related.","It's hemorrhagic cystitis || Not related.","It's a sign of hair loss || Not related."],
+ "Listen to breath sounds and monitor pulmonary function tests.")
+q("vesicant","Why should a vesicant such as doxorubicin or carmustine NOT be given in a vein near the wrist or antecubital space?",
+ ["*Extravasation near joints can cause necrosis, tendon or nerve injury","The drug won't absorb there || Not the reason.","It causes bradycardia || Not the reason.","It's too painful only || Damage is the concern."],
+ "Use a central line when possible.")
+q("vesicant","Vincristine infiltrates. Which antidote and site care does ATI list?",
+ ["*Warm compress (heat) and local hyaluronidase injection","Cold compress and sodium bicarbonate || That's carmustine.","Leucovorin || Methotrexate antidote.","Mesna || Bladder protection."],
+ "Treatments are drug-specific: carmustine uses bicarbonate and cold; vincristine uses heat and hyaluronidase.")
+q("cis","When does severe nausea and vomiting usually start with cisplatin, and how is it prevented?",
+ ["*About 1 hour after the infusion starts; premedicate with an antiemetic 30 minutes before","Only 1 week later || Starts within about an hour.","It never causes nausea || It's severe.","Only if the client eats || Not the trigger."],
+ "Take antiemetics for several days after treatment.")
+q("cis","Which client should NOT receive cisplatin?",
+ ["*A client also taking a loop diuretic like furosemide","A client with normal hearing || Hearing is assessed, not a reason to withhold.","A client who weighs 70 kg || Weight guides dosing.","A client with testicular cancer || An indication."],
+ "Other ototoxic drugs (furosemide) raise the risk of permanent hearing loss.")
+q("cis","Which preparation detail is specific to platinum compounds?",
+ ["*Don't use equipment containing aluminum","Mix with dextrose only || Not the rule.","Give IM || IV only.","Protect from light in a lead bag || Not the rule."],
+ "Also have epinephrine ready for anaphylaxis to platinum.")
+q("cis","When is the critical time for low counts after cisplatin?",
+ ["*Days 18–23","Days 1–2 || Too early.","Weeks 4–6 || Carmustine.","Days 10–14 || Doxorubicin."],
+ "Monitor CBC before each treatment and weekly after.")
+q("doxo","A client on doxorubicin is told what to expect. Which statements are correct? "+SATA,
+ ["*Complete hair loss that's reversible","*Red urine for up to 2 days","*Report palpitations, shortness of breath or chest pain","*Heart damage can show up months or years later","Hair loss is permanent || It's reversible."],
+ "Dexrazoxane or an ACE inhibitor may be ordered to protect the heart.")
+q("doxo","Which client should NOT receive doxorubicin?",
+ ["*A client with existing cardiac disorders","A client with bladder cancer || An indication.","A client with breast cancer || An indication.","A client with lymphoma || An indication."],
+ "Also contraindicated in existing marrow suppression and after a prior full course of doxorubicin.")
+q("antimit","Which assessment detects vincristine or paclitaxel neuropathy?",
+ ["*Check deep tendon reflexes, especially the Achilles reflex, and hand/foot strength","Check hearing || Cisplatin.","Check urine for blood || Cyclophosphamide.","Check the Amsler grid || Eyes."],
+ "The dose may be decreased if neuropathy develops.")
+q("antimit","Which premedication is given before the solvent form of paclitaxel?",
+ ["*An antihistamine, a corticosteroid and an H2 blocker 30 minutes before","Mesna || Not for paclitaxel.","Leucovorin || Not for paclitaxel.","Atropine || Not the premedication."],
+ "This prevents allergic reactions; it's infused over 3 hours with an in-line filter.")
+q("antimit","Vincristine is contraindicated in a client with:",
+ ["*Intestinal ileus","Leukemia || An indication.","Breast cancer || An indication.","Normal bowel function || Not a contraindication."],
+ "It causes severe constipation and impaction; monitor bowel sounds.")
+q("topo","When should filgrastim be given in relation to topotecan?",
+ ["*24 hours after the topotecan infusion is complete","At the same time || Worsens marrow suppression.","1 hour before || Not the timing.","Never || It may be prescribed."],
+ "Topotecan's neutropenia nadir is about day 12.")
+q("horm","Which effects should a client on tamoxifen report? "+SATA,
+ ["*Blurred vision","*Abnormal menstrual or vaginal bleeding","*Leg pain or swelling","*Sudden chest pain or one-sided weakness","Hair growth || Not listed."],
+ "Tamoxifen raises the risk of uterine cancer, clots and retinopathy/cataracts; regular eye exams.")
+q("horm","Which teaching applies to anastrozole? "+SATA,
+ ["*Increase calcium and vitamin D","*Do weight-bearing exercise","*Take on an empty stomach at the same time daily","*Take acetaminophen for muscle pain if approved","Take with estrogen for hot flashes || Don't take estrogen."],
+ "Only for postmenopausal clients; a bisphosphonate may be prescribed for fracture risk.")
+q("horm","How long should flutamide be monitored for liver function at first?",
+ ["*Monthly for the first few months","Never || Liver monitoring is key.","Only after 5 years || Too late.","Only if pregnant || Not applicable."],
+ "Flutamide begins when the GnRH drug starts and may raise INR with warfarin.")
+q("horm","Which teaching applies to leuprolide? "+SATA,
+ ["*Do weight-bearing exercise daily","*Get enough calcium and vitamin D","*Report headache, dizziness or numbness","It's taken orally once a day || It's given SQ or IM."],
+ "Bone loss is a major adverse effect; monitor bone density.")
+q("target","What should the nurse do if a client has wheezing and hypotension during the first trastuzumab infusion?",
+ ["*Stop the infusion and prepare epinephrine as prescribed","Speed up the infusion || Worsens the reaction.","Give it with dextrose || Don't mix with dextrose.","Ignore it; it's expected || It's an allergic reaction."],
+ "Allergic reactions usually occur with the first dose or within 12 hours.")
+q("target","Trastuzumab should not be given at the same time as which drug?",
+ ["*Doxorubicin (an anthracycline)","Acetaminophen || Not contraindicated.","Filgrastim || Not listed.","Ondansetron || Not listed."],
+ "Combined cardiotoxicity.")
+q("target","Which instructions apply to imatinib? "+SATA,
+ ["*Take with a meal and at least 8 oz of water","*Avoid grapefruit juice","*Report sudden weight gain, swelling or shortness of breath","Take on an empty stomach || Take with a meal."],
+ "Imatinib causes fluid retention that can lead to pulmonary edema.")
+q("target","A client on interferon alfa asks how to manage flu-like symptoms. What does the nurse suggest, if the provider approves?",
+ ["*Premedicate with acetaminophen","Take aspirin and ibuprofen together || Not the teaching.","Stop the drug when feverish || Don't stop on your own.","Drink less fluid || Stay well hydrated."],
+ "Interferon is dosed in million units (MU), not mg or mL. Watch for depression.")
+q("entry","Which instructions apply to enfuvirtide? "+SATA,
+ ["*Rotate injection sites (thigh, upper arm, abdomen)","*Avoid discolored or scarred skin","*Report cough, fever or shortness of breath","Give it as a deep IM injection || It's subcutaneous only."],
+ "It can cause pneumonia; it's given twice a day.")
+q("entry","A client on maraviroc develops an itchy rash. Why is this important?",
+ ["*Allergic signs like rash often come before liver damage","Rash is always harmless || Can precede liver damage.","It means the virus is gone || Not the meaning.","It's injection-site irritation || Maraviroc is oral."],
+ "Also report abdominal pain and jaundice; maraviroc has many interactions.")
+q("rti","When do anemia and neutropenia typically appear on zidovudine?",
+ ["*Anemia in 2–4 weeks; neutropenia after about 6 weeks","Within 24 hours || Too early.","Only after 1 year || Too late.","Never || Marrow suppression is the key effect."],
+ "Monitor Hgb and neutrophils monthly; epoetin alfa or filgrastim may be given.")
+q("rti","Zidovudine is also used for which purpose?",
+ ["*Preventing maternal HIV transmission to the fetus","Treating hepatitis C || Interferon.","Preventing ileus || Not related.","Treating breast cancer || Not related."],
+ "In pregnancy, oral doses start at 14 weeks, with IV during delivery.")
+q("rti","A client on delavirdine develops a rash with fever and mouth lesions. What is the priority?",
+ ["*Report it; the drug may need to be stopped (risk of Stevens-Johnson syndrome)","Apply lotion and continue || Could be life-threatening.","Double the dose || Not appropriate.","It's expected; ignore it || Not with fever and lesions."],
+ "Don't take delavirdine with antacids.")
+q("pi","Which findings show fat redistribution from ritonavir? "+SATA,
+ ["*Thin arms, legs and face","*Increased abdominal fat","*Fat between the shoulder blades ('buffalo hump')","Weight loss everywhere || Not redistribution."],
+ "Ritonavir also raises glucose and lipids and lowers bone density.")
+q("pi","Which drugs are contraindicated with protease inhibitors like ritonavir? "+SATA,
+ ["*Simvastatin and lovastatin","*Midazolam and alprazolam","*St. John's wort","Acetaminophen || Not listed."],
+ "PDE-5 inhibitors like sildenafil are given in reduced doses; ritonavir lowers oral contraceptive levels.")
+q("pi","How should ritonavir be taken?",
+ ["*Twice daily with food or a snack","On an empty stomach || Food improves absorption.","Once a week || Twice daily.","Only when the viral load rises || Take as prescribed."],
+ "Food also reduces GI effects and altered taste.")
+q("pi","Which adverse effects does ATI list for raltegravir? "+SATA,
+ ["*Nausea, vomiting and diarrhea","*Dizziness and headache","Hemorrhagic cystitis || Cyclophosphamide.","Red urine || Doxorubicin."],
+ "The lecture slide also flags muscle injury (high CK). Avoid driving until effects are known.")
